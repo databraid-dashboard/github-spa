@@ -1,0 +1,36 @@
+{
+  "name": "databraid-react-starter",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  },
+  "devDependencies": {
+    "eslint": "4.3.0",
+    "eslint-config-airbnb": "15.1.0",
+    "eslint-plugin-import": "2.7.0",
+    "eslint-plugin-jsx-a11y": "5.1.1",
+    "eslint-plugin-react": "7.1.0",
+    "react-scripts": "1.0.10"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "lint": "node_modules/eslint/bin/eslint.js --ext=js --ext=jsx ."
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/databraid-dashboard/databraid-react-starter.git"
+  },
+  "author": "joshwyatt",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/databraid-dashboard/databraid-react-starter/issues"
+  },
+  "homepage": "https://github.com/databraid-dashboard/databraid-react-starter#readme"
+}
