@@ -1,5 +1,6 @@
 
 import { combineReducers } from 'redux';
+<<<<<<< HEAD
 
 import orgReducer from './orgReducer';
 
@@ -24,3 +25,11 @@ const rootReducer = combineReducers({
 });
 
 export default rootReducer;
+=======
+import { repoReducer } from './repoReducer';
+
+export const rootReducer = combineReducers({
+  pullRequests: repoReducer,
+
+});
+>>>>>>> Must push scaffold to teamMates, My linting errors are related to smart component use are superfluous, and i've run out of time.
