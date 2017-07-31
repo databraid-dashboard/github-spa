@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Issues from './components/Issues/Issues.jsx';
+import PR_Table from './components/PR_Table/PR_Table.jsx'
 
 const App = () => (
   <div className="App">
@@ -13,6 +14,7 @@ const App = () => (
       To get started, edit <code>src/App.js</code> and save to reload.
     </p>
     <Issues/>
+    <PR_Table/>
   </div>
 );
 
