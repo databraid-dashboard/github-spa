@@ -9,6 +9,7 @@ import Login from './components/Login/Login';
 import Organizations from './components/Organizations/Organizations';
 import Dashboard from './components/Dashboard/Dashboard';
 import './App.css';
+import Issues from './components/Issues/Issues.jsx';
 
 const App = ({ currentPage }) => (
   <Container>
