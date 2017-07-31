@@ -2,7 +2,6 @@
 import { combineReducers } from 'redux';
 import { repoReducer } from './repoReducer';
 
-export const rootReducer = combineReducers({
+export default const rootReducer = combineReducers({
   pullRequests: repoReducer,
-
 });
