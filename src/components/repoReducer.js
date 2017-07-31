@@ -1,6 +1,7 @@
 /* eslint-disable no-console, no-param-reassign */
 
-const repoReducer => {
+const repoReducer = () => {
+
 }
 
-default export connect(null, null)(repoReducer);
+default export repoReducer;
