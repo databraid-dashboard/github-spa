@@ -6,7 +6,7 @@ import Cards from '../Cards/Cards.jsx';
 const Issues = () => (
   <Card>
     <Card.Content>
-      <Card.Header>
+      <Card.Header className="ui center aligned">
         Git Issues
       </Card.Header>
     </Card.Content>

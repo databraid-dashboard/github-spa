@@ -3,19 +3,15 @@ import logo from './logo.svg';
 import './App.css';
 import Issues from './components/Issues/Issues.jsx';
 import PrTable from './components/PrTable/PrTable.jsx'
+import Milestones from './components/Milestones/Milestones.jsx'
+import { Container } from 'semantic-ui-react';
 
 const App = () => (
-  <div className="App">
-    <div className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <h2>Welcome to React</h2>
-    </div>
-    <p className="App-intro">
-      To get started, edit <code>src/App.js</code> and save to reload.
-    </p>
+  <Container>
     <Issues/>
     <PrTable/>
-  </div>
+    <Milestones/>
+  </Container>
 );
 
 export default App;
