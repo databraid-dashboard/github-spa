@@ -1,4 +1,4 @@
-/* es-lint no-unused-vars */
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';

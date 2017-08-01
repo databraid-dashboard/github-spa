@@ -14,6 +14,8 @@ const Issues = () => (
       <Feed>
         <List divided relaxed>
           <Cards />
+          <Cards />
+          <Cards />
           {/* <List.Item>
               <List.Content>
                 <List.Header>#1 Git Issue One</List.Header><Label.Group tag><div className="us tiny label"><Label>question</Label></div></Label.Group>
@@ -36,6 +38,6 @@ const Issues = () => (
       </Feed>
     </Card.Content>
   </Card>
-)
+);
 
 export default Issues;
