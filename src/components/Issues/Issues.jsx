@@ -1,6 +1,7 @@
 import React from 'react';
 import './Issues.css'
-import { Card, Feed, List, Label } from 'semantic-ui-react';
+import { Card, Feed, List } from 'semantic-ui-react';
+import Cards from '../Cards/Cards.jsx';
 
 const Issues = () => (
   <Card>
@@ -12,7 +13,8 @@ const Issues = () => (
     <Card.Content>
       <Feed>
         <List divided relaxed>
-          <List.Item>
+          <Cards />
+          {/* <List.Item>
               <List.Content>
                 <List.Header>#1 Git Issue One</List.Header><Label.Group tag><div className="us tiny label"><Label>question</Label></div></Label.Group>
                 <List.Description>Assigned To: Jenny</List.Description>
@@ -29,7 +31,7 @@ const Issues = () => (
                 <List.Header>#3 Git Issue One</List.Header><Label.Group tag><Label>help</Label></Label.Group>
                 <List.Description>Assigned To: Jenny</List.Description>
               </List.Content>
-          </List.Item>
+          </List.Item> */}
         </List>
       </Feed>
     </Card.Content>
