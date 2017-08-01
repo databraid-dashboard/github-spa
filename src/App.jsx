@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Issues from './components/Issues/Issues.jsx';
+import Issues from './components/Issues/Issues';
 
 const App = () => (
   <div className="App">
@@ -12,7 +12,7 @@ const App = () => (
     <p className="App-intro">
       To get started, edit <code>src/App.js</code> and save to reload.
     </p>
-    <Issues/>
+    <Issues />
   </div>
 );
 
