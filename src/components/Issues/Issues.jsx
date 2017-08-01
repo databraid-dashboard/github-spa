@@ -5,7 +5,7 @@ import { Card, Feed, List, Label } from 'semantic-ui-react';
 const Issues = () => (
   <Card>
     <Card.Content>
-      <Card.Header>
+      <Card.Header className="ui center aligned">
         Git Issues
       </Card.Header>
     </Card.Content>

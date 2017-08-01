@@ -2,20 +2,25 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Issues from './components/Issues/Issues.jsx';
+<<<<<<< HEAD
 import PR_Table from './components/PR_Table/PR_Table.jsx'
+=======
+import PrTable from './components/PrTable/PrTable.jsx'
+import Milestones from './components/Milestones/Milestones.jsx'
+import { Container } from 'semantic-ui-react';
+>>>>>>> 2d0b4d9... Adding Milestones Component
 
 const App = () => (
-  <div className="App">
-    <div className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <h2>Welcome to React</h2>
-    </div>
-    <p className="App-intro">
-      To get started, edit <code>src/App.js</code> and save to reload.
-    </p>
+  <Container>
     <Issues/>
+<<<<<<< HEAD
     <PR_Table/>
   </div>
+=======
+    <PrTable/>
+    <Milestones/>
+  </Container>
+>>>>>>> 2d0b4d9... Adding Milestones Component
 );
 
 export default App;
