@@ -3,8 +3,12 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react": "15.6.1",
+    "react-dom": "15.6.1",
+    "react-redux": "5.0.5",
+    "redux": "3.7.2",
+    "redux-thunk": "2.2.0",
+    "semantic-ui-react": "0.71.3"
   },
   "devDependencies": {
     "eslint": "4.3.0",
@@ -12,6 +16,10 @@
     "eslint-plugin-import": "2.7.0",
     "eslint-plugin-jsx-a11y": "5.1.1",
     "eslint-plugin-react": "7.1.0",
+    "react-router-dom": "4.1.2",
+    "react-test-renderer": "15.6.1",
+    "enzyme": "2.9.1",
+    "enzyme-to-json": "1.5.1",
     "react-scripts": "1.0.10"
   },
   "scripts": {
@@ -19,7 +27,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "lint": "node_modules/eslint/bin/eslint.js --ext=js --ext=jsx ."
+    "lint": "node_modules/eslint/bin/eslint.js --fix --ext=js --ext=jsx ."
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
   "main": "index.js",
