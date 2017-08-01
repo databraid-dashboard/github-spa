@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 import { combineReducers } from 'redux';
@@ -33,3 +34,12 @@ export default const rootReducer = combineReducers({
   pullRequests: repoReducer,
 });
 >>>>>>> Must push scaffold to teamMates, My linting errors are related to smart component use are superfluous, and i've run out of time.
+=======
+// 
+// import { combineReducers } from 'redux';
+// import { repoReducer } from './repoReducer';
+//
+// export default const rootReducer = combineReducers({
+//   pullRequests: repoReducer,
+// });
+>>>>>>> created test, removed / disabled es-lint rules, scaffolded file structure
