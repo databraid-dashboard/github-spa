@@ -2,6 +2,7 @@ import {
   GET_ORGS,
 } from '../actions/orgActions';
 
+<<<<<<< HEAD
 function createState(json, incomingState) {
   const state = incomingState;
   json.forEach((org) => {
@@ -25,3 +26,18 @@ const orgReducer = (state = { ids: [], orgsById: {} }, action) => {
 };
 
 export default orgReducer;
+=======
+
+export const orgReducer = (state = {id: [], orgsByID: {} }, action) => {
+  switch (action.type) {
+    case GET_ORGS:
+
+
+    default:
+    return {
+      state,
+    }
+
+  }
+}
+>>>>>>> Begun component hookup, initial State, and related reducers

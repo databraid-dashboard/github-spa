@@ -1,7 +1,6 @@
-<<<<<<< HEAD
+
 
 import { combineReducers } from 'redux';
-<<<<<<< HEAD
 
 import orgReducer from './orgReducer';
 
@@ -26,21 +25,3 @@ const rootReducer = combineReducers({
 });
 
 export default rootReducer;
-=======
-//
-// import { combineReducers } from 'redux';
-// import { repoReducer } from './repoReducer';
-//
-// export default const rootReducer = combineReducers({
-//   pullRequests: repoReducer,
-// });
->>>>>>> created test, removed / disabled es-lint rules, scaffolded file structure
-=======
-//
-// import { combineReducers } from 'redux';
-// import { repoReducer } from './repoReducer';
-
-// export default const rootReducer = combineReducers({
-//   pullRequests: repoReducer,
-// });
->>>>>>> Adding card component to Issues list

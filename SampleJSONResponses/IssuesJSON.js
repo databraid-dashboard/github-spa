@@ -1,4 +1,4 @@
-const issuesMock = [
+export const issuesMock = [
   {
     url: 'https://api.github.com/repos/ShareCastG52/Q2_Project/issues/37',
     repository_url: 'https://api.github.com/repos/ShareCastG52/Q2_Project',
@@ -689,5 +689,9 @@ const issuesMock = [
     body: "i think that we're asking our users route do 'to do too much'\r\ni could be wrong but basically i'm building the auth into users and set-cookie there and that means either we tweak users route to also have get methods or we build a token route as well... hmmmmm",
   },
 ];
+function findAssignee(data) {
+  return data.map(issue => issue.assignees.forEach(assignee => assignee));
+}
 
+console.log(findAssignee(issuesMock));
 export default issuesMock;
