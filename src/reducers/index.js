@@ -1,7 +1,19 @@
-//
-// import { combineReducers } from 'redux';
-// import { repoReducer } from './repoReducer';
-//
-// export default const rootReducer = combineReducers({
-//   pullRequests: repoReducer,
-// });
+
+import { combineReducers } from 'redux';
+import { issuesReducer } from './issuesReducer';
+
+
+export const repoReducer = combineReducers({
+  issues: issuesReducer,
+  pullRequests : prReducer,
+  milestones: msReducer,
+})
+
+
+
+export const rootReducer = combineReducers({
+  repos: repoReducer,
+  orgs: orgReducer,
+  users: userReducer,
+
+})
