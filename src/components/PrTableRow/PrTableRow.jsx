@@ -2,7 +2,6 @@ import React from 'react';
 import './PrTableRow.css'
 import { Table } from 'semantic-ui-react';
 
-
 const PrTableRow = () => (
     <Table.Row>
       <Table.Cell>Merge Now</Table.Cell>
