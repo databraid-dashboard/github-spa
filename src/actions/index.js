@@ -1,5 +1,6 @@
 // temporary diable NOTE remove temp stuff
 /* eslint-disable no-unused-vars */
+<<<<<<< HEAD
 import prActions from './prActions';
 import issuesMock from '../../SampleJSONResponses/IssuesJSON';
 
@@ -13,3 +14,11 @@ export const getAllIssues(repo) => {
       })
     }
 }
+=======
+
+import {
+  store,
+} from '../store';
+/* es-lint disable no-unused-vars */
+import prActions from './prActions';
+>>>>>>> 49a3039... combined efforts (#1)

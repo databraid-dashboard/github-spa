@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* eslint-disable max-len, no-unused-vars */
 
 import { createStore, applyMiddleware } from 'redux';
@@ -23,10 +24,20 @@ const initialState = {
     milestones :{},
     }
   };
+=======
+/* eslint-disable max-len */
+
+// import { createStore, applyMiddleware } from 'redux';
+// import thunk from 'redux-thunk';
+// import { rootReducer } from './reducers/index';
+// import { initialState } from './reducers/initialState';
+//
+>>>>>>> 49a3039... combined efforts (#1)
 // const logger = store => next => (action) => {
 //   next(action);
 // };
 //
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> dab0224... added loading feature, wrote tests
@@ -54,6 +65,8 @@ const logger = store => next => (action) => {
 };
 
 >>>>>>> d3454fd... Adding PR Table and Milestones Components
+=======
+>>>>>>> 49a3039... combined efforts (#1)
 // const error = store => next => (action) => {
 //   try {
 //     next(action);
@@ -62,6 +75,7 @@ const logger = store => next => (action) => {
 //   }
 //   next(action);
 // };
+<<<<<<< HEAD
 
 const middleware = [
   thunk,
@@ -109,3 +123,22 @@ store.subscribe(() => {
 });
 >>>>>>> b56b9a4... Adding conditional views
 export default store;
+=======
+//
+// const middleware = [
+//   thunk,
+//   logger,
+//   error,
+// ];
+//
+// /* eslint-disable no-underscore-dangle */
+// const store = createStore(
+//   rootReducer,
+//   initialState,
+//   applyMiddleware(...middleware),
+//   typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+// );
+//
+//
+// export default store;
+>>>>>>> 49a3039... combined efforts (#1)

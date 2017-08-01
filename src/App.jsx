@@ -22,6 +22,7 @@ import { retrieveOrgs } from './actions/orgActions';
 >>>>>>> 2f2a056... Adding with fewer linting errors
 import './App.css';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import Issues from './components/Issues/Issues.jsx';
 <<<<<<< HEAD
 import PR_Table from './components/PR_Table/PR_Table.jsx'
@@ -68,6 +69,20 @@ if (currentPage === 'orgs') {
     <Issues/>
 <<<<<<< HEAD
     <PR_Table/>
+=======
+import Issues from './components/Issues/Issues';
+
+const App = () => (
+  <div className="App">
+    <div className="App-header">
+      <img src={logo} className="App-logo" alt="logo" />
+      <h2>Welcome to React</h2>
+    </div>
+    <p className="App-intro">
+      To get started, edit <code>src/App.js</code> and save to reload.
+    </p>
+    <Issues />
+>>>>>>> 49a3039... combined efforts (#1)
   </div>
 =======
     <PrTable/>

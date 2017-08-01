@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 import { combineReducers } from 'redux';
 <<<<<<< HEAD
@@ -67,3 +68,12 @@ const rootReducer = combineReducers({
 
 export default rootReducer;
 >>>>>>> 02a66ea... Adding with some linting errors addressed
+=======
+// 
+// import { combineReducers } from 'redux';
+// import { repoReducer } from './repoReducer';
+//
+// export default const rootReducer = combineReducers({
+//   pullRequests: repoReducer,
+// });
+>>>>>>> 49a3039... combined efforts (#1)

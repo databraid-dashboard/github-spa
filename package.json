@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     "prop-types": "^15.5.10",
 >>>>>>> edbe0e0... fml
@@ -23,13 +24,18 @@
 >>>>>>> 4def070... Adding percent complete feature
     "semantic-ui-react": "^0.71.3"
 =======
+=======
+>>>>>>> 49a3039... combined efforts (#1)
     "react": "15.6.1",
     "react-dom": "15.6.1",
     "react-redux": "5.0.5",
     "redux": "3.7.2",
     "redux-thunk": "2.2.0",
     "semantic-ui-react": "0.71.3"
+<<<<<<< HEAD
 >>>>>>> b2ee4a1... changed packed.json to reflect stable dependencies
+=======
+>>>>>>> 49a3039... combined efforts (#1)
   },
   "devDependencies": {
     "enzyme": "2.9.1",
@@ -40,6 +46,7 @@
     "eslint-plugin-jsx-a11y": "5.1.1",
     "eslint-plugin-react": "7.1.0",
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     "react-router-dom": "4.1.2",
     "react-scripts": "1.0.10",
@@ -48,6 +55,12 @@
     "enzyme": "2.9.1",
     "enzyme-to-json": "1.5.1",
 >>>>>>> b2ee4a1... changed packed.json to reflect stable dependencies
+=======
+    "react-router-dom": "4.1.2",
+    "react-test-renderer": "15.6.1",
+    "enzyme": "2.9.1",
+    "enzyme-to-json": "1.5.1",
+>>>>>>> 49a3039... combined efforts (#1)
     "react-scripts": "1.0.10"
 =======
     "redux-mock-store": "^1.2.3"
@@ -58,7 +71,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "lint": "node_modules/eslint/bin/eslint.js --ext=js --ext=jsx ."
+    "lint": "node_modules/eslint/bin/eslint.js --fix --ext=js --ext=jsx ."
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
   "main": "index.js",
