@@ -15,8 +15,7 @@ import issuesReducer from './issuesReducer';
 
 export const repoReducer = combineReducers({
    issues: issuesReducer,
-  // pullRequests : prReducer,
-  // milestones: msReducer,
+
 })
 >>>>>>> mapped store, state, readme, mockAPI calls, and began wiring up components
 
@@ -43,5 +42,7 @@ export const rootReducer = combineReducers({
   // repos: repoReducer,
   orgs: orgReducer,
   // users: userReducer,
+  // pullRequests : prReducer,
+  // milestones: msReducer,
 })
 >>>>>>> mapped store, state, readme, mockAPI calls, and began wiring up components
