@@ -36,4 +36,27 @@ const issuesReducer = (state = { ids: [], issuesById: {}, loadingIssues: true, r
   }
 };
 
+<<<<<<< HEAD
+=======
+
+<<<<<<< HEAD
+=======
+
+function createState(json){
+  console.log(json);
+ let state = { ids: [], reposByID: {} };
+ json.forEach(repo => {
+   state.ids.push(repo.id);
+   state.reposByID[repo.id] = {};
+   state.reposByID[repo.id].issues = {};
+   state.reposByID[repo.id].issues['title'] = repo.title;
+   state.reposByID[repo.id].issues['number'] = repo.number;
+   state.reposByID[repo.id].issues['assignedTo'] = repo.assignees.map(assignee => assignee.avatar_url);
+   state.reposByID[repo.id].issues['labels'] = repo.labels.map(label => { label.name, label.color })
+ });
+ return state;
+}
+
+>>>>>>> mapped store, state, readme, mockAPI calls, and began wiring up components
+>>>>>>> mapped store, state, readme, mockAPI calls, and began wiring up components
 export default issuesReducer;

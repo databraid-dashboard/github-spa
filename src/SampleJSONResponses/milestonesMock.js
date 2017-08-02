@@ -62,11 +62,11 @@ const milestoneMock = [
       site_admin: false,
     },
     open_issues: 3,
-    closed_issues: 2,
+    closed_issues: 0,
     state: 'open',
     created_at: '2017-06-23T22:45:34Z',
     updated_at: '2017-07-31T20:22:10Z',
-    due_on: '2017-08-03T20:22:10Z',
+    due_on: null,
     closed_at: null,
   },
 ];

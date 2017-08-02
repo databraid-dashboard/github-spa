@@ -9,5 +9,7 @@ import store from './store';
 
 ReactDOM.render(
   React.createElement(Provider, { store }, React.createElement(App)), document.getElementById('root'));
+<<<<<<< HEAD
 
+>>>>>>> mapped store, state, readme, mockAPI calls, and began wiring up components
 registerServiceWorker();
