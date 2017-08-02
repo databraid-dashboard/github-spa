@@ -1,4 +1,4 @@
-import authorizedUserByOrgResponse from '../SampleJSONResponses/authJSON';
+import authorizedUserByOrgResponse from '../SampleJSONResponses/authORGsJSON';
 
 export const GET_ORGS = 'GET_ORGS';
 

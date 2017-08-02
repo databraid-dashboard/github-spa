@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Issues from './components/Issues/Issues.jsx';
 import PrTable from './components/PrTable/PrTable.jsx'
@@ -11,30 +10,28 @@ import {connect} from 'react-redux';
 
 class App extends Component{
 
-  componentDidMount(){
-    this.props.retrieveOrgs();
-  }
   render() {
     return (
     <Container>
-      <Issues {...this.props.issues}/>
+      <Issues/>
       <PrTable/>
       <Milestones/>
     </Container>
   );
   }
+
 }
 
 
 const mapStateToProps = state => {
   return {
     orgs: state.orgs,
-    issues: state.repos
+    issues: state.issues
   }
 }
 
 const mapDispatchToProps = dispatch => bindActionCreators ({
-  retrieveOrgs,
+  retrieveOrgs
 }, dispatch);
 
 export default connect(

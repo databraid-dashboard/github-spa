@@ -1,41 +1,33 @@
 State = {
-  users : {
-    ids: [],
-    usersByID: {}
-  },
-  orgs: {
-    ids: [],
-    orgsByID: {
-      id: {
-        avatar_url: 'string',
-        login: 'string',
-        repos_url: 'string',
-      // triggers another action that fetches call
-      }
-    
-    },
-  },
-  repos : {
-    ids: [],
-    reposById: {},
-  }
-  issues : {
-    // repoID :{
-      ids: [],
-      issuesById: {},
-    // }
+ users : {
+   ids: [],
+   usersByID: {}
+ },
+ orgs: {
+   ids: [],
+   orgsByID: {
+     id: 0,
+     repoIds: [],
+     ...everything else related to an org
+   },
+ },
+ repos : {
+   ids: [],
+   reposById: {},
+ }
+ issues : {
+     ids: [],
+     issuesById: {},
 
-  }
-  pullRequests: {
-    // repoID :{
-      ids: [],
-      prById: {},
-    // }
-   },
-  milestones : {
-    repoID :{
-      ids: [],
-      milestonesById: {},
-    }
-   },
+ }
+ pullRequests: {
+     ids: [],
+     prById: {},
+  },
+ milestones : {
+   repoID :{
+     ids: [],
+     milestonesById: {},
+   }
+  },
 };

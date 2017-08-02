@@ -1,4 +1,4 @@
-import IssuesJSON from '../SampleJSONResponses/IssuesJSON';
+import issuesMock from '../SampleJSONResponses/IssuesJSON';
 
 export const GET_ISSUES = 'GET_ISSUES';
 
@@ -6,7 +6,7 @@ export const retrieveIssues = () => {
   return dispatch => {
     dispatch({
       type: GET_ISSUES,
-      responseObj: IssuesJSON
+      responseObj: issuesMock
     })
   }
 }

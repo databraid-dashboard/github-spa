@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import { rootReducer } from './reducers/index';
 
@@ -20,10 +20,12 @@ const initialState = {
     milestones :{},
     }
   };
-// const logger = store => next => (action) => {
-//   next(action);
-// };
-//
+
+const logger = store => next => (action) => {
+  console.log('action fired', action);
+  next(action);
+};
+
 // const error = store => next => (action) => {
 //   try {
 //     next(action);
@@ -35,16 +37,16 @@ const initialState = {
 
 const middleware = [
   thunk,
-  // logger,
+  logger,
   // error,
 ];
 
 /* eslint-disable no-underscore-dangle */
 const store = createStore(
   rootReducer,
-  initialState,
-  applyMiddleware(...middleware),
+  compose(applyMiddleware(...middleware),
    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+ )
 );
 
 store.subscribe(() => {
