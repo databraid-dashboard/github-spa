@@ -1,4 +1,4 @@
-const issuesMock = [
+export const issuesMock = [
   {
     url: 'https://api.github.com/repos/ShareCastG52/Q2_Project/issues/37',
     repository_url: 'https://api.github.com/repos/ShareCastG52/Q2_Project',
