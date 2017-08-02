@@ -1,4 +1,4 @@
-export const initialState = {
+State = {
   users : {
     ids: [],
     usersByID: {}
@@ -6,30 +6,36 @@ export const initialState = {
   orgs: {
     ids: [],
     orgsByID: {
-      id: int,
-      repo: repository,
-      url: repos_url,
-
+      id: {
+        avatar_url: 'string',
+        login: 'string',
+        repos_url: 'string',
+      // triggers another action that fetches call
+      }
+    
     },
   },
   repos : {
     ids: [],
-    reposById: {
-      4567: {
-      issues : {
-        labels : [],
-        assignedTo : [],
-        milestones: [],
-        }
-      },
-      pullRequests: {
-
-      },
-      milestones : {
-
-      },
-    }
-
+    reposById: {},
+  }
+  issues : {
+    // repoID :{
+      ids: [],
+      issuesById: {},
+    // }
 
   }
+  pullRequests: {
+    // repoID :{
+      ids: [],
+      prById: {},
+    // }
+   },
+  milestones : {
+    repoID :{
+      ids: [],
+      milestonesById: {},
+    }
+   },
 };

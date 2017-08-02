@@ -6,8 +6,7 @@ import issuesReducer from './issuesReducer';
 
 export const repoReducer = combineReducers({
    issues: issuesReducer,
-  // pullRequests : prReducer,
-  // milestones: msReducer,
+
 })
 
 
@@ -16,4 +15,6 @@ export const rootReducer = combineReducers({
   // repos: repoReducer,
   orgs: orgReducer,
   // users: userReducer,
+  // pullRequests : prReducer,
+  // milestones: msReducer,
 })
