@@ -8,5 +8,12 @@ import registerServiceWorker from './registerServiceWorker';
 import store from './store';
 
 ReactDOM.render(
+<<<<<<< HEAD
   React.createElement(Provider, { store }, React.createElement(App)), document.getElementById('root'));
+=======
+  <Provider store={store}>
+    <App />
+  </Provider>
+, document.getElementById('root'));
+>>>>>>> mapped store, state, readme, mockAPI calls, and began wiring up components
 registerServiceWorker();
