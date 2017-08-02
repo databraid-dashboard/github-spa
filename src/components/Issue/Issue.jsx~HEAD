@@ -1,13 +1,15 @@
 import React from 'react';
-import './Issue.css'
-import { List, Label } from 'semantic-ui-react';
+import { Card, Item, List, Label, Header } from 'semantic-ui-react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import './Issue.css';
 
 function getDescription(assignedTo) {
-  if (assignedTo[0] !== 'Not assigned') {
+  if (assignedTo.length > 0) {
     return (
       <div className="ui center aligned">
-        <div><Header sub className="space-issues">Assigned To: </Header>{assignedTo[0]}</div>
-        <Item.Image size="mini" src={assignedTo[1]} />
+        <div><Header sub className="space-issues">Assigned To: </Header>{assignedTo[0][0]}</div>
+        <Item.Image size="mini" src={assignedTo[0][1]} />
       </div>
     );
   }
@@ -16,7 +18,7 @@ function getDescription(assignedTo) {
   );
 }
 
-export const Issue = ({ title, number, assignedTo, labels }) => {
+export const Issue = ({ title, repoIssueNumber, assignedTo, labels }) => {
   const renderedLabels = labels.map(label => (
     <div className="space-labels" key={label}>
       <Label className="ui mini label" ribbon="right" color="grey">{label}
@@ -30,39 +32,34 @@ export const Issue = ({ title, number, assignedTo, labels }) => {
       <List divided relaxed>
         <List.Item>
           <List.Content>
-            <List.Header>#{number} {title}</List.Header>{renderedLabels}
+            <List.Header>#{repoIssueNumber} {title}</List.Header>{renderedLabels}
             <List.Description> {getDescription(assignedTo)}</List.Description>
           </List.Content>
         </List.Item>
-      )
-
-}
-
-<<<<<<< HEAD
-Issue.propTypes = {
-  title: PropTypes.string.isRequired,
-  number: PropTypes.number.isRequired,
-  assignedTo: PropTypes.arrayOf(PropTypes.array).isRequired,
-  labels: PropTypes.arrayOf(PropTypes.string).isRequired,
+      </List>
+    </Card.Content>
+  );
 };
 
+Issue.propTypes = {
+  title: PropTypes.string.isRequired,
+  repoIssueNumber: PropTypes.number.isRequired,
+  assignedTo: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)).isRequired,
+  labels: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
+// NOTE replace Line 43 with below
+// assignedTo: PropTypes.arrayOf(PropTypes.number),
 export const mapStateToProps = (state, { issueId }) => {
   const issue = state.issues.issuesById[issueId];
-  const { title, number, assignedTo, labels } = issue;
-=======
-const mapStateToProps = (state, { issueId }) => {
-  console.log(state, 'mapStateToProps');
-  const issue = state.issues.issuesById[issueId];
-  const { title, repoIssueNumber, assignedTo, labels  } = issue;
->>>>>>> Adding Issues component
+  const { title, repoIssueNumber, assignedTo, labels } = issue;
   return {
     title,
-    number,
+    repoIssueNumber,
     assignedTo,
-    labels
-  }
-}
+    labels,
+  };
+};
 
 export default connect(
-  mapStateToProps
+  mapStateToProps,
 )(Issue);

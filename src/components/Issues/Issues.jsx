@@ -1,6 +1,8 @@
 /* eslint-disable import/no-named-as-default */
 import React, { Component } from 'react';
-import { Card } from 'semantic-ui-react';
+import './Issues.css'
+import { Card, Feed, List } from 'semantic-ui-react';
+import Issue from '../Issue/Issue.jsx';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
@@ -37,7 +39,7 @@ export class Issues extends Component {
         </Card.Content>
         {issueComponents(this.props.issuesByRepo, this.props.repoName)}
       </Card>
-    );
+    )
   }
 }
 
