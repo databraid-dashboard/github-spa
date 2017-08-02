@@ -1,21 +1,12 @@
 
 import {
-  RECIEVE_ISSUES,
-} from '../actions';
-const issuesReducer = (state = {labels: [], assignedTo: [], milestones: []}, action) => {
-  {id, reposById} = state.repos.reposById;
-  switch (action.type) {
-    case RECIEVE_ISSUES:
-      return{
-        ...state,
-        id:[]
-        reposById : {
+  GET_ISSUES,
+} from '../actions/issueActions';
+const issuesReducer = (state = {ids:[], reposById: {}} , action) => {
 
-          issues :{ action.data.map(issue => issue.title)},
-          labels : action.data.labels.map(label => label)
-          assignedTo : action.data.map(issue => issue.assignees.forEach(assignee => assignee))
-        }
-      }
+  switch (action.type) {
+    case GET_ISSUES:
+      return createState (action.responseObj)
 
     default:
       return {
@@ -24,4 +15,20 @@ const issuesReducer = (state = {labels: [], assignedTo: [], milestones: []}, act
   }
 }
 
-default export issuesReducer;
+
+function createState(json){
+  console.log(json);
+ let state = { ids: [], reposByID: {} };
+ json.forEach(repo => {
+   state.ids.push(repo.id);
+   state.reposByID[repo.id] = {};
+   state.reposByID[repo.id].issues = {};
+   state.reposByID[repo.id].issues['title'] = repo.title;
+   state.reposByID[repo.id].issues['number'] = repo.number;
+   state.reposByID[repo.id].issues['assignedTo'] = repo.assignees.map(assignee => assignee.avatar_url);
+   state.reposByID[repo.id].issues['labels'] = repo.labels.map(label => { label.name, label.color })
+ });
+ return state;
+}
+
+export default issuesReducer;

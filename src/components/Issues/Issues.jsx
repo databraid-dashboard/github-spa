@@ -3,7 +3,7 @@ import './Issues.css'
 import { Card, Feed, List } from 'semantic-ui-react';
 import Cards from '../Cards/Cards.jsx';
 
-const Issues = () => (
+const Issues = ({}) => (
   <Card>
     <Card.Content>
       <Card.Header className="ui center aligned">
@@ -16,6 +16,7 @@ const Issues = () => (
           <Cards />
           <Cards />
           <Cards />
+          const cardComponents =
           {/* <List.Item>
               <List.Content>
                 <List.Header>#1 Git Issue One</List.Header><Label.Group tag><div className="us tiny label"><Label>question</Label></div></Label.Group>
@@ -38,6 +39,11 @@ const Issues = () => (
       </Feed>
     </Card.Content>
   </Card>
+  return (
+    <div>
+
+    </div>
+  )
 );
 
 export default Issues;
