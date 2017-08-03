@@ -1,6 +1,7 @@
 import {
   GET_ISSUES,
 <<<<<<< HEAD
+<<<<<<< HEAD
   LOADING_ISSUES,
 } from '../actions/issueActions';
 
@@ -31,11 +32,24 @@ const issuesReducer = (state = { ids: [], issuesById: {}, loadingIssues: true },
   switch (action.type) {
     case GET_ISSUES:
       return createState(action.responseObj, state);
+=======
+  LOADING_ISSUES
+} from '../actions/issueActions';
+const issuesReducer = (state = {ids:[], issuesById: {}, loadingIssues:true} , action) => {
+
+  switch (action.type) {
+    case GET_ISSUES:
+      return createState (action.responseObj, state)
+>>>>>>> added loading feature, wrote tests
     case LOADING_ISSUES:
       return {
         ...state,
         loadingIssues: true,
+<<<<<<< HEAD
       };
+=======
+      }
+>>>>>>> added loading feature, wrote tests
     default:
       return state;
   }
@@ -57,7 +71,11 @@ function createState(json){
    state.reposByID[repo.id].issues['assignedTo'] = repo.assignees.map(assignee => assignee.avatar_url);
    state.reposByID[repo.id].issues['labels'] = repo.labels.map(label => { label.name, label.color })
  });
+<<<<<<< HEAD
  return state;
+=======
+ return {...state, loadingIssues: false};
+>>>>>>> added loading feature, wrote tests
 }
 
 >>>>>>> mapped store, state, readme, mockAPI calls, and began wiring up components

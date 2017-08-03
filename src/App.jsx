@@ -34,7 +34,7 @@ class App extends Component{
 const mapStateToProps = state => {
   return {
     orgs: state.orgs,
-    issues: state.repos
+    // issues: state.issues
   }
 }
 
