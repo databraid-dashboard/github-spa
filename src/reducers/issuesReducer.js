@@ -4,6 +4,7 @@ import {
   LOADING_ISSUES
 } from '../actions/issueActions';
 <<<<<<< HEAD
+<<<<<<< HEAD
 const issuesReducer = (state = {ids:[], reposById: {}} , action) => {
 
   switch (action.type) {
@@ -12,6 +13,9 @@ const issuesReducer = (state = {ids:[], reposById: {}} , action) => {
 
 =======
 const issuesReducer = (state = {ids:[], issuesById: {}, loadingIssues:true} , action) => {
+=======
+const issuesReducer = (state = {ids:[], issuesById: {}, loadingIssues: true} , action) => {
+>>>>>>> 8aab236... added loading bar and tests
 
   switch (action.type) {
     case GET_ISSUES:

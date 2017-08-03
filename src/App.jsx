@@ -38,8 +38,12 @@ import { bindActionCreators } from 'redux';
 import {retrieveOrgs} from './actions/orgActions';
 import {connect} from 'react-redux';
 
+<<<<<<< HEAD
 class App extends Component{
 >>>>>>> 7e05dfe... mapped store, state, readme, mockAPI calls, and began wiring up components
+=======
+export class App extends Component{
+>>>>>>> 8aab236... added loading bar and tests
 
   componentDidMount(){
     this.props.retrieveOrgs();

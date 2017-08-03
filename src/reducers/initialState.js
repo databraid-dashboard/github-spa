@@ -15,6 +15,7 @@ State = {
     
     },
   },
+<<<<<<< HEAD
   repos : {
     ids: [],
     reposById: {},
@@ -38,4 +39,7 @@ State = {
       milestonesById: {},
     }
    },
+=======
+  loadingIssues: false;
+>>>>>>> 8aab236... added loading bar and tests
 };
