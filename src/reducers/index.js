@@ -32,6 +32,6 @@ export const rootReducer = combineReducers({
 >>>>>>> 9486a99... Adding components re-organized
   orgs: orgReducer,
   // users: userReducer,
-  // pullRequests : prReducer,
+
   // milestones: msReducer,
 })
