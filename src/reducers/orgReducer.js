@@ -2,7 +2,6 @@ import {
   GET_ORGS,
 } from '../actions/orgActions';
 
-<<<<<<< HEAD
 function createState(json, incomingState) {
   const state = incomingState;
   json.forEach((org) => {
@@ -19,39 +18,13 @@ const orgReducer = (state = { ids: [], orgsById: {} }, action) => {
   switch (action.type) {
     case GET_ORGS:
       return createState(action.responseObj, state);
-    // case LOADING_ORGS:
-    //   return {
-    //     ...state,
-    //     loadingOrgs: true,
-    //   }
-    // case SHOW_ORGS:
-    //   return {
-    //     ...state,
-    //     showOrgs: true,
-    //   }
+
     default:
       return state;
   }
 };
 
 export default orgReducer;
-=======
-
-
-const orgReducer = (state = {ids: [], orgsByID: {} }, action) => {
-
-  switch (action.type) {
-    case GET_ORGS:
-      return createState(action.responseObj);
-
-    default:
-    return {
-      state,
-    }
-  }
-}
-<<<<<<< HEAD
->>>>>>> Begun component hookup, initial State, and related reducers
 =======
 
 function createState(json){
@@ -63,7 +36,7 @@ function createState(json){
    state.orgsByID[org.id]['id'] = org.id;
    state.orgsByID[org.id]['url'] = org.repos_url;
  });
- return state;
+ return {...state};
 }
 
 export default orgReducer;

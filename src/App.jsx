@@ -9,9 +9,9 @@ import Login from './components/Login/Login';
 import Organizations from './components/Organizations/Organizations';
 import Dashboard from './components/Dashboard/Dashboard';
 import './App.css';
-import Issues from './components/Issues/Issues.jsx';
-import PrTable from './components/PrTable/PrTable.jsx'
-import Milestones from './components/Milestones/Milestones.jsx'
+import Dashboard from './components/Dashboard/Dashboard.jsx';
+import Orgs from './components/Orgs/Orgs.jsx'
+import Repos from './components/Repos/Repos.jsx'
 import { Container } from 'semantic-ui-react';
 import { bindActionCreators } from 'redux';
 import {retrieveOrgs} from './actions/orgActions';

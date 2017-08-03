@@ -1,14 +1,12 @@
-/* eslint-disable import/no-named-as-default, no-shadow, consistent-return */
-import React from 'react';
-import { Container, Grid, Header, Icon, Button } from 'semantic-ui-react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import { renderRepos } from '../../actions/renderActions';
-import Issues from '../Issues/Issues';
-import PrTable from '../PrTable/PrTable';
-import Milestones from '../Milestones/Milestones';
+import React, { Component } from 'react';
 import './Dashboard.css';
+import Issues from './Issues/Issues.jsx';
+import PrTable from './PrTable/PrTable.jsx';
+import Milestones from './Milestones/Milestones.jsx';
+import { Container } from 'semantic-ui-react';
+import { bindActionCreators } from 'redux';
+import { retrieveOrgs } from './actions/orgActions';
+import { connect } from 'react-redux';
 
 export const Dashboard = ({ repoName, renderRepos, orgName }) => (
   <div>
@@ -56,8 +54,8 @@ const mapStateToProps = state => ({
   orgName: state.currentPage.selectedOrgName,
 });
 
-export const mapDispatchToProps = dispatch => bindActionCreators({
-  renderRepos,
+const mapDispatchToProps = dispatch => bindActionCreators({
+  retrieveOrgs,
 }, dispatch);
 
 export default connect(
