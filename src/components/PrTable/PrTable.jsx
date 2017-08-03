@@ -80,19 +80,26 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { retrievePrs } from '../../actions/prActions';
 
-class PrTable extends Component {
+export class PrTable extends Component {
 
   componentDidMount(){
     this.props.retrievePrs();
   }
 
   prComponents = (prIds) => {
+    console.log(prIds, "prIds");
     return prIds.map(id => (
       <PrTableRow key={id} prId={id} />
     ))
   }
 
   render() {
+    if (this.props.loadingPrTable) {
+
+      return (
+        <div>Loading Pull Requests</div>
+      )
+    }
     return (
       <Table celled fixed>
         <Table.Header>
@@ -116,14 +123,15 @@ class PrTable extends Component {
   }
 };
 
-const mapStateToProps = state => {
+export const mapStateToProps = state => {
   return {
     prIds: state.pullRequests.ids,
-    prsById: state.pullRequests.prsByID
+    // prsById: state.pullRequests.prsByID
+    loadingPrTable: state.loadingPrTable
   }
 }
 
-const mapDispatchToProps = dispatch => bindActionCreators ({
+export const mapDispatchToProps = dispatch => bindActionCreators ({
   retrievePrs
 >>>>>>> Adding PR Table and Milestones Components
 }, dispatch);

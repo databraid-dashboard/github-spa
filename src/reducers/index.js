@@ -53,7 +53,7 @@ export const rootReducer = combineReducers({
   // repos: repoReducer,
   orgs: orgReducer,
   // users: userReducer,
-  // pullRequests : prReducer,
+
   // milestones: msReducer,
 })
 >>>>>>> mapped store, state, readme, mockAPI calls, and began wiring up components
