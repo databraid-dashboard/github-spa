@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* eslint-disable import/no-named-as-default */
 import React, { Component } from 'react';
 import { Card } from 'semantic-ui-react';
@@ -25,6 +26,29 @@ export class Milestones extends Component {
         <div>Loading Milestones</div>
       );
     }
+=======
+import React, { Component } from 'react';
+import './Milestones.css';
+import { Card, Feed, List } from 'semantic-ui-react';
+import Milestone from '../MilestonesRow/MilestonesRow.jsx';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { retrieveMilestones } from '../../actions/milestonesActions';
+
+class Milestones extends Component{
+
+  componentDidMount(){
+    this.props.retrieveMilestones();
+  }
+
+  milestoneComponents = (milestoneIds) => {
+    return milestoneIds.map(id => (
+      <Milestone key={id} milestoneId={id} />
+    ))
+  }
+
+  render() {
+>>>>>>> Adding PR Table and Milestones Components
     return (
       <Card>
         <Card.Content>
@@ -32,6 +56,7 @@ export class Milestones extends Component {
             Milestones
           </Card.Header>
         </Card.Content>
+<<<<<<< HEAD
         {milestoneComponents(this.props.milestonesIds)}
       </Card>
     );
@@ -62,4 +87,33 @@ export const mapDispatchToProps = dispatch =>
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
+=======
+        <Card.Content>
+          <Feed>
+            <List divided relaxed>
+              {this.milestoneComponents(this.props.milestonesIds)}
+            </List>
+          </Feed>
+        </Card.Content>
+      </Card>
+    )
+  }
+};
+
+const mapStateToProps = state => {
+  return {
+    milestonesIds: state.milestones.ids,
+    milestonesByID: state.milestones.milestonesByID
+  }
+}
+
+const mapDispatchToProps = dispatch =>
+bindActionCreators ({
+  retrieveMilestonesgit 
+}, dispatch);
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+>>>>>>> Adding PR Table and Milestones Components
 )(Milestones);

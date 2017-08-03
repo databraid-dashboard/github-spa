@@ -1,6 +1,7 @@
 import React from 'react';
 import './Issue.css'
-import { List, Label } from 'semantic-ui-react';
+import { Item, List, Label } from 'semantic-ui-react';
+import { connect } from 'react-redux';
 
 const Issue = ({ title, repoIssueNumber, assignedTo, labels, issueId }) => {
   const renderedLabels = labels.map((label, i) => (
@@ -12,11 +13,25 @@ const Issue = ({ title, repoIssueNumber, assignedTo, labels, issueId }) => {
     </div>
   )
 )
+  // const assignee = assignedTo.map((assignee) => (
+  //   if(assignee.length===0) {
+  //     return (
+  //       <div></div>
+  //     )
+  //   } else {
+  //     return (
+  //       <div>
+  //         <List.Description>Assigned To:{assignee}</List.Description>
+  //       </div>
+  //     )
+  //   }
+  // ))
+
     return (
       <List.Item textAlign='center'>
         {console.log('mounted')}
           <List.Content className="ui center aligned">
-            <List.Header>#{repoIssueNumber} {title}</List.Header>
+            <List.Header>#{repoIssueNumber} {title}</List.Header>{renderedLabels}
             <List.Description>Assigned To: {assignedTo}</List.Description>
           </List.Content>
         </List.Item>

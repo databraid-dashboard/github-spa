@@ -19,7 +19,16 @@ const orgReducer = (state = { ids: [], orgsById: {} }, action) => {
   switch (action.type) {
     case GET_ORGS:
       return createState(action.responseObj, state);
-
+    // case LOADING_ORGS:
+    //   return {
+    //     ...state,
+    //     loadingOrgs: true,
+    //   }
+    // case SHOW_ORGS:
+    //   return {
+    //     ...state,
+    //     showOrgs: true,
+    //   }
     default:
       return state;
   }

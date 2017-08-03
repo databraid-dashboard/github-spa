@@ -77,6 +77,7 @@ import thunk from 'redux-thunk';
 import { rootReducer } from './reducers/index';
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 const initialState = {
   users : {
     ids: [],
@@ -98,6 +99,8 @@ const initialState = {
 // };
 //
 =======
+=======
+>>>>>>> Adding PR Table and Milestones Components
 // const initialState = {
 //   users : {
 //     ids: [],

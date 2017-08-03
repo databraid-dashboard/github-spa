@@ -59,6 +59,7 @@ const issuesReducer = (state = {ids:[], issuesById: {}, loadingIssues:true} , ac
 <<<<<<< HEAD
 =======
 
+<<<<<<< HEAD
 function createState(json){
   console.log(json);
  let state = { ids: [], reposByID: {} };
@@ -70,6 +71,16 @@ function createState(json){
    state.reposByID[repo.id].issues['number'] = repo.number;
    state.reposByID[repo.id].issues['assignedTo'] = repo.assignees.map(assignee => assignee.avatar_url);
    state.reposByID[repo.id].issues['labels'] = repo.labels.map(label => { label.name, label.color })
+=======
+function createState(json, state){
+ json.forEach(repo => {
+   state.ids = state.ids.concat(repo.id);
+   state.issuesById[repo.id] = {};
+   state.issuesById[repo.id]['title'] = repo.title;
+   state.issuesById[repo.id]['repoIssueNumber'] = repo.number;
+   state.issuesById[repo.id]['assignedTo'] = repo.assignees.map(assignee => assignee.login);
+   state.issuesById[repo.id]['labels'] = repo.labels.map(label => label.name)
+>>>>>>> Adding PR Table and Milestones Components
  });
 <<<<<<< HEAD
  return state;
