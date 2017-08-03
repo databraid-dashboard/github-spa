@@ -13,7 +13,6 @@ export class PrTable extends Component {
   }
 
   prComponents = (prIds) => {
-    console.log(prIds, "prIds");
     return prIds.map(id => (
       <PrTableRow key={id} prId={id} />
     ))

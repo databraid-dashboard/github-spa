@@ -7,7 +7,6 @@ const Milestone = ({ title, due, created }) => {
 
   return (
     <List.Item textAlign='center'>
-      {console.log('mounted')}
         <List.Content className="ui center aligned">
           <List.Header>{title}</List.Header>{created}
           <List.Description>{due}</List.Description>

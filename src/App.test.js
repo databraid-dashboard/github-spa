@@ -18,7 +18,6 @@
 //         </Container>
 //       </App>
 //     )
-//     console.log(component);
 //     expect(toJson(component)).toMatchSnapshot();
 //   });
 //   it('It should have an Issues Component', ()=> {

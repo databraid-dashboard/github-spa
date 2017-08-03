@@ -22,7 +22,6 @@ const milestonesReducer = (state = { ids: [], milestonesByID: {} }, action) => {
 }
 
 function createState(json, state){
-  console.log('json', json);
  json.forEach(milestone => {
    state.ids = state.ids.concat(milestone.id);
    state.milestonesByID[milestone.id]={};

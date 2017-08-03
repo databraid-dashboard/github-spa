@@ -20,7 +20,6 @@ export class Issues extends Component{
 
   render() {
     if (this.props.loadingIssues) {
-      console.log('loading issues');
       return (
         <div>Loading Issues</div>
       )

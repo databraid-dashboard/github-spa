@@ -13,7 +13,6 @@ const PrTableRow = ({ created, mergeable, submittedBy, title }) => (
 )
 
 const mapStateToProps = (state, { prId }) => {
-  console.log(state, 'mapStateToProps');
   const pr = state.pullRequests.prsByID[prId];
   const { created, mergeable, submittedBy, title } = pr;
   return {
