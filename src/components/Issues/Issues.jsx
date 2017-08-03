@@ -61,8 +61,10 @@ class Issues extends Component{
     this.props.retrieveIssues();
   }
 
-  issueComponents = (issueIds) => {
-    return issueIds.map(id => (
+  issueComponents = (issuesIds) => {
+    return issuesIds.sort((a,b)=> {
+      return a-b;
+    }).map(id => (
         <Issue key={id} issueId={id} />
     ))
   }

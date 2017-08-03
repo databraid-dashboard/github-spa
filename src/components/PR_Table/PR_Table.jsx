@@ -57,7 +57,7 @@ class PrTable extends Component {
 
   render() {
     return (
-      <Table celled fixed singleline>
+      <Table celled fixed>
         <Table.Header>
           <Table.Row>
             <Table.HeaderCell colSpan='4' textAlign='center'>Pull Requests</Table.HeaderCell>

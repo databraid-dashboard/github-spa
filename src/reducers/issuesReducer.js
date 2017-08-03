@@ -35,7 +35,7 @@ function createState(json, state){
    state.issuesById[repo.id] = {};
    state.issuesById[repo.id]['title'] = repo.title;
    state.issuesById[repo.id]['repoIssueNumber'] = repo.number;
-   state.issuesById[repo.id]['assignedTo'] = repo.assignees.map(assignee => assignee.login);
+   state.issuesById[repo.id]['assignedTo'] = repo.assignees.map(assignee => [assignee.login,assignee.avatar_url]);
    state.issuesById[repo.id]['labels'] = repo.labels.map(label => label.name)
 >>>>>>> d3454fd... Adding PR Table and Milestones Components
  });
