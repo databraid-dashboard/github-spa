@@ -53,7 +53,7 @@ import { Card, Feed, List } from 'semantic-ui-react';
 import Issue from '../Issue/Issue.jsx';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import {retrieveIssues} from '../../actions/issueActions'
+import {retrieveIssues} from '../../actions/issueActions';
 
 class Issues extends Component{
 

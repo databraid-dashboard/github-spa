@@ -8,8 +8,22 @@ const orgReducer = (state = {ids: [], orgsByID: {} }, action) => {
 
   switch (action.type) {
     case GET_ORGS:
+<<<<<<< HEAD
       return createState(action.responseObj);
 
+=======
+      return createState(action.responseObj, state);
+    // case LOADING_ORGS:
+    //   return {
+    //     ...state,
+    //     loadingOrgs: true,
+    //   }
+    // case SHOW_ORGS:
+    //   return {
+    //     ...state,
+    //     showOrgs: true,
+    //   }
+>>>>>>> d3454fd... Adding PR Table and Milestones Components
     default:
     return {
       state,

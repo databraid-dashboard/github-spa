@@ -4,6 +4,7 @@ import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import { rootReducer } from './reducers/index';
 
+<<<<<<< HEAD
 const initialState = {
   users : {
     ids: [],
@@ -24,6 +25,30 @@ const initialState = {
 //   next(action);
 // };
 //
+=======
+// const initialState = {
+//   users : {
+//     ids: [],
+//     usersByID: {}
+//   },
+//   orgs: {
+//     ids: [],
+//     orgsByID: {},
+//   },
+//   repos : {
+//     ids: [],
+//     reposById: {},
+//     pullRequests: {},
+//     milestones :{},
+//     }
+//   };
+
+const logger = store => next => (action) => {
+  console.log('action fired', action);
+  next(action);
+};
+
+>>>>>>> d3454fd... Adding PR Table and Milestones Components
 // const error = store => next => (action) => {
 //   try {
 //     next(action);

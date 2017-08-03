@@ -53,7 +53,11 @@ class App extends Component{
 const mapStateToProps = state => {
   return {
     orgs: state.orgs,
+<<<<<<< HEAD
     issues: state.repos
+=======
+    issues: state.issues,
+>>>>>>> d3454fd... Adding PR Table and Milestones Components
   }
 }
 
