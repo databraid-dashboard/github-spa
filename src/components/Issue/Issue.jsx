@@ -35,10 +35,9 @@ export const Issue = ({ title, number, assignedTo, labels }) => {
           </List.Content>
         </List.Item>
       )
+};
 
-}
 
-<<<<<<< HEAD
 Issue.propTypes = {
   title: PropTypes.string.isRequired,
   number: PropTypes.number.isRequired,
@@ -49,12 +48,6 @@ Issue.propTypes = {
 export const mapStateToProps = (state, { issueId }) => {
   const issue = state.issues.issuesById[issueId];
   const { title, number, assignedTo, labels } = issue;
-=======
-const mapStateToProps = (state, { issueId }) => {
-  console.log(state, 'mapStateToProps');
-  const issue = state.issues.issuesById[issueId];
-  const { title, repoIssueNumber, assignedTo, labels  } = issue;
->>>>>>> Adding Issues component
   return {
     title,
     number,
