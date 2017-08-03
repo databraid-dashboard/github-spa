@@ -1,20 +1,23 @@
 import {
   GET_PRS,
+  LOADING_PRS
 } from '../actions/prActions';
 
-const prReducer = (state = { ids: [], prsByID: {} }, action) => {
+const prReducer = (state = { ids: [], prsByID: {},  loadingPrTable: true}, action) => {
 
   switch (action.type) {
     case GET_PRS:
+      console.log(state, " reducer state");
       return createState(action.responseObj, state);
-
+    case LOADING_PRS:
+      return {...state, loadingPrTable: true}
     default:
       return state
   }
 }
 
 function createState(json, state){
-  console.log('json', json);
+  console.log('json', json, state, 'state');
  json.forEach(pr => {
    state.ids = state.ids.concat(pr.id);
    state.prsByID[pr.id]={};
@@ -23,7 +26,7 @@ function createState(json, state){
    state.prsByID[pr.id]['created'] = pr.created_at;
    state.prsByID[pr.id]['mergeable'] = pr.mergeable;
  });
- return state;
+ return {...state, loadingPrTable:false};
 }
 
 export default prReducer;

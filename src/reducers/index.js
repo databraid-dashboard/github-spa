@@ -16,6 +16,6 @@ export const rootReducer = combineReducers({
   // repos: repoReducer,
   orgs: orgReducer,
   // users: userReducer,
-  // pullRequests : prReducer,
+
   // milestones: msReducer,
 })

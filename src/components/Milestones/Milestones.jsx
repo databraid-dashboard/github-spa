@@ -21,7 +21,7 @@ export class Milestones extends Component{
   }
 
   render() {
-    console.log(this.props.milestonesIds, "this.props.milestonesIds");
+
     if (this.props.loadingMilestones) {
 
       return (
