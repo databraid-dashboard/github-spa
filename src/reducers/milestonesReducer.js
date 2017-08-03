@@ -39,5 +39,4 @@ const milestonesReducer = (state = { ids: [], milestonesById: {}, repoName: '' }
   }
 };
 
-
 export default milestonesReducer;

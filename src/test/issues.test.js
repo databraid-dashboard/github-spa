@@ -1,8 +1,5 @@
-/* eslint-disable no-unused-vars, react/jsx-filename-extension */
 
 import React from 'react';
-// import renderer from 'react-test-renderer';
-// import { withRouter, Route } from 'react-router-dom';
 
 import toJson, { shallowToJson } from 'enzyme-to-json';
 import { shallow, render, mount } from 'enzyme';
