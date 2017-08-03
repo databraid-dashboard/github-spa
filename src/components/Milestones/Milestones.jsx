@@ -19,6 +19,13 @@ export class Milestones extends Component{
   }
 
   render() {
+
+    if (this.props.loadingMilestones) {
+
+      return (
+        <div>Loading Milestones</div>
+      )
+    }
     return (
       <Card>
         <Card.Content>
@@ -48,17 +55,10 @@ export const mapStateToProps = state => ({
   loadingMilestones: state.loadingMilestones,
 });
 
-<<<<<<< HEAD
 export const mapDispatchToProps = dispatch =>
   bindActionCreators({
     retrieveMilestones,
   }, dispatch);
-=======
-const mapDispatchToProps = dispatch =>
-bindActionCreators ({
-  retrieveMilestones
-}, dispatch);
->>>>>>> Adding completed PR table and Milestones components
 
 export default connect(
   mapStateToProps,
