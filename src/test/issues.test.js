@@ -47,4 +47,10 @@ describe('Issues component', () => {
     const dispatch = jest.fn();
     expect(mapDispatchToProps(dispatch)).toHaveProperty('retrieveIssues');
   });
+  it('Should have a Cart Header in the center', () => {
+    const component = shallow(
+      <Issues issuesIds={state.issues.ids} issuesLoading={false}/>,
+    );
+    expect(component.find('.aligned').exists()).toBe(true);
+  })
 });

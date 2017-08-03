@@ -35,7 +35,7 @@ const issuesReducer = (state = { ids: [], issuesById: {}, loadingIssues: true },
 =======
   LOADING_ISSUES
 } from '../actions/issueActions';
-const issuesReducer = (state = {ids:[], issuesById: {}, loadingIssues:true} , action) => {
+const issuesReducer = (state = {ids:[], issuesById: {}, loadingIssues: true} , action) => {
 
   switch (action.type) {
     case GET_ISSUES:
