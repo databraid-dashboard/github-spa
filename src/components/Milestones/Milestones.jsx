@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Milestones.css';
 import { Card, Feed, List } from 'semantic-ui-react';
-import Milestone from '../MilestonesRow/MilestonesRow.jsx';
+import Milestone from '../Milestone/Milestone.jsx';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { retrieveMilestones } from '../../actions/milestonesActions';
@@ -12,8 +12,8 @@ class Milestones extends Component{
     this.props.retrieveMilestones();
   }
 
-  milestoneComponents = (milestoneIds) => {
-    return milestoneIds.map(id => (
+  milestoneComponents = (milestonesIds) => {
+    return milestonesIds.map(id => (
       <Milestone key={id} milestoneId={id} />
     ))
   }
@@ -47,7 +47,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch =>
 bindActionCreators ({
-  retrieveMilestonesgit 
+  retrieveMilestones
 }, dispatch);
 
 export default connect(

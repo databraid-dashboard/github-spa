@@ -1,13 +1,12 @@
 import React from 'react';
 import './Milestone.css';
-import { Item, List } from 'semantic-ui-react';
+import { List } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 
-const Milestone = ({ title, due, created }) => {
+const Milestone = ({ title, due, created, milestoneId }) => {
 
   return (
-    <List.Item textAlign='center'>
-      {console.log('mounted')}
+    <List.Item>
         <List.Content className="ui center aligned">
           <List.Header>{title}</List.Header>{created}
           <List.Description>{due}</List.Description>
@@ -17,7 +16,7 @@ const Milestone = ({ title, due, created }) => {
 }
 
 const mapStateToProps = (state, { milestoneId }) => {
-  const milestone = state.milestones.milestonesById[milestoneId];
+  const milestone = state.milestones.milestonesByID[milestoneId];
   const { title, due, created } = milestone;
   return {
     title,

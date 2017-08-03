@@ -14,11 +14,10 @@ const prReducer = (state = { ids: [], prsByID: {} }, action) => {
 }
 
 function createState(json, state){
-  console.log('json', json);
  json.forEach(pr => {
    state.ids = state.ids.concat(pr.id);
    state.prsByID[pr.id]={};
-   state.prsByID[pr.id]['submittedBy'] = pr.user.login;
+   state.prsByID[pr.id]['submittedBy'] = [pr.user.login, pr.user.avatar_url];
    state.prsByID[pr.id]['title'] = pr.title;
    state.prsByID[pr.id]['created'] = pr.created_at;
    state.prsByID[pr.id]['mergeable'] = pr.mergeable;
