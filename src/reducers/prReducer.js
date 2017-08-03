@@ -34,7 +34,7 @@ const prReducer = (state = { ids: [], prsByID: {},  loadingPrTable: true}, actio
 
   switch (action.type) {
     case GET_PRS:
-      console.log(state, " reducer state");
+
       return createState(action.responseObj, state);
     case LOADING_PRS:
       return {...state, loadingPrTable: true}
@@ -44,7 +44,6 @@ const prReducer = (state = { ids: [], prsByID: {},  loadingPrTable: true}, actio
 }
 
 function createState(json, state){
-  console.log('json', json, state, 'state');
  json.forEach(pr => {
    state.ids = state.ids.concat(pr.id);
    state.prsByID[pr.id]={};

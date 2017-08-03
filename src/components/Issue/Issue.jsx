@@ -40,6 +40,7 @@ export const Issue = ({ title, repoIssueNumber, assignedTo, labels, issueId }) =
 const mapStateToProps = (state, { issueId }) => {
   const issue = state.issues.issuesById[issueId];
   const { title, repoIssueNumber, assignedTo, labels  } = issue;
+  console.log('MPSTP issue=>', issue);
   return {
     title,
     repoIssueNumber,

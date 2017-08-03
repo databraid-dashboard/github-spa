@@ -1,5 +1,4 @@
 import React from 'react';
-<<<<<<< HEAD
 import { Card, List, Header } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -81,15 +80,6 @@ Milestone.defaultProps = {
 
 export default connect(
   mapStateToProps,
-=======
-import './Milestone.css';
-import { List } from 'semantic-ui-react';
-import { connect } from 'react-redux';
-
-const Milestone = ({ title, due, created, milestoneId }) => {
-
-  return (
-    <List.Item>
         <List.Content className="ui center aligned">
           <List.Header>{title}</List.Header>{created}
           <List.Description>{due}</List.Description>
