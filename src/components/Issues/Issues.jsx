@@ -98,7 +98,6 @@ export class Issues extends Component{
 export const mapStateToProps = state => {
     return {
       issuesIds: state.issues.ids,
-      // issuesById : state.issues.issuesById,
       loadingIssues: state.loadingIssues
     }
 }

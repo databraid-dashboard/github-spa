@@ -70,6 +70,7 @@ const mapStateToProps = state => {
     orgs: state.orgs,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     issues: state.repos
 =======
     issues: state.issues,
@@ -77,6 +78,9 @@ const mapStateToProps = state => {
 =======
     // issues: state.issues
 >>>>>>> dab0224... added loading feature, wrote tests
+=======
+    issues: state.issues
+>>>>>>> 0365ab2... fixed related milestone: errors, loading feature, tests, must re-update snapshot, not rendering
   }
 }
 

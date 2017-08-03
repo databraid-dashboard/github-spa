@@ -7,6 +7,7 @@ import { Item, List, Label } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 >>>>>>> d3454fd... Adding PR Table and Milestones Components
 
+<<<<<<< HEAD
 <<<<<<< HEAD:src/components/Cards/Cards.jsx
 const Cards = () => (
   <List.Item textAlign='center'>
@@ -20,6 +21,9 @@ const Cards = () => (
 export default Cards;
 =======
 const Issue = ({ title, repoIssueNumber, assignedTo, labels, issueId }) => {
+=======
+export const Issue = ({ title, repoIssueNumber, assignedTo, labels, issueId }) => {
+>>>>>>> 0365ab2... fixed related milestone: errors, loading feature, tests, must re-update snapshot, not rendering
   const renderedLabels = labels.map((label, i) => (
     <div>
         <Label.Group><div className='ui tiny label'>{label}
@@ -43,7 +47,11 @@ const Issue = ({ title, repoIssueNumber, assignedTo, labels, issueId }) => {
   }
 
     return (
+<<<<<<< HEAD
       <List.Item>
+=======
+      <List.Item textAlign='center'>
+>>>>>>> 0365ab2... fixed related milestone: errors, loading feature, tests, must re-update snapshot, not rendering
           <List.Content className="ui center aligned">
             <List.Header>#{repoIssueNumber} {title}</List.Header>{renderedLabels}
             <List.Description> {getDescription(assignedTo)}</List.Description>
@@ -54,7 +62,10 @@ const Issue = ({ title, repoIssueNumber, assignedTo, labels, issueId }) => {
 }
 
 const mapStateToProps = (state, { issueId }) => {
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0365ab2... fixed related milestone: errors, loading feature, tests, must re-update snapshot, not rendering
   const issue = state.issues.issuesById[issueId];
   const { title, repoIssueNumber, assignedTo, labels  } = issue;
   return {
