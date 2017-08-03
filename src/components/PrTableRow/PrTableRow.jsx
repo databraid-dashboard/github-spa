@@ -1,5 +1,6 @@
 import React from 'react';
-import { Card, Item, List, Header } from 'semantic-ui-react';
+import './PrTableRow.css'
+import { Table, Label, Icon } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import './PrTableRow.css';

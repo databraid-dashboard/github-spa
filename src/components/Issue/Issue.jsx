@@ -6,32 +6,31 @@ import { connect } from 'react-redux';
 export const Issue = ({ title, repoIssueNumber, assignedTo, labels, issueId }) => {
   const renderedLabels = labels.map((label, i) => (
     <div>
-      <Label.Group tag key={i}>
-        <div className='us tiny label'>
-          <Label>{label} </Label>
+        <Label.Group><div className='ui tiny label'>{label}
       </div></Label.Group>
     </div>
   )
 )
-  // const assignee = assignedTo.map((assignee) => (
-  //   if(assignee.length===0) {
-  //     return (
-  //       <div></div>
-  //     )
-  //   } else {
-  //     return (
-  //       <div>
-  //         <List.Description>Assigned To:{assignee}</List.Description>
-  //       </div>
-  //     )
-  //   }
-  // ))
+
+  function getDescription(assignedTo){
+    if(assignedTo.length > 0){
+      return (
+        <div>Assigned To: {assignedTo[0][0]}<div>
+        <Item.Image size='mini' src={assignedTo[0][1]}/></div></div>
+      )
+    }
+    else {
+      return (
+        <div></div>
+      )
+    }
+  }
 
     return (
-      <List.Item textAlign='center'>
+      <List.Item>
           <List.Content className="ui center aligned">
             <List.Header>#{repoIssueNumber} {title}</List.Header>{renderedLabels}
-            <List.Description>Assigned To: {assignedTo}</List.Description>
+            <List.Description> {getDescription(assignedTo)}</List.Description>
           </List.Content>
         </List.Item>
       )

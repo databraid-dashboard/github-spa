@@ -23,7 +23,7 @@ function createState(json, incomingState) {
 const milestonesReducer = (state = { ids: [], milestonesById: {} }, action) => {
 } from '../actions/milestonesActions';
 
-const milestonesReducer = (state = { ids: [], milestonesByID: {} }, action) => {
+const milestonesReducer = (state = { ids:[], milestonesByID: {}}, action) => {
 
 >>>>>>> Adding PR Table and Milestones Components
   switch (action.type) {
@@ -48,7 +48,6 @@ const milestonesReducer = (state = { ids: [], milestonesByID: {} }, action) => {
 }
 
 function createState(json, state){
-  console.log('json', json);
  json.forEach(milestone => {
    state.ids = state.ids.concat(milestone.id);
    state.milestonesByID[milestone.id]={};

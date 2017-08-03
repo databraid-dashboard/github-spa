@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Milestones.css';
 import { Card, Feed, List } from 'semantic-ui-react';
-import Milestone from '../Milestones/Milestones.jsx';
+import Milestone from '../Milestone/Milestone.jsx';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { retrieveMilestones } from '../../actions/milestonesActions';
@@ -12,25 +12,13 @@ export class Milestones extends Component{
     this.props.retrieveMilestones();
   }
 
-  milestoneComponents = (milestoneIds) => {
-    return milestoneIds.map(id => (
-      <div>
-        <Milestone key={id} milestoneId={id} />
-      </div>
+  milestoneComponents = (milestonesIds) => {
+    return milestonesIds.map(id => (
+      <Milestone key={id} milestoneId={id} />
     ))
   }
 
   render() {
-<<<<<<< HEAD
-=======
-    console.log(this.props.milestonesIds, "this.props.milestonesIds");
-    if (this.props.loadingMilestones) {
-
-      return (
-        <div>Loading Milestones</div>
-      )
-    }
->>>>>>> fixed related milestone: errors, loading feature, tests, must re-update snapshot, not rendering
     return (
       <Card>
         <Card.Content>
@@ -60,10 +48,17 @@ export const mapStateToProps = state => ({
   loadingMilestones: state.loadingMilestones,
 });
 
+<<<<<<< HEAD
 export const mapDispatchToProps = dispatch =>
   bindActionCreators({
     retrieveMilestones,
   }, dispatch);
+=======
+const mapDispatchToProps = dispatch =>
+bindActionCreators ({
+  retrieveMilestones
+}, dispatch);
+>>>>>>> Adding completed PR table and Milestones components
 
 export default connect(
   mapStateToProps,

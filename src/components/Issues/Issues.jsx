@@ -21,6 +21,14 @@ export class Issues extends Component {
     this.props.retrieveIssues();
   }
 
+  issueComponents = (issuesIds) => {
+    return issuesIds.sort((a,b)=> {
+      return a-b;
+    }).map(id => (
+        <Issue key={id} issueId={id} />
+    ))
+  }
+
   render() {
     if (this.props.loadingIssues) {
       return (
