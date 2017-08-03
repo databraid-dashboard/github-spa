@@ -1,21 +1,21 @@
 import React, {Component} from 'react';
-import './App.css';
-import Dashboard from './components/Dashboard/Dashboard.jsx';
-import Orgs from './components/Orgs/Orgs.jsx'
-import Repos from './components/Repos/Repos.jsx'
+import './Dashboard.css';
+import Issues from './Issues/Issues.jsx';
+import PrTable from './PrTable/PrTable.jsx'
+import Milestones from './Milestones/Milestones.jsx'
 import { Container } from 'semantic-ui-react';
 import { bindActionCreators } from 'redux';
 import {retrieveOrgs} from './actions/orgActions';
 import {connect} from 'react-redux';
 
-class App extends Component{
+class Dashboard extends Component{
 
   render() {
     return (
     <Container>
-      <Orgs/>
-      <Repos/>
-      <Dashboard/>
+      <Issues/>
+      <PrTable/>
+      <Milestones/>
     </Container>
     )
   }
@@ -35,4 +35,4 @@ const mapDispatchToProps = dispatch => bindActionCreators ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(App);
+)(Dashboard);
