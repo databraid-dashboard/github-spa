@@ -1,6 +1,5 @@
 import {
   GET_MILESTONES,
-<<<<<<< HEAD
   LOADING_MILESTONES,
 } from '../actions/milestonesActions';
 
@@ -22,7 +21,6 @@ function createState(json, incomingState) {
 }
 
 const milestonesReducer = (state = { ids: [], milestonesById: {} }, action) => {
-=======
 } from '../actions/milestonesActions';
 
 const milestonesReducer = (state = { ids: [], milestonesByID: {} }, action) => {
@@ -32,7 +30,6 @@ const milestonesReducer = (state = { ids: [], milestonesByID: {} }, action) => {
     case GET_MILESTONES:
       return createState(action.responseObj, state);
 
-<<<<<<< HEAD
     case LOADING_MILESTONES:
       return {
         ...state,
@@ -45,7 +42,6 @@ const milestonesReducer = (state = { ids: [], milestonesByID: {} }, action) => {
   }
 };
 
-=======
     default:
       return state
   }
@@ -60,7 +56,7 @@ function createState(json, state){
    state.milestonesByID[milestone.id]['due'] = milestone.due_on;
    state.milestonesByID[milestone.id]['created'] = milestone.created_at;
  });
- return state;
+ return {...state, loadingMilestones: false};
 }
 >>>>>>> Adding PR Table and Milestones Components
 
