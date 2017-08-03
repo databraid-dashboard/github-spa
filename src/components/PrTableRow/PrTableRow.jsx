@@ -63,10 +63,10 @@ export const mapStateToProps = (state, { prId }) => {
     created,
     mergeable,
     submittedBy,
-    title
-  }
-}
+    title,
+  };
+};
 
 export default connect(
-  mapStateToProps
+  mapStateToProps,
 )(PrTableRow);
