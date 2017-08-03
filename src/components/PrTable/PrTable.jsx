@@ -1,39 +1,59 @@
-/* eslint-disable no-unused-vars, react/jsx-filename-extension */
-
-import React from 'react';
+import React, { Component } from 'react';
 import { Table } from 'semantic-ui-react';
 import './PrTable.css';
 import PrTableRow from '../PrTableRow/PrTableRow.jsx';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { retrievePrs } from '../../actions/prActions';
 
-const PrTable = () => {
-  return (
-    <Table celled fixed singleline>
-      <Table.Header>
-        <Table.Row>
-          <Table.HeaderCell colSpan='5' textAlign='center'>Pull Requests</Table.HeaderCell>
-        </Table.Row>
+class PrTable extends Component {
 
-        <Table.Row>
-          <Table.HeaderCell>Title</Table.HeaderCell>
-          <Table.HeaderCell>Created</Table.HeaderCell>
-          <Table.HeaderCell>Submitted By</Table.HeaderCell>
-          <Table.HeaderCell>Comments</Table.HeaderCell>
-          <Table.HeaderCell>Meargeability</Table.HeaderCell>
-        </Table.Row>
-      </Table.Header>
-      <Table.Body>
-        <PrTableRow />
+  componentDidMount(){
+    this.props.retrievePrs();
+  }
 
-        {/* <Table.Row>
-          <Table.Cell>Merge Now</Table.Cell>
-          <Table.Cell>Date</Table.Cell>
-          <Table.Cell>SSabu</Table.Cell>
-          <Table.Cell>Ready to Merge</Table.Cell>
-          <Table.Cell>No Conflicts</Table.Cell>
-        </Table.Row> */}
-      </Table.Body>
-    </Table>
-  )
+  prComponents = (prIds) => {
+    return prIds.map(id => (
+      <PrTableRow key={id} prId={id} />
+    ))
+  }
+
+  render() {
+    return (
+      <Table celled fixed singleline>
+        <Table.Header>
+          <Table.Row>
+            <Table.HeaderCell colSpan='4' textAlign='center'>Pull Requests</Table.HeaderCell>
+          </Table.Row>
+
+          <Table.Row>
+            <Table.HeaderCell>Title</Table.HeaderCell>
+            <Table.HeaderCell>Created</Table.HeaderCell>
+            <Table.HeaderCell>Submitted By</Table.HeaderCell>
+            <Table.HeaderCell>Meargeability</Table.HeaderCell>
+          </Table.Row>
+        </Table.Header>
+        <Table.Body>
+          {this.prComponents(this.props.prIds)}
+
+        </Table.Body>
+      </Table>
+    )
+  }
+};
+
+const mapStateToProps = state => {
+  return {
+    prIds: state.pullRequests.ids,
+    prsById: state.pullRequests.prsByID
+  }
 }
 
-export default PrTable;
+const mapDispatchToProps = dispatch => bindActionCreators ({
+  retrievePrs
+}, dispatch);
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(PrTable);
