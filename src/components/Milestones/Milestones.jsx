@@ -1,28 +1,56 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './Milestones.css';
-import { Table } from 'semantic-ui-react';
-import MilestonesRow from '../MilestonesRow/MilestonesRow.jsx';
+import { Card, Feed, List } from 'semantic-ui-react';
+import Milestone from '../MilestonesRow/MilestonesRow.jsx';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { retrieveMilestones } from '../../actions/milestonesActions';
 
-const Milestones = () => {
-  return (
-    <Table celled fixed singleline>
-      <Table.Header>
-        <Table.Row>
-          <Table.HeaderCell colSpan='4' textAlign='center'>Milestones</Table.HeaderCell>
-        </Table.Row>
+class Milestones extends Component{
 
-        <Table.Row>
-          <Table.HeaderCell>Title</Table.HeaderCell>
-          <Table.HeaderCell>Days Since</Table.HeaderCell>
-          <Table.HeaderCell>Due</Table.HeaderCell>
-          <Table.HeaderCell>Pull Request or Issue</Table.HeaderCell>
-        </Table.Row>
-      </Table.Header>
-        <Table.Body>
-          <MilestonesRow />
-        </Table.Body>
-  </Table>
-  )
+  componentDidMount(){
+    this.props.retrieveMilestones();
+  }
+
+  milestoneComponents = (milestoneIds) => {
+    return milestoneIds.map(id => (
+      <Milestone key={id} milestoneId={id} />
+    ))
+  }
+
+  render() {
+    return (
+      <Card>
+        <Card.Content>
+          <Card.Header className="ui center aligned">
+            Milestones
+          </Card.Header>
+        </Card.Content>
+        <Card.Content>
+          <Feed>
+            <List divided relaxed>
+              {this.milestoneComponents(this.props.milestonesIds)}
+            </List>
+          </Feed>
+        </Card.Content>
+      </Card>
+    )
+  }
+};
+
+const mapStateToProps = state => {
+  return {
+    milestonesIds: state.milestones.ids,
+    milestonesByID: state.milestones.milestonesByID
+  }
 }
 
-export default Milestones;
+const mapDispatchToProps = dispatch =>
+bindActionCreators ({
+  retrieveMilestonesgit 
+}, dispatch);
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Milestones);

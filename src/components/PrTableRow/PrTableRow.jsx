@@ -1,15 +1,29 @@
 import React from 'react';
 import './PrTableRow.css'
 import { Table } from 'semantic-ui-react';
+import { connect } from 'react-redux';
 
-const PrTableRow = () => (
+const PrTableRow = ({ created, mergeable, submittedBy, title }) => (
     <Table.Row>
-      <Table.Cell>Merge Now</Table.Cell>
-      <Table.Cell>Date</Table.Cell>
-      <Table.Cell>SSabu</Table.Cell>
-      <Table.Cell>Ready to Merge</Table.Cell>
-      <Table.Cell>No Conflicts</Table.Cell>
+      <Table.Cell>{ title }</Table.Cell>
+      <Table.Cell>{ created }</Table.Cell>
+      <Table.Cell>{ submittedBy }</Table.Cell>
+      <Table.Cell>{ mergeable }</Table.Cell>
     </Table.Row>
 )
 
-export default PrTableRow;
+const mapStateToProps = (state, { prId }) => {
+  console.log(state, 'mapStateToProps');
+  const pr = state.pullRequests.prsByID[prId];
+  const { created, mergeable, submittedBy, title } = pr;
+  return {
+    created,
+    mergeable,
+    submittedBy,
+    title
+  }
+}
+
+export default connect(
+  mapStateToProps
+)(PrTableRow);
