@@ -1,5 +1,6 @@
 import {
   GET_MILESTONES,
+  LOADING_MILESTONES
 } from '../actions/milestonesActions';
 
 const milestonesReducer = (state = { ids: [], milestonesByID: {} }, action) => {
@@ -7,6 +8,13 @@ const milestonesReducer = (state = { ids: [], milestonesByID: {} }, action) => {
   switch (action.type) {
     case GET_MILESTONES:
       return createState(action.responseObj, state);
+
+    case LOADING_MILESTONES:
+      return {
+        ...state,
+        loadingMilestones: true
+
+      }
 
     default:
       return state
@@ -22,7 +30,7 @@ function createState(json, state){
    state.milestonesByID[milestone.id]['due'] = milestone.due_on;
    state.milestonesByID[milestone.id]['created'] = milestone.created_at;
  });
- return state;
+ return {...state, loadingMilestones: false};
 }
 
 export default milestonesReducer;

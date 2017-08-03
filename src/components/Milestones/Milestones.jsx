@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import './Milestones.css';
 import { Card, Feed, List } from 'semantic-ui-react';
-import Milestone from '../MilestonesRow/MilestonesRow.jsx';
+import Milestone from '../Milestones/Milestones.jsx';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { retrieveMilestones } from '../../actions/milestonesActions';
 
-class Milestones extends Component{
+export class Milestones extends Component{
 
   componentDidMount(){
     this.props.retrieveMilestones();
@@ -14,11 +14,20 @@ class Milestones extends Component{
 
   milestoneComponents = (milestoneIds) => {
     return milestoneIds.map(id => (
-      <Milestone key={id} milestoneId={id} />
+      <div>
+        <Milestone key={id} milestoneId={id} />
+      </div>
     ))
   }
 
   render() {
+    console.log(this.props.milestonesIds, "this.props.milestonesIds");
+    if (this.props.loadingMilestones) {
+
+      return (
+        <div>Loading Milestones</div>
+      )
+    }
     return (
       <Card>
         <Card.Content>
@@ -29,7 +38,9 @@ class Milestones extends Component{
         <Card.Content>
           <Feed>
             <List divided relaxed>
-              {this.milestoneComponents(this.props.milestonesIds)}
+              <div>
+                {()=>{this.milestoneComponents(this.props.milestonesIds)}}
+              </div>
             </List>
           </Feed>
         </Card.Content>
@@ -38,16 +49,17 @@ class Milestones extends Component{
   }
 };
 
-const mapStateToProps = state => {
+export const mapStateToProps = state => {
   return {
     milestonesIds: state.milestones.ids,
-    milestonesByID: state.milestones.milestonesByID
+    milestonesByID: state.milestones.milestonesByID,
+    loadingMilestones: state.loadingMilestones
   }
 }
 
-const mapDispatchToProps = dispatch =>
+export const mapDispatchToProps = dispatch =>
 bindActionCreators ({
-  retrieveMilestonesgit 
+  retrieveMilestones
 }, dispatch);
 
 export default connect(
