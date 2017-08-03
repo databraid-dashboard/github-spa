@@ -1,13 +1,27 @@
 
 import {
   GET_ISSUES,
+  LOADING_ISSUES
 } from '../actions/issueActions';
+<<<<<<< HEAD
 const issuesReducer = (state = {ids:[], reposById: {}} , action) => {
 
   switch (action.type) {
     case GET_ISSUES:
       return createState (action.responseObj)
 
+=======
+const issuesReducer = (state = {ids:[], issuesById: {}, loadingIssues:true} , action) => {
+
+  switch (action.type) {
+    case GET_ISSUES:
+      return createState (action.responseObj, state)
+    case LOADING_ISSUES:
+      return {
+        ...state,
+        loadingIssues: true,
+      }
+>>>>>>> dab0224... added loading feature, wrote tests
     default:
       return {
         state
@@ -39,7 +53,11 @@ function createState(json, state){
    state.issuesById[repo.id]['labels'] = repo.labels.map(label => label.name)
 >>>>>>> d3454fd... Adding PR Table and Milestones Components
  });
+<<<<<<< HEAD
  return state;
+=======
+ return {...state, loadingIssues: false};
+>>>>>>> dab0224... added loading feature, wrote tests
 }
 
 export default issuesReducer;

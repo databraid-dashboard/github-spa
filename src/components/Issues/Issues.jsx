@@ -55,7 +55,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {retrieveIssues} from '../../actions/issueActions';
 
-class Issues extends Component{
+export class Issues extends Component{
 
   componentDidMount(){
     this.props.retrieveIssues();
@@ -70,6 +70,12 @@ class Issues extends Component{
   }
 
   render() {
+    if (this.props.loadingIssues) {
+      console.log('loading issues');
+      return (
+        <div>Loading Issues</div>
+      )
+    }
     return (
       <Card>
         <Card.Content>
@@ -89,17 +95,24 @@ class Issues extends Component{
   }
 };
 
-const mapStateToProps = state => {
+export const mapStateToProps = state => {
     return {
       issuesIds: state.issues.ids,
-      issuesById : state.issues.issuesById
+      // issuesById : state.issues.issuesById,
+      loadingIssues: state.loadingIssues
     }
 }
 >>>>>>> c317919... Adding Issues component
 
+<<<<<<< HEAD
     </div>
   )
 );
 >>>>>>> 7e05dfe... mapped store, state, readme, mockAPI calls, and began wiring up components
+=======
+export const mapDispatchToProps = dispatch => bindActionCreators ({
+  retrieveIssues
+}, dispatch);
+>>>>>>> dab0224... added loading feature, wrote tests
 
 export default Issues;

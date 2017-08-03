@@ -65,10 +65,14 @@ const mapStateToProps = state => {
   return {
     orgs: state.orgs,
 <<<<<<< HEAD
+<<<<<<< HEAD
     issues: state.repos
 =======
     issues: state.issues,
 >>>>>>> d3454fd... Adding PR Table and Milestones Components
+=======
+    // issues: state.issues
+>>>>>>> dab0224... added loading feature, wrote tests
   }
 }
 

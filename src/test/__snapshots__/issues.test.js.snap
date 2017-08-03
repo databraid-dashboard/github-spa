@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Issues component should render a component with props as specified  1`] = `
+<Card>
+  <CardContent>
+    <CardHeader
+      className="ui center aligned"
+    >
+      Git Issues
+    </CardHeader>
+  </CardContent>
+  <CardContent>
+    <Feed>
+      <List
+        divided={true}
+        relaxed={true}
+      >
+        <Connect(Issue)
+          issueId={246869449}
+        />
+      </List>
+    </Feed>
+  </CardContent>
+</Card>
+`;
+
+exports[`Issues component should render a snapshot component as specified  1`] = `
+<Card>
+  <CardContent>
+    <CardHeader
+      className="ui center aligned"
+    >
+      Git Issues
+    </CardHeader>
+  </CardContent>
+  <CardContent>
+    <Feed>
+      <List
+        divided={true}
+        relaxed={true}
+      >
+        <Connect(Issue)
+          issueId={246869449}
+        />
+      </List>
+    </Feed>
+  </CardContent>
+</Card>
+`;

@@ -5,6 +5,7 @@ import thunk from 'redux-thunk';
 import { rootReducer } from './reducers/index';
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 const initialState = {
   users : {
     ids: [],
@@ -26,6 +27,8 @@ const initialState = {
 // };
 //
 =======
+=======
+>>>>>>> dab0224... added loading feature, wrote tests
 // const initialState = {
 //   users : {
 //     ids: [],
