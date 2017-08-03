@@ -1,6 +1,7 @@
 import React from 'react';
-import './Issue.css'
-import { List, Label } from 'semantic-ui-react';
+import './Issue.css';
+import { Card, Item, List, Label, Header } from 'semantic-ui-react';
+import { connect } from 'react-redux';
 
 function getDescription(assignedTo) {
   if (assignedTo[0] !== 'Not assigned') {
@@ -34,9 +35,10 @@ export const Issue = ({ title, number, assignedTo, labels }) => {
             <List.Description> {getDescription(assignedTo)}</List.Description>
           </List.Content>
         </List.Item>
-      )
+      </List>
+    </Card.Content>
+  );
 };
-
 
 Issue.propTypes = {
   title: PropTypes.string.isRequired,
@@ -52,10 +54,10 @@ export const mapStateToProps = (state, { issueId }) => {
     title,
     number,
     assignedTo,
-    labels
-  }
-}
+    labels,
+  };
+};
 
 export default connect(
-  mapStateToProps
+  mapStateToProps,
 )(Issue);

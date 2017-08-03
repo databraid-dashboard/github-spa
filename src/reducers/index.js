@@ -9,6 +9,7 @@ import orgReducer from './orgReducer';
 import issuesReducer from './issuesReducer';
 
 import prReducer from './prReducer';
+<<<<<<< HEAD
 =======
 // import { issuesReducer }from './issuesReducer';
 import orgReducer from './orgReducer';
@@ -40,6 +41,15 @@ const rootReducer = combineReducers({
 export default rootReducer;
 =======
 export const rootReducer = combineReducers({
+=======
+
+import milestonesReducer from './milestonesReducer'
+
+export const rootReducer = combineReducers({
+  issues: issuesReducer,
+  pullRequests : prReducer,
+  milestones: milestonesReducer,
+>>>>>>> Adding PR Table and Milestones Components
   // repos: repoReducer,
   orgs: orgReducer,
   // users: userReducer,
