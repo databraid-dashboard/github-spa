@@ -1,9 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Issues component should render a snapshot component as specified  1`] = `
+exports[`Issues component should render a component with props as specified  1`] = `
 <Card>
   <CardContent>
-    <CardHeader>
+    <CardHeader
+      className="ui center aligned"
+    >
       Git Issues
     </CardHeader>
   </CardContent>
@@ -13,61 +15,33 @@ exports[`Issues component should render a snapshot component as specified  1`] =
         divided={true}
         relaxed={true}
       >
-        <ListItem>
-          <ListContent>
-            <ListHeader>
-              #1 Git Issue One
-            </ListHeader>
-            <LabelGroup
-              tag={true}
-            >
-              <div
-                className="us tiny label"
-              >
-                <Label>
-                  question
-                </Label>
-              </div>
-            </LabelGroup>
-            <ListDescription>
-              Assigned To: Jenny
-            </ListDescription>
-          </ListContent>
-        </ListItem>
-        <ListItem>
-          <ListContent>
-            <ListHeader>
-              #2 Git Issue One
-            </ListHeader>
-            <LabelGroup
-              tag={true}
-            >
-              <Label>
-                bug
-              </Label>
-            </LabelGroup>
-            <ListDescription>
-              Assigned To: Jenny
-            </ListDescription>
-          </ListContent>
-        </ListItem>
-        <ListItem>
-          <ListContent>
-            <ListHeader>
-              #3 Git Issue One
-            </ListHeader>
-            <LabelGroup
-              tag={true}
-            >
-              <Label>
-                help
-              </Label>
-            </LabelGroup>
-            <ListDescription>
-              Assigned To: Jenny
-            </ListDescription>
-          </ListContent>
-        </ListItem>
+        <Connect(Issue)
+          issueId={246869449}
+        />
+      </List>
+    </Feed>
+  </CardContent>
+</Card>
+`;
+
+exports[`Issues component should render a snapshot component as specified  1`] = `
+<Card>
+  <CardContent>
+    <CardHeader
+      className="ui center aligned"
+    >
+      Git Issues
+    </CardHeader>
+  </CardContent>
+  <CardContent>
+    <Feed>
+      <List
+        divided={true}
+        relaxed={true}
+      >
+        <Connect(Issue)
+          issueId={246869449}
+        />
       </List>
     </Feed>
   </CardContent>

@@ -26,7 +26,7 @@ class App extends Component{
 const mapStateToProps = state => {
   return {
     orgs: state.orgs,
-    issues: state.issues
+    // issues: state.issues
   }
 }
 

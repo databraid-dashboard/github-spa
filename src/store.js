@@ -4,22 +4,22 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import { rootReducer } from './reducers/index';
 
-const initialState = {
-  users : {
-    ids: [],
-    usersByID: {}
-  },
-  orgs: {
-    ids: [],
-    orgsByID: {},
-  },
-  repos : {
-    ids: [],
-    reposById: {},
-    pullRequests: {},
-    milestones :{},
-    }
-  };
+// const initialState = {
+//   users : {
+//     ids: [],
+//     usersByID: {}
+//   },
+//   orgs: {
+//     ids: [],
+//     orgsByID: {},
+//   },
+//   repos : {
+//     ids: [],
+//     reposById: {},
+//     pullRequests: {},
+//     milestones :{},
+//     }
+//   };
 
 const logger = store => next => (action) => {
   console.log('action fired', action);
