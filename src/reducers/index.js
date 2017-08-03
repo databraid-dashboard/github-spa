@@ -1,6 +1,6 @@
 
 import { combineReducers } from 'redux';
-// import { issuesReducer }from './issuesReducer';
+
 import orgReducer from './orgReducer';
 import issuesReducer from './issuesReducer';
 
@@ -17,14 +17,20 @@ export const rootReducer = combineReducers({
 =======
 import prReducer from './prReducer';
 
-import milestonesReducer from './milestonesReducer'
+import milestonesReducer from './milestonesReducer';
+
+import repoReducer from './repoReducer';
 
 export const rootReducer = combineReducers({
   issues: issuesReducer,
   pullRequests : prReducer,
   milestones: milestonesReducer,
+<<<<<<< HEAD
 >>>>>>> d3454fd... Adding PR Table and Milestones Components
   // repos: repoReducer,
+=======
+  repos: repoReducer,
+>>>>>>> 9486a99... Adding components re-organized
   orgs: orgReducer,
   // users: userReducer,
 })
