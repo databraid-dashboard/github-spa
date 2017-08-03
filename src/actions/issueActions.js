@@ -7,6 +7,7 @@ export const retrieveIssues = () => {
     dispatch({
       type: LOADING_ISSUES
     })
+    
     dispatch({
       type: GET_ISSUES,
       responseObj: issuesMock

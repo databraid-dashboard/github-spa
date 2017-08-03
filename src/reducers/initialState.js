@@ -30,4 +30,5 @@ State = {
      milestonesById: {},
    }
   },
+  loadingIssues: false;
 };
