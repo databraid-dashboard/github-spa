@@ -44,7 +44,7 @@ Issue.propTypes = {
   issueId: PropTypes.number.isRequired,
 };
 
-const mapStateToProps = (state, { issueId }) => {
+export const mapStateToProps = (state, { issueId }) => {
   const issue = state.issues.issuesById[issueId];
   const { title, repoIssueNumber, assignedTo, labels } = issue;
   return {

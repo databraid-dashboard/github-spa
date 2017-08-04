@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { retrieveOrgs } from '../../actions/orgActions';
 import Org from '../Org/Org';
-import './Orgs.css';
+import './Organizations.css';
 
 class Organizations extends Component {
   componentDidMount() {
@@ -16,14 +16,11 @@ class Organizations extends Component {
     return orgIds.map(id => <Org key={id} orgId={id} />);
   }
 
-  renderOrgs() {
-    this.setState({ showOrgs: !this.state.showOrgs });
-  }
-
   render() {
     return (
       <Image.Group size="small">
         {this.orgComponents(this.props.orgIds)}
+        
       </Image.Group>
     );
   }
