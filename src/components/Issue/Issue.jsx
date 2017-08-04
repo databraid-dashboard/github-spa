@@ -20,12 +20,15 @@ export const Issue = ({ title, repoIssueNumber, assignedTo, labels, issueId }) =
           <Item.Image size="mini" src={assignedTo[0][1]} /></div></div>
       );
     }
-  }
 
+    return (
+      <div />
+    );
+  }
 
   return (
     <List.Item>
-      <List.Content key={issueId + 1} className="ui center aligned">
+      <List.Content className="ui center aligned">
         <List.Header>#{repoIssueNumber} {title}</List.Header>{renderedLabels}
         <List.Description> {getDescription(assignedTo)}</List.Description>
       </List.Content>

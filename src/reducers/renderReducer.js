@@ -2,7 +2,7 @@ import {
   RENDER_ORGS, RENDER_REPOS, RENDER_LOGIN, RENDER_DASHBOARD,
 } from '../actions/renderActions';
 
-const renderPage = (state = '', action) => {
+export const renderPage = (state = '', action) => {
   switch (action.type) {
     case RENDER_ORGS:
       return state = 'orgs';

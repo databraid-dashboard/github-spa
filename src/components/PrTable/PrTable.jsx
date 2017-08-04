@@ -51,15 +51,11 @@ PrTable.propTypes = {
   loadingPrTable: PropTypes.bool.isRequired,
 };
 
-export const mapStateToProps = state => {
-  console.log(state.pullRequests, "state.pullRequests")
-
-   return {
+export const mapStateToProps = state => ({
   prIds: state.pullRequests.ids,
-  prsById: state.pullRequests.prsByID,
+  // prsById: state.pullRequests.prsByID
   loadingPrTable: state.loadingPrTable,
-}
-};
+});
 
 export const mapDispatchToProps = dispatch => bindActionCreators({
   retrievePrs,

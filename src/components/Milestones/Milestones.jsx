@@ -34,9 +34,7 @@ export class Milestones extends Component {
         <Card.Content>
           <Feed>
             <List divided relaxed>
-              <div>
                 {this.milestoneComponents(this.props.milestonesIds)}
-              </div>
             </List>
           </Feed>
         </Card.Content>
