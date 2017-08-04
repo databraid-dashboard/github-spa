@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React from 'react';
 <<<<<<< HEAD
 =======
@@ -27,6 +28,9 @@ import Dashboard from './components/Dashboard/Dashboard.jsx';
 import Orgs from './components/Orgs/Orgs.jsx'
 import Repos from './components/Repos/Repos.jsx'
 >>>>>>> 9486a99... Adding components re-organized
+=======
+import React from 'react';
+>>>>>>> edbe0e0... fml
 import { Container } from 'semantic-ui-react';
 <<<<<<< HEAD
 >>>>>>> 2d0b4d9... Adding Milestones Component
@@ -56,6 +60,7 @@ const App = () => (
 );
 =======
 import { bindActionCreators } from 'redux';
+<<<<<<< HEAD
 import {retrieveOrgs} from './actions/orgActions';
 import {connect} from 'react-redux';
 
@@ -115,12 +120,40 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => bindActionCreators({
 >>>>>>> df38d77... Adding working orgs page
+=======
+import { connect } from 'react-redux';
+import RepoList from './components/RepoList/RepoList';
+import Orgs from './components/Orgs/Orgs';
+import Dashboard from './components/Dashboard/Dashboard';
+import { retrieveOrgs } from './actions/orgActions';
+import './App.css';
+
+const App = () => (
+  <Container>
+    {/* <Orgs />
+    <RepoList /> */}
+    <Dashboard />
+  </Container>
+);
+
+const mapStateToProps = state => ({
+  orgs: state.orgs,
+  issues: state.issues,
+});
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+  retrieveOrgs,
+>>>>>>> edbe0e0... fml
 }, dispatch);
 
 export default connect(
   mapStateToProps,
 <<<<<<< HEAD
+<<<<<<< HEAD
   mapDispatchToProps
 =======
 >>>>>>> df38d77... Adding working orgs page
+=======
+  mapDispatchToProps,
+>>>>>>> edbe0e0... fml
 )(App);

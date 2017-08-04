@@ -1,27 +1,28 @@
 const reposByOrg = [
   {
-    "id": 95238685,
-    "name": "Q2_Project",
-    "full_name": "ShareCastG52/Q2_Project",
-    "owner": {
-      "login": "ShareCastG52",
-      "id": 29614654,
-      "avatar_url": "https://avatars1.githubusercontent.com/u/29614654?v=4",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/ShareCastG52",
-      "html_url": "https://github.com/ShareCastG52",
-      "followers_url": "https://api.github.com/users/ShareCastG52/followers",
-      "following_url": "https://api.github.com/users/ShareCastG52/following{/other_user}",
-      "gists_url": "https://api.github.com/users/ShareCastG52/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/ShareCastG52/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/ShareCastG52/subscriptions",
-      "organizations_url": "https://api.github.com/users/ShareCastG52/orgs",
-      "repos_url": "https://api.github.com/users/ShareCastG52/repos",
-      "events_url": "https://api.github.com/users/ShareCastG52/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/ShareCastG52/received_events",
-      "type": "Organization",
-      "site_admin": false
+    id: 95238685,
+    name: 'Q2_Project',
+    full_name: 'ShareCastG52/Q2_Project',
+    owner: {
+      login: 'ShareCastG52',
+      id: 29614654,
+      avatar_url: 'https://avatars1.githubusercontent.com/u/29614654?v=4',
+      gravatar_id: '',
+      url: 'https://api.github.com/users/ShareCastG52',
+      html_url: 'https://github.com/ShareCastG52',
+      followers_url: 'https://api.github.com/users/ShareCastG52/followers',
+      following_url: 'https://api.github.com/users/ShareCastG52/following{/other_user}',
+      gists_url: 'https://api.github.com/users/ShareCastG52/gists{/gist_id}',
+      starred_url: 'https://api.github.com/users/ShareCastG52/starred{/owner}{/repo}',
+      subscriptions_url: 'https://api.github.com/users/ShareCastG52/subscriptions',
+      organizations_url: 'https://api.github.com/users/ShareCastG52/orgs',
+      repos_url: 'https://api.github.com/users/ShareCastG52/repos',
+      events_url: 'https://api.github.com/users/ShareCastG52/events{/privacy}',
+      received_events_url: 'https://api.github.com/users/ShareCastG52/received_events',
+      type: 'Organization',
+      site_admin: false,
     },
+<<<<<<< HEAD
 <<<<<<< HEAD
     "private": false,
     "html_url": "https://github.com/ShareCastG52/Q2_Project",
@@ -190,6 +191,8 @@ const reposByOrg = [
       type: 'Organization',
       site_admin: false,
     },
+=======
+>>>>>>> edbe0e0... fml
     private: false,
     html_url: 'https://github.com/ShareCastG52/Q2_Project',
     description: 'ShareCast deployed on Heroku',
@@ -262,6 +265,9 @@ const reposByOrg = [
     },
   },
 ];
+<<<<<<< HEAD
 
 export default reposByOrg;
 >>>>>>> 2c48835... Adding repo view
+=======
+>>>>>>> edbe0e0... fml

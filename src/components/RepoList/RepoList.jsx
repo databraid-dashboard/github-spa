@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React, {Component} from 'react';
 import { List } from 'semantic-ui-react';
 import Repo from '../Repo/Repo.jsx';
@@ -19,11 +20,20 @@ class RepoList extends Components{
 =======
 import PropTypes from 'prop-types';
 import { retrieveRepos } from '../../actions/repoActions';
+=======
+import React, { Component } from 'react';
+import { List } from 'semantic-ui-react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import PropTypes from 'prop-types';
+// import { retrieveRepos } from '../../actions/orgActions';
+>>>>>>> edbe0e0... fml
 import Repo from '../Repo/Repo';
 import './RepoList.css';
 
 class RepoList extends Component {
   componentDidMount() {
+<<<<<<< HEAD
 <<<<<<< HEAD
     // this.props.retrieveRepos();
 >>>>>>> d1d9951... adding fixed dashboard view
@@ -83,9 +93,45 @@ const mapDispatchToProps = dispatch =>
 =======
     retrieveRepos,
 >>>>>>> 2c48835... Adding repo view
+=======
+    // this.props.retrieveRepos();
+  }
+
+  repoComponents(repoIds) {
+    return repoIds.map(id => <Repo key={id} repoId={id} />);
+  }
+
+  render() {
+    return (
+      <List>
+        {this.props.repoComponents(this.props.repoIds)}
+      </List>
+    );
+  }
+}
+
+RepoList.propTypes = {
+  repoComponents: PropTypes.func.isRequired,
+  retrieveRepos: PropTypes.func.isRequired,
+  repoIds: PropTypes.number.isRequired,
+};
+
+const mapStateToProps = state => ({
+  repoIds: state.repos.ids,
+  reposById: state.repos.reposById,
+});
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators({
+    // retrieveRepos,
+>>>>>>> edbe0e0... fml
   }, dispatch);
 
 export default connect(
   mapStateToProps,
+<<<<<<< HEAD
   mapDispatchToProps
+=======
+  mapDispatchToProps,
+>>>>>>> edbe0e0... fml
 )(RepoList);

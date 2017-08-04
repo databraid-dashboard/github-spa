@@ -1,9 +1,15 @@
 import React from 'react';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import './Milestone.css';
+=======
+>>>>>>> edbe0e0... fml
 import { List } from 'semantic-ui-react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import './Milestone.css';
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 const Milestone = ({ title, due, created, milestoneId }) => {
@@ -83,6 +89,19 @@ const mapStateToProps = (state, { milestoneId }) => {
 =======
 export const mapStateToProps = (state, { milestoneId }) => {
   console.log('state for josh', state);
+=======
+const Milestone = ({ title, due, created }) => (
+  <List.Item>
+    <List.Content className="ui center aligned">
+      <List.Header>{title}</List.Header>{created}
+      <List.Description>{due}</List.Description>
+    </List.Content>
+  </List.Item>
+);
+
+const mapStateToProps = (state, { milestoneId }) => {
+  console.log('state1', state);
+>>>>>>> edbe0e0... fml
   const milestone = state.milestones.milestonesByID[milestoneId];
   const { title, due, created } = milestone;
 >>>>>>> db00290... renamed files, finished tests for issue
@@ -90,12 +109,16 @@ export const mapStateToProps = (state, { milestoneId }) => {
     title,
     due,
 <<<<<<< HEAD
+<<<<<<< HEAD
     created
   }
 }
 =======
     created,
     percentComplete
+=======
+    created,
+>>>>>>> edbe0e0... fml
   };
 };
 
@@ -104,8 +127,11 @@ Milestone.propTypes = {
   due: PropTypes.string.isRequired,
   created: PropTypes.string.isRequired,
 };
+<<<<<<< HEAD
 >>>>>>> 4def070... Adding percent complete feature
+=======
+>>>>>>> edbe0e0... fml
 
 export default connect(
-  mapStateToProps
+  mapStateToProps,
 )(Milestone);

@@ -1,5 +1,10 @@
 
 import { combineReducers } from 'redux';
+<<<<<<< HEAD
+=======
+
+import orgReducer from './orgReducer';
+>>>>>>> edbe0e0... fml
 
 import orgReducer from './orgReducer';
 import issuesReducer from './issuesReducer';
@@ -19,26 +24,37 @@ import prReducer from './prReducer';
 import milestonesReducer from './milestonesReducer';
 
 import repoReducer from './repoReducer';
+<<<<<<< HEAD
 
 // import renderPage from './renderReducer';
+=======
+>>>>>>> edbe0e0... fml
 
 export const rootReducer = combineReducers({
   issues: issuesReducer,
-  pullRequests : prReducer,
+  pullRequests: prReducer,
   milestones: milestonesReducer,
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> d3454fd... Adding PR Table and Milestones Components
   // repos: repoReducer,
 =======
   repos: repoReducer,
 >>>>>>> 9486a99... Adding components re-organized
+=======
+  repos: repoReducer,
+>>>>>>> edbe0e0... fml
   orgs: orgReducer,
   // currentPage: renderPage,
   // users: userReducer,
 <<<<<<< HEAD
 
   // milestones: msReducer,
+<<<<<<< HEAD
 })
 =======
 });
 >>>>>>> df38d77... Adding working orgs page
+=======
+});
+>>>>>>> edbe0e0... fml

@@ -13,7 +13,11 @@ export class PrTable extends Component {
   }
 
   prComponents(prIds) {
+<<<<<<< HEAD
     return prIds.sort((a, b) => a - b).map(id => <PrTableRow key={id} prId={id} />);
+=======
+    return prIds.map(id => <PrTableRow key={id} prId={id} />);
+>>>>>>> edbe0e0... fml
   }
 
   render() {
@@ -51,11 +55,23 @@ PrTable.propTypes = {
   loadingPrTable: PropTypes.bool.isRequired,
 };
 
+<<<<<<< HEAD
 export const mapStateToProps = state => ({
   prIds: state.pullRequests.ids,
   // prsById: state.pullRequests.prsById
   loadingPrTable: state.loadingPrTable,
 });
+=======
+export const mapStateToProps = state => {
+  console.log(state.pullRequests, "state.pullRequests")
+
+   return {
+  prIds: state.pullRequests.ids,
+  prsById: state.pullRequests.prsByID,
+  loadingPrTable: state.loadingPrTable,
+}
+};
+>>>>>>> edbe0e0... fml
 
 export const mapDispatchToProps = dispatch => bindActionCreators({
   retrievePrs,

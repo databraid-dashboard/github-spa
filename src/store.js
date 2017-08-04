@@ -6,6 +6,7 @@ import { rootReducer } from './reducers/index';
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 const initialState = {
   users : {
     ids: [],
@@ -46,6 +47,8 @@ const initialState = {
 //     }
 //   };
 
+=======
+>>>>>>> edbe0e0... fml
 const logger = store => next => (action) => {
   console.log('action fired', action);
   next(action);
@@ -70,6 +73,7 @@ const middleware = [
 /* eslint-disable no-underscore-dangle */
 const store = createStore(
   rootReducer,
+<<<<<<< HEAD
   initialState,
   applyMiddleware(...middleware),
    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
@@ -83,4 +87,14 @@ store.subscribe(() => {
   console.log('state', store.getState());
 });
 >>>>>>> d1d9951... adding fixed dashboard view
+=======
+  compose(applyMiddleware(...middleware),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+  ),
+);
+
+store.subscribe(() => {
+  console.log('state', store.getState());
+});
+>>>>>>> edbe0e0... fml
 export default store;

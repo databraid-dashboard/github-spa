@@ -3,6 +3,7 @@ import {
 } from '../actions/orgActions';
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 const orgReducer = (state = {ids: [], orgsByID: {} }, action) => {
@@ -22,6 +23,21 @@ function createState(json, incomingState) {
 
 const orgReducer = (state = { ids: [], orgsById: {} }, action) => {
 >>>>>>> 2c48835... Adding repo view
+=======
+function createState(json, incomingState) {
+  const state = incomingState;
+  json.forEach((org) => {
+    state.ids = state.ids.concat(org.id);
+    state.orgsByID[org.id] = {};
+    state.orgsByID[org.id].avatarUrl = org.avatar_url;
+    state.orgsByID[org.id].orgName = org.login;
+    state.orgsByID[org.id].reposUrl = org.repos_url;
+  });
+  return { ...state };
+}
+
+const orgReducer = (state = { ids: [], orgsByID: {} }, action) => {
+>>>>>>> edbe0e0... fml
   switch (action.type) {
     case GET_ORGS:
 <<<<<<< HEAD
@@ -29,6 +45,7 @@ const orgReducer = (state = { ids: [], orgsById: {} }, action) => {
 
 =======
       return createState(action.responseObj, state);
+<<<<<<< HEAD
 <<<<<<< HEAD
     // case LOADING_ORGS:
     //   return {
@@ -48,9 +65,15 @@ const orgReducer = (state = { ids: [], orgsById: {} }, action) => {
     return {
       state,
     }
-  }
-}
+=======
 
+    default:
+      return state;
+>>>>>>> edbe0e0... fml
+  }
+};
+
+<<<<<<< HEAD
 function createState(json){
  let state = { ids: [], orgsByID: {} };
  json.forEach(org => {
@@ -68,5 +91,7 @@ function createState(json){
  });
  return {...state};
 }
+=======
+>>>>>>> edbe0e0... fml
 
 export default orgReducer;

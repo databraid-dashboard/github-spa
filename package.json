@@ -5,6 +5,10 @@
   "dependencies": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    "prop-types": "^15.5.10",
+>>>>>>> edbe0e0... fml
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
 =======
