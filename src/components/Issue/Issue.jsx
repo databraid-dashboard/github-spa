@@ -29,7 +29,7 @@ export const Issue = ({ title, repoIssueNumber, assignedTo, labels, issueId }) =
 
     return (
       <List.Item textAlign='center'>
-          <List.Content className="ui center aligned">
+          <List.Content key ={issueId + 1 }className="ui center aligned">
             <List.Header>#{repoIssueNumber} {title}</List.Header>{renderedLabels}
             <List.Description>Assigned To: {assignedTo}</List.Description>
           </List.Content>
@@ -38,10 +38,9 @@ export const Issue = ({ title, repoIssueNumber, assignedTo, labels, issueId }) =
 
 }
 
-const mapStateToProps = (state, { issueId }) => {
+export const mapStateToProps = (state, { issueId }) => {
   const issue = state.issues.issuesById[issueId];
   const { title, repoIssueNumber, assignedTo, labels  } = issue;
-  console.log('MPSTP issue=>', issue);
   return {
     title,
     repoIssueNumber,

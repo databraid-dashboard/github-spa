@@ -27,7 +27,7 @@ State = {
  milestones : {
    repoID :{
      ids: [],
-     milestonesById: {},
+     milestonesByID: {},
    }
   },
   loadingIssues: false;
