@@ -1,16 +1,59 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PrTable component should render a component with props as specified  1`] = `
-<Card>
-  <CardContent>
-    <CardHeader
-      className="ui center aligned"
+<Table
+  as="table"
+  celled={true}
+  fixed={true}
+  singleline={true}
+>
+  <TableHeader
+    as="thead"
+  >
+    <TableRow
+      as="tr"
+      cellAs="td"
     >
-      Pull Requests
-    </CardHeader>
-  </CardContent>
-  <Connect(Component)
-    prId={246869449}
-  />
-</Card>
+      <TableHeaderCell
+        as="th"
+        colSpan="4"
+        textAlign="center"
+      >
+        Pull Requests
+      </TableHeaderCell>
+    </TableRow>
+    <TableRow
+      as="tr"
+      cellAs="td"
+    >
+      <TableHeaderCell
+        as="th"
+      >
+        Title
+      </TableHeaderCell>
+      <TableHeaderCell
+        as="th"
+      >
+        Created
+      </TableHeaderCell>
+      <TableHeaderCell
+        as="th"
+      >
+        Submitted By
+      </TableHeaderCell>
+      <TableHeaderCell
+        as="th"
+      >
+        Meargeability
+      </TableHeaderCell>
+    </TableRow>
+  </TableHeader>
+  <TableBody
+    as="tbody"
+  >
+    <Connect(PrTableRow)
+      prId={246869449}
+    />
+  </TableBody>
+</Table>
 `;

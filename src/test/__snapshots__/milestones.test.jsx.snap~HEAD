@@ -9,15 +9,8 @@ exports[`Milestones component should render a component with props as specified 
       Milestones
     </CardHeader>
   </CardContent>
-  <CardContent>
-    <Feed>
-      <List
-        divided={true}
-        relaxed={true}
-      >
-        <div />
-      </List>
-    </Feed>
-  </CardContent>
+  <Connect(Component)
+    milestoneId={2601714}
+  />
 </Card>
 `;

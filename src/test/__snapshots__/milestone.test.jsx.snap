@@ -27,7 +27,7 @@ exports[`Milestone entry component should render a component with props as speci
           >
             Date Due:
           </Header>
-           
+
           06/23/2018
         </div>
         <Header

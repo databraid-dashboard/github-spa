@@ -1,74 +1,64 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Issue entry component should render a component with props as specified  1`] = `
-<CardContent>
-  <List
-    divided={true}
-    relaxed={true}
+<ListItem
+  textAlign="center"
+>
+  <ListContent
+    className="ui center aligned"
   >
-    <ListItem>
-      <ListContent>
-        <ListHeader>
-          #
-          16
-           
-          login tst JWT token
-        </ListHeader>
+    <ListHeader>
+      #
+      16
+
+      login tst JWT token
+    </ListHeader>
+    <div>
+      <LabelGroup
+        tag={true}
+      >
         <div
-          className="space-labels"
+          className="us tiny label"
         >
-          <Label
-            className="ui mini label"
-            color="grey"
-            ribbon="right"
-          >
+          <Label>
             duplicate
+
           </Label>
         </div>
+      </LabelGroup>
+    </div>
+    <div>
+      <LabelGroup
+        tag={true}
+      >
         <div
-          className="space-labels"
+          className="us tiny label"
         >
-          <Label
-            className="ui mini label"
-            color="grey"
-            ribbon="right"
-          >
+          <Label>
             help wanted
+
           </Label>
         </div>
+      </LabelGroup>
+    </div>
+    <div>
+      <LabelGroup
+        tag={true}
+      >
         <div
-          className="space-labels"
+          className="us tiny label"
         >
-          <Label
-            className="ui mini label"
-            color="grey"
-            ribbon="right"
-          >
+          <Label>
             question
+
           </Label>
         </div>
-        <ListDescription>
-           
-          <div
-            className="ui center aligned"
-          >
-            <div>
-              <Header
-                className="space-issues"
-                sub={true}
-              >
-                Assigned To: 
-              </Header>
-              Gwillison415
-            </div>
-            <ItemImage
-              size="mini"
-              src="https://avatars2.githubusercontent.com/u/22106099?v=4"
-            />
-          </div>
-        </ListDescription>
-      </ListContent>
-    </ListItem>
-  </List>
-</CardContent>
+      </LabelGroup>
+    </div>
+    <ListDescription>
+      Assigned To:
+      grant
+    </ListDescription>
+  </ListContent>
+</ListItem>
 `;
