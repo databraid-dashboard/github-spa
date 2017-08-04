@@ -1,9 +1,10 @@
 
 import React from 'react';
 
-import toJson from 'enzyme-to-json';
-import { shallow } from 'enzyme';
+import toJson, { shallowToJson } from 'enzyme-to-json';
+import { shallow, render, mount } from 'enzyme';
 import { PrTable, mapStateToProps, mapDispatchToProps } from '../components/PrTable/PrTable';
+import retrievePrs from '../actions/prActions';
 
 const state = {
   pullRequests: {
@@ -23,7 +24,6 @@ const state = {
 
 describe('PrTable component', () => {
   it('should render a component with props as specified ', () => {
-    const retrievePrs = jest.fn();
     const component = shallow(
       <PrTable
         loadingPrTable={false}
