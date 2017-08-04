@@ -1,24 +1,29 @@
 import React, { Component } from 'react';
-import './Milestones.css';
 import { Card, Feed, List } from 'semantic-ui-react';
-import Milestone from '../Milestone/Milestone.jsx';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import PropTypes from 'prop-types';
 import { retrieveMilestones } from '../../actions/milestonesActions';
+import Milestone from '../Milestone/Milestone';
+import './Milestones.css';
 
-class Milestones extends Component{
-
-  componentDidMount(){
+export class Milestones extends Component {
+  componentDidMount() {
     this.props.retrieveMilestones();
   }
 
-  milestoneComponents = (milestonesIds) => {
+  milestoneComponents(milestonesIds) {
     return milestonesIds.map(id => (
       <Milestone key={id} milestoneId={id} />
-    ))
+    ));
   }
 
   render() {
+    if (this.props.loadingMilestones) {
+      return (
+        <div>Loading Milestones</div>
+      );
+    }
     return (
       <Card>
         <Card.Content>
@@ -29,28 +34,35 @@ class Milestones extends Component{
         <Card.Content>
           <Feed>
             <List divided relaxed>
-              {this.milestoneComponents(this.props.milestonesIds)}
+              <div>
+                {() => { this.milestoneComponents(this.props.milestonesIds); }}
+              </div>
             </List>
           </Feed>
         </Card.Content>
       </Card>
-    )
-  }
-};
-
-const mapStateToProps = state => {
-  return {
-    milestonesIds: state.milestones.ids,
-    milestonesByID: state.milestones.milestonesByID
+    );
   }
 }
 
-const mapDispatchToProps = dispatch =>
-bindActionCreators ({
-  retrieveMilestones
-}, dispatch);
+Milestones.propTypes = {
+  retrieveMilestones: PropTypes.func.isRequired,
+  loadingMilestones: PropTypes.bool.isRequired,
+  milestonesIds: PropTypes.number.isRequired,
+};
+
+export const mapStateToProps = state => ({
+  milestonesIds: state.milestones.ids,
+  milestonesByID: state.milestones.milestonesByID,
+  loadingMilestones: state.loadingMilestones,
+});
+
+export const mapDispatchToProps = dispatch =>
+  bindActionCreators({
+    retrieveMilestones,
+  }, dispatch);
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(Milestones);

@@ -1,19 +1,19 @@
 import {
-  RENDER_ORGS, RENDER_REPOS, RENDER_LOGIN, RENDER_DASHBOARD
+  RENDER_ORGS, RENDER_REPOS, RENDER_LOGIN, RENDER_DASHBOARD,
 } from '../actions/renderActions';
 
 const renderPage = (state = '', action) => {
-  switch(action.type) {
+  switch (action.type) {
     case RENDER_ORGS:
-      return state='orgs';
+      return state = 'orgs';
 
     case RENDER_REPOS:
-      return state='repos';
+      return state = 'repos';
 
     case RENDER_LOGIN:
-      return state='login';
+      return state = 'login';
 
     case RENDER_DASHBOARD:
-      return state='dashboard';
+      return state = 'dashboard';
   }
-}
+};

@@ -1,38 +1,31 @@
-import React, {Component} from 'react';
-import './App.css';
-import Dashboard from './components/Dashboard/Dashboard.jsx';
-import Orgs from './components/Orgs/Orgs.jsx'
-import Repos from './components/Repos/Repos.jsx'
+import React from 'react';
 import { Container } from 'semantic-ui-react';
 import { bindActionCreators } from 'redux';
-import {retrieveOrgs} from './actions/orgActions';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
+import RepoList from './components/RepoList/RepoList';
+import Orgs from './components/Orgs/Orgs';
+import Dashboard from './components/Dashboard/Dashboard';
+import { retrieveOrgs } from './actions/orgActions';
+import './App.css';
 
-class App extends Component{
+const App = () => (
+  <Container>
+    {/* <Orgs />
+    <RepoList /> */}
+    <Dashboard />
+  </Container>
+);
 
-  render() {
-    return (
-    <Container>
-      <Orgs/>
-      <Repos/>
-      <Dashboard/>
-    </Container>
-    )
-  }
-}
+const mapStateToProps = state => ({
+  orgs: state.orgs,
+  issues: state.issues,
+});
 
-const mapStateToProps = state => {
-  return {
-    orgs: state.orgs,
-    issues: state.issues,
-  }
-}
-
-const mapDispatchToProps = dispatch => bindActionCreators ({
-  retrieveOrgs
+const mapDispatchToProps = dispatch => bindActionCreators({
+  retrieveOrgs,
 }, dispatch);
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(App);

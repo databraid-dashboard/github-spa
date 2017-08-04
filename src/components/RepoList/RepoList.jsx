@@ -1,45 +1,47 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { List } from 'semantic-ui-react';
-import Repo from '../Repo/Repo.jsx';
-import './RepoList.css'
-import {retrieveRepos} from '../../actions/orgActions';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import PropTypes from 'prop-types';
+import { retrieveRepos } from '../../actions/orgActions';
+import Repo from '../Repo/Repo';
+import './RepoList.css';
 
-class RepoList extends Components{
-
-  componentDidMount(){
-    this.props.retreiveRepos();
+class RepoList extends Component {
+  componentDidMount() {
+    this.props.retrieveRepos();
   }
 
-  repoComponents = (repoIds) => {
-    return repoIds.map(id => {
-      <Repo key={id} repoId={id} />
-    })
+  repoComponents(repoIds) {
+    return repoIds.map(id => <Repo key={id} repoId={id} />);
   }
 
-  render(){
+  render() {
     return (
       <List>
         {this.props.repoComponents(this.props.repoIds)}
       </List>
-    )
-  }
-};
-
-const mapStateToProps = state => {
-  return {
-    repoIds: state.repos.ids,
-    reposById: state.repos.reposById
+    );
   }
 }
 
+RepoList.propTypes = {
+  repoComponents: PropTypes.func.isRequired,
+  retrieveRepos: PropTypes.func.isRequired,
+  repoIds: PropTypes.number.isRequired,
+};
+
+const mapStateToProps = state => ({
+  repoIds: state.repos.ids,
+  reposById: state.repos.reposById,
+});
+
 const mapDispatchToProps = dispatch =>
-  bindActionCreators ({
-    retrieveRepos
+  bindActionCreators({
+    retrieveRepos,
   }, dispatch);
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(RepoList);

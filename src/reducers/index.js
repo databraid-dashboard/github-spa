@@ -13,9 +13,11 @@ import repoReducer from './repoReducer';
 
 export const rootReducer = combineReducers({
   issues: issuesReducer,
-  pullRequests : prReducer,
+  pullRequests: prReducer,
   milestones: milestonesReducer,
   repos: repoReducer,
   orgs: orgReducer,
   // users: userReducer,
-})
+
+  // milestones: msReducer,
+});

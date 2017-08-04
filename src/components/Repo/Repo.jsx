@@ -1,13 +1,19 @@
 import React from 'react';
-import './Repo.css';
 import { List, Link } from 'semantic-ui-react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import './Repo.css';
 
-const Repo = ({ repoName, repoUrl, repoId }) => (
+const Repo = ({ repoName, repoUrl }) => (
   <div>
     <List.Item as={Link} to={repoUrl}>{repoName}</List.Item>
   </div>
-)
+);
+
+Repo.propTypes = {
+  repoName: PropTypes.string.isRequired,
+  repoUrl: PropTypes.string.isRequired,
+};
 
 const mapStateToProps = (state, { repoId }) => {
   const repo = state.repos.reposById[repoId];
@@ -16,10 +22,10 @@ const mapStateToProps = (state, { repoId }) => {
 
   return {
     repoName,
-    repoUrl
-  }
-}
+    repoUrl,
+  };
+};
 
 export default connect(
-  mapStateToProps
+  mapStateToProps,
 )(Repo);

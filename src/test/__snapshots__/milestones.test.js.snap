@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Issues component should render a component with props as specified  1`] = `
+exports[`Milestones component should render a component with props as specified  1`] = `
 <Card>
   <CardContent>
     <CardHeader
       className="ui center aligned"
     >
-      Git Issues
+      Milestones
     </CardHeader>
   </CardContent>
   <CardContent>
@@ -15,9 +15,7 @@ exports[`Issues component should render a component with props as specified  1`]
         divided={true}
         relaxed={true}
       >
-        <Connect(Component)
-          issueId={246869449}
-        />
+        <div />
       </List>
     </Feed>
   </CardContent>

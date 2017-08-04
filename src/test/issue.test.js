@@ -3,38 +3,38 @@ import React from 'react';
 
 import toJson, { shallowToJson } from 'enzyme-to-json';
 import { shallow, render, mount } from 'enzyme';
-import { Issues, mapStateToProps, mapDispatchToProps } from '../components/Issues/Issues';
+import { Issue, mapStateToProps, mapDispatchToProps } from '../components/Issue/Issue';
 import retrieveIssues from '../actions/issueActions';
 
 const state = {
-  issues: {
-    ids: [246869449],
-    issuesById: {
-      246869449: {
-        assignedTo: [],
-        labels: [],
-        repoIssueNumber: 36,
-        title: 'disregard this PR',
 
-      },
+  issuesById: {
+    238923429: {
+      assignedTo: [],
+      labels: ['duplicate', 'help wanted', 'question'],
+      repoIssueNumber: 16,
+      title: 'login tst JWT token',
+
     },
   },
-  loadingIssues: false,
+
 };
 
 describe('Issues component', () => {
   it('should render a component with props as specified ', () => {
+    console.log(state.issuesById[238923429]);
     const component = shallow(
-      <Issues issuesIds={state.issues.ids} issuesLoading={false} />,
+      <Issue issuesIds={state.issuesById[238923429]} issuesLoading={false} />,
     );
     expect(toJson(component)).toMatchSnapshot();
   });
 
   it('map\'s given State To Props ', () => {
     const expected = {
-      issuesIds: [246869449],
-
-      loadingIssues: false,
+      assignedTo: [],
+      labels: ['duplicate', 'help wanted', 'question'],
+      repoIssueNumber: 16,
+      title: 'login tst JWT token',
     };
     expect(mapStateToProps(state)).toEqual(expected);
   });
@@ -45,7 +45,7 @@ describe('Issues component', () => {
   });
   it('Should have a Cart Header in the center', () => {
     const component = shallow(
-      <Issues issuesIds={state.issues.ids} issuesLoading={false} />,
+      <Issue issuesIds={state.issues.ids} issuesLoading={false} />,
     );
     expect(component.find('.aligned').exists()).toBe(true);
   });
