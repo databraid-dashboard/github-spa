@@ -1,10 +1,10 @@
-/* eslint-disable import/no-named-as-default, consistent-return */
-import React, { Component } from 'react';
-import { Header, Icon, Grid, Button } from 'semantic-ui-react';
-import { bindActionCreators } from 'redux';
+import React, {Component} from 'react';
+import { Image } from 'semantic-ui-react';
+import Org from '../Org/Org.jsx';
+import './Orgs.css'
+import {retrieveOrgs} from '../../actions/orgActions';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { renderLogin } from '../../actions/renderActions';
 import { retrieveOrgs } from '../../actions/orgActions';
 import Org from '../Org/Org';
 import './Organizations.css';
@@ -38,7 +38,6 @@ export class Organizations extends Component {
       </div>
     );
   }
-}
 
 Organizations.propTypes = {
   retrieveOrgs: PropTypes.func.isRequired,
@@ -58,12 +57,12 @@ export const mapStateToProps = state => ({
   userName: state.currentPage.userName,
 });
 
-export const mapDispatchToProps = dispatch =>
-  bindActionCreators({
-    retrieveOrgs, renderLogin,
+const mapDispatchToProps = dispatch =>
+  bindActionCreators ({
+    retrieveOrgs
   }, dispatch);
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(Organizations);
+  export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(Organizations);
