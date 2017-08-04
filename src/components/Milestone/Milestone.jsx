@@ -5,7 +5,11 @@ import { List } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 const Milestone = ({ title, due, created, milestoneId }) => {
+=======
+export const Milestone = ({ title, due, created }) => {
+>>>>>>> db00290... renamed files, finished tests for issue
 
   return (
     <List.Item>
@@ -71,10 +75,17 @@ const Milestone = ({ title, due, created, percentComplete }) => {
 };
 >>>>>>> df38d77... Adding working orgs page
 
+<<<<<<< HEAD
 const mapStateToProps = (state, { milestoneId }) => {
   const milestone = state.milestones.milestonesById[milestoneId];
   const { title, due, created, percentComplete } = milestone;
   console.log('state', due===null);
+=======
+export const mapStateToProps = (state, { milestoneId }) => {
+  console.log('state for josh', state);
+  const milestone = state.milestones.milestonesByID[milestoneId];
+  const { title, due, created } = milestone;
+>>>>>>> db00290... renamed files, finished tests for issue
   return {
     title,
     due,

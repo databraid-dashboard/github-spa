@@ -44,7 +44,7 @@ State = {
  milestones : {
    repoId :{
      ids: [],
-     milestonesById: {},
+     milestonesByID: {},
    }
 >>>>>>> 2c48835... Adding repo view
   },

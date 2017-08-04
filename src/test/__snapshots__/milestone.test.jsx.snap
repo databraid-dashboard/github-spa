@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Milestone entry component should render a component with props as specified  1`] = `
+<ListItem
+  textAlign="center"
+>
+  <ListContent
+    className="ui center aligned"
+  >
+    <ListHeader>
+      sprint 1
+    </ListHeader>
+    2017-06-23T22:45:34Z
+    <ListDescription>
+      2018-06-23T22:45:34Z
+    </ListDescription>
+  </ListContent>
+</ListItem>
+`;

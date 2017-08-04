@@ -51,8 +51,12 @@ export const Issue = ({ title, repoIssueNumber, assignedTo, labels, issueId }) =
       <List.Item>
 =======
       <List.Item textAlign='center'>
+<<<<<<< HEAD
 >>>>>>> 0365ab2... fixed related milestone: errors, loading feature, tests, must re-update snapshot, not rendering
           <List.Content className="ui center aligned">
+=======
+          <List.Content key ={issueId + 1 }className="ui center aligned">
+>>>>>>> db00290... renamed files, finished tests for issue
             <List.Header>#{repoIssueNumber} {title}</List.Header>{renderedLabels}
             <List.Description> {getDescription(assignedTo)}</List.Description>
           </List.Content>
@@ -62,6 +66,7 @@ export const Issue = ({ title, repoIssueNumber, assignedTo, labels, issueId }) =
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 const mapStateToProps = (state, { issueId }) => {
 <<<<<<< HEAD
 
@@ -70,6 +75,9 @@ const mapStateToProps = (state, { issueId }) => {
 =======
 export const mapStateToProps = (state, { issueId }) => {
 >>>>>>> df38d77... Adding working orgs page
+=======
+export const mapStateToProps = (state, { issueId }) => {
+>>>>>>> db00290... renamed files, finished tests for issue
   const issue = state.issues.issuesById[issueId];
   const { title, repoIssueNumber, assignedTo, labels  } = issue;
   return {
