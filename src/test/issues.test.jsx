@@ -8,6 +8,10 @@ import retrieveIssues from '../actions/issueActions';
 
 const state = {
   issues: {
+<<<<<<< HEAD
+=======
+    ids: [246869449],
+>>>>>>> fml
     issuesById: {
       246869449: {
         assignedTo: [],

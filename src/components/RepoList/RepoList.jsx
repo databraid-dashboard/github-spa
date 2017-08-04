@@ -67,7 +67,7 @@ export const mapStateToProps = state => ({
   orgName: state.currentPage.selectedOrgName,
 });
 
-export const mapDispatchToProps = dispatch =>
+const mapDispatchToProps = dispatch =>
   bindActionCreators({
     retrieveRepos, renderOrgs,
   }, dispatch);
