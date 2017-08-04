@@ -1,31 +1,35 @@
 import React from 'react';
-import './Milestone.css';
-import { Item, List } from 'semantic-ui-react';
+import { List } from 'semantic-ui-react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import './Milestone.css';
 
-export const Milestone = ({ title, due, created }) => {
+const Milestone = ({ title, due, created }) => (
+  <List.Item>
+    <List.Content className="ui center aligned">
+      <List.Header>{title}</List.Header>{created}
+      <List.Description>{due}</List.Description>
+    </List.Content>
+  </List.Item>
+);
 
-  return (
-    <List.Item textAlign='center'>
-        <List.Content className="ui center aligned">
-          <List.Header>{title}</List.Header>{created}
-          <List.Description>{due}</List.Description>
-        </List.Content>
-      </List.Item>
-  )
-}
-
-export const mapStateToProps = (state, { milestoneId }) => {
-  console.log('state for josh', state);
+const mapStateToProps = (state, { milestoneId }) => {
+  console.log('state1', state);
   const milestone = state.milestones.milestonesByID[milestoneId];
   const { title, due, created } = milestone;
   return {
     title,
     due,
-    created
-  }
-}
+    created,
+  };
+};
+
+Milestone.propTypes = {
+  title: PropTypes.string.isRequired,
+  due: PropTypes.string.isRequired,
+  created: PropTypes.string.isRequired,
+};
 
 export default connect(
-  mapStateToProps
+  mapStateToProps,
 )(Milestone);
