@@ -11,8 +11,8 @@ import './App.css';
 const App = () => (
   <Container>
     <Organizations />
-    {/* <RepoList />
-    <Dashboard /> */}
+    <RepoList />
+    <Dashboard />
   </Container>
 );
 

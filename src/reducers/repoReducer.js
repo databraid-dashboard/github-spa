@@ -3,6 +3,7 @@ import {
 } from '../actions/repoActions';
 
 function createState(json, incomingState) {
+  // console.log('json',json);
   const state = incomingState;
   json.forEach((repo) => {
     state.ids = state.ids.concat(repo.id);

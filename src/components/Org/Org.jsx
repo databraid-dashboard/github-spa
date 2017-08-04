@@ -1,18 +1,18 @@
 import React from 'react';
-import { Image, List } from 'semantic-ui-react';
+import { Grid, Image, List } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import './Org.css';
 
 const Org = ({ avatarUrl, orgName, reposUrl }) => (
-  <div>
-    <Image src={avatarUrl} />
+  <Grid.Column>
+    <Image src={avatarUrl} size='small'/>
     <List.Item as="a">{orgName}</List.Item>
-  </div>
+  </Grid.Column>
 );
 
 const mapStateToProps = (state, { orgId }) => {
-  const org = state.orgs.orgsByID[orgId];
+  const org = state.orgs.orgsById[orgId];
 
   const { avatarUrl, orgName, reposUrl } = org;
 

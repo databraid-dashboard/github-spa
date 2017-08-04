@@ -51,7 +51,7 @@ Milestones.propTypes = {
 
 export const mapStateToProps = state => ({
   milestonesIds: state.milestones.ids,
-  milestonesByID: state.milestones.milestonesByID,
+  milestonesById: state.milestones.milestonesById,
   loadingMilestones: state.loadingMilestones,
 });
 

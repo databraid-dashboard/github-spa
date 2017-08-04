@@ -13,7 +13,7 @@ export class PrTable extends Component {
   }
 
   prComponents(prIds) {
-    return prIds.map(id => <PrTableRow key={id} prId={id} />);
+    return prIds.sort((a, b) => a - b).map(id => <PrTableRow key={id} prId={id} />);
   }
 
   render() {
@@ -53,7 +53,7 @@ PrTable.propTypes = {
 
 export const mapStateToProps = state => ({
   prIds: state.pullRequests.ids,
-  // prsById: state.pullRequests.prsByID
+  // prsById: state.pullRequests.prsById
   loadingPrTable: state.loadingPrTable,
 });
 

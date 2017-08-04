@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import { List } from 'semantic-ui-react';
+import { Header, Icon, Image, Grid, List } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
-// import { retrieveRepos } from '../../actions/orgActions';
+import { retrieveRepos } from '../../actions/repoActions';
 import Repo from '../Repo/Repo';
 import './RepoList.css';
 
 class RepoList extends Component {
   componentDidMount() {
-    // this.props.retrieveRepos();
+    this.props.retrieveRepos();
   }
 
   repoComponents(repoIds) {
@@ -18,9 +18,19 @@ class RepoList extends Component {
 
   render() {
     return (
-      <List>
-        {this.props.repoComponents(this.props.repoIds)}
-      </List>
+      <Grid centered padded>
+        <Grid.Column width={8}>
+          <Header as='h2' icon textAlign='center'>
+            <Icon name='github'/>
+            <Header.Content>
+              Which repository are you interested in?
+            </Header.Content>
+          </Header>
+              <List animated divided relaxed size='huge'>
+            {this.repoComponents(this.props.repoIds)}
+              </List>
+        </Grid.Column>
+      </Grid>
     );
   }
 }
@@ -38,7 +48,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators({
-    // retrieveRepos,
+    retrieveRepos,
   }, dispatch);
 
 export default connect(

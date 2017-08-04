@@ -8,7 +8,7 @@ const state = {
   milestones: {
     ids: [2601714],
   },
-  milestonesByID: {
+  milestonesById: {
     2601714: {
       created: '2017-06-23T22:45:34Z',
       labels: [],

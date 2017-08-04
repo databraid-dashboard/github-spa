@@ -1,13 +1,12 @@
 import React from 'react';
-import { List } from 'semantic-ui-react';
+import { Grid, List } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import './Repo.css';
 
 const Repo = ({ repoName, repoUrl }) => (
-  <div>
-    <List.Item as='a' to={repoUrl}>{repoName}</List.Item>
-  </div>
+    <List.Item as='a' to={repoUrl}><List.Content>{repoName}</List.Content>
+    </List.Item>
 );
 
 Repo.propTypes = {

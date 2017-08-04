@@ -1,12 +1,12 @@
-//import mock JSON data
+import reposByOrg from '../SampleJSONResponses/reposByORGmock';
 
-// export GET_REPOS = 'GET_REPOS';
-//
-// export const retrieveRepos = () => {
-//   return dispatch => {
-//     dispatch( {
-//       type: GET_REPOS,
-//       responseObj: //mock JSON data,
-//     })
-//   }
-// }
+export const GET_REPOS = 'GET_REPOS';
+
+export const retrieveRepos = () => {
+  return dispatch => {
+    dispatch( {
+      type: GET_REPOS,
+      responseObj: reposByOrg,
+    })
+  }
+}
