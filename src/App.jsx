@@ -16,32 +16,21 @@ import {connect} from 'react-redux';
 
 export class App extends Component{
 
-  componentDidMount(){
-    this.props.retrieveOrgs();
-  }
-  render() {
-    return (
-    <Container>
-      <Orgs/>
-      <Repos/>
-      <Dashboard/>
-    </Container>
-    )
-  }
-}
+const App = () => (
+  <Container>
+    <Organizations />
+    {/* <RepoList />
+    <Dashboard /> */}
+  </Container>
+);
 
-const mapStateToProps = state => {
-  return {
-    orgs: state.orgs,
-    issues: state.issues
-  }
-}
+const mapStateToProps = state => ({
+  // currentPage: state.currentPage,
+});
 
-const mapDispatchToProps = dispatch => bindActionCreators ({
-  retrieveOrgs,
+const mapDispatchToProps = dispatch => bindActionCreators({
 }, dispatch);
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
 )(App);
