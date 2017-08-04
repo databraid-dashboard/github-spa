@@ -60,5 +60,4 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
 )(Dashboard);

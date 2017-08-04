@@ -150,7 +150,12 @@ const store = createStore(
 );
 
 store.subscribe(() => {
+<<<<<<< HEAD
   console.log("State Change => ", store.getState());
 })
+=======
+  console.log('state', store.getState());
+});
+>>>>>>> adding fixed dashboard view
 export default store;
 >>>>>>> Begun component hookup, initial State, and related reducers
