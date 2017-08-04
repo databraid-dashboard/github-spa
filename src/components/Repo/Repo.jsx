@@ -1,11 +1,15 @@
 import React from 'react';
+<<<<<<< HEAD
 import './Repo.css';
 import { List, Link } from 'semantic-ui-react';
+=======
+import { List } from 'semantic-ui-react';
+>>>>>>> d1d9951... adding fixed dashboard view
 import { connect } from 'react-redux';
 
 const Repo = ({ repoName, repoUrl, repoId }) => (
   <div>
-    <List.Item as={Link} to={repoUrl}>{repoName}</List.Item>
+    <List.Item as='a' to={repoUrl}>{repoName}</List.Item>
   </div>
 )
 

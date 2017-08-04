@@ -49,7 +49,11 @@ export class Milestones extends Component{
           <Feed>
             <List divided relaxed>
               <div>
+<<<<<<< HEAD
                 {()=>{this.milestoneComponents(this.props.milestonesIds)}}
+=======
+                {this.milestoneComponents(this.props.milestonesIds)}
+>>>>>>> d1d9951... adding fixed dashboard view
               </div>
             </List>
           </Feed>

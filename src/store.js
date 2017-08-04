@@ -76,6 +76,11 @@ const store = createStore(
 );
 
 store.subscribe(() => {
+<<<<<<< HEAD
   console.log("State Change => ", store.getState());
 })
+=======
+  console.log('state', store.getState());
+});
+>>>>>>> d1d9951... adding fixed dashboard view
 export default store;

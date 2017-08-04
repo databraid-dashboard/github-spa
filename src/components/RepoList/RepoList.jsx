@@ -5,11 +5,22 @@ import './RepoList.css'
 import {retrieveRepos} from '../../actions/orgActions';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+<<<<<<< HEAD
 
 class RepoList extends Components{
 
   componentDidMount(){
     this.props.retreiveRepos();
+=======
+import PropTypes from 'prop-types';
+// import { retrieveRepos } from '../../actions/orgActions';
+import Repo from '../Repo/Repo';
+import './RepoList.css';
+
+class RepoList extends Component {
+  componentDidMount() {
+    // this.props.retrieveRepos();
+>>>>>>> d1d9951... adding fixed dashboard view
   }
 
   repoComponents = (repoIds) => {
@@ -35,8 +46,13 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch =>
+<<<<<<< HEAD
   bindActionCreators ({
     retrieveRepos
+=======
+  bindActionCreators({
+    // retrieveRepos,
+>>>>>>> d1d9951... adding fixed dashboard view
   }, dispatch);
 
 export default connect(
