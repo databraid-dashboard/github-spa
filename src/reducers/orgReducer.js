@@ -25,19 +25,6 @@ const orgReducer = (state = { ids: [], orgsById: {} }, action) => {
 };
 
 export default orgReducer;
-=======
-
-function createState(json){
- let state = { ids: [], orgsByID: {} };
- json.forEach(org => {
-   state.ids.push(org.id);
-   state.orgsByID[org.id]={};
-   state.orgsByID[org.id]['repo'] = org.login;
-   state.orgsByID[org.id]['id'] = org.id;
-   state.orgsByID[org.id]['url'] = org.repos_url;
- });
- return {...state};
-}
 
 export default orgReducer;
 >>>>>>> mapped store, state, readme, mockAPI calls, and began wiring up components

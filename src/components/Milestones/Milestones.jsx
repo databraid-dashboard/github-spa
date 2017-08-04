@@ -1,30 +1,29 @@
 import React, { Component } from 'react';
-import './Milestones.css';
 import { Card, Feed, List } from 'semantic-ui-react';
 import Milestone from '../Milestone/Milestone.jsx';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import PropTypes from 'prop-types';
 import { retrieveMilestones } from '../../actions/milestonesActions';
+import Milestone from '../Milestone/Milestone';
+import './Milestones.css';
 
-export class Milestones extends Component{
-
-  componentDidMount(){
+export class Milestones extends Component {
+  componentDidMount() {
     this.props.retrieveMilestones();
   }
 
-  milestoneComponents = (milestonesIds) => {
+  milestoneComponents(milestonesIds) {
     return milestonesIds.map(id => (
       <Milestone key={id} milestoneId={id} />
-    ))
+    ));
   }
 
   render() {
-
     if (this.props.loadingMilestones) {
-
       return (
         <div>Loading Milestones</div>
-      )
+      );
     }
     return (
       <Card>

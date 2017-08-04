@@ -8,23 +8,18 @@ import PrTable from '../PrTable/PrTable';
 import Milestones from '../Milestones/Milestones';
 import './Dashboard.css';
 
-  render() {
-    return (
-    <Container>
-      <Issues/>
-      <PrTable/>
-      <Milestones/>
-    </Container>
-    )
-  }
-}
+const Dashboard = () => (
+  <Container>
+    <Issues />
+    <PrTable />
+    <Milestones />
+  </Container>
+);
 
-const mapStateToProps = state => {
-  return {
-    orgs: state.orgs,
-    issues: state.issues,
-  }
-}
+const mapStateToProps = state => ({
+  orgs: state.orgs,
+  issues: state.issues,
+});
 
 // const mapDispatchToProps = dispatch => bindActionCreators({
 //   retrieveOrgs,

@@ -94,11 +94,16 @@ const mapStateToProps = (state, { milestoneId }) => {
   return {
     title,
     due,
-    created
-  }
-}
+    created,
+  };
+};
+
+Milestone.propTypes = {
+  title: PropTypes.string.isRequired,
+  due: PropTypes.string.isRequired,
+  created: PropTypes.string.isRequired,
+};
 
 export default connect(
-  mapStateToProps
->>>>>>> Adding PR Table and Milestones Components
+  mapStateToProps,
 )(Milestone);

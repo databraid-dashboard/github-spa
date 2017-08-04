@@ -43,20 +43,9 @@ const milestonesReducer = (state = { ids:[], milestonesByID: {}}, action) => {
 };
 
     default:
-      return state
+      return state;
   }
-}
+};
 
-function createState(json, state){
- json.forEach(milestone => {
-   state.ids = state.ids.concat(milestone.id);
-   state.milestonesByID[milestone.id]={};
-   state.milestonesByID[milestone.id]['title'] = milestone.title;
-   state.milestonesByID[milestone.id]['due'] = milestone.due_on;
-   state.milestonesByID[milestone.id]['created'] = milestone.created_at;
- });
- return {...state, loadingMilestones: false};
-}
->>>>>>> Adding PR Table and Milestones Components
 
 export default milestonesReducer;

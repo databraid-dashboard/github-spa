@@ -1,5 +1,4 @@
 import React from 'react';
-import './PrTableRow.css'
 import { Table, Label, Icon } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -11,7 +10,6 @@ const getMergeable = (able) => {
   } else if (able === false) {
     return 'merge-false';
   }
-<<<<<<< HEAD
   return 'merge-null';
 };
 
@@ -53,28 +51,6 @@ export const PrTableRow = ({ created, mergeable, submittedBy, title }) => (
   //     <div><Label size="mini" image={submittedBy[1]} /></div></Table.Cell>
   //   <Table.Cell textAlign="center">{getMergeableCheckbox(mergeable) }</Table.Cell>
   // </Table.Row>
-=======
-  return <div><Icon name="minus" size="big" color="yellow" /></div>;
-};
-
-const convertDate = (ISOdate) => {
-
-  let date = new Date(ISOdate);
-  let formatOptions = {
-    day: '2-digit',
-    month: '2-digit',
-    year: 'numeric',
-    hour: '2-digit',
-    minute: '2-digit',
-    hour12: true
-  };
-
-  let dateString = date.toLocaleDateString('en-US', formatOptions);
-  dateString = dateString.replace(',','')
-                         .replace('PM','p.m.')
-                         .replace('AM','a.m.');
-  return dateString;
-}
 
 const PrTableRow = ({ created, mergeable, submittedBy, title }) => (
   <Table.Row>
@@ -89,26 +65,22 @@ const PrTableRow = ({ created, mergeable, submittedBy, title }) => (
 
 PrTableRow.propTypes = {
   created: PropTypes.string.isRequired,
-  mergeable: PropTypes.bool,
-  submittedBy: PropTypes.arrayOf(PropTypes.string).isRequired,
-  title: PropTypes.string.isRequired,
+  mergeable: PropTypes.bool.isRequired,
+  submittedBy: PropTypes.string.isRequired,
+  title: PropTypes.number.isRequired,
 };
 
-PrTableRow.defaultProps = {
-  mergeable: undefined,
-};
-
-export const mapStateToProps = (state, { prId }) => {
-  const pr = state.pullRequests.prsById[prId];
+const mapStateToProps = (state, { prId }) => {
+  const pr = state.pullRequests.prsByID[prId];
   const { created, mergeable, submittedBy, title } = pr;
   return {
     created,
     mergeable,
     submittedBy,
-    title
-  }
-}
+    title,
+  };
+};
 
 export default connect(
-  mapStateToProps
+  mapStateToProps,
 )(PrTableRow);

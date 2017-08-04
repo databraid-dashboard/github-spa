@@ -1,6 +1,5 @@
 /* eslint-disable import/no-named-as-default, no-shadow */
 import React from 'react';
-<<<<<<< HEAD
 import { Grid, Image, List } from 'semantic-ui-react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -19,29 +18,10 @@ export const mapStateToProps = (state, { orgId }) => {
   const org = state.orgs.orgsById[orgId];
 
   const { avatarUrl, orgName } = org;
-=======
-import './Org.css'
-import { Image, List } from 'semantic-ui-react';
-import { connect } from 'react-redux';
-
-const Org = ({ avatarUrl, orgName, reposUrl, orgId}) => (
-    <div>
-      <Image src={avatarUrl}/>
-      <List.Item as='a'>{orgName}</List.Item>
-    </div>
-)
-
-const mapStateToProps = (state, { orgId }) => {
-
-  const org = state.orgs.orgsByID[orgId];
-
-  const { avatarUrl, orgName, reposUrl } = org;
->>>>>>> Adding components re-organized
 
   return {
     avatarUrl,
     orgName,
-<<<<<<< HEAD
   };
 };
 
@@ -58,12 +38,4 @@ Org.propTypes = {
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-=======
-    reposUrl
-  }
-}
-
-export default connect(
-  mapStateToProps
->>>>>>> Adding components re-organized
 )(Org);

@@ -48,22 +48,19 @@ export class RepoList extends Component {
 }
 
 RepoList.propTypes = {
-  // repoComponents: PropTypes.func.isRequired,
+  repoComponents: PropTypes.func.isRequired,
   retrieveRepos: PropTypes.func.isRequired,
-  repoIds: PropTypes.arrayOf(PropTypes.number).isRequired,
-  currentPage: PropTypes.string.isRequired,
-  renderOrgs: PropTypes.func.isRequired,
+  repoIds: PropTypes.number.isRequired,
 };
 
-export const mapStateToProps = state => ({
+const mapStateToProps = state => ({
   repoIds: state.repos.ids,
   reposById: state.repos.reposById,
-  currentPage: state.currentPage.render,
 });
 
-export const mapDispatchToProps = dispatch =>
+const mapDispatchToProps = dispatch =>
   bindActionCreators({
-    retrieveRepos, renderOrgs,
+    // retrieveRepos,
   }, dispatch);
 
 export default connect(
