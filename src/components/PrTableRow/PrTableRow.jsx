@@ -13,9 +13,34 @@ const getMergeableCheckbox = able => {
   } else {
     return <div><Icon name='minus' size='big' color='violet' /></div>
   }
+<<<<<<< HEAD
+}
+=======
+  return <div><Icon name="minus" size="big" color="yellow" /></div>;
+};
+>>>>>>> df38d77... Adding working orgs page
+
+const convertDate = (ISOdate) => {
+
+  let date = new Date(ISOdate);
+  let formatOptions = {
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: true
+  };
+
+  let dateString = date.toLocaleDateString('en-US', formatOptions);
+  dateString = dateString.replace(',','')
+                         .replace('PM','p.m.')
+                         .replace('AM','a.m.');
+  return dateString;
 }
 
 const PrTableRow = ({ created, mergeable, submittedBy, title }) => (
+<<<<<<< HEAD
     <Table.Row>
       <Table.Cell textAlign='center'>{ title }</Table.Cell>
       <Table.Cell textAlign='center'>{ created }</Table.Cell>
@@ -23,6 +48,23 @@ const PrTableRow = ({ created, mergeable, submittedBy, title }) => (
       <Table.Cell textAlign='center'>{ getMergeableCheckbox(mergeable) }</Table.Cell>
     </Table.Row>
 )
+=======
+  <Table.Row>
+    <Table.Cell textAlign="center">{ title }</Table.Cell>
+    <Table.Cell textAlign="center">{ convertDate(created) }</Table.Cell>
+    <Table.Cell textAlign="center">{ submittedBy[0] }
+      <div><Label size="mini" image={submittedBy[1]} /></div></Table.Cell>
+    <Table.Cell textAlign="center">{getMergeableCheckbox(mergeable) }</Table.Cell>
+  </Table.Row>
+);
+
+PrTableRow.propTypes = {
+  created: PropTypes.string.isRequired,
+  mergeable: PropTypes.bool.isRequired,
+  submittedBy: PropTypes.string.isRequired,
+  title: PropTypes.number.isRequired,
+};
+>>>>>>> df38d77... Adding working orgs page
 
 const mapStateToProps = (state, { prId }) => {
   const pr = state.pullRequests.prsByID[prId];

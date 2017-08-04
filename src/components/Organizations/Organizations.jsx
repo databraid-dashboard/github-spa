@@ -4,6 +4,7 @@ import Org from '../Org/Org.jsx';
 import './Orgs.css'
 import {retrieveOrgs} from '../../actions/orgActions';
 import { connect } from 'react-redux';
+<<<<<<< HEAD:src/components/Orgs/Orgs.jsx
 import { bindActionCreators } from 'redux';
 
 class Organizations extends Components{
@@ -17,6 +18,12 @@ class Organizations extends Components{
   //
   //   this.renderOrgs = this.renderOrgs.bind(this)
   // }
+=======
+import PropTypes from 'prop-types';
+import { retrieveOrgs } from '../../actions/orgActions';
+import Org from '../Org/Org';
+import './Organizations.css';
+>>>>>>> df38d77... Adding working orgs page:src/components/Organizations/Organizations.jsx
 
   componentDidMount(){
     this.props.retrieveOrgs();
@@ -28,14 +35,19 @@ class Organizations extends Components{
     })
   }
 
+<<<<<<< HEAD:src/components/Orgs/Orgs.jsx
   renderOrgs(){
     this.setState( {showOrgs: !this.state.showOrgs });
   }
 
   render(){
+=======
+  render() {
+>>>>>>> df38d77... Adding working orgs page:src/components/Organizations/Organizations.jsx
     return (
       <Image.Group size='small'>
         {this.orgComponents(this.props.orgIds)}
+        
       </Image.Group>
     )
   }

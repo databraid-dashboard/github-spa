@@ -1,9 +1,14 @@
+<<<<<<< HEAD
 import React, {Component} from 'react';
 import './Dashboard.css';
 import Issues from './Issues/Issues.jsx';
 import PrTable from './PrTable/PrTable.jsx'
 import Milestones from './Milestones/Milestones.jsx'
 import { Container } from 'semantic-ui-react';
+=======
+import React from 'react';
+import { Container, Grid } from 'semantic-ui-react';
+>>>>>>> df38d77... Adding working orgs page
 import { bindActionCreators } from 'redux';
 <<<<<<< HEAD
 import {retrieveOrgs} from './actions/orgActions';
@@ -30,12 +35,28 @@ import './Dashboard.css';
   }
 }
 
+<<<<<<< HEAD
 const mapStateToProps = state => {
   return {
     orgs: state.orgs,
     issues: state.issues,
   }
 }
+=======
+const Dashboard = () => (
+    <Container>
+      <Grid>
+      <Grid.Column floated='left' width={4}>
+        <Issues />
+      </Grid.Column>
+      <Grid.Column floated='right' width={4}>
+        <Milestones />
+      </Grid.Column>
+    </Grid>
+        <PrTable />
+    </Container>
+);
+>>>>>>> df38d77... Adding working orgs page
 
 <<<<<<< HEAD
 const mapDispatchToProps = dispatch => bindActionCreators ({

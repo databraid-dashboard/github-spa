@@ -61,11 +61,15 @@ export const Issue = ({ title, repoIssueNumber, assignedTo, labels, issueId }) =
 
 }
 
+<<<<<<< HEAD
 const mapStateToProps = (state, { issueId }) => {
 <<<<<<< HEAD
 
 =======
 >>>>>>> 0365ab2... fixed related milestone: errors, loading feature, tests, must re-update snapshot, not rendering
+=======
+export const mapStateToProps = (state, { issueId }) => {
+>>>>>>> df38d77... Adding working orgs page
   const issue = state.issues.issuesById[issueId];
   const { title, repoIssueNumber, assignedTo, labels  } = issue;
   return {

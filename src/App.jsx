@@ -1,9 +1,19 @@
 <<<<<<< HEAD
 import React from 'react';
+<<<<<<< HEAD
 =======
 import React, {Component} from 'react';
 import logo from './logo.svg';
 >>>>>>> 7e05dfe... mapped store, state, readme, mockAPI calls, and began wiring up components
+=======
+import { Container } from 'semantic-ui-react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import RepoList from './components/RepoList/RepoList';
+import Organizations from './components/Organizations/Organizations';
+import Dashboard from './components/Dashboard/Dashboard';
+import { retrieveOrgs } from './actions/orgActions';
+>>>>>>> df38d77... Adding working orgs page
 import './App.css';
 <<<<<<< HEAD
 import Issues from './components/Issues/Issues.jsx';
@@ -23,6 +33,7 @@ import { Container } from 'semantic-ui-react';
 
 const App = () => (
   <Container>
+<<<<<<< HEAD
     <Issues/>
 <<<<<<< HEAD
     <PR_Table/>
@@ -30,6 +41,11 @@ const App = () => (
 =======
     <PrTable/>
     <Milestones/>
+=======
+    <Organizations />
+    {/* <RepoList />
+    <Dashboard /> */}
+>>>>>>> df38d77... Adding working orgs page
   </Container>
 >>>>>>> 2d0b4d9... Adding Milestones Component
 );
@@ -65,6 +81,7 @@ export class App extends Component{
   }
 }
 
+<<<<<<< HEAD
 const mapStateToProps = state => {
   return {
     orgs: state.orgs,
@@ -86,9 +103,19 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => bindActionCreators ({
   retrieveOrgs,
+=======
+const mapStateToProps = state => ({
+  // currentPage: state.currentPage,
+});
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+>>>>>>> df38d77... Adding working orgs page
 }, dispatch);
 
 export default connect(
   mapStateToProps,
+<<<<<<< HEAD
   mapDispatchToProps
+=======
+>>>>>>> df38d77... Adding working orgs page
 )(App);
