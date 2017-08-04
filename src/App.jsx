@@ -38,6 +38,7 @@ import { Container } from 'semantic-ui-react';
 const App = () => (
   <Container>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Issues/>
 <<<<<<< HEAD
     <PR_Table/>
@@ -46,15 +47,23 @@ const App = () => (
     <PrTable/>
     <Milestones/>
 =======
+=======
+
+    <Dashboard />
+>>>>>>> fdd71b2... unfucking app.jsx
     <Organizations />
 <<<<<<< HEAD
     {/* <RepoList />
     <Dashboard /> */}
+<<<<<<< HEAD
 >>>>>>> df38d77... Adding working orgs page
 =======
     <RepoList />
     <Dashboard />
 >>>>>>> 2c48835... Adding repo view
+=======
+
+>>>>>>> fdd71b2... unfucking app.jsx
   </Container>
 >>>>>>> 2d0b4d9... Adding Milestones Component
 );
@@ -65,11 +74,19 @@ import {retrieveOrgs} from './actions/orgActions';
 import {connect} from 'react-redux';
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 class App extends Component{
 >>>>>>> 7e05dfe... mapped store, state, readme, mockAPI calls, and began wiring up components
 =======
 export class App extends Component{
 >>>>>>> 8aab236... added loading bar and tests
+=======
+const mapStateToProps = state => ({
+
+  orgs: state.orgs,
+  issues: state.issues,
+});
+>>>>>>> fdd71b2... unfucking app.jsx
 
   componentDidMount(){
     this.props.retrieveOrgs();
@@ -113,12 +130,17 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => bindActionCreators ({
   retrieveOrgs,
+<<<<<<< HEAD
 =======
 const mapStateToProps = state => ({
+=======
+
+>>>>>>> fdd71b2... unfucking app.jsx
   // currentPage: state.currentPage,
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
+<<<<<<< HEAD
 >>>>>>> df38d77... Adding working orgs page
 =======
 import { connect } from 'react-redux';
@@ -144,10 +166,14 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => bindActionCreators({
   retrieveOrgs,
 >>>>>>> edbe0e0... fml
+=======
+
+>>>>>>> fdd71b2... unfucking app.jsx
 }, dispatch);
 
 export default connect(
   mapStateToProps,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   mapDispatchToProps
@@ -156,4 +182,9 @@ export default connect(
 =======
   mapDispatchToProps,
 >>>>>>> edbe0e0... fml
+=======
+
+  mapDispatchToProps,
+
+>>>>>>> fdd71b2... unfucking app.jsx
 )(App);
