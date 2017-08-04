@@ -4,9 +4,8 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import renderIf from 'render-if';
 import RepoList from './components/RepoList/RepoList';
-import Dashboard from './components/Dashboard/Dashboard.jsx';
-import Orgs from './components/Orgs/Orgs.jsx';
-import Repos from './components/Repos/Repos.jsx';
+import Organizations from './components/Organizations/Organizations';
+import Dashboard from './components/Dashboard/Dashboard';
 import './App.css';
 
 const App = ({ currentPage }) => (
