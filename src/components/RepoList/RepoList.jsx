@@ -15,7 +15,7 @@ function repoComponents(repoIds) {
 
 export class RepoList extends Component {
   componentDidMount() {
-    this.props.retrieveRepos();
+    // this.props.retrieveRepos();
   }
 
   render() {

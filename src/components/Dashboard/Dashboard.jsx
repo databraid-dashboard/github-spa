@@ -5,10 +5,12 @@ import PrTable from './PrTable/PrTable.jsx'
 import Milestones from './Milestones/Milestones.jsx'
 import { Container } from 'semantic-ui-react';
 import { bindActionCreators } from 'redux';
-import {retrieveOrgs} from './actions/orgActions';
-import {connect} from 'react-redux';
-
-class Dashboard extends Component{
+// import { retrieveOrgs } from './actions/orgActions';
+import { connect } from 'react-redux';
+import Issues from '../Issues/Issues';
+import PrTable from '../PrTable/PrTable';
+import Milestones from '../Milestones/Milestones';
+import './Dashboard.css';
 
   render() {
     return (
@@ -28,11 +30,10 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch => bindActionCreators ({
-  retrieveOrgs
-}, dispatch);
+// const mapDispatchToProps = dispatch => bindActionCreators({
+//   retrieveOrgs,
+// }, dispatch);
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
 )(Dashboard);

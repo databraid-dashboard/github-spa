@@ -33,7 +33,15 @@ export class Milestones extends Component{
             Milestones
           </Card.Header>
         </Card.Content>
-        {milestoneComponents(this.props.milestonesIds)}
+        <Card.Content>
+          <Feed>
+            <List divided relaxed>
+              <div>
+                {this.milestoneComponents(this.props.milestonesIds)}
+              </div>
+            </List>
+          </Feed>
+        </Card.Content>
       </Card>
     );
   }
