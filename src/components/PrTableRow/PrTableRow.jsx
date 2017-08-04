@@ -57,7 +57,7 @@ PrTableRow.defaultProps = {
 };
 
 const mapStateToProps = (state, { prId }) => {
-  const pr = state.pullRequests.prsByID[prId];
+  const pr = state.pullRequests.prsById[prId];
   const { created, mergeable, submittedBy, title } = pr;
   return {
     created,

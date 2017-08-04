@@ -1,8 +1,6 @@
-import React, {Component} from 'react';
-import { Image } from 'semantic-ui-react';
-import Org from '../Org/Org.jsx';
-import './Orgs.css'
-import {retrieveOrgs} from '../../actions/orgActions';
+import React, { Component } from 'react';
+import { Header, Icon, Image, Grid } from 'semantic-ui-react';
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { retrieveOrgs } from '../../actions/orgActions';

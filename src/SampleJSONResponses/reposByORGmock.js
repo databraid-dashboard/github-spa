@@ -93,7 +93,6 @@ const reposByOrg = [
       pull: true,
     },
   },
-<<<<<<< HEAD
   {
     id: 95238686,
     name: 'Q2_Projects',
@@ -192,6 +191,3 @@ const reposByOrg = [
 
 
 export default reposByOrg;
-=======
-];
->>>>>>> fml
