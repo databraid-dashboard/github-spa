@@ -28,19 +28,5 @@ const prReducer = (state = { ids: [], prsById: {}, loadingPrTable: true }, actio
   }
 };
 
-} from '../actions/prActions';
-
-const prReducer = (state = { ids: [], prsByID: {}, loadingPrTable: true }, action) => {
-  switch (action.type) {
-    case GET_PRS:
-
-      return createState(action.responseObj, state);
-    case LOADING_PRS:
-      return { ...state, loadingPrTable: true };
-    default:
-      return state;
-  }
-};
-
 
 export default prReducer;

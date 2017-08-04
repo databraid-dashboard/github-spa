@@ -1,8 +1,6 @@
-import React, {Component} from 'react';
-import { Image } from 'semantic-ui-react';
-import Org from '../Org/Org.jsx';
-import './Orgs.css'
-import {retrieveOrgs} from '../../actions/orgActions';
+import React, { Component } from 'react';
+import { Header, Icon, Image, Grid } from 'semantic-ui-react';
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { retrieveOrgs } from '../../actions/orgActions';
@@ -21,20 +19,25 @@ import './Organizations.css';
 
   render() {
     return (
-      <Image.Group size='small'>
-        {this.orgComponents(this.props.orgIds)}
-
-      </Image.Group>
-    )
+      <Grid centered columns={3} padded>
+        <Header as='h2' icon textAlign='center'>
+          <Icon name='github'/>
+          <Header.Content>
+            Which organization are you interested in?
+          </Header.Content>
+        </Header>
+        <Grid.Row>
+          {this.orgComponents(this.props.orgIds)}
+        </Grid.Row>
+      </Grid>
+    );
   }
 };
 
-const mapStateToProps = state => {
-  return {
-    orgIds: state.orgs.ids,
-    orgsByID: state.orgs.orgsByID
-  }
-}
+const mapStateToProps = state => ({
+  orgIds: state.orgs.ids,
+  orgsById: state.orgs.orgsById,
+});
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators ({

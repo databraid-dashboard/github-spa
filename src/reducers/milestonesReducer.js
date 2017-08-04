@@ -21,11 +21,6 @@ function createState(json, incomingState) {
 }
 
 const milestonesReducer = (state = { ids: [], milestonesById: {} }, action) => {
-} from '../actions/milestonesActions';
-
-const milestonesReducer = (state = { ids:[], milestonesByID: {}}, action) => {
-
->>>>>>> Adding PR Table and Milestones Components
   switch (action.type) {
     case GET_MILESTONES:
       return createState(action.responseObj, state);

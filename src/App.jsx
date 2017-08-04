@@ -10,8 +10,8 @@ import './App.css';
 
 const App = () => (
   <Container>
-    {/* <Orgs />
-    <RepoList /> */}
+    <Organizations />
+    <RepoList />
     <Dashboard />
   </Container>
 );

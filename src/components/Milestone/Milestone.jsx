@@ -89,7 +89,8 @@ export default connect(
 }
 
 const mapStateToProps = (state, { milestoneId }) => {
-  const milestone = state.milestones.milestonesByID[milestoneId];
+  console.log('state', state);
+  const milestone = state.milestones.milestonesById[milestoneId];
   const { title, due, created } = milestone;
   return {
     title,

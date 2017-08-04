@@ -15,35 +15,25 @@ function repoComponents(repoIds) {
 
 export class RepoList extends Component {
   componentDidMount() {
-    // this.props.retrieveRepos();
+    this.props.retrieveRepos();
   }
 
   render() {
-    if (this.props.currentPage !== 'repos') {
-      return <div />;
-    }
-    if (this.props.currentPage === 'repos') {
-      return (
-        <div>
-          <Button icon onClick={() => this.props.renderOrgs()}>
-            <Icon name="arrow left" />
-          </Button>
-          <Grid centered padded>
-            <Grid.Column width={8}>
-              <Header as="h2" icon textAlign="center">
-                <Icon name="github" />
-                <Header.Content>
-                  Which repository are you interested in?
-                </Header.Content>
-              </Header>
-              <List animated divided relaxed size="huge">
-                {repoComponents(this.props.repoIds)}
+    return (
+      <Grid centered padded>
+        <Grid.Column width={8}>
+          <Header as='h2' icon textAlign='center'>
+            <Icon name='github'/>
+            <Header.Content>
+              Which repository are you interested in?
+            </Header.Content>
+          </Header>
+              <List animated divided relaxed size='huge'>
+            {this.repoComponents(this.props.repoIds)}
               </List>
-            </Grid.Column>
-          </Grid>
-        </div>
-      );
-    }
+        </Grid.Column>
+      </Grid>
+    );
   }
 }
 
@@ -60,7 +50,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators({
-    // retrieveRepos,
+    retrieveRepos,
   }, dispatch);
 
 export default connect(
