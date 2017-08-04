@@ -52,7 +52,7 @@ const Milestone = ({ title, due, created }) => {
 
 const mapStateToProps = (state, { milestoneId }) => {
   console.log('state', state);
-  const milestone = state.milestones.milestonesByID[milestoneId];
+  const milestone = state.milestones.milestonesById[milestoneId];
   const { title, due, created } = milestone;
   return {
     title,

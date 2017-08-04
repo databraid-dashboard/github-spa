@@ -67,6 +67,7 @@ export class Milestones extends Component{
   }
 };
 
+<<<<<<< HEAD
 export const mapStateToProps = state => {
   return {
     milestonesIds: state.milestones.ids,
@@ -74,6 +75,13 @@ export const mapStateToProps = state => {
     loadingMilestones: state.loadingMilestones
   }
 }
+=======
+export const mapStateToProps = state => ({
+  milestonesIds: state.milestones.ids,
+  milestonesById: state.milestones.milestonesById,
+  loadingMilestones: state.loadingMilestones,
+});
+>>>>>>> 2c48835... Adding repo view
 
 export const mapDispatchToProps = dispatch =>
 bindActionCreators ({

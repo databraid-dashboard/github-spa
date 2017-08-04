@@ -3,8 +3,24 @@ import {
   LOADING_MILESTONES
 } from '../actions/milestonesActions';
 
+<<<<<<< HEAD
 const milestonesReducer = (state = { ids:[], milestonesByID: {}}, action) => {
 
+=======
+function createState(json, incomingState) {
+  const state = incomingState;
+  json.forEach((milestone) => {
+    state.ids = state.ids.concat(milestone.id);
+    state.milestonesById[milestone.id] = {};
+    state.milestonesById[milestone.id].title = milestone.title;
+    state.milestonesById[milestone.id].due = milestone.due_on;
+    state.milestonesById[milestone.id].created = milestone.created_at;
+  });
+  return { ...state, loadingMilestones: false };
+}
+
+const milestonesReducer = (state = { ids: [], milestonesById: {} }, action) => {
+>>>>>>> 2c48835... Adding repo view
   switch (action.type) {
     case GET_MILESTONES:
       return createState(action.responseObj, state);

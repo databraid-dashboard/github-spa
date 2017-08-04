@@ -1,4 +1,5 @@
 State = {
+<<<<<<< HEAD
   users : {
     ids: [],
     usersByID: {}
@@ -14,6 +15,38 @@ State = {
       }
     
     },
+=======
+ users : {
+   ids: [],
+   usersById: {}
+ },
+ orgs: {
+   ids: [],
+   orgsById: {
+     id: 0,
+     repoIds: [],
+     ...everything else related to an org
+   },
+ },
+ repos : {
+   ids: [],
+   reposById: {},
+ }
+ issues : {
+     ids: [],
+     issuesById: {},
+
+ }
+ pullRequests: {
+     ids: [],
+     prById: {},
+  },
+ milestones : {
+   repoId :{
+     ids: [],
+     milestonesById: {},
+   }
+>>>>>>> 2c48835... Adding repo view
   },
 <<<<<<< HEAD
   repos : {

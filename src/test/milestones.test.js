@@ -8,10 +8,17 @@ const state = {
   milestones : {
     ids: [2601714],
   },
+<<<<<<< HEAD
   milestonesByID : {
     2601714 : {
       created: "2017-06-23T22:45:34Z",
       labels : [],
+=======
+  milestonesById: {
+    2601714: {
+      created: '2017-06-23T22:45:34Z',
+      labels: [],
+>>>>>>> 2c48835... Adding repo view
       repoIssueNumber: 36,
       title : "disregard this PR",
 

@@ -7,6 +7,7 @@ import {
 <<<<<<< HEAD
 const issuesReducer = (state = {ids:[], reposById: {}} , action) => {
 
+<<<<<<< HEAD
   switch (action.type) {
     case GET_ISSUES:
       return createState (action.responseObj)
@@ -16,6 +17,22 @@ const issuesReducer = (state = {ids:[], issuesById: {}, loadingIssues:true} , ac
 =======
 const issuesReducer = (state = {ids:[], issuesById: {}, loadingIssues: true} , action) => {
 >>>>>>> 8aab236... added loading bar and tests
+=======
+function createState(json, incomingState) {
+  const state = incomingState;
+  json = json.filter(repo => !repo.pull_request);
+  json.forEach((repo) => {
+    console.log('json', json);
+    state.ids = state.ids.concat(repo.id);
+    state.issuesById[repo.id] = {};
+    state.issuesById[repo.id].title = repo.title;
+    state.issuesById[repo.id].repoIssueNumber = repo.number;
+    state.issuesById[repo.id].assignedTo = repo.assignees.map(assignee => [assignee.login, assignee.avatar_url]);
+    state.issuesById[repo.id].labels = repo.labels.map(label => label.name);
+  });
+  return { ...state, loadingIssues: false };
+}
+>>>>>>> 2c48835... Adding repo view
 
   switch (action.type) {
     case GET_ISSUES:

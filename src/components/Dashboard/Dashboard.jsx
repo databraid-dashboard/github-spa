@@ -45,7 +45,7 @@ const mapStateToProps = state => {
 =======
 const Dashboard = () => (
     <Container>
-      <Grid>
+      <Grid padded>
       <Grid.Column floated='left' width={4}>
         <Issues />
       </Grid.Column>

@@ -43,9 +43,14 @@ const App = () => (
     <Milestones/>
 =======
     <Organizations />
+<<<<<<< HEAD
     {/* <RepoList />
     <Dashboard /> */}
 >>>>>>> df38d77... Adding working orgs page
+=======
+    <RepoList />
+    <Dashboard />
+>>>>>>> 2c48835... Adding repo view
   </Container>
 >>>>>>> 2d0b4d9... Adding Milestones Component
 );
