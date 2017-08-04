@@ -33,6 +33,6 @@ const store = createStore(
 );
 
 store.subscribe(() => {
-  store.getState();
+  console.log('state', store.getState());
 });
 export default store;

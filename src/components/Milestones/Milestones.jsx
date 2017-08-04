@@ -35,7 +35,7 @@ export class Milestones extends Component {
           <Feed>
             <List divided relaxed>
               <div>
-                {() => { this.milestoneComponents(this.props.milestonesIds); }}
+                {this.milestoneComponents(this.props.milestonesIds)}
               </div>
             </List>
           </Feed>
