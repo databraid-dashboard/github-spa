@@ -32,6 +32,8 @@
 >>>>>>> b2ee4a1... changed packed.json to reflect stable dependencies
   },
   "devDependencies": {
+    "enzyme": "2.9.1",
+    "enzyme-to-json": "1.5.1",
     "eslint": "4.3.0",
     "eslint-config-airbnb": "15.1.0",
     "eslint-plugin-import": "2.7.0",
@@ -40,11 +42,16 @@
 <<<<<<< HEAD
 =======
     "react-router-dom": "4.1.2",
+    "react-scripts": "1.0.10",
     "react-test-renderer": "15.6.1",
+<<<<<<< HEAD
     "enzyme": "2.9.1",
     "enzyme-to-json": "1.5.1",
 >>>>>>> b2ee4a1... changed packed.json to reflect stable dependencies
     "react-scripts": "1.0.10"
+=======
+    "redux-mock-store": "^1.2.3"
+>>>>>>> 88f4b03... Added passing tests on <Org and <Orgs
   },
   "scripts": {
     "start": "react-scripts start",

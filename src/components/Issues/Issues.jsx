@@ -65,6 +65,7 @@ import './Issues.css';
 
 export class Issues extends Component {
   componentDidMount() {
+    console.log('hello');
     this.props.retrieveIssues();
   }
 
@@ -125,7 +126,7 @@ export class Issues extends Component {
 
 Issues.propTypes = {
   retrieveIssues: PropTypes.func.isRequired,
-  issuesIds: PropTypes.number.isRequired,
+  issuesIds: PropTypes.array,
   loadingIssues: PropTypes.bool.isRequired,
 };
 

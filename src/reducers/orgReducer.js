@@ -28,16 +28,20 @@ function createState(json, incomingState) {
   const state = incomingState;
   json.forEach((org) => {
     state.ids = state.ids.concat(org.id);
-    state.orgsByID[org.id] = {};
-    state.orgsByID[org.id].avatarUrl = org.avatar_url;
-    state.orgsByID[org.id].orgName = org.login;
-    state.orgsByID[org.id].reposUrl = org.repos_url;
+    state.orgsById[org.id] = { };
+    state.orgsById[org.id].avatarUrl = org.avatar_url;
+    state.orgsById[org.id].orgName = org.login;
+    state.orgsById[org.id].reposUrl = org.repos_url;
   });
   return { ...state };
 }
 
+<<<<<<< HEAD
 const orgReducer = (state = { ids: [], orgsByID: {} }, action) => {
 >>>>>>> edbe0e0... fml
+=======
+const orgReducer = (state = { ids: [], orgsById: {} }, action) => {
+>>>>>>> 88f4b03... Added passing tests on <Org and <Orgs
   switch (action.type) {
     case GET_ORGS:
 <<<<<<< HEAD

@@ -103,10 +103,11 @@ export const Issue = ({ title, repoIssueNumber, assignedTo, labels, issueId }) =
 Issue.propTypes = {
   title: PropTypes.string.isRequired,
   repoIssueNumber: PropTypes.number.isRequired,
-  assignedTo: PropTypes.string.isRequired,
+  assignedTo: PropTypes.array.isRequired,
   labels: PropTypes.string.isRequired,
   issueId: PropTypes.number.isRequired,
 };
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -119,6 +120,10 @@ const mapStateToProps = (state, { issueId }) => {
 export const mapStateToProps = (state, { issueId }) => {
 >>>>>>> df38d77... Adding working orgs page
 =======
+=======
+//NOTE replace Line 43 with below
+// assignedTo: PropTypes.arrayOf(PropTypes.number),
+>>>>>>> 88f4b03... Added passing tests on <Org and <Orgs
 export const mapStateToProps = (state, { issueId }) => {
 >>>>>>> db00290... renamed files, finished tests for issue
   const issue = state.issues.issuesById[issueId];

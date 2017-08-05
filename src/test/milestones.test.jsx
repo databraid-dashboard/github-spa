@@ -10,6 +10,7 @@ const state = {
   },
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   milestonesByID : {
     2601714 : {
       created: "2017-06-23T22:45:34Z",
@@ -22,6 +23,9 @@ const state = {
 >>>>>>> 2c48835... Adding repo view
 =======
   milestonesByID: {
+=======
+  milestonesById: {
+>>>>>>> 88f4b03... Added passing tests on <Org and <Orgs
     2601714: {
       created: '2017-06-23T22:45:34Z',
       labels: [],
@@ -37,7 +41,7 @@ const state = {
 describe('Milestones component', () => {
   it('should render a component with props as specified ', () => {
     const component = shallow(
-      <Milestones milestoneId={state.milestones.ids} loadingMilestones={false} />,
+      <Milestones milestonesIds={state.milestones.ids} loadingMilestones={false} />,
     );
     expect(toJson(component)).toMatchSnapshot();
   });

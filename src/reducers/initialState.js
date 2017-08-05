@@ -22,11 +22,15 @@ State = {
  },
  orgs: {
    ids: [],
+<<<<<<< HEAD
    orgsById: {
      id: 0,
      repoIds: [],
      ...everything else related to an org
    },
+=======
+   orgsById: { },
+>>>>>>> 88f4b03... Added passing tests on <Org and <Orgs
  },
  repos : {
    ids: [],
@@ -44,7 +48,7 @@ State = {
  milestones : {
    repoId :{
      ids: [],
-     milestonesByID: {},
+     milestonesById: {},
    }
 >>>>>>> 2c48835... Adding repo view
   },

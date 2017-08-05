@@ -139,6 +139,7 @@ const mapStateToProps = state => ({
   // currentPage: state.currentPage,
 });
 
+<<<<<<< HEAD
 const mapDispatchToProps = dispatch => bindActionCreators({
 <<<<<<< HEAD
 >>>>>>> df38d77... Adding working orgs page
@@ -170,6 +171,8 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 
 >>>>>>> fdd71b2... unfucking app.jsx
 }, dispatch);
+=======
+>>>>>>> 88f4b03... Added passing tests on <Org and <Orgs
 
 export default connect(
   mapStateToProps,

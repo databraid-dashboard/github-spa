@@ -54,7 +54,7 @@ import './Organizations.css';
 <<<<<<< HEAD
       <Image.Group size='small'>
         {this.orgComponents(this.props.orgIds)}
-        
+
       </Image.Group>
     )
 =======

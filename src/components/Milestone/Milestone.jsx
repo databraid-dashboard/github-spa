@@ -12,6 +12,7 @@ import './Milestone.css';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 const Milestone = ({ title, due, created, milestoneId }) => {
 =======
 export const Milestone = ({ title, due, created }) => {
@@ -37,6 +38,9 @@ import './Milestone.css';
 
 const Milestone = ({ title, due, created, percentComplete }) => {
 >>>>>>> 4def070... Adding percent complete feature
+=======
+export const Milestone = ({ title, due, created }) => {
+>>>>>>> 88f4b03... Added passing tests on <Org and <Orgs
 
   function convertDate(ISOdate) {
 
@@ -99,10 +103,15 @@ const Milestone = ({ title, due, created }) => (
   </List.Item>
 );
 
+<<<<<<< HEAD
 const mapStateToProps = (state, { milestoneId }) => {
   console.log('state1', state);
 >>>>>>> edbe0e0... fml
   const milestone = state.milestones.milestonesByID[milestoneId];
+=======
+export const mapStateToProps = (state, { milestoneId }) => {
+  const milestone = state.milestones.milestonesById[milestoneId];
+>>>>>>> 88f4b03... Added passing tests on <Org and <Orgs
   const { title, due, created } = milestone;
 >>>>>>> db00290... renamed files, finished tests for issue
   return {

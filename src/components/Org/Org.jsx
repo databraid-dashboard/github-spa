@@ -36,16 +36,21 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import './Org.css';
 
-const Org = ({ avatarUrl, orgName, reposUrl }) => (
+export const Org = ({ avatarUrl, orgName, reposUrl }) => (
   <div>
     <Image src={avatarUrl} />
     <List.Item as="a">{orgName}</List.Item>
   </div>
 );
 
+<<<<<<< HEAD
 const mapStateToProps = (state, { orgId }) => {
   const org = state.orgs.orgsByID[orgId];
 >>>>>>> edbe0e0... fml
+=======
+export const mapStateToProps = (state, { orgId }) => {
+  const org = state.orgs.orgsById[orgId];
+>>>>>>> 88f4b03... Added passing tests on <Org and <Orgs
 
   const { avatarUrl, orgName, reposUrl } = org;
 
