@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Organizations component should render a component with props as specified  1`] = `
+<ImageGroup
+  size="small"
+>
+  <Connect(Component)
+    orgId={246869449}
+  />
+</ImageGroup>
+`;

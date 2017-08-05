@@ -39,11 +39,12 @@ export const Issue = ({ title, repoIssueNumber, assignedTo, labels, issueId }) =
 Issue.propTypes = {
   title: PropTypes.string.isRequired,
   repoIssueNumber: PropTypes.number.isRequired,
-  assignedTo: PropTypes.string.isRequired,
+  assignedTo: PropTypes.array.isRequired,
   labels: PropTypes.string.isRequired,
   issueId: PropTypes.number.isRequired,
 };
-
+//NOTE replace Line 43 with below
+// assignedTo: PropTypes.arrayOf(PropTypes.number),
 export const mapStateToProps = (state, { issueId }) => {
   const issue = state.issues.issuesById[issueId];
   const { title, repoIssueNumber, assignedTo, labels } = issue;

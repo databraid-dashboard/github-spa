@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import './Milestone.css';
 
-const Milestone = ({ title, due, created }) => {
+export const Milestone = ({ title, due, created }) => {
 
   function convertDate(ISOdate) {
 
@@ -37,9 +37,8 @@ const Milestone = ({ title, due, created }) => {
       )
 };
 
-const mapStateToProps = (state, { milestoneId }) => {
-  console.log('state', state);
-  const milestone = state.milestones.milestonesByID[milestoneId];
+export const mapStateToProps = (state, { milestoneId }) => {
+  const milestone = state.milestones.milestonesById[milestoneId];
   const { title, due, created } = milestone;
   return {
     title,

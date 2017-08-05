@@ -5,11 +5,7 @@ State = {
  },
  orgs: {
    ids: [],
-   orgsByID: {
-     id: 0,
-     repoIds: [],
-     ...everything else related to an org
-   },
+   orgsById: { },
  },
  repos : {
    ids: [],
@@ -27,7 +23,7 @@ State = {
  milestones : {
    repoID :{
      ids: [],
-     milestonesByID: {},
+     milestonesById: {},
    }
   },
   loadingIssues: false;

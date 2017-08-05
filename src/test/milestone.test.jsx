@@ -7,12 +7,12 @@ import { Milestone, mapStateToProps, mapDispatchToProps } from '../components/Mi
 const state = {
   milestones: {
     ids: [2601714],
-    milestonesByID: {
+    milestonesById: {
       2601714: {
         created: '2017-06-23T22:45:34Z',
         labels: ['sprint 1'],
         repoIssueNumber: 36,
-        title: 'sprint 1',
+        title: 'building paths and auth',
         created: '2017-06-23T22:45:34Z',
         due: '2018-06-23T22:45:34Z',
       },
@@ -36,14 +36,14 @@ describe('Milestone entry component', () => {
 
   it('map\'s given State To Props ', () => {
     const expected = {
-      title: 'sprint 1',
+      title: 'building paths and auth',
       created: '2017-06-23T22:45:34Z',
       due: '2018-06-23T22:45:34Z',
     };
     expect(mapStateToProps(state, { milestoneId: 2601714 })).toEqual(expected);
   });
 
-  it('Should have a Cart Header in the center', () => {
+  it('Should have a Cart Header aligned in the center', () => {
     const component = shallow(
       <Milestone />,
     );

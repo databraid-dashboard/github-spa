@@ -20,7 +20,7 @@ class Organizations extends Component {
     return (
       <Image.Group size="small">
         {this.orgComponents(this.props.orgIds)}
-        
+
       </Image.Group>
     );
   }
@@ -33,7 +33,7 @@ Organizations.propTypes = {
 
 const mapStateToProps = state => ({
   orgIds: state.orgs.ids,
-  orgsByID: state.orgs.orgsByID,
+  orgsById: state.orgs.orgsById,
 });
 
 const mapDispatchToProps = dispatch =>

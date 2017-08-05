@@ -31,9 +31,6 @@ const mapDispatchToProps = dispatch => bindActionCreators({
   // currentPage: state.currentPage,
 });
 
-const mapDispatchToProps = dispatch => bindActionCreators({
-
-}, dispatch);
 
 export default connect(
   mapStateToProps,

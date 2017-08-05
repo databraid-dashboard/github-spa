@@ -8,7 +8,7 @@ const state = {
   milestones: {
     ids: [2601714],
   },
-  milestonesByID: {
+  milestonesById: {
     2601714: {
       created: '2017-06-23T22:45:34Z',
       labels: [],
@@ -23,7 +23,7 @@ const state = {
 describe('Milestones component', () => {
   it('should render a component with props as specified ', () => {
     const component = shallow(
-      <Milestones milestoneId={state.milestones.ids} loadingMilestones={false} />,
+      <Milestones milestonesIds={state.milestones.ids} loadingMilestones={false} />,
     );
     expect(toJson(component)).toMatchSnapshot();
   });

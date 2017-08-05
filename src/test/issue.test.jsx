@@ -27,6 +27,7 @@ describe('Issue entry component', () => {
         assignedTo={['grant']}
         repoIssueNumber={16}
         title={'login tst JWT token'}
+        getDescription={()=>{getDescription}}
       />,
     );
     expect(toJson(component)).toMatchSnapshot();
@@ -41,12 +42,13 @@ describe('Issue entry component', () => {
     expect(mapStateToProps(state, { issueId: 238923429 })).toEqual(expected);
   });
 
-
   it('Should have a Cart Header in the center', () => {
     const component = shallow(
       <Issue
         issueId={238923429}
         labels={state.issues.issuesById[238923429].labels}
+        assignedTo={['grant']}
+        getDescription={()=>{getDescription}}
       />,
     );
     expect(component.find('.aligned').exists()).toBe(true);
