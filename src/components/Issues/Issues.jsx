@@ -18,6 +18,7 @@ function issueComponents(issuesIds) {
 
 export class Issues extends Component {
   componentDidMount() {
+    console.log('hello');
     this.props.retrieveIssues();
   }
 

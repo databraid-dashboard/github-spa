@@ -14,6 +14,7 @@ export class Milestones extends Component {
   }
 
   milestoneComponents(milestonesIds) {
+    console.log('milestonesIds', milestonesIds);
     return milestonesIds.map(id => (
       <Milestone key={id} milestoneId={id} />
     ));
@@ -30,7 +31,7 @@ export class Milestones extends Component {
         <Card.Content>
           <Card.Header className="ui center aligned">
             Milestones
-          </Card.Header>
+          </Card.Header>u
         </Card.Content>
         <Card.Content>
           <Feed>

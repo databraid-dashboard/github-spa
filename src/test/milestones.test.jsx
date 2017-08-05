@@ -23,7 +23,7 @@ const state = {
 describe('Milestones component', () => {
   it('should render a component with props as specified ', () => {
     const component = shallow(
-      <Milestones milestoneId={state.milestones.ids} loadingMilestones={false} />,
+      <Milestones milestonesIds={state.milestones.ids} loadingMilestones={false} />,
     );
     expect(toJson(component)).toMatchSnapshot();
   });
