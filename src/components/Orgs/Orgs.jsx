@@ -7,7 +7,7 @@ import { retrieveOrgs } from '../../actions/orgActions';
 import Org from '../Org/Org';
 import './Orgs.css';
 
-class Organizations extends Component {
+export class Organizations extends Component {
   componentDidMount() {
     this.props.retrieveOrgs();
   }
@@ -34,12 +34,12 @@ Organizations.propTypes = {
   orgIds: PropTypes.number.isRequired,
 };
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   orgIds: state.orgs.ids,
-  orgsByID: state.orgs.orgsByID,
+  orgsById: state.orgs.orgsById,
 });
 
-const mapDispatchToProps = dispatch =>
+export const mapDispatchToProps = dispatch =>
   bindActionCreators({
     retrieveOrgs,
   }, dispatch);

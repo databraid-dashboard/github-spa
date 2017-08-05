@@ -2,7 +2,6 @@
 import React, { Component } from 'react';
 import './Issues.css';
 import { Card, Feed, List, Dimmer, Loader, Image, Segment } from 'semantic-ui-react';
-import Issue from '../Issue/Issue.jsx';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';

@@ -32,7 +32,7 @@ export class Milestones extends Component {
         <Card.Content>
           <Card.Header className="ui center aligned">
             Milestones
-          </Card.Header>
+          </Card.Header>u
         </Card.Content>
         {milestoneComponents(this.props.milestonesByRepo, this.props.repoName)}
       </Card>

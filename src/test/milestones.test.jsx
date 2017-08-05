@@ -24,10 +24,14 @@ const state = {
 describe('Milestones component', () => {
   it('should render a component with props as specified ', () => {
     const component = shallow(
+<<<<<<< HEAD
       <Milestones
         loadingMilestones={false}
         retrieveMilestones={retrieveMilestones}
       />,
+=======
+      <Milestones milestonesIds={state.milestones.ids} loadingMilestones={false} />,
+>>>>>>> Added passing tests on <Org and <Orgs
     );
     expect(toJson(component)).toMatchSnapshot();
   });

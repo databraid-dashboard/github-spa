@@ -1,17 +1,11 @@
-
 import React from 'react';
-
 import toJson, { shallowToJson } from 'enzyme-to-json';
 import { shallow, render, mount } from 'enzyme';
 import { Issues, mapStateToProps, mapDispatchToProps } from '../components/Issues/Issues';
-import retrieveIssues from '../actions/issueActions';
+import configureMockStore from 'redux-mock-store';
 
 const state = {
   issues: {
-<<<<<<< HEAD
-=======
-    ids: [246869449],
->>>>>>> fml
     issuesById: {
       246869449: {
         assignedTo: [],
@@ -38,6 +32,15 @@ describe('Issues component', () => {
     );
     expect(toJson(component)).toMatchSnapshot();
   });
+
+  // it('Should call the retrieveIssues Function', ()=> {
+  //   const retrieveIssues = jest.fn();
+  //   const store = mockStore({ })
+  //   const component = mount (
+  //     <Issues issuesIds={state.issues.ids} loadingIssues={false} retrieveIssues={retrieveIssues}/>,
+  //   );
+  //   expect(retrieveIssues).toBeCalled();
+  // });
 
   it('map\'s given State To Props ', () => {
     const expected = {

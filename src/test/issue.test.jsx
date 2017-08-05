@@ -28,6 +28,7 @@ describe('Issue entry component', () => {
         assignedTo={[['Gwillison415', 'https://avatars2.githubusercontent.com/u/22106099?v=4']]}
         number={16}
         title={'login tst JWT token'}
+        getDescription={() => { getDescription; }}
       />,
     );
     expect(toJson(component)).toMatchSnapshot();
