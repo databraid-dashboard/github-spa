@@ -12,7 +12,6 @@ const state = {
         labels: ['sprint 1'],
         repoIssueNumber: 36,
         title: 'building paths and auth',
-        created: '2017-06-23T22:45:34Z',
         due: '2018-06-23T22:45:34Z',
         percentComplete: 0.4,
       },

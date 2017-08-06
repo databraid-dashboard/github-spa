@@ -55,7 +55,7 @@ Issue.propTypes = {
   issueId: PropTypes.number.isRequired,
 >>>>>>> Added passing tests on <Org and <Orgs
 };
-//NOTE replace Line 43 with below
+// NOTE replace Line 43 with below
 // assignedTo: PropTypes.arrayOf(PropTypes.number),
 export const mapStateToProps = (state, { issueId }) => {
   const issue = state.issues.issuesById[issueId];
