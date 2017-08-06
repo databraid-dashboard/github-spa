@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import reposByOrg from '../SampleJSONResponses/reposByORGmock';
 
 <<<<<<< HEAD
@@ -20,6 +21,8 @@ export const retrieveRepos = () => {
   }
 }
 =======
+=======
+>>>>>>> 8dc7899... removed MSTP's where uneeded, wrote test for components ready for pr, limited scoped of PR  via .gitignore dashboard feature
 // import mock JSON data
 
 // export GET_REPOS = 'GET_REPOS';

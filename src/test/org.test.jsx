@@ -1,7 +1,7 @@
 import React from 'react';
-import toJson, { shallowToJson } from 'enzyme-to-json';
-import { shallow, render, mount } from 'enzyme';
-import { Org, mapStateToProps, mapDispatchToProps } from '../components/Org/Org';
+import toJson from 'enzyme-to-json';
+import { shallow } from 'enzyme';
+import { Org, mapStateToProps } from '../components/Org/Org';
 
 const state = {
   orgs: {

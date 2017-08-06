@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render a Dashboard that holds Connected Components Should render the Dashboard 1`] = `
+<Container>
+  <Grid>
+    <GridColumn
+      floated="left"
+      width={4}
+    >
+      <Connect(Issues) />
+    </GridColumn>
+    <GridColumn
+      floated="right"
+      width={4}
+    >
+      <Connect(Milestones) />
+    </GridColumn>
+  </Grid>
+  <Connect(PrTable) />
+</Container>
+`;

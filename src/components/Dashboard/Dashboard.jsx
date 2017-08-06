@@ -33,6 +33,7 @@ import LineChart from '../LineChart/LineChart';
 import './Dashboard.css';
 >>>>>>> d1d9951... adding fixed dashboard view
 
+<<<<<<< HEAD
   render() {
     return (
     <Container>
@@ -56,15 +57,26 @@ const Dashboard = () => (
     <Container>
       <Grid padded>
       <Grid.Column floated='left' width={4}>
+=======
+export const Dashboard = () => (
+  <Container>
+    <Grid>
+      <Grid.Column floated="left" width={4}>
+>>>>>>> 8dc7899... removed MSTP's where uneeded, wrote test for components ready for pr, limited scoped of PR  via .gitignore dashboard feature
         <Issues />
       </Grid.Column>
-      <Grid.Column floated='right' width={4}>
+      <Grid.Column floated="right" width={4}>
         <Milestones />
       </Grid.Column>
     </Grid>
+<<<<<<< HEAD
         <PrTable />
         <LineChart />
     </Container>
+=======
+    <PrTable />
+  </Container>
+>>>>>>> 8dc7899... removed MSTP's where uneeded, wrote test for components ready for pr, limited scoped of PR  via .gitignore dashboard feature
 );
 >>>>>>> df38d77... Adding working orgs page
 
@@ -88,6 +100,7 @@ const Dashboard = () => (
   </Container>
 );
 
+<<<<<<< HEAD
 const mapStateToProps = state => ({
   orgs: state.orgs,
   issues: state.issues,
@@ -105,3 +118,6 @@ export default connect(
 =======
 >>>>>>> edbe0e0... fml
 )(Dashboard);
+=======
+export default Dashboard;
+>>>>>>> 8dc7899... removed MSTP's where uneeded, wrote test for components ready for pr, limited scoped of PR  via .gitignore dashboard feature

@@ -60,6 +60,7 @@ export class Milestones extends Component {
           <Feed>
             <List divided relaxed>
 <<<<<<< HEAD
+<<<<<<< HEAD
               <div>
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -74,6 +75,9 @@ export class Milestones extends Component {
 =======
                 {this.milestoneComponents(this.props.milestonesIds)}
 >>>>>>> df38d77... Adding working orgs page
+=======
+              {this.milestoneComponents(this.props.milestonesIds)}
+>>>>>>> 8dc7899... removed MSTP's where uneeded, wrote test for components ready for pr, limited scoped of PR  via .gitignore dashboard feature
             </List>
           </Feed>
         </Card.Content>

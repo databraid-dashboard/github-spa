@@ -1,7 +1,7 @@
 import React from 'react';
-import toJson, { shallowToJson } from 'enzyme-to-json';
-import { shallow, render, mount } from 'enzyme';
-import { Milestone, mapStateToProps, mapDispatchToProps } from '../components/Milestone/Milestone';
+import toJson from 'enzyme-to-json';
+import { shallow } from 'enzyme';
+import { Milestone, mapStateToProps } from '../components/Milestone/Milestone';
 
 
 const state = {
@@ -13,7 +13,6 @@ const state = {
         labels: ['sprint 1'],
         repoIssueNumber: 36,
         title: 'building paths and auth',
-        created: '2017-06-23T22:45:34Z',
         due: '2018-06-23T22:45:34Z',
       },
     },

@@ -108,6 +108,7 @@ Issue.propTypes = {
   issueId: PropTypes.number.isRequired,
 };
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -122,6 +123,9 @@ export const mapStateToProps = (state, { issueId }) => {
 =======
 =======
 //NOTE replace Line 43 with below
+=======
+// NOTE replace Line 43 with below
+>>>>>>> 8dc7899... removed MSTP's where uneeded, wrote test for components ready for pr, limited scoped of PR  via .gitignore dashboard feature
 // assignedTo: PropTypes.arrayOf(PropTypes.number),
 >>>>>>> 88f4b03... Added passing tests on <Org and <Orgs
 export const mapStateToProps = (state, { issueId }) => {

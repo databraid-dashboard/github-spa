@@ -1,8 +1,7 @@
 import React from 'react';
-import toJson, { shallowToJson } from 'enzyme-to-json';
-import { shallow, render, mount } from 'enzyme';
+import toJson from 'enzyme-to-json';
+import { shallow } from 'enzyme';
 import { Milestones, mapStateToProps, mapDispatchToProps } from '../components/Milestones/Milestones';
-import retrieveMilestones from '../actions/milestonesActions';
 
 const state = {
   milestones: {

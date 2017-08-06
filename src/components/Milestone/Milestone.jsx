@@ -40,27 +40,36 @@ const Milestone = ({ title, due, created, percentComplete }) => {
 >>>>>>> 4def070... Adding percent complete feature
 =======
 export const Milestone = ({ title, due, created }) => {
+<<<<<<< HEAD
 >>>>>>> 88f4b03... Added passing tests on <Org and <Orgs
 
+=======
+>>>>>>> 8dc7899... removed MSTP's where uneeded, wrote test for components ready for pr, limited scoped of PR  via .gitignore dashboard feature
   function convertDate(ISOdate) {
-
-    let date = new Date(ISOdate);
-    let formatOptions = {
+    const date = new Date(ISOdate);
+    const formatOptions = {
       day: '2-digit',
       month: '2-digit',
       year: 'numeric',
+<<<<<<< HEAD
       // hour: '2-digit',
       // minute: '2-digit',
       // hour12: true
+=======
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: true,
+>>>>>>> 8dc7899... removed MSTP's where uneeded, wrote test for components ready for pr, limited scoped of PR  via .gitignore dashboard feature
     };
 
     let dateString = date.toLocaleDateString('en-US', formatOptions);
-    dateString = dateString.replace(',','')
-                           .replace('PM','p.m.')
-                           .replace('AM','a.m.');
+    dateString = dateString.replace(',', '')
+      .replace('PM', 'p.m.')
+      .replace('AM', 'a.m.');
     return dateString;
   }
 
+<<<<<<< HEAD
   function getDueDate(date){
     if (date === null) {
       return <div></div>
@@ -82,6 +91,17 @@ export const Milestone = ({ title, due, created }) => {
       </List>
     </Card.Content>
       )
+=======
+
+  return (
+    <List.Item>
+      <List.Content className="ui center aligned">
+        <List.Header>{title}</List.Header>{convertDate(created)}
+        <List.Description>{due}</List.Description>
+      </List.Content>
+    </List.Item>
+  );
+>>>>>>> 8dc7899... removed MSTP's where uneeded, wrote test for components ready for pr, limited scoped of PR  via .gitignore dashboard feature
 };
 >>>>>>> df38d77... Adding working orgs page
 

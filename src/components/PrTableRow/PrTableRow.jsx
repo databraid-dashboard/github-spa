@@ -37,23 +37,22 @@ const getMergeableCheckbox = able => {
 >>>>>>> df38d77... Adding working orgs page
 
 const convertDate = (ISOdate) => {
-
-  let date = new Date(ISOdate);
-  let formatOptions = {
+  const date = new Date(ISOdate);
+  const formatOptions = {
     day: '2-digit',
     month: '2-digit',
     year: 'numeric',
     hour: '2-digit',
     minute: '2-digit',
-    hour12: true
+    hour12: true,
   };
 
   let dateString = date.toLocaleDateString('en-US', formatOptions);
-  dateString = dateString.replace(',','')
-                         .replace('PM','p.m.')
-                         .replace('AM','a.m.');
+  dateString = dateString.replace(',', '')
+    .replace('PM', 'p.m.')
+    .replace('AM', 'a.m.');
   return dateString;
-}
+};
 
 const PrTableRow = ({ created, mergeable, submittedBy, title }) => (
 <<<<<<< HEAD

@@ -1,4 +1,4 @@
-/* eslint-disable max-len */
+/* eslint-disable max-len, no-unused-vars */
 
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
