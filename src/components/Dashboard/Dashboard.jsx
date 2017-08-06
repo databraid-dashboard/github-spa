@@ -16,15 +16,4 @@ const Dashboard = () => (
   </Container>
 );
 
-const mapStateToProps = state => ({
-  orgs: state.orgs,
-  issues: state.issues,
-});
-
-// const mapDispatchToProps = dispatch => bindActionCreators({
-//   retrieveOrgs,
-// }, dispatch);
-
-export default connect(
-  mapStateToProps,
-)(Dashboard);
+export default Dashboard;

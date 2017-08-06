@@ -1,7 +1,7 @@
 import React from 'react';
-import toJson, { shallowToJson } from 'enzyme-to-json';
-import { shallow, render, mount } from 'enzyme';
-import { Issue, mapStateToProps, mapDispatchToProps } from '../components/Issue/Issue';
+import toJson from 'enzyme-to-json';
+import { shallow } from 'enzyme';
+import { Issue, mapStateToProps } from '../components/Issue/Issue';
 
 const state = {
 
@@ -27,7 +27,6 @@ describe('Issue entry component', () => {
         assignedTo={['grant']}
         repoIssueNumber={16}
         title={'login tst JWT token'}
-        getDescription={()=>{getDescription}}
       />,
     );
     expect(toJson(component)).toMatchSnapshot();
@@ -48,7 +47,6 @@ describe('Issue entry component', () => {
         issueId={238923429}
         labels={state.issues.issuesById[238923429].labels}
         assignedTo={['grant']}
-        getDescription={()=>{getDescription}}
       />,
     );
     expect(component.find('.aligned').exists()).toBe(true);

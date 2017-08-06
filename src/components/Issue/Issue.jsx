@@ -53,7 +53,7 @@ Issue.propTypes = {
   labels: PropTypes.string.isRequired,
   issueId: PropTypes.number.isRequired,
 };
-//NOTE replace Line 43 with below
+// NOTE replace Line 43 with below
 // assignedTo: PropTypes.arrayOf(PropTypes.number),
 export const mapStateToProps = (state, { issueId }) => {
   const issue = state.issues.issuesById[issueId];
