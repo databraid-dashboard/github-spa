@@ -1,8 +1,10 @@
+/* eslint-disable no-unused-var */
+
 import React from 'react';
-import toJson, { shallowToJson } from 'enzyme-to-json';
-import { shallow, render, mount } from 'enzyme';
+import toJson from 'enzyme-to-json';
+import { shallow } from 'enzyme';
+
 import { Organizations, mapStateToProps, mapDispatchToProps } from '../components/Orgs/Orgs';
-import configureMockStore from 'redux-mock-store';
 
 const state = {
   orgs: {
@@ -20,13 +22,16 @@ const state = {
 
 describe('Organizations component', () => {
   it('should render a component with props as specified ', () => {
-
     const component = shallow(
-      <Organizations orgIds={state.orgs.ids} loadingOrganizations={false} retrieveOrgs={()=> { retrieveOrgs}}/>,
+      <Organizations
+        orgIds={state.orgs.ids}
+        loadingOrganizations={false}
+      />,
     );
     expect(toJson(component)).toMatchSnapshot();
   });
-// NOTE this test will be included in future versions to check that passed in functions have been called
+  // NOTE this test will be included in future versions
+  // to check that passed in functions have been called
   // it('Should call the retrieveOrganizations Function', ()=> {
   //   const retrieveOrgs = jest.fn();
   //   const store = mockStore({ })
@@ -55,5 +60,4 @@ describe('Organizations component', () => {
     const dispatch = jest.fn();
     expect(mapDispatchToProps(dispatch)).toHaveProperty('retrieveOrgs');
   });
-
 });

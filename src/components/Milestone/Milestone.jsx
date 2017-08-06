@@ -5,36 +5,33 @@ import PropTypes from 'prop-types';
 import './Milestone.css';
 
 export const Milestone = ({ title, due, created }) => {
-
   function convertDate(ISOdate) {
-
-    let date = new Date(ISOdate);
-    let formatOptions = {
+    const date = new Date(ISOdate);
+    const formatOptions = {
       day: '2-digit',
       month: '2-digit',
       year: 'numeric',
       hour: '2-digit',
       minute: '2-digit',
-      hour12: true
+      hour12: true,
     };
 
     let dateString = date.toLocaleDateString('en-US', formatOptions);
-    dateString = dateString.replace(',','')
-                           .replace('PM','p.m.')
-                           .replace('AM','a.m.');
+    dateString = dateString.replace(',', '')
+      .replace('PM', 'p.m.')
+      .replace('AM', 'a.m.');
     return dateString;
   }
 
 
-
   return (
-      <List.Item>
-        <List.Content className="ui center aligned">
-          <List.Header>{title}</List.Header>{convertDate(created)}
-          <List.Description>{due}</List.Description>
-        </List.Content>
-      </List.Item>
-      )
+    <List.Item>
+      <List.Content className="ui center aligned">
+        <List.Header>{title}</List.Header>{convertDate(created)}
+        <List.Description>{due}</List.Description>
+      </List.Content>
+    </List.Item>
+  );
 };
 
 export const mapStateToProps = (state, { milestoneId }) => {

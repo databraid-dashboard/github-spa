@@ -6,7 +6,7 @@ import './Repo.css';
 
 const Repo = ({ repoName, repoUrl }) => (
   <div>
-    <List.Item as='a' to={repoUrl}>{repoName}</List.Item>
+    <List.Item as="a" to={repoUrl}>{repoName}</List.Item>
   </div>
 );
 

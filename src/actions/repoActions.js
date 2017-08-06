@@ -1,4 +1,4 @@
-//import mock JSON data
+// import mock JSON data
 
 // export GET_REPOS = 'GET_REPOS';
 //

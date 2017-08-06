@@ -8,29 +8,18 @@ import PrTable from '../PrTable/PrTable';
 import Milestones from '../Milestones/Milestones';
 import './Dashboard.css';
 
-const Dashboard = () => (
-    <Container>
-      <Grid>
-      <Grid.Column floated='left' width={4}>
+export const Dashboard = () => (
+  <Container>
+    <Grid>
+      <Grid.Column floated="left" width={4}>
         <Issues />
       </Grid.Column>
-      <Grid.Column floated='right' width={4}>
+      <Grid.Column floated="right" width={4}>
         <Milestones />
       </Grid.Column>
     </Grid>
-        <PrTable />
-    </Container>
+    <PrTable />
+  </Container>
 );
 
-const mapStateToProps = state => ({
-  orgs: state.orgs,
-  issues: state.issues,
-});
-
-// const mapDispatchToProps = dispatch => bindActionCreators({
-//   retrieveOrgs,
-// }, dispatch);
-
-export default connect(
-  mapStateToProps,
-)(Dashboard);
+export default Dashboard;
