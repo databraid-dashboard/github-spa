@@ -1,10 +1,8 @@
-
 import React from 'react';
-
-import toJson, { shallowToJson } from 'enzyme-to-json';
-import { shallow, render, mount } from 'enzyme';
+import toJson from 'enzyme-to-json';
+import { shallow } from 'enzyme';
 import { Issues, mapStateToProps, mapDispatchToProps } from '../components/Issues/Issues';
-import retrieveIssues from '../actions/issueActions';
+
 
 const state = {
   issues: {
@@ -25,10 +23,24 @@ const state = {
 describe('Issues component', () => {
   it('should render a component with props as specified ', () => {
     const component = shallow(
-      <Issues issuesIds={state.issues.ids} issuesLoading={false} />,
+      <Issues
+        issuesIds={state.issues.ids}
+        loadingIssues={false}
+      />,
     );
     expect(toJson(component)).toMatchSnapshot();
   });
+  //
+  // it('Should call the retrieveIssues Function', ()=> {
+  //   const retrieveIssues = jest.fn();
+  //   const store = mockStore({ })
+  //   const component = mount (
+  //     <Issues issuesIds={state.issues.ids}
+  //       loadingIssues={false}
+  //       retrieveIssues={retrieveIssues}/>,
+  //   );
+  //   expect(retrieveIssues).toBeCalled();
+  // });
 
   it('map\'s given State To Props ', () => {
     const expected = {
@@ -45,7 +57,10 @@ describe('Issues component', () => {
   });
   it('Should have a Cart Header in the center', () => {
     const component = shallow(
-      <Issues issuesIds={state.issues.ids} issuesLoading={false} />,
+      <Issues
+        issuesIds={state.issues.ids}
+        issuesLoading={false}
+      />,
     );
     expect(component.find('.aligned').exists()).toBe(true);
   });

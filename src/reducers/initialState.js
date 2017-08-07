@@ -5,11 +5,7 @@ State = {
  },
  orgs: {
    ids: [],
-   orgsById: {
-     id: 0,
-     repoIds: [],
-     ...everything else related to an org
-   },
+   orgsById: { },
  },
  repos : {
    ids: [],

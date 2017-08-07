@@ -10,6 +10,7 @@ import './App.css';
 
 const App = () => (
   <Container>
+
     <Organizations />
     <RepoList />
     <Dashboard />
@@ -17,12 +18,21 @@ const App = () => (
 );
 
 const mapStateToProps = state => ({
-  // currentPage: state.currentPage,
+
+  orgs: state.orgs,
+  issues: state.issues,
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-}, dispatch);
+  retrieveOrgs,
+
+  // currentPage: state.currentPage,
+});
+
 
 export default connect(
   mapStateToProps,
+
+  mapDispatchToProps,
+
 )(App);

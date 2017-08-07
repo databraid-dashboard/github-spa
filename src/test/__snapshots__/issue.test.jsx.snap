@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Issue entry component should render a component with props as specified  1`] = `
+<ListItem>
+  <ListContent
+    className="ui center aligned"
+  >
+    <ListHeader>
+      #
+      16
+       
+      login tst JWT token
+    </ListHeader>
+    <div>
+      <LabelGroup>
+        <div
+          className="ui tiny label"
+        >
+          duplicate
+        </div>
+      </LabelGroup>
+    </div>
+    <div>
+      <LabelGroup>
+        <div
+          className="ui tiny label"
+        >
+          help wanted
+        </div>
+      </LabelGroup>
+    </div>
+    <div>
+      <LabelGroup>
+        <div
+          className="ui tiny label"
+        >
+          question
+        </div>
+      </LabelGroup>
+    </div>
+    <ListDescription>
+       
+      <div>
+        Assigned To: 
+        g
+        <div>
+          <ItemImage
+            size="mini"
+            src="r"
+          />
+        </div>
+      </div>
+    </ListDescription>
+  </ListContent>
+</ListItem>
+`;

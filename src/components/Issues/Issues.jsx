@@ -9,6 +9,7 @@ import './Issues.css';
 
 export class Issues extends Component {
   componentDidMount() {
+    console.log('hello');
     this.props.retrieveIssues();
   }
 
@@ -19,6 +20,7 @@ export class Issues extends Component {
   }
 
   render() {
+    console.log('this.props.loadingIssues', this.props);
     if (this.props.loadingIssues) {
       return (
         <div>Loading Issues</div>
@@ -43,7 +45,7 @@ export class Issues extends Component {
 
 Issues.propTypes = {
   retrieveIssues: PropTypes.func.isRequired,
-  issuesIds: PropTypes.number.isRequired,
+  issuesIds: PropTypes.array,
   loadingIssues: PropTypes.bool.isRequired,
 };
 

@@ -1,8 +1,7 @@
 import React from 'react';
-import toJson, { shallowToJson } from 'enzyme-to-json';
-import { shallow, render, mount } from 'enzyme';
+import toJson from 'enzyme-to-json';
+import { shallow } from 'enzyme';
 import { Milestones, mapStateToProps, mapDispatchToProps } from '../components/Milestones/Milestones';
-import retrieveMilestones from '../actions/milestonesActions';
 
 const state = {
   milestones: {
@@ -23,7 +22,7 @@ const state = {
 describe('Milestones component', () => {
   it('should render a component with props as specified ', () => {
     const component = shallow(
-      <Milestones milestoneId={state.milestones.ids} loadingMilestones={false} />,
+      <Milestones milestonesIds={state.milestones.ids} loadingMilestones={false} />,
     );
     expect(toJson(component)).toMatchSnapshot();
   });

@@ -8,9 +8,8 @@ import './Milestone.css';
 const Milestone = ({ title, due, created, percentComplete }) => {
 
   function convertDate(ISOdate) {
-
-    let date = new Date(ISOdate);
-    let formatOptions = {
+    const date = new Date(ISOdate);
+    const formatOptions = {
       day: '2-digit',
       month: '2-digit',
       year: 'numeric',
@@ -20,9 +19,9 @@ const Milestone = ({ title, due, created, percentComplete }) => {
     };
 
     let dateString = date.toLocaleDateString('en-US', formatOptions);
-    dateString = dateString.replace(',','')
-                           .replace('PM','p.m.')
-                           .replace('AM','a.m.');
+    dateString = dateString.replace(',', '')
+      .replace('PM', 'p.m.')
+      .replace('AM', 'a.m.');
     return dateString;
   }
 

@@ -13,6 +13,7 @@ export class Milestones extends Component {
   }
 
   milestoneComponents(milestonesIds) {
+    console.log('milestonesIds', milestonesIds);
     return milestonesIds.map(id => (
       <Milestone key={id} milestoneId={id} />
     ));

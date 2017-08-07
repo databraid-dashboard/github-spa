@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import Issues from '../Issues/Issues';
 import PrTable from '../PrTable/PrTable';
 import Milestones from '../Milestones/Milestones';
-import LineChart from '../LineChart/LineChart';
+// import LineChart from '../LineChart/LineChart';
 import './Dashboard.css';
 
 const Dashboard = () => (
@@ -15,24 +15,12 @@ const Dashboard = () => (
       <Grid.Column floated='left' width={4}>
         <Issues />
       </Grid.Column>
-      <Grid.Column floated='right' width={4}>
+      <Grid.Column floated="right" width={4}>
         <Milestones />
       </Grid.Column>
     </Grid>
-        <PrTable />
-        <LineChart />
-    </Container>
+    <PrTable />
+  </Container>
 );
 
-const mapStateToProps = state => ({
-  orgs: state.orgs,
-  issues: state.issues,
-});
-
-// const mapDispatchToProps = dispatch => bindActionCreators({
-//   retrieveOrgs,
-// }, dispatch);
-
-export default connect(
-  mapStateToProps,
-)(Dashboard);
+export default Dashboard;
