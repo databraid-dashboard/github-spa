@@ -1,3 +1,4 @@
+/* eslint-disable import/no-named-as-default */
 import React from 'react';
 import { Container, Grid } from 'semantic-ui-react';
 // import { bindActionCreators } from 'redux';

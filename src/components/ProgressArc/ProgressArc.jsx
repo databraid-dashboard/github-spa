@@ -1,3 +1,7 @@
+/* eslint-disable react/no-string-refs,
+react/sort-comp, class-methods-use-this, no-unused-expressions */
+
+
 import React, { Component } from 'react';
 import * as d3 from 'd3';
 import { connect } from 'react-redux';

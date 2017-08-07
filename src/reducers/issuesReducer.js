@@ -5,8 +5,8 @@ import {
 
 function createState(json, incomingState) {
   const state = incomingState;
-  json = json.filter(repo => !repo.pull_request);
-  json.forEach((repo) => {
+  const jsonFiltered = json.filter(repo => !repo.pull_request);
+  jsonFiltered.forEach((repo) => {
     state.ids = state.ids.concat(repo.id);
     state.issuesById[repo.id] = {};
     state.issuesById[repo.id].title = repo.title;
