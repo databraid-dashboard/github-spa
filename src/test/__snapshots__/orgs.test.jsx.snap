@@ -1,11 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Organizations component should render a component with props as specified  1`] = `
-<ImageGroup
-  size="small"
+<Grid
+  centered={true}
+  columns={3}
+  padded={true}
 >
-  <Connect(Component)
-    orgId={246869449}
-  />
-</ImageGroup>
+  <Header
+    as="h2"
+    icon={true}
+    textAlign="center"
+  >
+    <Icon
+      as="i"
+      name="github"
+    />
+    <HeaderContent>
+      Which organization are you interested in?
+    </HeaderContent>
+  </Header>
+  <GridRow>
+    <Connect(Component)
+      orgId={246869449}
+    />
+  </GridRow>
+</Grid>
 `;

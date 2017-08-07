@@ -1,9 +1,9 @@
 import React from 'react';
-import toJson, { shallowToJson } from 'enzyme-to-json';
-import { shallow, render, mount } from 'enzyme';
+import { shallowToJson } from 'enzyme-to-json';
+import { shallow } from 'enzyme';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import Dashboard, { mapStateToProps } from '../components/Dashboard/Dashboard';
+import { Dashboard } from '../components/Dashboard/Dashboard';
 import rootReducer from '../reducers/index';
 
 const middlewares = [thunk];

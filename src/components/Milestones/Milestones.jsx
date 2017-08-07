@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, Feed, List } from 'semantic-ui-react';
+import { Card } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
@@ -13,7 +13,6 @@ export class Milestones extends Component {
   }
 
   milestoneComponents(milestonesIds) {
-    console.log('milestonesIds', milestonesIds);
     return milestonesIds.map(id => (
       <Milestone key={id} milestoneId={id} />
     ));
@@ -32,7 +31,7 @@ export class Milestones extends Component {
             Milestones
           </Card.Header>
         </Card.Content>
-              {this.milestoneComponents(this.props.milestonesIds)}
+        {this.milestoneComponents(this.props.milestonesIds)}
       </Card>
     );
   }

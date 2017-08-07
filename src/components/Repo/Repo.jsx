@@ -1,12 +1,12 @@
 import React from 'react';
-import { Grid, List } from 'semantic-ui-react';
+import { List } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import './Repo.css';
 
-const Repo = ({ repoName, repoUrl }) => (
-    <List.Item as='a' to={repoUrl}><List.Content>{repoName}</List.Content>
-    </List.Item>
+export const Repo = ({ repoName, repoUrl }) => (
+  <List.Item as="a" to={repoUrl}><List.Content>{repoName}</List.Content>
+  </List.Item>
 );
 
 Repo.propTypes = {
@@ -14,7 +14,7 @@ Repo.propTypes = {
   repoUrl: PropTypes.string.isRequired,
 };
 
-const mapStateToProps = (state, { repoId }) => {
+export const mapStateToProps = (state, { repoId }) => {
   const repo = state.repos.reposById[repoId];
 
   const { repoName, repoUrl } = repo;

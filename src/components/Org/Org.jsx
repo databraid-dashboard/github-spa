@@ -4,14 +4,14 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import './Org.css';
 
-const Org = ({ avatarUrl, orgName, reposUrl }) => (
+export const Org = ({ avatarUrl, orgName, reposUrl }) => (
   <Grid.Column>
-    <Image src={avatarUrl} size='small'/>
-    <List.Item as='a'>{orgName}</List.Item>
+    <Image src={avatarUrl} size="small" />
+    <List.Item as="a">{orgName}</List.Item>
   </Grid.Column>
 );
 
-const mapStateToProps = (state, { orgId }) => {
+export const mapStateToProps = (state, { orgId }) => {
   const org = state.orgs.orgsById[orgId];
 
   const { avatarUrl, orgName, reposUrl } = org;

@@ -2,11 +2,10 @@ import React from 'react';
 import { Card, List, Header } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import ProgressArc from '../ProgressArc/ProgressArc'
+import ProgressArc from '../ProgressArc/ProgressArc';
 import './Milestone.css';
 
-const Milestone = ({ title, due, created, percentComplete }) => {
-
+export const Milestone = ({ title, due, created, percentComplete }) => {
   function convertDate(ISOdate) {
     const date = new Date(ISOdate);
     const formatOptions = {
@@ -25,12 +24,11 @@ const Milestone = ({ title, due, created, percentComplete }) => {
     return dateString;
   }
 
-  function getDueDate(date){
+  function getDueDate(date) {
     if (date === null) {
-      return <div></div>
-    } else {
-      return <div><Header sub>Date Due:</Header> {convertDate(date)}</div>
+      return <div />;
     }
+    return <div><Header sub>Date Due:</Header> {convertDate(date)}</div>;
   }
 
   return (
@@ -40,23 +38,23 @@ const Milestone = ({ title, due, created, percentComplete }) => {
           <List.Content className="ui center aligned">
             <List.Header>{title}</List.Header><Header sub>Date Created:</Header> {convertDate(created)}
             {getDueDate(due)}
-            <Header sub className="space">Percent Complete:</Header> <ProgressArc percentComplete={percentComplete} duration={2000}/>
+            <Header sub className="space">Percent Complete:</Header> <ProgressArc percentComplete={percentComplete} duration={2000} />
           </List.Content>
         </List.Item>
       </List>
     </Card.Content>
-      )
+  );
 };
 
-const mapStateToProps = (state, { milestoneId }) => {
+export const mapStateToProps = (state, { milestoneId }) => {
   const milestone = state.milestones.milestonesById[milestoneId];
   const { title, due, created, percentComplete } = milestone;
-  console.log('state', due===null);
+  console.log('state', due === null);
   return {
     title,
     due,
     created,
-    percentComplete
+    percentComplete,
   };
 };
 
@@ -64,6 +62,7 @@ Milestone.propTypes = {
   title: PropTypes.string.isRequired,
   due: PropTypes.string.isRequired,
   created: PropTypes.string.isRequired,
+  percentComplete: PropTypes.number.isRequired,
 };
 
 export default connect(

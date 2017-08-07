@@ -33,7 +33,7 @@ const convertDate = (ISOdate) => {
   return dateString;
 };
 
-const PrTableRow = ({ created, mergeable, submittedBy, title }) => (
+export const PrTableRow = ({ created, mergeable, submittedBy, title }) => (
   <Table.Row>
     <Table.Cell textAlign="center">{ title }</Table.Cell>
     <Table.Cell textAlign="center">{ convertDate(created) }</Table.Cell>
@@ -50,7 +50,7 @@ PrTableRow.propTypes = {
   title: PropTypes.number.isRequired,
 };
 
-const mapStateToProps = (state, { prId }) => {
+export const mapStateToProps = (state, { prId }) => {
   const pr = state.pullRequests.prsById[prId];
   const { created, mergeable, submittedBy, title } = pr;
   return {

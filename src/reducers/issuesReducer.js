@@ -7,7 +7,6 @@ function createState(json, incomingState) {
   const state = incomingState;
   json = json.filter(repo => !repo.pull_request);
   json.forEach((repo) => {
-    console.log('json', json);
     state.ids = state.ids.concat(repo.id);
     state.issuesById[repo.id] = {};
     state.issuesById[repo.id].title = repo.title;

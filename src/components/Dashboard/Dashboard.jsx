@@ -1,18 +1,18 @@
 import React from 'react';
 import { Container, Grid } from 'semantic-ui-react';
-import { bindActionCreators } from 'redux';
+// import { bindActionCreators } from 'redux';
 // import { retrieveOrgs } from './actions/orgActions';
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 import Issues from '../Issues/Issues';
 import PrTable from '../PrTable/PrTable';
 import Milestones from '../Milestones/Milestones';
 // import LineChart from '../LineChart/LineChart';
 import './Dashboard.css';
 
-const Dashboard = () => (
-    <Container>
-      <Grid padded>
-      <Grid.Column floated='left' width={4}>
+export const Dashboard = () => (
+  <Container>
+    <Grid padded>
+      <Grid.Column floated="left" width={4}>
         <Issues />
       </Grid.Column>
       <Grid.Column floated="right" width={4}>

@@ -2,10 +2,9 @@
 
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
-import { rootReducer } from './reducers/index';
+import rootReducer from './reducers/index';
 
 const logger = store => next => (action) => {
-  console.log('action fired', action);
   next(action);
 };
 
@@ -32,7 +31,7 @@ const store = createStore(
   ),
 );
 
-store.subscribe(() => {
-  console.log('state', store.getState());
-});
+// store.subscribe(() => {
+//   store.getState();
+// });
 export default store;
