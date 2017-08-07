@@ -1,6 +1,7 @@
-import React, {Component} from 'react';
-import { Image } from 'semantic-ui-react';
-import './Orgs.css'
+/* eslint-disable import/no-named-as-default */
+import React, { Component } from 'react';
+import { Header, Icon, Grid } from 'semantic-ui-react';
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
