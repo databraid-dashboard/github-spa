@@ -7,11 +7,17 @@ import PrTableRow from '../PrTableRow/PrTableRow';
 import { retrievePrs } from '../../actions/prActions';
 import './PrTable.css';
 
+
+function prComponents(prIds) {
+  return prIds.sort((a, b) => a - b).map(id => <PrTableRow key={id} prId={id} />);
+}
+
 export class PrTable extends Component {
   componentDidMount() {
     this.props.retrievePrs();
   }
 
+<<<<<<< HEAD
   prComponents(prIds) {
 <<<<<<< HEAD
     return prIds.sort((a, b) => a - b).map(id => <PrTableRow key={id} prId={id} />);
@@ -19,6 +25,8 @@ export class PrTable extends Component {
     return prIds.map(id => <PrTableRow key={id} prId={id} />);
 >>>>>>> edbe0e0... fml
   }
+=======
+>>>>>>> 02a66ea... Adding with some linting errors addressed
 
   render() {
     if (this.props.loadingPrTable) {
@@ -41,7 +49,7 @@ export class PrTable extends Component {
           </Table.Row>
         </Table.Header>
         <Table.Body>
-          {this.prComponents(this.props.prIds)}
+          {prComponents(this.props.prIds)}
 
         </Table.Body>
       </Table>
@@ -51,7 +59,7 @@ export class PrTable extends Component {
 
 PrTable.propTypes = {
   retrievePrs: PropTypes.func.isRequired,
-  prIds: PropTypes.number.isRequired,
+  prIds: PropTypes.arrayOf.isRequired,
   loadingPrTable: PropTypes.bool.isRequired,
 };
 

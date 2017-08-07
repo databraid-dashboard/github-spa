@@ -12,59 +12,58 @@ class ProgressArc extends Component {
     this.redrawArc();
   }
 
-  drawArc(){
+
+  setContext() {
+    return d3.select(this.refs.arc).append('svg')
+      .attr('height', '60px')
+      .attr('width', '60px')
+      .attr('id', 'd3-arc')
+      .append('g')
+      .attr('transform', 'translate(30,30)');
+  }
+
+  setBackground(context) {
+    return context.append('path')
+      .datum({ endAngle: (Math.PI * 2) })
+      .style('fill', '#e6e6e6')
+      .attr('d', this.arc());
+  }
+
+  setForeground(context) {
+    return context.append('path')
+      .datum({ endAngle: 0 })
+      .style('fill', '#756bb1')
+      .attr('d', this.arc());
+  }
+
+  drawArc() {
     const context = this.setContext();
     this.setBackground(context);
     this.setForeground(context);
     this.updatePercent(context);
   }
 
-  redrawArc(){
+  redrawArc() {
     const context = d3.select(`#${this.props.id}`);
     context.remove();
     this.drawArc();
   }
 
-  setContext() {
-    return d3.select(this.refs.arc).append('svg')
-    .attr('height', '60px')
-    .attr('width', '60px')
-    .attr('id','d3-arc')
-    .append('g')
-    .attr('transform',`translate(30,30)`)
-  }
-
-  setBackground(context) {
-    return context.append('path')
-    .datum({endAngle:this.tau})
-    .style('fill','#e6e6e6')
-    .attr('d',this.arc());
-  }
-
-  setForeground(context) {
-    return context.append('path')
-    .datum({endAngle:0})
-    .style('fill','#756bb1')
-    .attr('d',this.arc());
-  }
-
-  tau = Math.PI * 2;
-
   arc() {
     return d3.arc()
-    .innerRadius(20)
-    .outerRadius(30)
-    .startAngle(0)
+      .innerRadius(20)
+      .outerRadius(30)
+      .startAngle(0);
   }
 
   updatePercent(context) {
     return this.setForeground(context).transition()
-    .duration(this.props.duration)
-    .call(this.arcTween, this.tau*this.props.percentComplete, this.arc());
+      .duration(this.props.duration)
+      .call(this.arcTween, (Math.PI * 2) * this.props.percentComplete, this.arc());
   }
 
   arcTween(transition, newAngle, arc) {
-    transition.attrTween('d', (d)=> {
+    transition.attrTween('d', (d) => {
       const interpolate = d3.interpolate(d.endAngle, newAngle);
       const newArc = d;
       return (t) => {
@@ -76,15 +75,22 @@ class ProgressArc extends Component {
 
   render() {
     return (
-      <div ref='arc'></div>
-    )
+      <div ref="arc" />
+    );
   }
 }
 
-const mapStateToProps = state => {
-  percentComplete: state.milestones.percentComplete
-}
+ProgressArc.propTypes = {
+  id: PropTypes.number.isRequired,
+  duration: PropTypes.number.isRequired,
+  percentComplete: PropTypes.number.isRequired,
+
+};
+
+const mapStateToProps = (state) => {
+  state.milestones.percentComplete;
+};
 
 export default connect(
-  mapStateToProps
+  mapStateToProps,
 )(ProgressArc);

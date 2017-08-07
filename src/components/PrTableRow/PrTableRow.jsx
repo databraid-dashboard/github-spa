@@ -54,6 +54,7 @@ const convertDate = (ISOdate) => {
   return dateString;
 };
 
+<<<<<<< HEAD
 const PrTableRow = ({ created, mergeable, submittedBy, title }) => (
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -65,6 +66,9 @@ const PrTableRow = ({ created, mergeable, submittedBy, title }) => (
     </Table.Row>
 )
 =======
+=======
+export const PrTableRow = ({ created, mergeable, submittedBy, title }) => (
+>>>>>>> 02a66ea... Adding with some linting errors addressed
   <Table.Row>
     <Table.Cell textAlign="center">{ title }</Table.Cell>
     <Table.Cell textAlign="center">{ convertDate(created) }</Table.Cell>
@@ -93,7 +97,7 @@ PrTableRow.propTypes = {
 =======
 >>>>>>> edbe0e0... fml
 
-const mapStateToProps = (state, { prId }) => {
+export const mapStateToProps = (state, { prId }) => {
   const pr = state.pullRequests.prsById[prId];
   const { created, mergeable, submittedBy, title } = pr;
   return {

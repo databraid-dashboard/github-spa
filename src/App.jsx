@@ -10,7 +10,7 @@ import logo from './logo.svg';
 import { Container } from 'semantic-ui-react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import RepoList from './components/RepoList/RepoList';
+import RepoList  from './components/RepoList/RepoList';
 import Organizations from './components/Organizations/Organizations';
 import Dashboard from './components/Dashboard/Dashboard';
 import { retrieveOrgs } from './actions/orgActions';
@@ -39,6 +39,7 @@ const App = () => (
   <Container>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Issues/>
 <<<<<<< HEAD
     <PR_Table/>
@@ -51,6 +52,8 @@ const App = () => (
 
     <Dashboard />
 >>>>>>> fdd71b2... unfucking app.jsx
+=======
+>>>>>>> 02a66ea... Adding with some linting errors addressed
     <Organizations />
 <<<<<<< HEAD
     {/* <RepoList />

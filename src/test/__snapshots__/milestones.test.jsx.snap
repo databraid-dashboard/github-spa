@@ -8,8 +8,8 @@ exports[`Milestones component should render a component with props as specified 
     >
       Milestones
     </CardHeader>
-    u
   </CardContent>
+<<<<<<< HEAD
   <CardContent>
     <Feed>
       <List
@@ -22,5 +22,10 @@ exports[`Milestones component should render a component with props as specified 
       </List>
     </Feed>
   </CardContent>
+=======
+  <Connect(Component)
+    milestoneId={2601714}
+  />
+>>>>>>> 02a66ea... Adding with some linting errors addressed
 </Card>
 `;

@@ -33,9 +33,10 @@ const Milestone = ({ title, due, created }) => {
 import { Card, List, Header } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import ProgressArc from '../ProgressArc/ProgressArc'
+import ProgressArc from '../ProgressArc/ProgressArc';
 import './Milestone.css';
 
+<<<<<<< HEAD
 const Milestone = ({ title, due, created, percentComplete }) => {
 >>>>>>> 4def070... Adding percent complete feature
 =======
@@ -45,6 +46,9 @@ export const Milestone = ({ title, due, created }) => {
 
 =======
 >>>>>>> 8dc7899... removed MSTP's where uneeded, wrote test for components ready for pr, limited scoped of PR  via .gitignore dashboard feature
+=======
+export const Milestone = ({ title, due, created, percentComplete }) => {
+>>>>>>> 02a66ea... Adding with some linting errors addressed
   function convertDate(ISOdate) {
     const date = new Date(ISOdate);
     const formatOptions = {
@@ -70,12 +74,15 @@ export const Milestone = ({ title, due, created }) => {
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   function getDueDate(date){
+=======
+  function getDueDate(date) {
+>>>>>>> 02a66ea... Adding with some linting errors addressed
     if (date === null) {
-      return <div></div>
-    } else {
-      return <div><Header sub>Date Due:</Header> {convertDate(date)}</div>
+      return <div />;
     }
+    return <div><Header sub>Date Due:</Header> {convertDate(date)}</div>;
   }
 
   return (
@@ -85,11 +92,12 @@ export const Milestone = ({ title, due, created }) => {
           <List.Content className="ui center aligned">
             <List.Header>{title}</List.Header><Header sub>Date Created:</Header> {convertDate(created)}
             {getDueDate(due)}
-            <Header sub className="space">Percent Complete:</Header> <ProgressArc percentComplete={percentComplete} duration={2000}/>
+            <Header sub className="space">Percent Complete:</Header> <ProgressArc percentComplete={percentComplete} duration={2000} />
           </List.Content>
         </List.Item>
       </List>
     </Card.Content>
+<<<<<<< HEAD
       )
 =======
 
@@ -102,9 +110,13 @@ export const Milestone = ({ title, due, created }) => {
     </List.Item>
   );
 >>>>>>> 8dc7899... removed MSTP's where uneeded, wrote test for components ready for pr, limited scoped of PR  via .gitignore dashboard feature
+=======
+  );
+>>>>>>> 02a66ea... Adding with some linting errors addressed
 };
 >>>>>>> df38d77... Adding working orgs page
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 const mapStateToProps = (state, { milestoneId }) => {
   const milestone = state.milestones.milestonesById[milestoneId];
@@ -134,6 +146,12 @@ export const mapStateToProps = (state, { milestoneId }) => {
 >>>>>>> 88f4b03... Added passing tests on <Org and <Orgs
   const { title, due, created } = milestone;
 >>>>>>> db00290... renamed files, finished tests for issue
+=======
+export const mapStateToProps = (state, { milestoneId }) => {
+  const milestone = state.milestones.milestonesById[milestoneId];
+  const { title, due, created, percentComplete } = milestone;
+  console.log('state', due === null);
+>>>>>>> 02a66ea... Adding with some linting errors addressed
   return {
     title,
     due,
@@ -144,10 +162,14 @@ export const mapStateToProps = (state, { milestoneId }) => {
 }
 =======
     created,
+<<<<<<< HEAD
     percentComplete
 =======
     created,
 >>>>>>> edbe0e0... fml
+=======
+    percentComplete,
+>>>>>>> 02a66ea... Adding with some linting errors addressed
   };
 };
 
@@ -155,6 +177,7 @@ Milestone.propTypes = {
   title: PropTypes.string.isRequired,
   due: PropTypes.string.isRequired,
   created: PropTypes.string.isRequired,
+  percentComplete: PropTypes.number.isRequired,
 };
 <<<<<<< HEAD
 >>>>>>> 4def070... Adding percent complete feature

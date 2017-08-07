@@ -10,16 +10,14 @@ exports[`Issues component should render a component with props as specified  1`]
     </CardHeader>
   </CardContent>
   <CardContent>
-    <Feed>
-      <List
-        divided={true}
-        relaxed={true}
-      >
-        <Connect(Component)
-          issueId={246869449}
-        />
-      </List>
-    </Feed>
+    <List
+      divided={true}
+      relaxed={true}
+    >
+      <Connect(Component)
+        issueId={246869449}
+      />
+    </List>
   </CardContent>
 </Card>
 `;

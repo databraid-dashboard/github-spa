@@ -50,7 +50,7 @@ exports[`PrTable component should render a component with props as specified  1`
   <TableBody
     as="tbody"
   >
-    <Connect(PrTableRow)
+    <Connect(Component)
       prId={246869449}
     />
   </TableBody>

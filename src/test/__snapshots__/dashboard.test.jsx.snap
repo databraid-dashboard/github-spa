@@ -2,7 +2,13 @@
 
 exports[`Should render a Dashboard that holds Connected Components Should render the Dashboard 1`] = `
 <Container>
+<<<<<<< HEAD
   <Grid>
+=======
+  <Grid
+    padded={true}
+  >
+>>>>>>> 02a66ea... Adding with some linting errors addressed
     <GridColumn
       floated="left"
       width={4}

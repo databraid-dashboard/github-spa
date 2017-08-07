@@ -8,6 +8,7 @@ export GET_REPOS = 'GET_REPOS';
 export const GET_REPOS = 'GET_REPOS';
 >>>>>>> 2c48835... Adding repo view
 
+<<<<<<< HEAD
 export const retrieveRepos = () => {
   return dispatch => {
     dispatch( {
@@ -36,3 +37,11 @@ export const retrieveRepos = () => {
 //   }
 // }
 >>>>>>> edbe0e0... fml
+=======
+export const retrieveRepos = () => (dispatch) => {
+  dispatch({
+    type: GET_REPOS,
+    responseObj: reposByOrg,
+  });
+};
+>>>>>>> 02a66ea... Adding with some linting errors addressed

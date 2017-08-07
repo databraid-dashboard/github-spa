@@ -16,7 +16,7 @@ function createState(json, incomingState) {
     state.milestonesById[milestone.id].title = milestone.title;
     state.milestonesById[milestone.id].due = milestone.due_on;
     state.milestonesById[milestone.id].created = milestone.created_at;
-    state.milestonesById[milestone.id].percentComplete = milestone.closed_issues/(milestone.closed_issues+milestone.open_issues)
+    state.milestonesById[milestone.id].percentComplete = milestone.closed_issues / (milestone.closed_issues + milestone.open_issues);
   });
   return { ...state, loadingMilestones: false };
 }

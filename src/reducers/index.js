@@ -30,7 +30,7 @@ import repoReducer from './repoReducer';
 =======
 >>>>>>> edbe0e0... fml
 
-export const rootReducer = combineReducers({
+const rootReducer = combineReducers({
   issues: issuesReducer,
   pullRequests: prReducer,
   milestones: milestonesReducer,
@@ -57,4 +57,9 @@ export const rootReducer = combineReducers({
 >>>>>>> df38d77... Adding working orgs page
 =======
 });
+<<<<<<< HEAD
 >>>>>>> edbe0e0... fml
+=======
+
+export default rootReducer;
+>>>>>>> 02a66ea... Adding with some linting errors addressed

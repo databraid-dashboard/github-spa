@@ -9,6 +9,7 @@ import { Grid, Image, List } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 const Org = ({ avatarUrl, orgName, reposUrl, orgId}) => (
     <div>
       <Image src={avatarUrl}/>
@@ -21,13 +22,16 @@ const mapStateToProps = (state, { orgId }) => {
   const org = state.orgs.orgsByID[orgId];
 =======
 const Org = ({ avatarUrl, orgName, reposUrl }) => (
+=======
+export const Org = ({ avatarUrl, orgName, reposUrl }) => (
+>>>>>>> 02a66ea... Adding with some linting errors addressed
   <Grid.Column>
-    <Image src={avatarUrl} size='small'/>
-    <List.Item as='a'>{orgName}</List.Item>
+    <Image src={avatarUrl} size="small" />
+    <List.Item as="a">{orgName}</List.Item>
   </Grid.Column>
 );
 
-const mapStateToProps = (state, { orgId }) => {
+export const mapStateToProps = (state, { orgId }) => {
   const org = state.orgs.orgsById[orgId];
 >>>>>>> 2c48835... Adding repo view
 =======

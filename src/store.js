@@ -2,7 +2,7 @@
 
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import { rootReducer } from './reducers/index';
+import rootReducer from './reducers/index';
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -50,7 +50,6 @@ const initialState = {
 =======
 >>>>>>> edbe0e0... fml
 const logger = store => next => (action) => {
-  console.log('action fired', action);
   next(action);
 };
 
@@ -93,8 +92,14 @@ store.subscribe(() => {
   ),
 );
 
+<<<<<<< HEAD
 store.subscribe(() => {
   console.log('state', store.getState());
 });
 >>>>>>> edbe0e0... fml
+=======
+// store.subscribe(() => {
+//   store.getState();
+// });
+>>>>>>> 02a66ea... Adding with some linting errors addressed
 export default store;

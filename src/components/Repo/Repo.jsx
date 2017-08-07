@@ -2,6 +2,7 @@ import React from 'react';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import './Repo.css';
 import { List, Link } from 'semantic-ui-react';
 =======
@@ -10,8 +11,12 @@ import { List } from 'semantic-ui-react';
 =======
 import { Grid, List } from 'semantic-ui-react';
 >>>>>>> 2c48835... Adding repo view
+=======
+import { List } from 'semantic-ui-react';
+>>>>>>> 02a66ea... Adding with some linting errors addressed
 import { connect } from 'react-redux';
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 const Repo = ({ repoName, repoUrl, repoId }) => (
   <div>
@@ -33,6 +38,11 @@ const Repo = ({ repoName, repoUrl }) => (
     <List.Item as="a" to={repoUrl}>{repoName}</List.Item>
   </div>
 >>>>>>> edbe0e0... fml
+=======
+export const Repo = ({ repoName, repoUrl }) => (
+  <List.Item as="a" to={repoUrl}><List.Content>{repoName}</List.Content>
+  </List.Item>
+>>>>>>> 02a66ea... Adding with some linting errors addressed
 );
 
 Repo.propTypes = {
@@ -44,7 +54,7 @@ Repo.propTypes = {
 =======
 >>>>>>> edbe0e0... fml
 
-const mapStateToProps = (state, { repoId }) => {
+export const mapStateToProps = (state, { repoId }) => {
   const repo = state.repos.reposById[repoId];
 
   const { repoName, repoUrl } = repo;

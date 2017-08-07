@@ -1,9 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Org entry component should render a component with props as specified  1`] = `
-<div>
+<GridColumn>
   <Image
     as="img"
+    size="small"
     src="https://avatars1.githubusercontent.com/u/29614654?v=4"
     ui={true}
   />
@@ -12,5 +13,5 @@ exports[`Org entry component should render a component with props as specified  
   >
     ShareCastG52
   </ListItem>
-</div>
+</GridColumn>
 `;

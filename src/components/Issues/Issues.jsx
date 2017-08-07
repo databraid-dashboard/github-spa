@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React from 'react';
 import './Issues.css'
 <<<<<<< HEAD
@@ -57,6 +58,10 @@ import './Issues.css';
 import { Card, Feed, List, Dimmer, Loader, Image, Segment } from 'semantic-ui-react';
 >>>>>>> edbe0e0... fml
 import Issue from '../Issue/Issue.jsx';
+=======
+import React, { Component } from 'react';
+import { Card, List } from 'semantic-ui-react';
+>>>>>>> 02a66ea... Adding with some linting errors addressed
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
@@ -65,7 +70,6 @@ import './Issues.css';
 
 export class Issues extends Component {
   componentDidMount() {
-    console.log('hello');
     this.props.retrieveIssues();
   }
 
@@ -85,7 +89,6 @@ export class Issues extends Component {
   }
 
   render() {
-    console.log('this.props.loadingIssues', this.props);
     if (this.props.loadingIssues) {
       console.log('loading issues');
       return (
@@ -115,9 +118,9 @@ export class Issues extends Component {
           </Card.Header>
         </Card.Content>
         <Card.Content>
-            <List divided relaxed>
-              {this.issueComponents(this.props.issuesIds)}
-            </List>
+          <List divided relaxed>
+            {this.issueComponents(this.props.issuesIds)}
+          </List>
         </Card.Content>
       </Card>
     );
@@ -126,8 +129,8 @@ export class Issues extends Component {
 
 Issues.propTypes = {
   retrieveIssues: PropTypes.func.isRequired,
-  issuesIds: PropTypes.array,
   loadingIssues: PropTypes.bool.isRequired,
+  issuesIds: PropTypes.array
 };
 
 <<<<<<< HEAD

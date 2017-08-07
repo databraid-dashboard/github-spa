@@ -7,8 +7,12 @@ import './RepoList.css'
 import {retrieveRepos} from '../../actions/orgActions';
 =======
 import React, { Component } from 'react';
+<<<<<<< HEAD
 import { Header, Icon, Image, Grid, List } from 'semantic-ui-react';
 >>>>>>> 2c48835... Adding repo view
+=======
+import { Header, Icon, Grid, List } from 'semantic-ui-react';
+>>>>>>> 02a66ea... Adding with some linting errors addressed
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 <<<<<<< HEAD
@@ -31,7 +35,11 @@ import PropTypes from 'prop-types';
 import Repo from '../Repo/Repo';
 import './RepoList.css';
 
-class RepoList extends Component {
+function repoComponents(repoIds) {
+  return repoIds.map(id => <Repo key={id} repoId={id} />);
+}
+
+export class RepoList extends Component {
   componentDidMount() {
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -42,6 +50,7 @@ class RepoList extends Component {
 >>>>>>> 2c48835... Adding repo view
   }
 
+<<<<<<< HEAD
   repoComponents = (repoIds) => {
     return repoIds.map(id => {
       <Repo key={id} repoId={id} />
@@ -49,6 +58,13 @@ class RepoList extends Component {
   }
 
   render(){
+=======
+
+  render() {
+    if(this.props.repoIds===undefined) {
+      return <div>Loading...</div>
+    }
+>>>>>>> 02a66ea... Adding with some linting errors addressed
     return (
 <<<<<<< HEAD
       <List>
@@ -58,15 +74,15 @@ class RepoList extends Component {
 =======
       <Grid centered padded>
         <Grid.Column width={8}>
-          <Header as='h2' icon textAlign='center'>
-            <Icon name='github'/>
+          <Header as="h2" icon textAlign="center">
+            <Icon name="github" />
             <Header.Content>
               Which repository are you interested in?
             </Header.Content>
           </Header>
-              <List animated divided relaxed size='huge'>
-            {this.repoComponents(this.props.repoIds)}
-              </List>
+          <List animated divided relaxed size="huge">
+            {repoComponents(this.props.repoIds)}
+          </List>
         </Grid.Column>
       </Grid>
     );
@@ -111,17 +127,17 @@ const mapDispatchToProps = dispatch =>
 }
 
 RepoList.propTypes = {
-  repoComponents: PropTypes.func.isRequired,
+  // repoComponents: PropTypes.func.isRequired,
   retrieveRepos: PropTypes.func.isRequired,
   repoIds: PropTypes.number.isRequired,
 };
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   repoIds: state.repos.ids,
   reposById: state.repos.reposById,
 });
 
-const mapDispatchToProps = dispatch =>
+export const mapDispatchToProps = dispatch =>
   bindActionCreators({
     // retrieveRepos,
 >>>>>>> edbe0e0... fml

@@ -9,6 +9,7 @@ import { Container } from 'semantic-ui-react';
 =======
 import React from 'react';
 import { Container, Grid } from 'semantic-ui-react';
+<<<<<<< HEAD
 >>>>>>> df38d77... Adding working orgs page
 import { bindActionCreators } from 'redux';
 <<<<<<< HEAD
@@ -25,6 +26,11 @@ import { bindActionCreators } from 'redux';
 // import { retrieveOrgs } from '../actions/orgActions';
 >>>>>>> edbe0e0... fml
 import { connect } from 'react-redux';
+=======
+// import { bindActionCreators } from 'redux';
+// import { retrieveOrgs } from './actions/orgActions';
+// import { connect } from 'react-redux';
+>>>>>>> 02a66ea... Adding with some linting errors addressed
 import Issues from '../Issues/Issues';
 import PrTable from '../PrTable/PrTable';
 import Milestones from '../Milestones/Milestones';
@@ -33,6 +39,7 @@ import LineChart from '../LineChart/LineChart';
 import './Dashboard.css';
 >>>>>>> d1d9951... adding fixed dashboard view
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   render() {
     return (
@@ -63,6 +70,12 @@ export const Dashboard = () => (
     <Grid>
       <Grid.Column floated="left" width={4}>
 >>>>>>> 8dc7899... removed MSTP's where uneeded, wrote test for components ready for pr, limited scoped of PR  via .gitignore dashboard feature
+=======
+export const Dashboard = () => (
+  <Container>
+    <Grid padded>
+      <Grid.Column floated="left" width={4}>
+>>>>>>> 02a66ea... Adding with some linting errors addressed
         <Issues />
       </Grid.Column>
       <Grid.Column floated="right" width={4}>

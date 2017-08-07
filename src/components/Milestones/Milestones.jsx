@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+<<<<<<< HEAD
 import { Card, Feed, List } from 'semantic-ui-react';
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -8,6 +9,9 @@ import Milestone from '../Milestones/Milestones.jsx';
 >>>>>>> 0365ab2... fixed related milestone: errors, loading feature, tests, must re-update snapshot, not rendering
 =======
 >>>>>>> edbe0e0... fml
+=======
+import { Card } from 'semantic-ui-react';
+>>>>>>> 02a66ea... Adding with some linting errors addressed
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
@@ -35,7 +39,6 @@ export class Milestones extends Component {
     ))
 =======
   milestoneComponents(milestonesIds) {
-    console.log('milestonesIds', milestonesIds);
     return milestonesIds.map(id => (
       <Milestone key={id} milestoneId={id} />
     ));
@@ -81,9 +84,13 @@ export class Milestones extends Component {
             </List>
           </Feed>
         </Card.Content>
+<<<<<<< HEAD
 =======
               {this.milestoneComponents(this.props.milestonesIds)}
 >>>>>>> 4def070... Adding percent complete feature
+=======
+        {this.milestoneComponents(this.props.milestonesIds)}
+>>>>>>> 02a66ea... Adding with some linting errors addressed
       </Card>
     );
   }
