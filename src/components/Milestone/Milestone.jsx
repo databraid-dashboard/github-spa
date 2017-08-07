@@ -54,7 +54,6 @@ export const Milestone = ({ title, due, created, percentComplete, milestoneId })
 export const mapStateToProps = (state, { milestoneId }) => {
   const milestone = state.milestones.milestonesById[milestoneId];
   const { title, due, created, percentComplete } = milestone;
-  console.log('state', due === null);
   return {
     title,
     due,

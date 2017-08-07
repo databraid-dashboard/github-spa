@@ -8,28 +8,32 @@ import { retrieveOrgs } from '../../actions/orgActions';
 import Organizations from '../Organizations/Organizations';
 import './Organizations.css';
 
+function orgComponents(orgIds) {
+  return orgIds.map(id => <Org key={id} orgId={id} />);
+}
 
-class Organizations extends Components{
-
-  componentDidMount(){
+export class Organizations extends Component {
+  componentDidMount() {
     this.props.retrieveOrgs();
-  }
-
-  orgComponents = (orgIds) => {
-    return orgIds.map(id => {
-      <Org key={id} orgId={id} />
-    })
   }
 
   render() {
     return (
-      <Image.Group size='small'>
-        {this.orgComponents(this.props.orgIds)}
-
-      </Image.Group>
-    )
+      <Grid centered columns={3} padded>
+        <Header as="h2" icon textAlign="center">
+          <Icon name="github" />
+          <Header.Content>
+            Which organization are you interested in?
+          </Header.Content>
+        </Header>
+        <Grid.Row>
+          {orgComponents(this.props.orgIds)}
+        </Grid.Row>
+      </Grid>
+    );
   }
-};
+}
+
 
 const mapStateToProps = state => {
   return {

@@ -1,4 +1,3 @@
-//
 
 export RENDER_ORGS= 'RENDER_ORGS';
 export RENDER_LOGIN='RENDER_LOGIN';

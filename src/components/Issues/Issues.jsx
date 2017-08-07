@@ -19,12 +19,6 @@ export class Issues extends Component {
     this.props.retrieveIssues();
   }
 
-  issueComponents(issuesIds) {
-    return issuesIds.sort((a, b) => a - b).map(id => (
-      <Issue key={id} issueId={id} />
-    ));
-  }
-
   render() {
     if (this.props.loadingIssues) {
       return (
@@ -40,7 +34,7 @@ export class Issues extends Component {
         </Card.Content>
         <Card.Content>
           <List divided relaxed>
-            {this.issueComponents(this.props.issuesIds)}
+            {issueComponents(this.props.issuesIds)}
           </List>
         </Card.Content>
       </Card>

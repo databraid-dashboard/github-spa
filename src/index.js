@@ -9,7 +9,5 @@ import store from './store';
 
 ReactDOM.render(
   React.createElement(Provider, { store }, React.createElement(App)), document.getElementById('root'));
-=======
-  , document.getElementById('root'));
->>>>>>> fml
+
 registerServiceWorker();

@@ -20,8 +20,8 @@ export class RepoList extends Component {
 
 
   render() {
-    if(this.props.repoIds===undefined) {
-      return <div>Loading...</div>
+    if (this.props.repoIds === undefined) {
+      return <div>Loading...</div>;
     }
     return (
       <Grid centered padded>
