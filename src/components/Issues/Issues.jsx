@@ -32,11 +32,9 @@ export class Issues extends Component {
           </Card.Header>
         </Card.Content>
         <Card.Content>
-          <Feed>
             <List divided relaxed>
               {this.issueComponents(this.props.issuesIds)}
             </List>
-          </Feed>
         </Card.Content>
       </Card>
     );
