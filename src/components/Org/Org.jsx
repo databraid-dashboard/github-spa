@@ -10,6 +10,7 @@ import { connect } from 'react-redux';
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 const Org = ({ avatarUrl, orgName, reposUrl, orgId}) => (
     <div>
       <Image src={avatarUrl}/>
@@ -25,6 +26,9 @@ const Org = ({ avatarUrl, orgName, reposUrl }) => (
 =======
 export const Org = ({ avatarUrl, orgName, reposUrl }) => (
 >>>>>>> 02a66ea... Adding with some linting errors addressed
+=======
+export const Org = ({ avatarUrl, orgName }) => (
+>>>>>>> 2f2a056... Adding with fewer linting errors
   <Grid.Column>
     <Image src={avatarUrl} size="small" />
     <List.Item as="a">{orgName}</List.Item>
@@ -56,11 +60,12 @@ export const mapStateToProps = (state, { orgId }) => {
   const org = state.orgs.orgsById[orgId];
 >>>>>>> 88f4b03... Added passing tests on <Org and <Orgs
 
-  const { avatarUrl, orgName, reposUrl } = org;
+  const { avatarUrl, orgName } = org;
 
   return {
     avatarUrl,
     orgName,
+<<<<<<< HEAD
 <<<<<<< HEAD
     reposUrl
   }
@@ -70,13 +75,14 @@ export default connect(
   mapStateToProps
 =======
     reposUrl,
+=======
+>>>>>>> 2f2a056... Adding with fewer linting errors
   };
 };
 
 Org.propTypes = {
   avatarUrl: PropTypes.string.isRequired,
   orgName: PropTypes.string.isRequired,
-  reposUrl: PropTypes.string.isRequired,
 };
 
 export default connect(

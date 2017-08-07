@@ -90,9 +90,12 @@ export const Milestone = ({ title, due, created, percentComplete }) => {
       <List divided relaxed>
         <List.Item>
           <List.Content className="ui center aligned">
-            <List.Header>{title}</List.Header><Header sub>Date Created:</Header> {convertDate(created)}
+            <List.Header>{title}</List.Header>
+            <Header sub>Date Created:</Header>
+            {convertDate(created)}
             {getDueDate(due)}
-            <Header sub className="space">Percent Complete:</Header> <ProgressArc percentComplete={percentComplete} duration={2000} />
+            <Header sub className="space">Percent Complete:</Header>
+            <ProgressArc percentComplete={percentComplete} duration={2000} />
           </List.Content>
         </List.Item>
       </List>
@@ -150,8 +153,11 @@ export const mapStateToProps = (state, { milestoneId }) => {
 export const mapStateToProps = (state, { milestoneId }) => {
   const milestone = state.milestones.milestonesById[milestoneId];
   const { title, due, created, percentComplete } = milestone;
+<<<<<<< HEAD
   console.log('state', due === null);
 >>>>>>> 02a66ea... Adding with some linting errors addressed
+=======
+>>>>>>> 2f2a056... Adding with fewer linting errors
   return {
     title,
     due,

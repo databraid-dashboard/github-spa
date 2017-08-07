@@ -8,13 +8,14 @@ import logo from './logo.svg';
 >>>>>>> 7e05dfe... mapped store, state, readme, mockAPI calls, and began wiring up components
 =======
 import { Container } from 'semantic-ui-react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import RepoList  from './components/RepoList/RepoList';
+import RepoList from './components/RepoList/RepoList';
 import Organizations from './components/Organizations/Organizations';
 import Dashboard from './components/Dashboard/Dashboard';
+<<<<<<< HEAD
 import { retrieveOrgs } from './actions/orgActions';
 >>>>>>> df38d77... Adding working orgs page
+=======
+>>>>>>> 2f2a056... Adding with fewer linting errors
 import './App.css';
 <<<<<<< HEAD
 import Issues from './components/Issues/Issues.jsx';
@@ -76,6 +77,7 @@ import { bindActionCreators } from 'redux';
 import {retrieveOrgs} from './actions/orgActions';
 import {connect} from 'react-redux';
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 class App extends Component{
@@ -194,3 +196,7 @@ export default connect(
 
 >>>>>>> fdd71b2... unfucking app.jsx
 )(App);
+=======
+
+export default App;
+>>>>>>> 2f2a056... Adding with fewer linting errors

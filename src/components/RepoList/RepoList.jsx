@@ -61,8 +61,8 @@ export class RepoList extends Component {
 =======
 
   render() {
-    if(this.props.repoIds===undefined) {
-      return <div>Loading...</div>
+    if (this.props.repoIds === undefined) {
+      return <div>Loading...</div>;
     }
 >>>>>>> 02a66ea... Adding with some linting errors addressed
     return (

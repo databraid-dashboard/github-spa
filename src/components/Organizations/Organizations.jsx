@@ -32,14 +32,22 @@ import './Organizations.css';
 >>>>>>> df38d77... Adding working orgs page:src/components/Organizations/Organizations.jsx
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   componentDidMount(){
 =======
+=======
+function orgComponents(orgIds) {
+  return orgIds.map(id => <Org key={id} orgId={id} />);
+}
+
+>>>>>>> 2f2a056... Adding with fewer linting errors
 export class Organizations extends Component {
   componentDidMount() {
 >>>>>>> 02a66ea... Adding with some linting errors addressed
     this.props.retrieveOrgs();
   }
 
+<<<<<<< HEAD
   orgComponents = (orgIds) => {
     return orgIds.map(id => {
       <Org key={id} orgId={id} />
@@ -53,6 +61,8 @@ export class Organizations extends Component {
 
   render(){
 =======
+=======
+>>>>>>> 2f2a056... Adding with fewer linting errors
   render() {
 >>>>>>> df38d77... Adding working orgs page:src/components/Organizations/Organizations.jsx
     return (
@@ -71,7 +81,7 @@ export class Organizations extends Component {
           </Header.Content>
         </Header>
         <Grid.Row>
-          {this.orgComponents(this.props.orgIds)}
+          {orgComponents(this.props.orgIds)}
         </Grid.Row>
       </Grid>
     );

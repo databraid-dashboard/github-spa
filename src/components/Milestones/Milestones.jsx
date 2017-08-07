@@ -19,11 +19,18 @@ import { retrieveMilestones } from '../../actions/milestonesActions';
 import Milestone from '../Milestone/Milestone';
 import './Milestones.css';
 
+function milestoneComponents(milestonesIds) {
+  return milestonesIds.map(id => (
+    <Milestone key={id} milestoneId={id} />
+  ));
+}
+
 export class Milestones extends Component {
   componentDidMount() {
     this.props.retrieveMilestones();
   }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   milestoneComponents = (milestonesIds) => {
@@ -45,6 +52,8 @@ export class Milestones extends Component {
 >>>>>>> edbe0e0... fml
   }
 
+=======
+>>>>>>> 2f2a056... Adding with fewer linting errors
   render() {
     if (this.props.loadingMilestones) {
       return (
@@ -85,12 +94,16 @@ export class Milestones extends Component {
           </Feed>
         </Card.Content>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
               {this.milestoneComponents(this.props.milestonesIds)}
 >>>>>>> 4def070... Adding percent complete feature
 =======
         {this.milestoneComponents(this.props.milestonesIds)}
 >>>>>>> 02a66ea... Adding with some linting errors addressed
+=======
+        {milestoneComponents(this.props.milestonesIds)}
+>>>>>>> 2f2a056... Adding with fewer linting errors
       </Card>
     );
   }

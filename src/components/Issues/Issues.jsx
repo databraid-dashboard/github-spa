@@ -68,11 +68,18 @@ import PropTypes from 'prop-types';
 import { retrieveIssues } from '../../actions/issueActions';
 import './Issues.css';
 
+function issueComponents(issuesIds) {
+  return issuesIds.sort((a, b) => a - b).map(id => (
+    <Issue key={id} issueId={id} />
+  ));
+}
+
 export class Issues extends Component {
   componentDidMount() {
     this.props.retrieveIssues();
   }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   issueComponents = (issuesIds) => {
     return issuesIds.sort((a,b)=> {
@@ -88,6 +95,8 @@ export class Issues extends Component {
 >>>>>>> edbe0e0... fml
   }
 
+=======
+>>>>>>> 2f2a056... Adding with fewer linting errors
   render() {
     if (this.props.loadingIssues) {
       console.log('loading issues');
@@ -119,7 +128,7 @@ export class Issues extends Component {
         </Card.Content>
         <Card.Content>
           <List divided relaxed>
-            {this.issueComponents(this.props.issuesIds)}
+            {issueComponents(this.props.issuesIds)}
           </List>
         </Card.Content>
       </Card>
@@ -130,7 +139,7 @@ export class Issues extends Component {
 Issues.propTypes = {
   retrieveIssues: PropTypes.func.isRequired,
   loadingIssues: PropTypes.bool.isRequired,
-  issuesIds: PropTypes.array
+  issuesIds: PropTypes.arrayOf.isRequired,
 };
 
 <<<<<<< HEAD
