@@ -7,13 +7,13 @@ import { retrieveOrgs } from '../../actions/orgActions';
 import Org from '../Org/Org';
 import './Organizations.css';
 
+function orgComponents(orgIds) {
+  return orgIds.map(id => <Org key={id} orgId={id} />);
+}
+
 export class Organizations extends Component {
   componentDidMount() {
     this.props.retrieveOrgs();
-  }
-
-  orgComponents(orgIds) {
-    return orgIds.map(id => <Org key={id} orgId={id} />);
   }
 
   render() {
@@ -26,7 +26,7 @@ export class Organizations extends Component {
           </Header.Content>
         </Header>
         <Grid.Row>
-          {this.orgComponents(this.props.orgIds)}
+          {orgComponents(this.props.orgIds)}
         </Grid.Row>
       </Grid>
     );

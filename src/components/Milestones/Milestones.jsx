@@ -7,15 +7,15 @@ import { retrieveMilestones } from '../../actions/milestonesActions';
 import Milestone from '../Milestone/Milestone';
 import './Milestones.css';
 
+function milestoneComponents(milestonesIds) {
+  return milestonesIds.map(id => (
+    <Milestone key={id} milestoneId={id} />
+  ));
+}
+
 export class Milestones extends Component {
   componentDidMount() {
     this.props.retrieveMilestones();
-  }
-
-  milestoneComponents(milestonesIds) {
-    return milestonesIds.map(id => (
-      <Milestone key={id} milestoneId={id} />
-    ));
   }
 
   render() {
@@ -31,7 +31,7 @@ export class Milestones extends Component {
             Milestones
           </Card.Header>
         </Card.Content>
-        {this.milestoneComponents(this.props.milestonesIds)}
+        {milestoneComponents(this.props.milestonesIds)}
       </Card>
     );
   }

@@ -1,4 +1,4 @@
-import issuesMock from '../SampleJSONResponses/IssuesJSON';
+import { issuesMock } from '../SampleJSONResponses/IssuesJSON';
 
 export const GET_ISSUES = 'GET_ISSUES';
 export const LOADING_ISSUES = 'LOADING_ISSUES';

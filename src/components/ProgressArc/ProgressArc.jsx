@@ -12,7 +12,6 @@ class ProgressArc extends Component {
     this.redrawArc();
   }
 
-
   setContext() {
     return d3.select(this.refs.arc).append('svg')
       .attr('height', '60px')
@@ -20,6 +19,13 @@ class ProgressArc extends Component {
       .attr('id', 'd3-arc')
       .append('g')
       .attr('transform', 'translate(30,30)');
+  }
+
+  arc() {
+    return d3.arc()
+      .innerRadius(20)
+      .outerRadius(30)
+      .startAngle(0);
   }
 
   setBackground(context) {
@@ -47,13 +53,6 @@ class ProgressArc extends Component {
     const context = d3.select(`#${this.props.id}`);
     context.remove();
     this.drawArc();
-  }
-
-  arc() {
-    return d3.arc()
-      .innerRadius(20)
-      .outerRadius(30)
-      .startAngle(0);
   }
 
   updatePercent(context) {
