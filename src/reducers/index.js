@@ -16,7 +16,7 @@ import renderPage from './renderReducer';
 
 const rootReducer = combineReducers({
 
-export const rootReducer = combineReducers({
+const rootReducer = combineReducers({
   issues: issuesReducer,
   pullRequests: prReducer,
   milestones: milestonesReducer,
@@ -27,8 +27,3 @@ export const rootReducer = combineReducers({
 });
 
 export default rootReducer;
-  // repos: repoReducer,
-
-  // users: userReducer,
-
-  // milestones: msReducer,

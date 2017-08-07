@@ -14,15 +14,14 @@ exports[`Milestone entry component should render a component with props as speci
           sprint 1
         </ListHeader>
         <Header
-          className="space-milestones"
           sub={true}
         >
           Date Created:
         </Header>
+
         06/23/2017
         <div>
           <Header
-            className="space-milestones"
             sub={true}
           >
             Date Due:
@@ -31,7 +30,7 @@ exports[`Milestone entry component should render a component with props as speci
           06/23/2018
         </div>
         <Header
-          className="space-milestones"
+          className="space"
           sub={true}
         >
           Percent Complete:

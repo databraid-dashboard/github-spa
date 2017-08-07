@@ -1,14 +1,14 @@
 import React from 'react';
-import { Grid, List } from 'semantic-ui-react';
+import { List } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { renderDashboard } from '../../actions/renderActions';
 
 import './Repo.css';
 
-const Repo = ({ repoName, repoUrl }) => (
-    <List.Item as='a' to={repoUrl}><List.Content>{repoName}</List.Content>
-    </List.Item>
+export const Repo = ({ repoName, repoUrl }) => (
+  <List.Item as="a" to={repoUrl}><List.Content>{repoName}</List.Content>
+  </List.Item>
 );
 
 Repo.propTypes = {

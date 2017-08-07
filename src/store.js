@@ -33,4 +33,7 @@ const store = createStore(
   ),
 );
 
+// store.subscribe(() => {
+//   store.getState();
+// });
 export default store;

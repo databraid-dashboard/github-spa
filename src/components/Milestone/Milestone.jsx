@@ -22,12 +22,11 @@ export const Milestone = ({ title, due, created, percentComplete, milestoneId })
     return dateString;
   }
 
-  function getDueDate(date){
+  function getDueDate(date) {
     if (date === null) {
-      return <div></div>
-    } else {
-      return <div><Header sub>Date Due:</Header> {convertDate(date)}</div>
+      return <div />;
     }
+    return <div><Header sub>Date Due:</Header> {convertDate(date)}</div>;
   }
 
   return (
@@ -55,46 +54,12 @@ export const Milestone = ({ title, due, created, percentComplete, milestoneId })
 export const mapStateToProps = (state, { milestoneId }) => {
   const milestone = state.milestones.milestonesById[milestoneId];
   const { title, due, created, percentComplete } = milestone;
+  console.log('state', due === null);
   return {
     title,
     due,
     created,
     percentComplete,
-    milestoneId,
-  };
-};
-
-Milestone.propTypes = {
-  milestoneId: PropTypes.number.isRequired,
-  title: PropTypes.string.isRequired,
-  due: PropTypes.string,
-  created: PropTypes.string.isRequired,
-  percentComplete: PropTypes.number.isRequired,
-};
-
-Milestone.defaultProps = {
-  due: undefined,
-};
-
-export default connect(
-  mapStateToProps,
-        <List.Content className="ui center aligned">
-          <List.Header>{title}</List.Header>{created}
-          <List.Description>{due}</List.Description>
-        </List.Content>
-      </List.Item>
-  )
-}
-
-export const mapStateToProps = (state, { milestoneId }) => {
-  const milestone = state.milestones.milestonesById[milestoneId];
-  const { title, due, created, percentComplete } = milestone;
-  console.log('state', due===null);
-  return {
-    title,
-    due,
-    created,
-    percentComplete
   };
 };
 
@@ -102,6 +67,7 @@ Milestone.propTypes = {
   title: PropTypes.string.isRequired,
   due: PropTypes.string.isRequired,
   created: PropTypes.string.isRequired,
+  percentComplete: PropTypes.number.isRequired,
 };
 
 export default connect(

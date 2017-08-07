@@ -6,7 +6,6 @@ import {
 function createState(json, incomingState) {
   const state = incomingState;
   json.forEach((repo) => {
-    console.log('json', json);
     state.ids = state.ids.concat(repo.id);
     state.issuesById[repo.id] = {};
     state.issuesById[repo.id].title = repo.title;

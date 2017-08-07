@@ -1,8 +1,6 @@
 /* eslint-disable import/no-named-as-default */
 import React, { Component } from 'react';
-import './Issues.css';
-import { Card, Feed, List, Dimmer, Loader, Image, Segment } from 'semantic-ui-react';
-import Issue from '../Issue/Issue.jsx';
+import { Card, List } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
@@ -18,7 +16,6 @@ function issueComponents(issuesIds) {
 
 export class Issues extends Component {
   componentDidMount() {
-    console.log('hello');
     this.props.retrieveIssues();
   }
 
@@ -29,7 +26,6 @@ export class Issues extends Component {
   }
 
   render() {
-    console.log('this.props.loadingIssues', this.props);
     if (this.props.loadingIssues) {
       return (
         <div>Loading Issues</div>
@@ -43,9 +39,9 @@ export class Issues extends Component {
           </Card.Header>
         </Card.Content>
         <Card.Content>
-            <List divided relaxed>
-              {this.issueComponents(this.props.issuesIds)}
-            </List>
+          <List divided relaxed>
+            {this.issueComponents(this.props.issuesIds)}
+          </List>
         </Card.Content>
       </Card>
     );

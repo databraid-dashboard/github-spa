@@ -52,15 +52,6 @@ export const PrTableRow = ({ created, mergeable, submittedBy, title }) => (
   //   <Table.Cell textAlign="center">{getMergeableCheckbox(mergeable) }</Table.Cell>
   // </Table.Row>
 
-const PrTableRow = ({ created, mergeable, submittedBy, title }) => (
-  <Table.Row>
-    <Table.Cell textAlign="center">{ title }</Table.Cell>
-    <Table.Cell textAlign="center">{ convertDate(created) }</Table.Cell>
-    <Table.Cell textAlign="center">{ submittedBy[0] }
-      <div><Label size="mini" image={submittedBy[1]} /></div></Table.Cell>
-    <Table.Cell textAlign="center">{getMergeableCheckbox(mergeable) }</Table.Cell>
-  </Table.Row>
->>>>>>> Adding working orgs page
 );
 
 PrTableRow.propTypes = {
@@ -70,7 +61,7 @@ PrTableRow.propTypes = {
   title: PropTypes.number.isRequired,
 };
 
-const mapStateToProps = (state, { prId }) => {
+export const mapStateToProps = (state, { prId }) => {
   const pr = state.pullRequests.prsById[prId];
   const { created, mergeable, submittedBy, title } = pr;
   return {
