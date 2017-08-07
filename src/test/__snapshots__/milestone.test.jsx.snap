@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Milestone entry component should render a component with props as specified  1`] = `
+<CardContent>
+  <List
+    divided={true}
+    relaxed={true}
+  >
+    <ListItem>
+      <ListContent
+        className="ui center aligned"
+      >
+        <ListHeader>
+          sprint 1
+        </ListHeader>
+        <Header
+          sub={true}
+        >
+          Date Created:
+        </Header>
+         
+        06/23/2017
+        <div>
+          <Header
+            sub={true}
+          >
+            Date Due:
+          </Header>
+           
+          06/23/2018
+        </div>
+        <Header
+          className="space"
+          sub={true}
+        >
+          Percent Complete:
+        </Header>
+         
+        <Connect(ProgressArc)
+          duration={2000}
+        />
+      </ListContent>
+    </ListItem>
+  </List>
+</CardContent>
+`;

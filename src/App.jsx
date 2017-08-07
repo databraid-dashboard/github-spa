@@ -1,19 +1,54 @@
+/* eslint-disable import/no-named-as-default */
+
 import React from 'react';
-import logo from './logo.svg';
+import { Container } from 'semantic-ui-react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { renderOrgs, renderLogin, renderRepos, renderDashboard } from './actions/renderActions';
+import RepoList from './components/RepoList/RepoList';
+import Organizations from './components/Organizations/Organizations';
+import Dashboard from './components/Dashboard/Dashboard';
 import './App.css';
 import Issues from './components/Issues/Issues';
 
-const App = () => (
-  <div className="App">
-    <div className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <h2>Welcome to React</h2>
-    </div>
-    <p className="App-intro">
-      To get started, edit <code>src/App.js</code> and save to reload.
-    </p>
-    <Issues />
-  </div>
-);
+const App = ({ currentPage }) => {
+if (currentPage === 'orgs') {
+  return (
+    <Container>
+      <Organizations />
+    </Container>
+  )
+} else if (currentPage === 'repos') {
+  return (
+    <Container>
+      <RepoList />
+    </Container>
+  )
+} else if (currentPage === 'dashboard') {
+  return (
+    <Container>
+      <Dashboard />
+    </Container>
+  )
+} else {
+  <Container>
+    <div>Something has gone wrong with your application</div>
+  </Container>
+}
 
-export default App;
+};
+
+export const mapStateToProps = state => ({
+  currentPage: state.currentPage,
+})
+
+export const mapDispatchToProps = dispatch =>
+  bindActionCreators({
+    renderOrgs, renderLogin, renderRepos, renderDashboard,
+  }, dispatch);
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(App);
