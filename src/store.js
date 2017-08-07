@@ -93,6 +93,7 @@ store.subscribe(() => {
 );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 store.subscribe(() => {
   console.log('state', store.getState());
 });
@@ -102,4 +103,9 @@ store.subscribe(() => {
 //   store.getState();
 // });
 >>>>>>> 02a66ea... Adding with some linting errors addressed
+=======
+store.subscribe(() => {
+  console.log(store.getState());
+});
+>>>>>>> b56b9a4... Adding conditional views
 export default store;

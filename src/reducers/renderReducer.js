@@ -1,5 +1,6 @@
 import {
 <<<<<<< HEAD
+<<<<<<< HEAD
   RENDER_ORGS, RENDER_REPOS, RENDER_LOGIN, RENDER_DASHBOARD
 } from '../actions/renderActions';
 
@@ -28,6 +29,12 @@ export const renderPage = (state = '', action) => {
 } from '../actions/renderActions';
 
 const renderPage = (state = '', action) => {
+=======
+  RENDER_ORGS, RENDER_REPOS, RENDER_LOGIN, RENDER_DASHBOARD,
+} from '../actions/renderActions';
+
+const renderPage = (state = 'orgs', action) => {
+>>>>>>> b56b9a4... Adding conditional views
   switch (action.type) {
     case RENDER_ORGS:
       return state = 'orgs';
@@ -40,6 +47,16 @@ const renderPage = (state = '', action) => {
 
     case RENDER_DASHBOARD:
       return state = 'dashboard';
+<<<<<<< HEAD
   }
 };
 >>>>>>> edbe0e0... fml
+=======
+
+    default:
+      return state
+  }
+};
+
+export default renderPage
+>>>>>>> b56b9a4... Adding conditional views

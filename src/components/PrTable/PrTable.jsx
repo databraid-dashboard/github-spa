@@ -18,6 +18,7 @@ export class PrTable extends Component {
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   prComponents(prIds) {
 <<<<<<< HEAD
     return prIds.sort((a, b) => a - b).map(id => <PrTableRow key={id} prId={id} />);
@@ -28,12 +29,15 @@ export class PrTable extends Component {
 =======
 >>>>>>> 02a66ea... Adding with some linting errors addressed
 
+=======
+>>>>>>> b56b9a4... Adding conditional views
   render() {
     if (this.props.loadingPrTable) {
       return (
         <div>Loading Pull Requests</div>
       );
     }
+    
     return (
       <Table celled fixed>
         <Table.Header>

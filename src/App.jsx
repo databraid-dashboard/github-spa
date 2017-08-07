@@ -8,6 +8,10 @@ import logo from './logo.svg';
 >>>>>>> 7e05dfe... mapped store, state, readme, mockAPI calls, and began wiring up components
 =======
 import { Container } from 'semantic-ui-react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { renderOrgs, renderLogin, renderRepos, renderDashboard } from './actions/renderActions';
 import RepoList from './components/RepoList/RepoList';
 import Organizations from './components/Organizations/Organizations';
 import Dashboard from './components/Dashboard/Dashboard';
@@ -36,8 +40,28 @@ import { Container } from 'semantic-ui-react';
 <<<<<<< HEAD
 >>>>>>> 2d0b4d9... Adding Milestones Component
 
-const App = () => (
+const App = ({ currentPage }) => {
+if (currentPage === 'orgs') {
+  return (
+    <Container>
+      <Organizations />
+    </Container>
+  )
+} else if (currentPage === 'repos') {
+  return (
+    <Container>
+      <RepoList />
+    </Container>
+  )
+} else if (currentPage === 'dashboard') {
+  return (
+    <Container>
+      <Dashboard />
+    </Container>
+  )
+} else {
   <Container>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -200,3 +224,24 @@ export default connect(
 
 export default App;
 >>>>>>> 2f2a056... Adding with fewer linting errors
+=======
+    <div>Something has gone wrong with your application</div>
+  </Container>
+}
+
+};
+
+export const mapStateToProps = state => ({
+  currentPage: state.currentPage,
+})
+
+export const mapDispatchToProps = dispatch =>
+  bindActionCreators({
+    renderOrgs, renderLogin, renderRepos, renderDashboard,
+  }, dispatch);
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(App);
+>>>>>>> b56b9a4... Adding conditional views

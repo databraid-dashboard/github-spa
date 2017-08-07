@@ -26,9 +26,13 @@ import milestonesReducer from './milestonesReducer';
 import repoReducer from './repoReducer';
 <<<<<<< HEAD
 
+<<<<<<< HEAD
 // import renderPage from './renderReducer';
 =======
 >>>>>>> edbe0e0... fml
+=======
+import renderPage from './renderReducer';
+>>>>>>> b56b9a4... Adding conditional views
 
 const rootReducer = combineReducers({
   issues: issuesReducer,
@@ -45,7 +49,7 @@ const rootReducer = combineReducers({
   repos: repoReducer,
 >>>>>>> edbe0e0... fml
   orgs: orgReducer,
-  // currentPage: renderPage,
+  currentPage: renderPage,
   // users: userReducer,
 <<<<<<< HEAD
 
