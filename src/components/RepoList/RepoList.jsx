@@ -1,4 +1,5 @@
 /* eslint-disable import/no-named-as-default, consistent-return */
+
 import React, { Component } from 'react';
 import { Header, Icon, Grid, List } from 'semantic-ui-react';
 import { connect } from 'react-redux';
