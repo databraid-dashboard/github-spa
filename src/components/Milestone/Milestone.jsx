@@ -12,9 +12,6 @@ export const Milestone = ({ title, due, percentComplete, milestoneId }) => {
       day: '2-digit',
       month: '2-digit',
       year: 'numeric',
-      // hour: '2-digit',
-      // minute: '2-digit',
-      // hour12: true
     };
 
     const dateString = date.toLocaleDateString('en-US', formatOptions);

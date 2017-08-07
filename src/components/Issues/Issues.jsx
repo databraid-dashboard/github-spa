@@ -22,12 +22,6 @@ export class Issues extends Component {
     this.props.retrieveIssues(this.props.userName, this.props.orgName, this.props.repoName);
   }
 
-  issueComponents(issuesIds) {
-    return issuesIds.sort((a, b) => a - b).map(id => (
-      <Issue key={id} issueId={id} />
-    ));
-  }
-
   render() {
     if (this.props.loadingIssues) {
       return (
