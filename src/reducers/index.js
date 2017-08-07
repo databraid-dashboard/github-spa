@@ -15,8 +15,6 @@ import repoReducer from './repoReducer';
 import renderPage from './renderReducer';
 
 const rootReducer = combineReducers({
-
-const rootReducer = combineReducers({
   issues: issuesReducer,
   pullRequests: prReducer,
   milestones: milestonesReducer,
