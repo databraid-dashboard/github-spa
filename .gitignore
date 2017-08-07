@@ -27,6 +27,5 @@ worksheet.js
  # unfinished components
 /src/components/Repo/
 /src/components/RepoList/
-/src/components/Dashboard/
+
 /src/components/Login/
-/src/test/dashboard.test.jsx
