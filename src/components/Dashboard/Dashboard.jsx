@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import Issues from '../Issues/Issues';
 import PrTable from '../PrTable/PrTable';
 import Milestones from '../Milestones/Milestones';
+import LineChart from '../LineChart/LineChart';
 import './Dashboard.css';
 
 const Dashboard = () => (

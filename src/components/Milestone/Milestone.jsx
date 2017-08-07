@@ -12,6 +12,9 @@ export const Milestone = ({ title, due, created, percentComplete, milestoneId })
       day: '2-digit',
       month: '2-digit',
       year: 'numeric',
+      // hour: '2-digit',
+      // minute: '2-digit',
+      // hour12: true
     };
 
     const dateString = date.toLocaleDateString('en-US', formatOptions);
@@ -19,17 +22,12 @@ export const Milestone = ({ title, due, created, percentComplete, milestoneId })
     return dateString;
   }
 
-  function getDueDate(date) {
+  function getDueDate(date){
     if (date === null) {
-      return <div />;
+      return <div></div>
+    } else {
+      return <div><Header sub>Date Due:</Header> {convertDate(date)}</div>
     }
-    return (
-      <div>
-        <Header sub className="space-milestones">
-        Date Due:
-        </Header> {convertDate(date)}
-      </div>
-    );
   }
 
   return (
@@ -90,11 +88,13 @@ export default connect(
 
 export const mapStateToProps = (state, { milestoneId }) => {
   const milestone = state.milestones.milestonesById[milestoneId];
-  const { title, due, created } = milestone;
+  const { title, due, created, percentComplete } = milestone;
+  console.log('state', due===null);
   return {
     title,
     due,
     created,
+    percentComplete
   };
 };
 
