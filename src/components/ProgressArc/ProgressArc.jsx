@@ -16,6 +16,7 @@ class ProgressArc extends Component {
     this.redrawArc();
   }
 
+
   setContext() {
     return d3.select(this.refs.arc).append('svg')
       .attr('height', '60px')

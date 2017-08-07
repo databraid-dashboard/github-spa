@@ -3,9 +3,9 @@ import Issues from './Issues/Issues.jsx';
 import PrTable from './PrTable/PrTable.jsx';
 import Milestones from './Milestones/Milestones.jsx';
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Container, Grid, Header, Icon, Button } from 'semantic-ui-react';
 import { bindActionCreators } from 'redux';
-import { retrieveOrgs } from './actions/orgActions';
 import { connect } from 'react-redux';
 
 export const Dashboard = ({ repoName, renderRepos, orgName }) => (

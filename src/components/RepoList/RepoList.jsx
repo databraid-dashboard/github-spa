@@ -1,6 +1,6 @@
 /* eslint-disable import/no-named-as-default, consistent-return */
 import React, { Component } from 'react';
-import { Header, Icon, Grid, List, Button } from 'semantic-ui-react';
+import { Header, Icon, Grid, List } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
@@ -23,7 +23,11 @@ export class RepoList extends Component {
     this.props.retrieveRepos(this.props.userName, this.props.orgName);
   }
 
+
   render() {
+    if (this.props.repoIds === undefined) {
+      return <div>Loading...</div>;
+    }
     return (
       <div>
         <Button icon onClick={() => this.props.renderOrgs(this.props.userName)}>
@@ -67,7 +71,7 @@ export const mapStateToProps = state => ({
   orgName: state.currentPage.selectedOrgName,
 });
 
-const mapDispatchToProps = dispatch =>
+export const mapDispatchToProps = dispatch =>
   bindActionCreators({
     retrieveRepos, renderOrgs,
   }, dispatch);

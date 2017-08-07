@@ -1,7 +1,6 @@
 /* eslint-disable import/no-named-as-default */
 import React, { Component } from 'react';
-import './Issues.css';
-import { Card, Feed, List, Dimmer, Loader, Image, Segment } from 'semantic-ui-react';
+import { Card } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
@@ -30,7 +29,6 @@ export class Issues extends Component {
   }
 
   render() {
-    console.log('this.props.loadingIssues', this.props);
     if (this.props.loadingIssues) {
       return (
         <div>Loading Issues</div>
