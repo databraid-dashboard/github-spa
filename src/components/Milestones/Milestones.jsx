@@ -45,6 +45,7 @@ export class Milestones extends Component{
             Milestones
           </Card.Header>
         </Card.Content>
+<<<<<<< HEAD
         <Card.Content>
           <Feed>
             <List divided relaxed>
@@ -62,6 +63,9 @@ export class Milestones extends Component{
             </List>
           </Feed>
         </Card.Content>
+=======
+              {this.milestoneComponents(this.props.milestonesIds)}
+>>>>>>> 4def070... Adding percent complete feature
       </Card>
     )
   }

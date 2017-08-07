@@ -4,8 +4,19 @@
   "private": true,
   "dependencies": {
 <<<<<<< HEAD
+<<<<<<< HEAD
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+=======
+    "d3": "^4.10.0",
+    "prop-types": "^15.5.10",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-linechart": "^1.1.9",
+    "react-redux": "^5.0.5",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0",
+>>>>>>> 4def070... Adding percent complete feature
     "semantic-ui-react": "^0.71.3"
 =======
     "react": "15.6.1",
