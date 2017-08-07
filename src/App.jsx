@@ -17,7 +17,7 @@ const App = ({ currentPage }) => (
     {renderIf(currentPage === 'repos')(<RepoList />)}
     {renderIf(currentPage === 'dashboard')(<Dashboard />)}
   </Container>
-);
+}
 
 App.propTypes = {
   currentPage: PropTypes.string.isRequired,
