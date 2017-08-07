@@ -10,6 +10,7 @@ import RepoList from './components/RepoList/RepoList';
 import Organizations from './components/Organizations/Organizations';
 import Dashboard from './components/Dashboard/Dashboard';
 import './App.css';
+import Issues from './components/Issues/Issues';
 
 const App = ({ currentPage }) => {
 if (currentPage === 'orgs') {
