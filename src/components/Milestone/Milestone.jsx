@@ -12,6 +12,9 @@ export const Milestone = ({ title, due, percentComplete, milestoneId }) => {
       day: '2-digit',
       month: '2-digit',
       year: 'numeric',
+      // hour: '2-digit',
+      // minute: '2-digit',
+      // hour12: true
     };
 
     const dateString = date.toLocaleDateString('en-US', formatOptions);
@@ -23,13 +26,7 @@ export const Milestone = ({ title, due, percentComplete, milestoneId }) => {
     if (date === null) {
       return <div />;
     }
-    return (
-      <div>
-        <Header sub className="space-milestones">
-        Date Due:
-        </Header> {convertDate(date)}
-      </div>
-    );
+    return <div><Header sub>Date Due:</Header> {convertDate(date)}</div>;
   }
 
   return (
