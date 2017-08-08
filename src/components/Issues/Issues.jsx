@@ -29,14 +29,10 @@ export class Issues extends Component {
       <Card>
         <Card.Content>
           <Card.Header className="ui center aligned">
-            Git Issues
+            Issues
           </Card.Header>
         </Card.Content>
-        <Card.Content>
-          <List divided relaxed>
-            {issueComponents(this.props.issuesIds)}
-          </List>
-        </Card.Content>
+          {issueComponents(this.props.issuesIds)}
       </Card>
     );
   }
@@ -45,7 +41,7 @@ export class Issues extends Component {
 Issues.propTypes = {
   retrieveIssues: PropTypes.func.isRequired,
   loadingIssues: PropTypes.bool.isRequired,
-  issuesIds: PropTypes.arrayOf.isRequired,
+  issuesIds: PropTypes.array.isRequired,
 };
 
 export const mapStateToProps = state => ({

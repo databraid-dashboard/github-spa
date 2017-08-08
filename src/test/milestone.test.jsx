@@ -3,7 +3,6 @@ import toJson from 'enzyme-to-json';
 import { shallow } from 'enzyme';
 import { Milestone, mapStateToProps } from '../components/Milestone/Milestone';
 
-
 const state = {
   milestones: {
     ids: [2601714],
@@ -14,6 +13,7 @@ const state = {
         repoIssueNumber: 36,
         title: 'building paths and auth',
         due: '2018-06-23T22:45:34Z',
+        percentComplete: 0.4,
       },
     },
   },
@@ -28,6 +28,7 @@ describe('Milestone entry component', () => {
         due={'2018-06-23T22:45:34Z'}
         milestoneId={2601714}
         created={'2017-06-23T22:45:34Z'}
+        percentComplete={0.4}
       />,
     );
     expect(toJson(component)).toMatchSnapshot();
@@ -38,13 +39,14 @@ describe('Milestone entry component', () => {
       title: 'building paths and auth',
       created: '2017-06-23T22:45:34Z',
       due: '2018-06-23T22:45:34Z',
+      percentComplete:0.4
     };
     expect(mapStateToProps(state, { milestoneId: 2601714 })).toEqual(expected);
   });
 
   it('Should have a List Content aligned in the center', () => {
     const component = shallow(
-      <Milestone />,
+      <Milestone title={'sprint 1'} due={'2018-06-23T22:45:34Z'} created={'2017-06-23T22:45:34Z'} percentComplete={0.4} />,
     );
     expect(component.find('.aligned').exists()).toBe(true);
   });

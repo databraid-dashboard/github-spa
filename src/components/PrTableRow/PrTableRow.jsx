@@ -1,18 +1,16 @@
 import React from 'react';
-import { Table, Label, Icon } from 'semantic-ui-react';
+import { Card, Item, Label, List, Header, Icon } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import './PrTableRow.css';
 
-const getMergeableCheckbox = (able) => {
+const getMergeable = (able) => {
   if (able) {
-    return (
-      <div><Icon name="checkmark" size="big" color="green" /></div>
-    );
+    return 'merge-true';
   } else if (able === false) {
-    return <div><Icon name="remove" size="big" color="red" /></div>;
+    return 'merge-false';
   }
-  return <div><Icon name="minus" size="big" color="yellow" /></div>;
+  return 'merge-null';
 };
 
 const convertDate = (ISOdate) => {
@@ -21,26 +19,32 @@ const convertDate = (ISOdate) => {
     day: '2-digit',
     month: '2-digit',
     year: 'numeric',
-    hour: '2-digit',
-    minute: '2-digit',
-    hour12: true,
   };
 
   let dateString = date.toLocaleDateString('en-US', formatOptions);
-  dateString = dateString.replace(',', '')
-    .replace('PM', 'p.m.')
-    .replace('AM', 'a.m.');
+
   return dateString;
 };
 
 export const PrTableRow = ({ created, mergeable, submittedBy, title }) => (
-  <Table.Row>
-    <Table.Cell textAlign="center">{ title }</Table.Cell>
-    <Table.Cell textAlign="center">{ convertDate(created) }</Table.Cell>
-    <Table.Cell textAlign="center">{ submittedBy[0] }
-      <div><Label size="mini" image={submittedBy[1]} /></div></Table.Cell>
-    <Table.Cell textAlign="center">{getMergeableCheckbox(mergeable) }</Table.Cell>
-  </Table.Row>
+<Card.Content className={getMergeable(mergeable)}>
+  <List divided relaxed>
+    <List.Item>
+      <List.Content className='ui center aligned'>
+        <List.Header className='space-item'>{title}</List.Header>
+        <List.Description className='space-item'><Header sub>date created:</Header>{ convertDate(created)}</List.Description>
+        <List.Description className='space-item'><Header sub>Submitted by:</Header>{submittedBy[0]}<div><Item.Image size='mini' src={submittedBy[1]} /></div></List.Description>
+      </List.Content>
+    </List.Item>
+  </List>
+</Card.Content>
+  // <Table.Row>
+  //   <Table.Cell textAlign="center">{ title }</Table.Cell>
+  //   <Table.Cell textAlign="center">{ convertDate(created) }</Table.Cell>
+  //   <Table.Cell textAlign="center">{ submittedBy[0] }
+  //     <div><Label size="mini" image={submittedBy[1]} /></div></Table.Cell>
+  //   <Table.Cell textAlign="center">{getMergeableCheckbox(mergeable) }</Table.Cell>
+  // </Table.Row>
 );
 
 PrTableRow.propTypes = {

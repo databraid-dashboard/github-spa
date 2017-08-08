@@ -3,7 +3,6 @@ import {
 } from '../actions/repoActions';
 
 function createState(json, incomingState) {
-  // console.log('json',json);
   const state = incomingState;
   json.forEach((repo) => {
     state.ids = state.ids.concat(repo.id);
@@ -23,6 +22,5 @@ const repoReducer = (state = { ids: [], reposById: {} }, action) => {
       return state;
   }
 };
-
 
 export default repoReducer;
