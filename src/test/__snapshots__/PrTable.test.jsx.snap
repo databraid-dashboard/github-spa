@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PrTable component should render a component with props as specified  1`] = `
+<Table
+  as="table"
+  celled={true}
+  fixed={true}
+>
+  <TableHeader
+    as="thead"
+  >
+    <TableRow
+      as="tr"
+      cellAs="td"
+    >
+      <TableHeaderCell
+        as="th"
+        colSpan="4"
+        textAlign="center"
+      >
+        Pull Requests
+      </TableHeaderCell>
+    </TableRow>
+    <TableRow
+      as="tr"
+      cellAs="td"
+    >
+      <TableHeaderCell
+        as="th"
+      >
+        Title
+      </TableHeaderCell>
+      <TableHeaderCell
+        as="th"
+      >
+        Created
+      </TableHeaderCell>
+      <TableHeaderCell
+        as="th"
+      >
+        Submitted By
+      </TableHeaderCell>
+      <TableHeaderCell
+        as="th"
+      >
+        Meargeability
+      </TableHeaderCell>
+    </TableRow>
+  </TableHeader>
+  <TableBody
+    as="tbody"
+  >
+    <Connect(Component)
+      prId={246869449}
+    />
+  </TableBody>
+</Table>
+`;

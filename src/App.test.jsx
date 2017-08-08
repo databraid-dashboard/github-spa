@@ -1,8 +1,17 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import toJson from 'enzyme-to-json';
+import { shallow } from 'enzyme';
+import { Provider } from 'react-redux';
+import App from './App.jsx';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
+describe('App component', () => {
+  it('should render a component with props as specified ', () => {
+    const component = shallow(
+      <Provider>
+
+        <App />
+      </Provider>,
+    );
+    expect(toJson(component)).toMatchSnapshot();
+  });
 });

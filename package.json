@@ -3,14 +3,19 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "react": "15.6.1",
-    "react-dom": "15.6.1",
-    "react-redux": "5.0.5",
-    "redux": "3.7.2",
-    "redux-thunk": "2.2.0",
-    "semantic-ui-react": "0.71.3"
+    "d3": "^4.10.0",
+    "prop-types": "^15.5.10",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-linechart": "^1.1.9",
+    "react-redux": "^5.0.5",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0",
+    "semantic-ui-react": "^0.71.3"
   },
   "devDependencies": {
+    "enzyme": "2.9.1",
+    "enzyme-to-json": "1.5.1",
     "eslint": "4.3.0",
     "eslint-config-airbnb": "15.1.0",
     "eslint-plugin-import": "2.7.0",
