@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Issue entry component should render a component with props as specified  1`] = `
+<CardContent>
+  <List
+    divided={true}
+    relaxed={true}
+  >
+    <ListHeader>
+      #
+      16
+
+      login tst JWT token
+    </ListHeader>
+    <div>
+      <LabelGroup>
+        <div
+          className="space-labels"
+        >
+          <Label>
+            duplicate
+
+          </Label>
+        </div>
+        <div
+          className="space-labels"
+        >
+          <Label>
+            help wanted
+
+          </Label>
+        </div>
+        <div
+          className="space-labels"
+        >
+          <Label>
+            question
+
+          </Label>
+        </div>
+      </LabelGroup>
+    </div>
+    <ListDescription>
+      Assigned To:
+      grant
+    </ListDescription>
+  </ListContent>
+</ListItem>
+`;

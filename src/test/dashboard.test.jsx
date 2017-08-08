@@ -13,7 +13,7 @@ describe('Should render a Dashboard that holds Connected Components', () => {
   it.only('Should render the Dashboard', () => {
     const store = mockStore({ rootReducer });
     const dashComponent = shallow(
-      <Dashboard store={store} />,
+      <Dashboard store={store} repoName={'Some Repo'} currentPage={'dashboard'} />,
     );
 
     // console.log('dashComponent', dashComponent);

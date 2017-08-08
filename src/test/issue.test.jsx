@@ -28,10 +28,7 @@ describe('Issue entry component', () => {
         assignedTo={[['Gwillison415', 'https://avatars2.githubusercontent.com/u/22106099?v=4']]}
         number={16}
         title={'login tst JWT token'}
-<<<<<<< HEAD
         getDescription={() => { getDescription; }}
-=======
->>>>>>> removed MSTP's where uneeded, wrote test for components ready for pr, limited scoped of PR  via .gitignore dashboard feature
       />,
     );
     expect(toJson(component)).toMatchSnapshot();
@@ -53,11 +50,7 @@ describe('Issue entry component', () => {
         title={'login tst JWT token'}
         issueId={238923429}
         labels={state.issues.issuesById[238923429].labels}
-<<<<<<< HEAD
         assignedTo={[['Gwillison415', 'https://avatars2.githubusercontent.com/u/22106099?v=4']]}
-=======
-        assignedTo={['grant']}
->>>>>>> removed MSTP's where uneeded, wrote test for components ready for pr, limited scoped of PR  via .gitignore dashboard feature
       />,
     );
     expect(component.find('.aligned').exists()).toBe(true);

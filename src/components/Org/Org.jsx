@@ -1,6 +1,7 @@
 /* eslint-disable import/no-named-as-default, no-shadow */
 import React from 'react';
 import { Grid, Image, List } from 'semantic-ui-react';
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { renderRepos } from '../../actions/renderActions';

@@ -1,6 +1,6 @@
 /* eslint-disable import/no-named-as-default */
 import React, { Component } from 'react';
-import { Header, Icon, Grid } from 'semantic-ui-react';
+import { Header, Icon, Grid, Button } from 'semantic-ui-react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';

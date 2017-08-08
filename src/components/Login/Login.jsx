@@ -1,4 +1,3 @@
-/* eslint-disable import/no-named-as-default, no-shadow, consistent-return */
 import React from 'react';
 import { Grid, Card, Button } from 'semantic-ui-react';
 import { connect } from 'react-redux';

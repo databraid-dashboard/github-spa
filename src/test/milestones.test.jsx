@@ -22,15 +22,12 @@ const state = {
 
 describe('Milestones component', () => {
   it('should render a component with props as specified ', () => {
+    const retrieveMilestones = jest.fn();
     const component = shallow(
-<<<<<<< HEAD
       <Milestones
         loadingMilestones={false}
         retrieveMilestones={retrieveMilestones}
       />,
-=======
-      <Milestones milestonesIds={state.milestones.ids} loadingMilestones={false} />,
->>>>>>> Added passing tests on <Org and <Orgs
     );
     expect(toJson(component)).toMatchSnapshot();
   });
@@ -51,6 +48,7 @@ describe('Milestones component', () => {
     expect(mapDispatchToProps(dispatch)).toHaveProperty('retrieveMilestones');
   });
   it('Should have a Cart Header in the center', () => {
+    const retrieveMilestones = jest.fn();
     const component = shallow(
       <Milestones
         loadingMilestones={false}

@@ -19,7 +19,6 @@ describe('App component', () => {
   it('should render a component with props as specified ', () => {
     const component = shallow(
       <Provider store={mockStore({})}>
-
         <App />
       </Provider>,
     );

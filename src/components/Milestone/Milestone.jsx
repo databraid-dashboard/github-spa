@@ -14,23 +14,23 @@ export const Milestone = ({ title, due, percentComplete, milestoneId }) => {
       year: 'numeric',
     };
 
-    const dateString = date.toLocaleDateString('en-US', formatOptions);
+    let dateString = date.toLocaleDateString('en-US', formatOptions);
 
     return dateString;
   }
 
   function getDueDate(date) {
     if (date === null) {
-      return <div />;
+      return <div></div>;
     }
-    return <div><Header sub>Date Due:</Header> {convertDate(date)}</div>;
+    return <div><Header sub className='space-milestones'>Date Due:</Header> {convertDate(date)}</div>;
   }
 
   return (
     <Card.Content>
       <List divided relaxed>
         <List.Item>
-          <List.Content className="ui center aligned">
+          <List.Content className='ui center aligned'>
             <List.Header>{title}</List.Header>
             {getDueDate(due)}
             <Header sub className="space-milestones">Percent Complete:</Header>

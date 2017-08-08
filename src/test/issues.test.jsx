@@ -22,6 +22,7 @@ const state = {
 
 describe('Issues component', () => {
   it('should render a component with props as specified ', () => {
+    const retrieveIssues = jest.fn();
     const component = shallow(
       <Issues
         issuesIds={state.issues.ids}
@@ -59,6 +60,7 @@ describe('Issues component', () => {
     expect(mapDispatchToProps(dispatch)).toHaveProperty('retrieveIssues');
   });
   it('Should have a Cart Header in the center', () => {
+    const retrieveIssues = jest.fn();
     const component = shallow(
       <Issues
         issuesIds={state.issues.ids}

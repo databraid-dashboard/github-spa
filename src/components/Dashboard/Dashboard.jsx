@@ -4,6 +4,7 @@ import PrTable from './PrTable/PrTable.jsx';
 import Milestones from './Milestones/Milestones.jsx';
 import React from 'react';
 import PropTypes from 'prop-types';
+import { renderRepos } from '../../actions/renderActions';
 import { Container, Grid, Header, Icon, Button } from 'semantic-ui-react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -60,4 +61,5 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 
 export default connect(
   mapStateToProps,
+  mapDispatchToProps,
 )(Dashboard);
