@@ -1,10 +1,11 @@
-/* eslint-disable import/no-named-as-default */
+/* eslint-disable import/no-named-as-default, consistent-return */
 import React, { Component } from 'react';
 import { Header, Icon, Grid, Button } from 'semantic-ui-react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
+import { renderLogin } from '../../actions/renderActions';
 import { retrieveOrgs } from '../../actions/orgActions';
 import Organizations from '../Organizations/Organizations';
 import './Organizations.css';
@@ -19,14 +20,14 @@ export class Organizations extends Component {
   }
 
   render() {
-    if (this.props.currentPage !== 'orgs'){
-      return <div />
+    if (this.props.currentPage !== 'orgs') {
+      return <div />;
     }
     if (this.props.currentPage === 'orgs') {
       return (
         <div>
-          <Button icon padded>
-            <Icon name='arrow left'/>
+          <Button icon onClick={() => this.props.renderLogin()}>
+            <Icon name="arrow left" />
           </Button>
           <Grid centered columns={3} padded>
             <Header as="h2" icon textAlign="center">
@@ -47,8 +48,9 @@ export class Organizations extends Component {
 
 Organizations.propTypes = {
   retrieveOrgs: PropTypes.func.isRequired,
-  orgIds: PropTypes.array.isRequired,
+  orgIds: PropTypes.arrayOf(PropTypes.number).isRequired,
   currentPage: PropTypes.string.isRequired,
+  renderLogin: PropTypes.func.isRequired,
 };
 
 export const mapStateToProps = state => ({
@@ -57,9 +59,9 @@ export const mapStateToProps = state => ({
   currentPage: state.currentPage.render,
 });
 
-const mapDispatchToProps = dispatch =>
-  bindActionCreators ({
-    retrieveOrgs
+export const mapDispatchToProps = dispatch =>
+  bindActionCreators({
+    retrieveOrgs, renderLogin,
   }, dispatch);
 
   export default connect(

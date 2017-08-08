@@ -22,7 +22,7 @@ const state = {
 
 describe('PrTable component', () => {
   it('should render a component with props as specified ', () => {
-    const retrievePrs = jest.fn()
+    const retrievePrs = jest.fn();
     const component = shallow(
       <PrTable prIds={state.pullRequests.ids} loadingPrTable={false} retrievePrs={retrievePrs} />,
     );

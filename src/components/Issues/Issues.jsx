@@ -1,6 +1,6 @@
 /* eslint-disable import/no-named-as-default */
 import React, { Component } from 'react';
-import { Card, List } from 'semantic-ui-react';
+import { Card } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
@@ -32,7 +32,7 @@ export class Issues extends Component {
             Issues
           </Card.Header>
         </Card.Content>
-          {issueComponents(this.props.issuesIds)}
+        {issueComponents(this.props.issuesIds)}
       </Card>
     );
   }

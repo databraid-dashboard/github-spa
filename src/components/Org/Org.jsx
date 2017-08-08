@@ -9,8 +9,8 @@ import './Org.css';
 
 export const Org = ({ avatarUrl, orgName, renderRepos }) => (
   <Grid.Column>
-    <Image className='hoverable' onClick = {() => renderRepos()} src={avatarUrl} size='small' />
-    <List.Item as='a' className='hoverable' onClick = {() => renderRepos()}>{orgName}</List.Item>
+    <Image className="hoverable" onClick={() => renderRepos()} src={avatarUrl} size="small" />
+    <List.Item as="a" className="hoverable" onClick={() => renderRepos()}>{orgName}</List.Item>
   </Grid.Column>
 );
 
