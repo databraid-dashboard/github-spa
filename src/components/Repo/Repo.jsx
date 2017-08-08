@@ -1,3 +1,4 @@
+/* eslint-disable no-shadow */
 import React from 'react';
 import { List } from 'semantic-ui-react';
 import { bindActionCreators } from 'redux';
@@ -7,8 +8,9 @@ import { renderDashboard } from '../../actions/renderActions';
 
 import './Repo.css';
 
-export const Repo = ({ repoName, renderDashboard, }) => (
-  <List.Item as='a' className='hoverable' onClick = {() => renderDashboard(repoName)} ><List.Content>{repoName}</List.Content>
+export const Repo = ({ repoName, renderDashboard }) => (
+  <List.Item as="a" className="hoverable" onClick={() => renderDashboard(repoName)} >
+    <List.Content>{repoName}</List.Content>
   </List.Item>
 );
 
@@ -32,5 +34,4 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-
 )(Repo);

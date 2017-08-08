@@ -1,5 +1,4 @@
 import React from 'react';
-import './Issue.css';
 import { Card, Item, List, Label, Header } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';

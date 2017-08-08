@@ -1,4 +1,3 @@
-import './Dashboard.css';
 import Issues from './Issues/Issues.jsx';
 import PrTable from './PrTable/PrTable.jsx';
 import Milestones from './Milestones/Milestones.jsx';
@@ -8,6 +7,7 @@ import { renderRepos } from '../../actions/renderActions';
 import { Container, Grid, Header, Icon, Button } from 'semantic-ui-react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import './Dashboard.css';
 
 export const Dashboard = ({ repoName, renderRepos, orgName }) => (
   <div>
@@ -40,6 +40,7 @@ export const Dashboard = ({ repoName, renderRepos, orgName }) => (
 );
 
 Dashboard.propTypes = {
+<<<<<<< HEAD
   repoName: PropTypes.string,
   renderRepos: PropTypes.func.isRequired,
   orgName: PropTypes.string,
@@ -48,6 +49,11 @@ Dashboard.propTypes = {
 Dashboard.defaultProps = {
   repoName: null,
   orgName: null,
+=======
+  repoName: PropTypes.string.isRequired,
+  currentPage: PropTypes.string.isRequired,
+  renderRepos: PropTypes.func.isRequired,
+>>>>>>> Fixed linting errors, installed redux-mock-store
 };
 
 const mapStateToProps = state => ({
@@ -55,8 +61,13 @@ const mapStateToProps = state => ({
   orgName: state.currentPage.selectedOrgName,
 });
 
+<<<<<<< HEAD
 const mapDispatchToProps = dispatch => bindActionCreators({
   retrieveOrgs,
+=======
+export const mapDispatchToProps = dispatch => bindActionCreators({
+  renderRepos,
+>>>>>>> Fixed linting errors, installed redux-mock-store
 }, dispatch);
 
 export default connect(

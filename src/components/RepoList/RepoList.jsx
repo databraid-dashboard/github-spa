@@ -1,5 +1,4 @@
 /* eslint-disable import/no-named-as-default, consistent-return */
-
 import React, { Component } from 'react';
 import { Header, Icon, Grid, List, Button } from 'semantic-ui-react';
 import { connect } from 'react-redux';
@@ -26,7 +25,7 @@ export class RepoList extends Component {
 
   render() {
     if (this.props.currentPage !== 'repos') {
-      return <div />
+      return <div />;
     }
     if (this.props.currentPage === 'repos') {
       return (
