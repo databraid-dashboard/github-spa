@@ -39,7 +39,7 @@ describe('Milestone entry component', () => {
       title: 'building paths and auth',
       created: '2017-06-23T22:45:34Z',
       due: '2018-06-23T22:45:34Z',
-      percentComplete:0.4
+      percentComplete: 0.4,
     };
     expect(mapStateToProps(state, { milestoneId: 2601714 })).toEqual(expected);
   });

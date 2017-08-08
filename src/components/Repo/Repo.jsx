@@ -1,26 +1,28 @@
+/* eslint-disable no-shadow */
 import React from 'react';
 import { List } from 'semantic-ui-react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { renderDashboard } from '../../actions/renderActions'
+import { renderDashboard } from '../../actions/renderActions';
 
 import './Repo.css';
 
-export const Repo = ({ repoName, renderDashboard, }) => (
-  <List.Item as='a' className='hoverable' onClick = {() => renderDashboard(repoName)} ><List.Content>{repoName}</List.Content>
+export const Repo = ({ repoName, renderDashboard }) => (
+  <List.Item as="a" className="hoverable" onClick={() => renderDashboard(repoName)} >
+    <List.Content>{repoName}</List.Content>
   </List.Item>
 );
 
 Repo.propTypes = {
   repoName: PropTypes.string.isRequired,
+  renderDashboard: PropTypes.func.isRequired,
 };
 
 export const mapStateToProps = (state, { repoId }) => {
   const repo = state.repos.reposById[repoId];
 
-  const { repoName, } = repo;
-  console.log('repoName',repoName);
+  const { repoName } = repo;
 
   return {
     repoName,
@@ -33,5 +35,5 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(Repo);

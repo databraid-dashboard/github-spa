@@ -1,4 +1,4 @@
-/* eslint-disable import/no-named-as-default */
+/* eslint-disable import/no-named-as-default, consistent-return */
 import React, { Component } from 'react';
 import { Header, Icon, Grid, List, Button } from 'semantic-ui-react';
 import { connect } from 'react-redux';
@@ -9,8 +9,8 @@ import { renderOrgs } from '../../actions/renderActions';
 import Repo from '../Repo/Repo';
 import './RepoList.css';
 
-function repoComponents(repoIds,) {
-  return repoIds.map(id => <Repo key={id} repoId={id}/>);
+function repoComponents(repoIds) {
+  return repoIds.map(id => <Repo key={id} repoId={id} />);
 }
 
 export class RepoList extends Component {
@@ -20,13 +20,13 @@ export class RepoList extends Component {
 
   render() {
     if (this.props.currentPage !== 'repos') {
-      return <div />
+      return <div />;
     }
     if (this.props.currentPage === 'repos') {
       return (
         <div>
-          <Button icon padded onClick = {() => this.props.renderOrgs()}>
-            <Icon name='arrow left'/>
+          <Button icon padded onClick={() => this.props.renderOrgs()}>
+            <Icon name="arrow left" />
           </Button>
           <Grid centered padded>
             <Grid.Column width={8}>
@@ -63,7 +63,7 @@ export const mapStateToProps = state => ({
 
 export const mapDispatchToProps = dispatch =>
   bindActionCreators({
-    retrieveRepos, renderOrgs
+    retrieveRepos, renderOrgs,
   }, dispatch);
 
 export default connect(

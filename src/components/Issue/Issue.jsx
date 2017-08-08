@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Card, Item, List, Label, Header, Segment } from 'semantic-ui-react';
+import { Card, Item, List, Label, Header } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import './Issue.css';
@@ -7,24 +7,24 @@ import './Issue.css';
 function getDescription(assignedTo) {
   if (assignedTo.length > 0) {
     return (
-      <div className='ui center aligned'>
-        <div><Header sub className='space-issues'>Assigned To: </Header>{assignedTo[0][0]}</div>
+      <div className="ui center aligned">
+        <div><Header sub className="space-issues">Assigned To: </Header>{assignedTo[0][0]}</div>
         <Item.Image size="mini" src={assignedTo[0][1]} />
       </div>
     );
   }
   return (
-    <div></div>
+    <div />
   );
 }
 
 export const Issue = ({ title, repoIssueNumber, assignedTo, labels }) => {
   const renderedLabels = labels.map(label => (
-    <div className='space-labels' key={label}>
-      <Label className='ui mini label' ribbon='right' color='grey'>{label}
+    <div className="space-labels" key={label}>
+      <Label className="ui mini label" ribbon="right" color="grey">{label}
       </Label>
     </div>
-  )
+  ),
   );
 
   return (
@@ -44,8 +44,8 @@ export const Issue = ({ title, repoIssueNumber, assignedTo, labels }) => {
 Issue.propTypes = {
   title: PropTypes.string.isRequired,
   repoIssueNumber: PropTypes.number.isRequired,
-  assignedTo: PropTypes.array.isRequired,
-  labels: PropTypes.array.isRequired,
+  assignedTo: PropTypes.arrayOf(PropTypes.string).isRequired,
+  labels: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 // NOTE replace Line 43 with below
 // assignedTo: PropTypes.arrayOf(PropTypes.number),

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Item, Label, List, Header, Icon } from 'semantic-ui-react';
+import { Card, Item, List, Header } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import './PrTableRow.css';
@@ -21,23 +21,29 @@ const convertDate = (ISOdate) => {
     year: 'numeric',
   };
 
-  let dateString = date.toLocaleDateString('en-US', formatOptions);
+  const dateString = date.toLocaleDateString('en-US', formatOptions);
 
   return dateString;
 };
 
 export const PrTableRow = ({ created, mergeable, submittedBy, title }) => (
-<Card.Content className={getMergeable(mergeable)}>
-  <List divided relaxed>
-    <List.Item>
-      <List.Content className='ui center aligned'>
-        <List.Header className='space-item'>{title}</List.Header>
-        <List.Description className='space-item'><Header sub>date created:</Header>{ convertDate(created)}</List.Description>
-        <List.Description className='space-item'><Header sub>Submitted by:</Header>{submittedBy[0]}<div><Item.Image size='mini' src={submittedBy[1]} /></div></List.Description>
-      </List.Content>
-    </List.Item>
-  </List>
-</Card.Content>
+  <Card.Content className={getMergeable(mergeable)}>
+    <List divided relaxed>
+      <List.Item>
+        <List.Content className="ui center aligned">
+          <List.Header className="space-item">{title}</List.Header>
+          <List.Description className="space-item">
+            <Header sub>date created:</Header>
+            { convertDate(created)}
+          </List.Description>
+          <List.Description className="space-item">
+            <Header sub>Submitted by:</Header>{submittedBy[0]}<div>
+              <Item.Image size="mini" src={submittedBy[1]} /></div>
+          </List.Description>
+        </List.Content>
+      </List.Item>
+    </List>
+  </Card.Content>
   // <Table.Row>
   //   <Table.Cell textAlign="center">{ title }</Table.Cell>
   //   <Table.Cell textAlign="center">{ convertDate(created) }</Table.Cell>

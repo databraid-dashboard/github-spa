@@ -17,18 +17,20 @@ const state = {
       },
     },
   },
-  currentPage: {render: 'orgs', repoName: null}
+  currentPage: { render: 'orgs', repoName: null },
 };
 
 describe('Organizations component', () => {
   it('should render a component with props as specified ', () => {
-    const retrieveOrgs = jest.fn()
+    const retrieveOrgs = jest.fn();
+    const renderLogin = jest.fn();
     const component = shallow(
       <Organizations
         orgIds={state.orgs.ids}
         loadingOrganizations={false}
         currentPage={state.currentPage.render}
         retrieveOrgs={retrieveOrgs}
+        renderLogin={renderLogin}
       />,
     );
     expect(toJson(component)).toMatchSnapshot();
