@@ -99,8 +99,12 @@ import { Card, Feed, List, Dimmer, Loader, Image, Segment } from 'semantic-ui-re
 import Issue from '../Issue/Issue.jsx';
 =======
 import React, { Component } from 'react';
+<<<<<<< HEAD
 import { Card, List } from 'semantic-ui-react';
 >>>>>>> 02a66ea... Adding with some linting errors addressed
+=======
+import { Card } from 'semantic-ui-react';
+>>>>>>> 79473f9... Fixed linting errors, installed redux-mock-store
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
@@ -165,7 +169,7 @@ export class Issues extends Component {
             Issues
           </Card.Header>
         </Card.Content>
-          {issueComponents(this.props.issuesIds)}
+        {issueComponents(this.props.issuesIds)}
       </Card>
     );
   }
@@ -174,9 +178,10 @@ export class Issues extends Component {
 Issues.propTypes = {
   retrieveIssues: PropTypes.func.isRequired,
   loadingIssues: PropTypes.bool.isRequired,
-  issuesIds: PropTypes.array.isRequired,
+  issuesIds: PropTypes.arrayOf(PropTypes.number).isRequired,
 };
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 export const mapStateToProps = state => {
     return {
@@ -195,6 +200,8 @@ export const mapStateToProps = state => {
 export const mapDispatchToProps = dispatch => bindActionCreators ({
   retrieveIssues
 =======
+=======
+>>>>>>> 79473f9... Fixed linting errors, installed redux-mock-store
 
 export const mapStateToProps = state => ({
   issuesIds: state.issues.ids,

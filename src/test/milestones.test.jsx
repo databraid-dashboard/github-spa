@@ -39,10 +39,12 @@ const state = {
 
 describe('Milestones component', () => {
   it('should render a component with props as specified ', () => {
-    const retrieveMilestones = jest.fn()
+    const retrieveMilestones = jest.fn();
     const component = shallow(
-      <Milestones milestonesIds={state.milestones.ids} loadingMilestones={false}
-      retrieveMilestones= {retrieveMilestones}
+      <Milestones
+        milestonesIds={state.milestones.ids}
+        loadingMilestones={false}
+        retrieveMilestones={retrieveMilestones}
       />,
     );
     expect(toJson(component)).toMatchSnapshot();
@@ -61,10 +63,13 @@ describe('Milestones component', () => {
     expect(mapDispatchToProps(dispatch)).toHaveProperty('retrieveMilestones');
   });
   it('Should have a Cart Header in the center', () => {
-    const retrieveMilestones = jest.fn()
+    const retrieveMilestones = jest.fn();
     const component = shallow(
-      <Milestones milestonesIds={state.milestones.ids} loadingMilestones={false}
-      retrieveMilestones= {retrieveMilestones} />,
+      <Milestones
+        milestonesIds={state.milestones.ids}
+        loadingMilestones={false}
+        retrieveMilestones={retrieveMilestones}
+      />,
     );
     expect(component.find('.aligned').exists()).toBe(true);
   });

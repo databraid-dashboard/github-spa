@@ -1,11 +1,15 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React, {Component} from 'react';
 import { List } from 'semantic-ui-react';
 import Repo from '../Repo/Repo.jsx';
 import './RepoList.css'
 import {retrieveRepos} from '../../actions/orgActions';
 =======
+=======
+/* eslint-disable import/no-named-as-default, consistent-return */
+>>>>>>> 79473f9... Fixed linting errors, installed redux-mock-store
 import React, { Component } from 'react';
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -43,8 +47,8 @@ import { renderOrgs } from '../../actions/renderActions';
 import Repo from '../Repo/Repo';
 import './RepoList.css';
 
-function repoComponents(repoIds,) {
-  return repoIds.map(id => <Repo key={id} repoId={id}/>);
+function repoComponents(repoIds) {
+  return repoIds.map(id => <Repo key={id} repoId={id} />);
 }
 
 export class RepoList extends Component {
@@ -73,13 +77,13 @@ export class RepoList extends Component {
 >>>>>>> 564c283... Fixing warning messages from tests
   render() {
     if (this.props.currentPage !== 'repos') {
-      return <div />
+      return <div />;
     }
     if (this.props.currentPage === 'repos') {
       return (
         <div>
-          <Button icon padded onClick = {() => this.props.renderOrgs()}>
-            <Icon name='arrow left'/>
+          <Button icon padded onClick={() => this.props.renderOrgs()}>
+            <Icon name="arrow left" />
           </Button>
           <Grid centered padded>
             <Grid.Column width={8}>
@@ -179,11 +183,15 @@ export const mapStateToProps = state => ({
 export const mapDispatchToProps = dispatch =>
   bindActionCreators({
 <<<<<<< HEAD
+<<<<<<< HEAD
     // retrieveRepos,
 >>>>>>> edbe0e0... fml
 =======
     retrieveRepos, renderOrgs
 >>>>>>> 564c283... Fixing warning messages from tests
+=======
+    retrieveRepos, renderOrgs,
+>>>>>>> 79473f9... Fixed linting errors, installed redux-mock-store
   }, dispatch);
 
 export default connect(

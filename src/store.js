@@ -108,6 +108,7 @@ store.subscribe(() => {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 store.subscribe(() => {
   console.log('state', store.getState());
 });
@@ -122,6 +123,8 @@ store.subscribe(() => {
   console.log(store.getState());
 });
 >>>>>>> b56b9a4... Adding conditional views
+=======
+>>>>>>> 79473f9... Fixed linting errors, installed redux-mock-store
 export default store;
 =======
 //

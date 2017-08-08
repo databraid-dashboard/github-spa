@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, List, Table } from 'semantic-ui-react';
+import { Card } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
@@ -41,11 +41,11 @@ export class PrTable extends Component {
     return (
       <Card>
         <Card.Content>
-          <Card.Header className='ui center aligned'>
+          <Card.Header className="ui center aligned">
             Pull Requests
           </Card.Header>
         </Card.Content>
-            {prComponents(this.props.prIds)}
+        {prComponents(this.props.prIds)}
       </Card>
 
       // <Table celled fixed>
@@ -72,7 +72,7 @@ export class PrTable extends Component {
 
 PrTable.propTypes = {
   retrievePrs: PropTypes.func.isRequired,
-  prIds: PropTypes.array.isRequired,
+  prIds: PropTypes.arrayOf(PropTypes.number).isRequired,
   loadingPrTable: PropTypes.bool.isRequired,
 };
 

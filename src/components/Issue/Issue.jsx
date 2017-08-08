@@ -1,6 +1,7 @@
 import React from 'react';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import './Issue.css'
 <<<<<<< HEAD
 import { List, Label } from 'semantic-ui-react';
@@ -13,6 +14,9 @@ import { Item, List, Label } from 'semantic-ui-react';
 =======
 import { Grid, Card, Item, List, Label, Header, Segment } from 'semantic-ui-react';
 >>>>>>> 564c283... Fixing warning messages from tests
+=======
+import { Card, Item, List, Label, Header } from 'semantic-ui-react';
+>>>>>>> 79473f9... Fixed linting errors, installed redux-mock-store
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import './Issue.css';
@@ -80,25 +84,25 @@ export const Issue = ({ title, repoIssueNumber, assignedTo, labels, issueId }) =
 function getDescription(assignedTo) {
   if (assignedTo.length > 0) {
     return (
-      <div className='ui center aligned'>
-        <div><Header sub className='space-issues'>Assigned To: </Header>{assignedTo[0][0]}</div>
+      <div className="ui center aligned">
+        <div><Header sub className="space-issues">Assigned To: </Header>{assignedTo[0][0]}</div>
         <Item.Image size="mini" src={assignedTo[0][1]} />
       </div>
     );
   }
   return (
-    <div></div>
+    <div />
   );
 }
 
 export const Issue = ({ title, repoIssueNumber, assignedTo, labels }) => {
 >>>>>>> 02a66ea... Adding with some linting errors addressed
   const renderedLabels = labels.map(label => (
-    <div className='space-labels' key={label}>
-      <Label className='ui mini label' ribbon='right' color='grey'>{label}
+    <div className="space-labels" key={label}>
+      <Label className="ui mini label" ribbon="right" color="grey">{label}
       </Label>
     </div>
-  )
+  ),
   );
 
 <<<<<<< HEAD
@@ -141,8 +145,8 @@ export const Issue = ({ title, repoIssueNumber, assignedTo, labels }) => {
 Issue.propTypes = {
   title: PropTypes.string.isRequired,
   repoIssueNumber: PropTypes.number.isRequired,
-  assignedTo: PropTypes.array.isRequired,
-  labels: PropTypes.array.isRequired,
+  assignedTo: PropTypes.arrayOf(PropTypes.string).isRequired,
+  labels: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 <<<<<<< HEAD
 <<<<<<< HEAD

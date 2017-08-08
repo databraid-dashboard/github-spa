@@ -1,5 +1,9 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+/* eslint-disable import/no-named-as-default */
+>>>>>>> 79473f9... Fixed linting errors, installed redux-mock-store
 import React from 'react';
 <<<<<<< HEAD
 =======
@@ -8,11 +12,8 @@ import logo from './logo.svg';
 >>>>>>> 7e05dfe... mapped store, state, readme, mockAPI calls, and began wiring up components
 =======
 import { Container } from 'semantic-ui-react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import { renderOrgs, renderLogin, renderRepos, renderDashboard } from './actions/renderActions';
 import RepoList from './components/RepoList/RepoList';
+import Login from './components/Login/Login';
 import Organizations from './components/Organizations/Organizations';
 import Dashboard from './components/Dashboard/Dashboard';
 <<<<<<< HEAD
@@ -21,6 +22,7 @@ import { retrieveOrgs } from './actions/orgActions';
 =======
 >>>>>>> 2f2a056... Adding with fewer linting errors
 import './App.css';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 import Issues from './components/Issues/Issues.jsx';
@@ -40,10 +42,12 @@ import React from 'react';
 import { Container } from 'semantic-ui-react';
 <<<<<<< HEAD
 >>>>>>> 2d0b4d9... Adding Milestones Component
+=======
+>>>>>>> 79473f9... Fixed linting errors, installed redux-mock-store
 
-const App = () => {
-  return (
+const App = () => (
   <Container>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -77,6 +81,9 @@ const App = () => (
 >>>>>>> fdd71b2... unfucking app.jsx
 =======
 >>>>>>> 02a66ea... Adding with some linting errors addressed
+=======
+    <Login />
+>>>>>>> 79473f9... Fixed linting errors, installed redux-mock-store
     <Organizations />
 <<<<<<< HEAD
     {/* <RepoList />
@@ -230,8 +237,7 @@ export default App;
     <Dashboard />
 >>>>>>> 564c283... Fixing warning messages from tests
   </Container>
-  )
-};
+);
 
 <<<<<<< HEAD
 export const mapStateToProps = state => ({

@@ -1,18 +1,41 @@
+/* eslint-disable import/no-named-as-default, no-shadow, consistent-return */
 import React from 'react';
 import { Button } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
-import { renderLogin } from '../../action/renderActions';
+import { renderOrgs } from '../../actions/renderActions';
 import './Login.css';
 
-export const Login = () => {
+export const Login = ({ currentPage, renderOrgs }) => {
   if (currentPage !== 'login') {
-    return <div />
+    return <div />;
   }
   if (currentPage === 'login') {
     return (
-      <Button
-    )
+      <div>
+        <Button onClick={() => renderOrgs()}>
+        Login
+        </Button>
+      </div>
+    );
   }
-}
+};
+
+Login.propTypes = {
+  currentPage: PropTypes.string.isRequired,
+  renderOrgs: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = state => ({
+  currentPage: state.currentPage.render,
+});
+
+export const mapDispatchToProps = dispatch => bindActionCreators({
+  renderOrgs,
+}, dispatch);
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Login);

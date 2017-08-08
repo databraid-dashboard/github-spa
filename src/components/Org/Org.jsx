@@ -1,3 +1,4 @@
+/* eslint-disable import/no-named-as-default, no-shadow */
 import React from 'react';
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -40,8 +41,8 @@ import './Org.css';
 export const Org = ({ avatarUrl, orgName, renderRepos }) => (
 >>>>>>> 564c283... Fixing warning messages from tests
   <Grid.Column>
-    <Image className='hoverable' onClick = {() => renderRepos()} src={avatarUrl} size='small' />
-    <List.Item as='a' className='hoverable' onClick = {() => renderRepos()}>{orgName}</List.Item>
+    <Image className="hoverable" onClick={() => renderRepos()} src={avatarUrl} size="small" />
+    <List.Item as="a" className="hoverable" onClick={() => renderRepos()}>{orgName}</List.Item>
   </Grid.Column>
 );
 
@@ -97,13 +98,18 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 Org.propTypes = {
   avatarUrl: PropTypes.string.isRequired,
   orgName: PropTypes.string.isRequired,
+  renderRepos: PropTypes.func.isRequired,
 };
 
 export default connect(
   mapStateToProps,
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> edbe0e0... fml
 =======
   mapDispatchToProps
 >>>>>>> 564c283... Fixing warning messages from tests
+=======
+  mapDispatchToProps,
+>>>>>>> 79473f9... Fixed linting errors, installed redux-mock-store
 )(Org);

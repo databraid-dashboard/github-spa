@@ -34,22 +34,27 @@ const renderPage = (state = '', action) => {
 } from '../actions/renderActions';
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 const renderPage = (state = 'orgs', action) => {
 >>>>>>> b56b9a4... Adding conditional views
 =======
 const renderPage = (state = {render: 'orgs', repoName:null }, action) => {
 >>>>>>> 564c283... Fixing warning messages from tests
+=======
+const renderPage = (state = { render: 'login', repoName: null }, action) => {
+>>>>>>> 79473f9... Fixed linting errors, installed redux-mock-store
   switch (action.type) {
     case RENDER_ORGS:
-      return {...state, render: 'orgs'};
+      return { ...state, render: 'orgs' };
 
     case RENDER_REPOS:
-      return {...state, render: 'repos'};
+      return { ...state, render: 'repos' };
 
     case RENDER_LOGIN:
-      return {...state, render: 'login'};
+      return { ...state, render: 'login' };
 
     case RENDER_DASHBOARD:
+<<<<<<< HEAD
 <<<<<<< HEAD
       return state = 'dashboard';
 <<<<<<< HEAD
@@ -61,11 +66,19 @@ const renderPage = (state = {render: 'orgs', repoName:null }, action) => {
       return {render: 'dashboard',
               repoName: action.repoName}
 >>>>>>> 564c283... Fixing warning messages from tests
+=======
+      return { render: 'dashboard',
+        repoName: action.repoName };
+>>>>>>> 79473f9... Fixed linting errors, installed redux-mock-store
 
     default:
-      return state
+      return state;
   }
 };
 
+<<<<<<< HEAD
 export default renderPage
 >>>>>>> b56b9a4... Adding conditional views
+=======
+export default renderPage;
+>>>>>>> 79473f9... Fixed linting errors, installed redux-mock-store

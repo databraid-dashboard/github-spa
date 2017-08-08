@@ -5,7 +5,7 @@ exports[`Organizations component should render a component with props as specifi
   <Button
     as="button"
     icon={true}
-    padded={true}
+    onClick={[Function]}
   >
     <Icon
       as="i"
