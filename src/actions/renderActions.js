@@ -30,11 +30,12 @@ export const renderRepos = () => {
   }
 }
 
-export const renderDashboard = () => {
+export const renderDashboard = (repoName) => {
   return dispatch => {
     dispatch({
       type: RENDER_DASHBOARD,
-      reponseStr:'dashboard'
+      reponseStr:'dashboard',
+      repoName: repoName
     })
   }
 }

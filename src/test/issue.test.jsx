@@ -44,6 +44,8 @@ describe('Issue entry component', () => {
   it('Should have a Cart Header in the center', () => {
     const component = shallow(
       <Issue
+        repoIssueNumber={16}
+        title={'login tst JWT token'}
         issueId={238923429}
         labels={state.issues.issuesById[238923429].labels}
         assignedTo={['grant']}

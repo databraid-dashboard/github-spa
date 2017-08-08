@@ -5,6 +5,7 @@ import './Org.css'
 import { Image, List } from 'semantic-ui-react';
 =======
 import { Grid, Image, List } from 'semantic-ui-react';
+<<<<<<< HEAD
 >>>>>>> 2c48835... Adding repo view
 import { connect } from 'react-redux';
 
@@ -29,9 +30,18 @@ export const Org = ({ avatarUrl, orgName, reposUrl }) => (
 =======
 export const Org = ({ avatarUrl, orgName }) => (
 >>>>>>> 2f2a056... Adding with fewer linting errors
+=======
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { renderRepos } from '../../actions/renderActions';
+import './Org.css';
+
+export const Org = ({ avatarUrl, orgName, renderRepos }) => (
+>>>>>>> 564c283... Fixing warning messages from tests
   <Grid.Column>
-    <Image src={avatarUrl} size="small" />
-    <List.Item as="a">{orgName}</List.Item>
+    <Image className='hoverable' onClick = {() => renderRepos()} src={avatarUrl} size='small' />
+    <List.Item as='a' className='hoverable' onClick = {() => renderRepos()}>{orgName}</List.Item>
   </Grid.Column>
 );
 
@@ -80,6 +90,10 @@ export default connect(
   };
 };
 
+const mapDispatchToProps = dispatch => bindActionCreators({
+  renderRepos,
+}, dispatch);
+
 Org.propTypes = {
   avatarUrl: PropTypes.string.isRequired,
   orgName: PropTypes.string.isRequired,
@@ -87,5 +101,9 @@ Org.propTypes = {
 
 export default connect(
   mapStateToProps,
+<<<<<<< HEAD
 >>>>>>> edbe0e0... fml
+=======
+  mapDispatchToProps
+>>>>>>> 564c283... Fixing warning messages from tests
 )(Org);

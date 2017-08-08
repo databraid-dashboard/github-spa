@@ -8,11 +8,15 @@ import {retrieveRepos} from '../../actions/orgActions';
 =======
 import React, { Component } from 'react';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { Header, Icon, Image, Grid, List } from 'semantic-ui-react';
 >>>>>>> 2c48835... Adding repo view
 =======
 import { Header, Icon, Grid, List } from 'semantic-ui-react';
 >>>>>>> 02a66ea... Adding with some linting errors addressed
+=======
+import { Header, Icon, Grid, List, Button } from 'semantic-ui-react';
+>>>>>>> 564c283... Fixing warning messages from tests
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 <<<<<<< HEAD
@@ -24,6 +28,7 @@ class RepoList extends Components{
 =======
 import PropTypes from 'prop-types';
 import { retrieveRepos } from '../../actions/repoActions';
+<<<<<<< HEAD
 =======
 import React, { Component } from 'react';
 import { List } from 'semantic-ui-react';
@@ -32,11 +37,14 @@ import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 // import { retrieveRepos } from '../../actions/orgActions';
 >>>>>>> edbe0e0... fml
+=======
+import { renderOrgs } from '../../actions/renderActions';
+>>>>>>> 564c283... Fixing warning messages from tests
 import Repo from '../Repo/Repo';
 import './RepoList.css';
 
-function repoComponents(repoIds) {
-  return repoIds.map(id => <Repo key={id} repoId={id} />);
+function repoComponents(repoIds,) {
+  return repoIds.map(id => <Repo key={id} repoId={id}/>);
 }
 
 export class RepoList extends Component {
@@ -51,6 +59,7 @@ export class RepoList extends Component {
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   repoComponents = (repoIds) => {
     return repoIds.map(id => {
       <Repo key={id} repoId={id} />
@@ -60,10 +69,35 @@ export class RepoList extends Component {
   render(){
 =======
 
+=======
+>>>>>>> 564c283... Fixing warning messages from tests
   render() {
-    if (this.props.repoIds === undefined) {
-      return <div>Loading...</div>;
+    if (this.props.currentPage !== 'repos') {
+      return <div />
     }
+    if (this.props.currentPage === 'repos') {
+      return (
+        <div>
+          <Button icon padded onClick = {() => this.props.renderOrgs()}>
+            <Icon name='arrow left'/>
+          </Button>
+          <Grid centered padded>
+            <Grid.Column width={8}>
+              <Header as="h2" icon textAlign="center">
+                <Icon name="github" />
+                <Header.Content>
+                  Which repository are you interested in?
+                </Header.Content>
+              </Header>
+              <List animated divided relaxed size="huge">
+                {repoComponents(this.props.repoIds)}
+              </List>
+            </Grid.Column>
+          </Grid>
+        </div>
+      );
+    }
+<<<<<<< HEAD
 >>>>>>> 02a66ea... Adding with some linting errors addressed
     return (
 <<<<<<< HEAD
@@ -123,6 +157,8 @@ const mapDispatchToProps = dispatch =>
         {this.props.repoComponents(this.props.repoIds)}
       </List>
     );
+=======
+>>>>>>> 564c283... Fixing warning messages from tests
   }
 }
 
@@ -130,17 +166,24 @@ RepoList.propTypes = {
   // repoComponents: PropTypes.func.isRequired,
   retrieveRepos: PropTypes.func.isRequired,
   repoIds: PropTypes.number.isRequired,
+  currentPage: PropTypes.string.isRequired,
+  renderOrgs: PropTypes.func.isRequired,
 };
 
 export const mapStateToProps = state => ({
   repoIds: state.repos.ids,
   reposById: state.repos.reposById,
+  currentPage: state.currentPage.render,
 });
 
 export const mapDispatchToProps = dispatch =>
   bindActionCreators({
+<<<<<<< HEAD
     // retrieveRepos,
 >>>>>>> edbe0e0... fml
+=======
+    retrieveRepos, renderOrgs
+>>>>>>> 564c283... Fixing warning messages from tests
   }, dispatch);
 
 export default connect(

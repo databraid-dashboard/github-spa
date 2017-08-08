@@ -56,6 +56,7 @@ export const Milestone = ({ title, due, created, percentComplete }) => {
       month: '2-digit',
       year: 'numeric',
 <<<<<<< HEAD
+<<<<<<< HEAD
       // hour: '2-digit',
       // minute: '2-digit',
       // hour12: true
@@ -64,12 +65,12 @@ export const Milestone = ({ title, due, created, percentComplete }) => {
       minute: '2-digit',
       hour12: true,
 >>>>>>> 8dc7899... removed MSTP's where uneeded, wrote test for components ready for pr, limited scoped of PR  via .gitignore dashboard feature
+=======
+>>>>>>> 564c283... Fixing warning messages from tests
     };
 
     let dateString = date.toLocaleDateString('en-US', formatOptions);
-    dateString = dateString.replace(',', '')
-      .replace('PM', 'p.m.')
-      .replace('AM', 'a.m.');
+
     return dateString;
   }
 
@@ -80,21 +81,21 @@ export const Milestone = ({ title, due, created, percentComplete }) => {
   function getDueDate(date) {
 >>>>>>> 02a66ea... Adding with some linting errors addressed
     if (date === null) {
-      return <div />;
+      return <div></div>;
     }
-    return <div><Header sub>Date Due:</Header> {convertDate(date)}</div>;
+    return <div><Header sub className='space-milestones'>Date Due:</Header> {convertDate(date)}</div>;
   }
 
   return (
     <Card.Content>
       <List divided relaxed>
         <List.Item>
-          <List.Content className="ui center aligned">
+          <List.Content className='ui center aligned'>
             <List.Header>{title}</List.Header>
-            <Header sub>Date Created:</Header>
+            <Header sub className='space-milestones'>Date Created:</Header>
             {convertDate(created)}
             {getDueDate(due)}
-            <Header sub className="space">Percent Complete:</Header>
+            <Header sub className='space-milestones'>Percent Complete:</Header>
             <ProgressArc percentComplete={percentComplete} duration={2000} />
           </List.Content>
         </List.Item>

@@ -29,10 +29,14 @@ const Repo = ({ repoName, repoUrl }) => (
     </List.Item>
 =======
 import { List } from 'semantic-ui-react';
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { renderDashboard } from '../../actions/renderActions'
+
 import './Repo.css';
 
+<<<<<<< HEAD
 const Repo = ({ repoName, repoUrl }) => (
   <div>
     <List.Item as="a" to={repoUrl}>{repoName}</List.Item>
@@ -41,13 +45,16 @@ const Repo = ({ repoName, repoUrl }) => (
 =======
 export const Repo = ({ repoName, repoUrl }) => (
   <List.Item as="a" to={repoUrl}><List.Content>{repoName}</List.Content>
+=======
+export const Repo = ({ repoName, renderDashboard, }) => (
+  <List.Item as='a' className='hoverable' onClick = {() => renderDashboard(repoName)} ><List.Content>{repoName}</List.Content>
+>>>>>>> 564c283... Fixing warning messages from tests
   </List.Item>
 >>>>>>> 02a66ea... Adding with some linting errors addressed
 );
 
 Repo.propTypes = {
   repoName: PropTypes.string.isRequired,
-  repoUrl: PropTypes.string.isRequired,
 };
 <<<<<<< HEAD
 >>>>>>> 2c48835... Adding repo view
@@ -57,10 +64,12 @@ Repo.propTypes = {
 export const mapStateToProps = (state, { repoId }) => {
   const repo = state.repos.reposById[repoId];
 
-  const { repoName, repoUrl } = repo;
+  const { repoName, } = repo;
+  console.log('repoName',repoName);
 
   return {
     repoName,
+<<<<<<< HEAD
 <<<<<<< HEAD
     repoUrl
   }
@@ -70,10 +79,20 @@ export default connect(
   mapStateToProps
 =======
     repoUrl,
+=======
+>>>>>>> 564c283... Fixing warning messages from tests
   };
 };
 
+const mapDispatchToProps = dispatch => bindActionCreators({
+  renderDashboard,
+}, dispatch);
+
 export default connect(
   mapStateToProps,
+<<<<<<< HEAD
 >>>>>>> edbe0e0... fml
+=======
+  mapDispatchToProps
+>>>>>>> 564c283... Fixing warning messages from tests
 )(Repo);

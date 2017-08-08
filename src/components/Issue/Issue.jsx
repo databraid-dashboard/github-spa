@@ -1,5 +1,6 @@
 import React from 'react';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import './Issue.css'
 <<<<<<< HEAD
 import { List, Label } from 'semantic-ui-react';
@@ -9,6 +10,9 @@ import { connect } from 'react-redux';
 >>>>>>> d3454fd... Adding PR Table and Milestones Components
 =======
 import { Item, List, Label } from 'semantic-ui-react';
+=======
+import { Grid, Card, Item, List, Label, Header, Segment } from 'semantic-ui-react';
+>>>>>>> 564c283... Fixing warning messages from tests
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import './Issue.css';
@@ -76,23 +80,25 @@ export const Issue = ({ title, repoIssueNumber, assignedTo, labels, issueId }) =
 function getDescription(assignedTo) {
   if (assignedTo.length > 0) {
     return (
-      <div>Assigned To: {assignedTo[0][0]}<div>
-        <Item.Image size="mini" src={assignedTo[0][1]} /></div></div>
+      <div className='ui center aligned'>
+        <div><Header sub className='space-issues'>Assigned To: </Header>{assignedTo[0][0]}</div>
+        <Item.Image size="mini" src={assignedTo[0][1]} />
+      </div>
     );
   }
   return (
-    <div />
+    <div></div>
   );
 }
 
 export const Issue = ({ title, repoIssueNumber, assignedTo, labels }) => {
 >>>>>>> 02a66ea... Adding with some linting errors addressed
   const renderedLabels = labels.map(label => (
-    <div>
-      <Label.Group><div className="ui tiny label">{label}
-      </div></Label.Group>
+    <div className='space-labels' key={label}>
+      <Label className='ui mini label' ribbon='right' color='grey'>{label}
+      </Label>
     </div>
-  ),
+  )
   );
 
 <<<<<<< HEAD
@@ -110,20 +116,33 @@ export const Issue = ({ title, repoIssueNumber, assignedTo, labels }) => {
 =======
 >>>>>>> 02a66ea... Adding with some linting errors addressed
   return (
+<<<<<<< HEAD
     <List.Item>
       <List.Content key={issueId + 1} className="ui center aligned">
         <List.Header>#{repoIssueNumber} {title}</List.Header>{renderedLabels}
         <List.Description> {getDescription(assignedTo)}</List.Description>
       </List.Content>
     </List.Item>
+=======
+    <Card.Content>
+      <List divided relaxed>
+        <List.Item>
+          <List.Content>
+            <List.Header>#{repoIssueNumber} {title}</List.Header>{renderedLabels}
+            <List.Description> {getDescription(assignedTo)}</List.Description>
+          </List.Content>
+        </List.Item>
+      </List>
+    </Card.Content>
+>>>>>>> 564c283... Fixing warning messages from tests
   );
 };
 
 Issue.propTypes = {
   title: PropTypes.string.isRequired,
   repoIssueNumber: PropTypes.number.isRequired,
-  assignedTo: PropTypes.arrayOf.isRequired,
-  labels: PropTypes.string.isRequired,
+  assignedTo: PropTypes.array.isRequired,
+  labels: PropTypes.array.isRequired,
 };
 <<<<<<< HEAD
 <<<<<<< HEAD

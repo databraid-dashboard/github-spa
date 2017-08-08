@@ -1,6 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Should render a Dashboard that holds Connected Components Should render the Dashboard 1`] = `
+<<<<<<< HEAD
 <Container>
 <<<<<<< HEAD
   <Grid>
@@ -12,16 +13,51 @@ exports[`Should render a Dashboard that holds Connected Components Should render
     <GridColumn
       floated="left"
       width={4}
+=======
+<div>
+  <Button
+    as="button"
+    icon={true}
+    onClick={[Function]}
+    padded={true}
+  >
+    <Icon
+      as="i"
+      name="arrow left"
+    />
+  </Button>
+  <Container>
+    <Grid
+      padded={true}
+>>>>>>> 564c283... Fixing warning messages from tests
     >
-      <Connect(Issues) />
-    </GridColumn>
-    <GridColumn
-      floated="right"
-      width={4}
-    >
-      <Connect(Milestones) />
-    </GridColumn>
-  </Grid>
-  <Connect(PrTable) />
-</Container>
+      <Header
+        as="h2"
+        icon={true}
+        textAlign="center"
+      >
+        <Icon
+          as="i"
+          name="github"
+        />
+        <HeaderContent>
+          Some Repo
+        </HeaderContent>
+      </Header>
+      <GridRow
+        columns={3}
+      >
+        <GridColumn>
+          <Connect(PrTable) />
+        </GridColumn>
+        <GridColumn>
+          <Connect(Issues) />
+        </GridColumn>
+        <GridColumn>
+          <Connect(Milestones) />
+        </GridColumn>
+      </GridRow>
+    </Grid>
+  </Container>
+</div>
 `;

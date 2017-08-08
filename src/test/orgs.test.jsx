@@ -17,15 +17,18 @@ const state = {
       },
     },
   },
-  loadingOrganizations: false,
+  currentPage: {render: 'orgs', repoName: null}
 };
 
 describe('Organizations component', () => {
   it('should render a component with props as specified ', () => {
+    const retrieveOrgs = jest.fn()
     const component = shallow(
       <Organizations
         orgIds={state.orgs.ids}
         loadingOrganizations={false}
+        currentPage={state.currentPage.render}
+        retrieveOrgs={retrieveOrgs}
       />,
     );
     expect(toJson(component)).toMatchSnapshot();
@@ -51,7 +54,7 @@ describe('Organizations component', () => {
           reposUrl: 'https://api.github.com/orgs/ShareCastG52/repos',
         },
       },
-
+      currentPage: 'orgs',
     };
     expect(mapStateToProps(state)).toEqual(expected);
   });

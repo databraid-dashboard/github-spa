@@ -41,27 +41,10 @@ import { Container } from 'semantic-ui-react';
 <<<<<<< HEAD
 >>>>>>> 2d0b4d9... Adding Milestones Component
 
-const App = ({ currentPage }) => {
-if (currentPage === 'orgs') {
+const App = () => {
   return (
-    <Container>
-      <Organizations />
-    </Container>
-  )
-} else if (currentPage === 'repos') {
-  return (
-    <Container>
-      <RepoList />
-    </Container>
-  )
-} else if (currentPage === 'dashboard') {
-  return (
-    <Container>
-      <Dashboard />
-    </Container>
-  )
-} else {
   <Container>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -241,11 +224,16 @@ export default App;
 >>>>>>> 2f2a056... Adding with fewer linting errors
 =======
     <div>Something has gone wrong with your application</div>
+=======
+    <Organizations />
+    <RepoList />
+    <Dashboard />
+>>>>>>> 564c283... Fixing warning messages from tests
   </Container>
-}
-
+  )
 };
 
+<<<<<<< HEAD
 export const mapStateToProps = state => ({
   currentPage: state.currentPage,
 })
@@ -260,3 +248,6 @@ export default connect(
   mapDispatchToProps,
 )(App);
 >>>>>>> b56b9a4... Adding conditional views
+=======
+export default App;
+>>>>>>> 564c283... Fixing warning messages from tests

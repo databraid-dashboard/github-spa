@@ -24,7 +24,6 @@ describe('Org entry component', () => {
 
         avatarUrl={'https://avatars1.githubusercontent.com/u/29614654?v=4'}
         orgName={'ShareCastG52'}
-        reposUrl={'https://api.github.com/orgs/ShareCastG52/repos'}
       />,
     );
     expect(toJson(component)).toMatchSnapshot();

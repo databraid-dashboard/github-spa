@@ -7,6 +7,7 @@ import {
 const repoReducer = {state = ids:[], reposById: {} }, action) => {
 =======
 function createState(json, incomingState) {
+<<<<<<< HEAD
   // console.log('json',json);
 =======
   GET_REPOS,
@@ -14,6 +15,8 @@ function createState(json, incomingState) {
 
 function createState(json, incomingState) {
 >>>>>>> edbe0e0... fml
+=======
+>>>>>>> 564c283... Fixing warning messages from tests
   const state = incomingState;
   json.forEach((repo) => {
     state.ids = state.ids.concat(repo.id);
@@ -54,6 +57,9 @@ function createState(json, state) {
   }
 };
 
+<<<<<<< HEAD
 >>>>>>> edbe0e0... fml
 
+=======
+>>>>>>> 564c283... Fixing warning messages from tests
 export default repoReducer;
