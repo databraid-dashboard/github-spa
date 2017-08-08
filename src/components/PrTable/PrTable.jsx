@@ -18,13 +18,13 @@ export class PrTable extends Component {
     this.props.retrievePrs();
   }
 
-
   render() {
     if (this.props.loadingPrTable) {
       return (
         <div>Loading Pull Requests</div>
       );
     }
+    
     return (
       <Table celled fixed>
         <Table.Header>

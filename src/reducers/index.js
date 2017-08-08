@@ -11,7 +11,7 @@ import milestonesReducer from './milestonesReducer';
 
 import repoReducer from './repoReducer';
 
-// import renderPage from './renderReducer';
+import renderPage from './renderReducer';
 
 const rootReducer = combineReducers({
   issues: issuesReducer,
@@ -19,7 +19,7 @@ const rootReducer = combineReducers({
   milestones: milestonesReducer,
   repos: repoReducer,
   orgs: orgReducer,
-  // currentPage: renderPage,
+  currentPage: renderPage,
   // users: userReducer,
 });
 
