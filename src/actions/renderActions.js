@@ -24,10 +24,12 @@ export const renderRepos = () => (dispatch) => {
   });
 };
 
-export const renderDashboard = repoName => (dispatch) => {
-  dispatch({
-    type: RENDER_DASHBOARD,
-    reponseStr: 'dashboard',
-    repoName,
-  });
-};
+export const renderDashboard = (repoName) => {
+  return dispatch => {
+    dispatch({
+      type: RENDER_DASHBOARD,
+      reponseStr:'dashboard',
+      repoName: repoName
+    })
+  }
+}

@@ -31,6 +31,7 @@ describe('Organizations component', () => {
         currentPage={state.currentPage.render}
         retrieveOrgs={retrieveOrgs}
         renderLogin={renderLogin}
+
       />,
     );
     expect(toJson(component)).toMatchSnapshot();

@@ -11,43 +11,14 @@ import Organizations from './components/Organizations/Organizations';
 import Dashboard from './components/Dashboard/Dashboard';
 import './App.css';
 
-const App = ({ currentPage }) => {
-if (currentPage === 'orgs') {
+const App = () => {
   return (
-    <Container>
-      <Organizations />
-    </Container>
-  )
-} else if (currentPage === 'repos') {
-  return (
-    <Container>
-      <RepoList />
-    </Container>
-  )
-} else if (currentPage === 'dashboard') {
-  return (
-    <Container>
-      <Dashboard />
-    </Container>
-  )
-} else {
   <Container>
-    <div>Something has gone wrong with your application</div>
+    <Organizations />
+    <RepoList />
+    <Dashboard />
   </Container>
-}
-
+  )
 };
 
-export const mapStateToProps = state => ({
-  currentPage: state.currentPage,
-})
-
-export const mapDispatchToProps = dispatch =>
-  bindActionCreators({
-    renderOrgs, renderLogin, renderRepos, renderDashboard,
-  }, dispatch);
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(App);
+export default App;

@@ -12,28 +12,25 @@ export const Milestone = ({ title, due, created, percentComplete, milestoneId })
       day: '2-digit',
       month: '2-digit',
       year: 'numeric',
-      // hour: '2-digit',
-      // minute: '2-digit',
-      // hour12: true
     };
 
-    const dateString = date.toLocaleDateString('en-US', formatOptions);
+    let dateString = date.toLocaleDateString('en-US', formatOptions);
 
     return dateString;
   }
 
   function getDueDate(date) {
     if (date === null) {
-      return <div />;
+      return <div></div>;
     }
-    return <div><Header sub>Date Due:</Header> {convertDate(date)}</div>;
+    return <div><Header sub className='space-milestones'>Date Due:</Header> {convertDate(date)}</div>;
   }
 
   return (
     <Card.Content>
       <List divided relaxed>
         <List.Item>
-          <List.Content className="ui center aligned">
+          <List.Content className='ui center aligned'>
             <List.Header>{title}</List.Header>
             <Header sub className="space-milestones">Date Created:</Header>
             {convertDate(created)}

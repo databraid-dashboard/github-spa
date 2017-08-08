@@ -1,9 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Issue entry component should render a component with props as specified  1`] = `
-<ListItem>
-  <ListContent
-    className="ui center aligned"
+<CardContent>
+  <List
+    divided={true}
+    relaxed={true}
   >
     <ListHeader>
       #
@@ -14,31 +15,23 @@ exports[`Issue entry component should render a component with props as specified
     <div>
       <LabelGroup>
         <div
-          className="ui tiny label"
+          className="space-labels"
         >
           <Label>
             duplicate
 
           </Label>
         </div>
-      </LabelGroup>
-    </div>
-    <div>
-      <LabelGroup>
         <div
-          className="ui tiny label"
+          className="space-labels"
         >
           <Label>
             help wanted
 
           </Label>
         </div>
-      </LabelGroup>
-    </div>
-    <div>
-      <LabelGroup>
         <div
-          className="ui tiny label"
+          className="space-labels"
         >
           <Label>
             question

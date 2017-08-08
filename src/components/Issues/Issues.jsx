@@ -32,11 +32,7 @@ export class Issues extends Component {
             Issues
           </Card.Header>
         </Card.Content>
-        <Card.Content>
-          <List divided relaxed>
-            {issueComponents(this.props.issuesIds)}
-          </List>
-        </Card.Content>
+          {issueComponents(this.props.issuesIds)}
       </Card>
     );
   }

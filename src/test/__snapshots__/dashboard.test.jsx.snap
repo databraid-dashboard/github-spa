@@ -6,6 +6,7 @@ exports[`Should render a Dashboard that holds Connected Components Should render
     as="button"
     icon={true}
     onClick={[Function]}
+    padded={true}
   >
     <Icon
       as="i"

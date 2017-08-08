@@ -2,7 +2,6 @@
 
 exports[`App component should render a component with props as specified  1`] = `
 <Container>
-  <Connect(Component) />
   <Connect(Organizations) />
   <Connect(RepoList) />
   <Connect(Component) />
