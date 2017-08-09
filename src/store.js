@@ -4,7 +4,6 @@ import { createStore, applyMiddleware, compose } from 'redux';
 // import thunk from 'redux-thunk';
 import thunkMiddleware from 'redux-thunk';
 import rootReducer from './reducers/index';
-import Api from './utils/Api';
 
 
 const logger = store => next => (action) => {
