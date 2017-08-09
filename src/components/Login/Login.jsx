@@ -7,14 +7,15 @@ import PropTypes from 'prop-types';
 import { renderOrgs } from '../../actions/renderActions';
 import './Login.css';
 
-export const Login = ({ currentPage, renderOrgs }) => {
+export const Login = ({ currentPage, renderOrgs, userName }) => {
+  console.log('state current', userName);
   if (currentPage !== 'login') {
     return <div />;
   }
   if (currentPage === 'login') {
     return (
       <div>
-        <Button onClick={() => renderOrgs()}>
+        <Button onClick={() => renderOrgs(userName)}>
         Login
         </Button>
       </div>
@@ -25,10 +26,12 @@ export const Login = ({ currentPage, renderOrgs }) => {
 Login.propTypes = {
   currentPage: PropTypes.string.isRequired,
   renderOrgs: PropTypes.func.isRequired,
+  userName: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = state => ({
   currentPage: state.currentPage.render,
+  userName: state.currentPage.userName,
 });
 
 export const mapDispatchToProps = dispatch => bindActionCreators({
