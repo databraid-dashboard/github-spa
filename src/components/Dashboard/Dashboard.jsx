@@ -20,9 +20,13 @@ const Dashboard = () => (
 );
 
 Dashboard.propTypes = {
-  repoName: PropTypes.string.isRequired,
+  repoName: PropTypes.string,
   currentPage: PropTypes.string.isRequired,
   renderRepos: PropTypes.func.isRequired,
+};
+
+Dashboard.defaultProps = {
+  repoName: null,
 };
 
 const mapStateToProps = state => ({

@@ -19,7 +19,7 @@ const state = {
 
 describe('Org entry component', () => {
   it('should render a component with props as specified ', () => {
-    const renderRepos = jest.fn()
+    const renderRepos = jest.fn();
     const component = shallow(
       <Org
         avatarUrl={'https://avatars1.githubusercontent.com/u/29614654?v=4'}

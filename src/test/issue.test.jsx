@@ -8,7 +8,7 @@ const state = {
   issues: {
     issuesById: {
       238923429: {
-        assignedTo: ['grant'],
+        assignedTo: [['Gwillison415', 'https://avatars2.githubusercontent.com/u/22106099?v=4']],
         labels: ['duplicate', 'help wanted', 'question'],
         repoIssueNumber: 16,
         title: 'login tst JWT token',
@@ -24,7 +24,7 @@ describe('Issue entry component', () => {
       <Issue
         labels={state.issues.issuesById[238923429].labels}
         issueId={238923429}
-        assignedTo={['grant']}
+        assignedTo={[['Gwillison415', 'https://avatars2.githubusercontent.com/u/22106099?v=4']]}
         repoIssueNumber={16}
         title={'login tst JWT token'}
       />,
@@ -33,7 +33,7 @@ describe('Issue entry component', () => {
   });
   it('map\'s given State To Props ', () => {
     const expected = {
-      assignedTo: ['grant'],
+      assignedTo: [['Gwillison415', 'https://avatars2.githubusercontent.com/u/22106099?v=4']],
       labels: ['duplicate', 'help wanted', 'question'],
       repoIssueNumber: 16,
       title: 'login tst JWT token',
@@ -48,7 +48,7 @@ describe('Issue entry component', () => {
         title={'login tst JWT token'}
         issueId={238923429}
         labels={state.issues.issuesById[238923429].labels}
-        assignedTo={['grant']}
+        assignedTo={[['Gwillison415', 'https://avatars2.githubusercontent.com/u/22106099?v=4']]}
       />,
     );
     expect(component.find('.aligned').exists()).toBe(true);
