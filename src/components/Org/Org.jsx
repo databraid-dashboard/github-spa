@@ -7,21 +7,22 @@ import PropTypes from 'prop-types';
 import { renderRepos } from '../../actions/renderActions';
 import './Org.css';
 
-export const Org = ({ avatarUrl, orgName, renderRepos }) => (
+export const Org = ({ avatarUrl, orgName, renderRepos, selectedOrgName }) => (
   <Grid.Column>
-    <Image className="hoverable" onClick={() => renderRepos()} src={avatarUrl} size="small" />
-    <List.Item as="a" className="hoverable" onClick={() => renderRepos()}>{orgName}</List.Item>
+    {console.log('state current1', selectedOrgName)};
+    <Image className="hoverable" onClick={() => renderRepos(orgName)} src={avatarUrl} size="small" />
+    <List.Item as="a" className="hoverable" onClick={() => renderRepos(orgName)}>{orgName}</List.Item>
   </Grid.Column>
 );
 
 export const mapStateToProps = (state, { orgId }) => {
+  const selectedOrgName = state.currentPage.selectedOrgName;
   const org = state.orgs.orgsById[orgId];
-
   const { avatarUrl, orgName } = org;
-
   return {
     avatarUrl,
     orgName,
+    selectedOrgName,
   };
 };
 
