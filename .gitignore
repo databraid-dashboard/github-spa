@@ -21,13 +21,8 @@ yarn-debug.log*
 yarn-error.log*
 
 # worksheets, Mock data
-/src/SampleJSONResponses/
 worksheet.js
 
  # unfinished components
-/src/components/Repo/
-/src/components/RepoList/
-
-/src/components/Login/
 
 /src/utils/Api.js

@@ -9,7 +9,7 @@ function createState(json, incomingState) {
     state.orgsById[org.id] = {};
     state.orgsById[org.id].avatarUrl = org.avatar_url;
     state.orgsById[org.id].orgName = org.login;
-    state.orgsById[org.id].reposUrl = org.repos_url;
+    state.orgsById[org.id].reposUrl = org.url;
   });
   return { ...state };
 }
@@ -23,6 +23,5 @@ const orgReducer = (state = { ids: [], orgsById: {} }, action) => {
       return state;
   }
 };
-
 
 export default orgReducer;

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import ProgressArc from '../ProgressArc/ProgressArc';
 import './Milestone.css';
 
-export const Milestone = ({ title, due, created, percentComplete }) => {
+export const Milestone = ({ title, due, created, percentComplete, milestoneId }) => {
   function convertDate(ISOdate) {
     const date = new Date(ISOdate);
     const formatOptions = {
@@ -42,7 +42,11 @@ export const Milestone = ({ title, due, created, percentComplete }) => {
             {convertDate(created)}
             {getDueDate(due)}
             <Header sub className="space-milestones">Percent Complete:</Header>
-            <ProgressArc percentComplete={percentComplete} duration={2000} />
+            <ProgressArc
+              milestoneId={milestoneId}
+              percentComplete={percentComplete}
+              duration={2000}
+            />
           </List.Content>
         </List.Item>
       </List>
@@ -58,10 +62,12 @@ export const mapStateToProps = (state, { milestoneId }) => {
     due,
     created,
     percentComplete,
+    milestoneId,
   };
 };
 
 Milestone.propTypes = {
+  milestoneId: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   due: PropTypes.string,
   created: PropTypes.string.isRequired,

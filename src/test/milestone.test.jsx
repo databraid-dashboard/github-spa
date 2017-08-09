@@ -40,13 +40,20 @@ describe('Milestone entry component', () => {
       created: '2017-06-23T22:45:34Z',
       due: '2018-06-23T22:45:34Z',
       percentComplete: 0.4,
+      milestoneId: 2601714,
     };
     expect(mapStateToProps(state, { milestoneId: 2601714 })).toEqual(expected);
   });
 
   it('Should have a List Content aligned in the center', () => {
     const component = shallow(
-      <Milestone title={'sprint 1'} due={'2018-06-23T22:45:34Z'} created={'2017-06-23T22:45:34Z'} percentComplete={0.4} />,
+      <Milestone
+        title={'sprint 1'}
+        due={'2018-06-23T22:45:34Z'}
+        created={'2017-06-23T22:45:34Z'}
+        percentComplete={0.4}
+        milestoneId={2601714}
+      />,
     );
     expect(component.find('.aligned').exists()).toBe(true);
   });

@@ -38,6 +38,7 @@ exports[`Milestone entry component should render a component with props as speci
         </Header>
         <Connect(ProgressArc)
           duration={2000}
+          milestoneId={2601714}
           percentComplete={0.4}
         />
       </ListContent>
