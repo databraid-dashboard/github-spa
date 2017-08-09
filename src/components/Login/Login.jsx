@@ -33,6 +33,7 @@ Login.propTypes = {
 };
 
 const mapStateToProps = state => ({
+  currentPage: state.currentPage.render,
   userName: state.currentPage.userName,
 });
 
