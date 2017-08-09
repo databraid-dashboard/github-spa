@@ -84,7 +84,7 @@ class ProgressArc extends Component {
 }
 
 ProgressArc.propTypes = {
-  id: PropTypes.number,
+  id: PropTypes.number.isRequired,
   duration: PropTypes.number.isRequired,
   percentComplete: PropTypes.number.isRequired,
 };
