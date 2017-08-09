@@ -7,5 +7,6 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import store from './store';
 
-ReactDOM.render(React.createElement(App), document.getElementById('root'));
+ReactDOM.render(
+  React.createElement(Provider, { store }, React.createElement(App)), document.getElementById('root'));
 registerServiceWorker();

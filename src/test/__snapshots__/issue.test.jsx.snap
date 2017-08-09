@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Issue entry component should render a component with props as specified  1`] = `
+<CardContent>
+  <List
+    divided={true}
+    relaxed={true}
+  >
+    <ListItem>
+      <ListContent>
+        <ListHeader>
+          #
+          16
+           
+          login tst JWT token
+        </ListHeader>
+        <div
+          className="space-labels"
+        >
+          <Label
+            className="ui mini label"
+            color="grey"
+            ribbon="right"
+          >
+            duplicate
+          </Label>
+        </div>
+        <div
+          className="space-labels"
+        >
+          <Label
+            className="ui mini label"
+            color="grey"
+            ribbon="right"
+          >
+            help wanted
+          </Label>
+        </div>
+        <div
+          className="space-labels"
+        >
+          <Label
+            className="ui mini label"
+            color="grey"
+            ribbon="right"
+          >
+            question
+          </Label>
+        </div>
+        <ListDescription>
+           
+          <div
+            className="ui center aligned"
+          >
+            <div>
+              <Header
+                className="space-issues"
+                sub={true}
+              >
+                Assigned To: 
+              </Header>
+              Gwillison415
+            </div>
+            <ItemImage
+              size="mini"
+              src="https://avatars2.githubusercontent.com/u/22106099?v=4"
+            />
+          </div>
+        </ListDescription>
+      </ListContent>
+    </ListItem>
+  </List>
+</CardContent>
+`;

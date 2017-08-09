@@ -1,19 +1,19 @@
+/* eslint-disable import/no-named-as-default */
 import React from 'react';
-import logo from './logo.svg';
+import { Container } from 'semantic-ui-react';
+import RepoList from './components/RepoList/RepoList';
+import Login from './components/Login/Login';
+import Organizations from './components/Organizations/Organizations';
+import Dashboard from './components/Dashboard/Dashboard';
 import './App.css';
-import Issues from './components/Issues/Issues';
 
 const App = () => (
-  <div className="App">
-    <div className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <h2>Welcome to React</h2>
-    </div>
-    <p className="App-intro">
-      To get started, edit <code>src/App.js</code> and save to reload.
-    </p>
-    <Issues />
-  </div>
+  <Container>
+    <Login />
+    <Organizations />
+    <RepoList />
+    <Dashboard />
+  </Container>
 );
 
 export default App;
