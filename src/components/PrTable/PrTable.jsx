@@ -60,7 +60,11 @@ export class PrTable extends Component {
 PrTable.propTypes = {
   retrievePrs: PropTypes.func.isRequired,
   prIds: PropTypes.arrayOf(PropTypes.number).isRequired,
-  loadingPrTable: PropTypes.bool.isRequired,
+  loadingPrTable: PropTypes.bool,
+};
+
+PrTable.defaultProps = {
+  loadingPrTable: false,
 };
 
 export const mapStateToProps = state => ({

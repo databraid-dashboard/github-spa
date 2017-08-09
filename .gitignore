@@ -29,3 +29,5 @@ worksheet.js
 /src/components/RepoList/
 
 /src/components/Login/
+
+/src/utils/Api.js

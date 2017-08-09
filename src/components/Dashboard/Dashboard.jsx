@@ -17,7 +17,7 @@ export const Dashboard = ({ repoName, currentPage, renderRepos }) => {
   if (currentPage === 'dashboard') {
     return (
       <div>
-        <Button icon padded onClick={() => renderRepos()}>
+        <Button icon onClick={() => renderRepos()}>
           <Icon name="arrow left" />
         </Button>
         <Container>
@@ -47,9 +47,13 @@ export const Dashboard = ({ repoName, currentPage, renderRepos }) => {
 };
 
 Dashboard.propTypes = {
-  repoName: PropTypes.string.isRequired,
+  repoName: PropTypes.string,
   currentPage: PropTypes.string.isRequired,
   renderRepos: PropTypes.func.isRequired,
+};
+
+Dashboard.defaultProps = {
+  repoName: null,
 };
 
 const mapStateToProps = state => ({

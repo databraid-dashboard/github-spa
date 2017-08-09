@@ -55,9 +55,13 @@ export const PrTableRow = ({ created, mergeable, submittedBy, title }) => (
 
 PrTableRow.propTypes = {
   created: PropTypes.string.isRequired,
-  mergeable: PropTypes.bool.isRequired,
-  submittedBy: PropTypes.string.isRequired,
-  title: PropTypes.number.isRequired,
+  mergeable: PropTypes.bool,
+  submittedBy: PropTypes.arrayOf(PropTypes.string).isRequired,
+  title: PropTypes.string.isRequired,
+};
+
+PrTableRow.defaultProps = {
+  mergeable: undefined,
 };
 
 export const mapStateToProps = (state, { prId }) => {

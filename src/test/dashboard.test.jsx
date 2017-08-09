@@ -12,7 +12,7 @@ const mockStore = configureMockStore(middlewares);
 describe('Should render a Dashboard that holds Connected Components', () => {
   it.only('Should render the Dashboard', () => {
     const store = mockStore({ rootReducer });
-    const renderRepos = jest.fn()
+    const renderRepos = jest.fn();
     const dashComponent = shallow(
       <Dashboard store={store} repoName={'Some Repo'} currentPage={'dashboard'} renderRepos={renderRepos} />,
     );

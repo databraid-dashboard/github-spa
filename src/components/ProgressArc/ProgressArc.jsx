@@ -84,15 +84,19 @@ class ProgressArc extends Component {
 }
 
 ProgressArc.propTypes = {
-  id: PropTypes.number.isRequired,
+  id: PropTypes.number,
   duration: PropTypes.number.isRequired,
-  percentComplete: PropTypes.number.isRequired,
-
+  percentComplete: PropTypes.number,
 };
 
-const mapStateToProps = (state) => {
-  state.milestones.percentComplete;
+ProgressArc.defaultProps = {
+  id: undefined,
+  percentComplete: undefined,
 };
+
+const mapStateToProps = state => ({
+  percentComplete: state.milestones.percentComplete,
+});
 
 export default connect(
   mapStateToProps,

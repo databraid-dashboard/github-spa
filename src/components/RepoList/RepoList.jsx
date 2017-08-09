@@ -25,7 +25,7 @@ export class RepoList extends Component {
     if (this.props.currentPage === 'repos') {
       return (
         <div>
-          <Button icon padded onClick={() => this.props.renderOrgs()}>
+          <Button icon onClick={() => this.props.renderOrgs()}>
             <Icon name="arrow left" />
           </Button>
           <Grid centered padded>
@@ -50,7 +50,7 @@ export class RepoList extends Component {
 RepoList.propTypes = {
   // repoComponents: PropTypes.func.isRequired,
   retrieveRepos: PropTypes.func.isRequired,
-  repoIds: PropTypes.number.isRequired,
+  repoIds: PropTypes.arrayOf(PropTypes.number).isRequired,
   currentPage: PropTypes.string.isRequired,
   renderOrgs: PropTypes.func.isRequired,
 };

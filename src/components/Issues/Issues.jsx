@@ -40,8 +40,12 @@ export class Issues extends Component {
 
 Issues.propTypes = {
   retrieveIssues: PropTypes.func.isRequired,
-  loadingIssues: PropTypes.bool.isRequired,
+  loadingIssues: PropTypes.bool,
   issuesIds: PropTypes.arrayOf(PropTypes.number).isRequired,
+};
+
+Issues.defaultProps = {
+  loadingIssues: false,
 };
 
 
