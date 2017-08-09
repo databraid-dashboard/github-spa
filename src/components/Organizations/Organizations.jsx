@@ -15,7 +15,7 @@ function orgComponents(orgIds) {
 
 export class Organizations extends Component {
   componentDidMount() {
-    this.props.retrieveOrgs();
+    this.props.retrieveOrgs(this.props.userName);
   }
 
   render() {
@@ -56,6 +56,7 @@ export const mapStateToProps = state => ({
   orgIds: state.orgs.ids,
   orgsById: state.orgs.orgsById,
   currentPage: state.currentPage.render,
+  userName: state.currentPage.userName,
 });
 
 export const mapDispatchToProps = dispatch =>

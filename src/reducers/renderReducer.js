@@ -14,7 +14,7 @@ const renderPage = (state = { render: 'login', repoName: null, userName: 'michae
       return { ...state, render: 'login' };
 
     case RENDER_DASHBOARD:
-      return { render: 'dashboard',
+      return { ...state, render: 'dashboard',
         repoName: action.repoName };
 
     default:

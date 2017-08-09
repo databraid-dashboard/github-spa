@@ -1,12 +1,16 @@
-import authorizedUserByOrgResponse from '../SampleJSONResponses/authORGsJSON';
+// import authorizedUserByOrgResponse from '../SampleJSONResponses/authORGsJSON';
 
 export const GET_ORGS = 'GET_ORGS';
 
-const request = { query: '{orgs(userName: "michaelmurray6298") {orgs {id login url avatarUrl } } }' };
 
-export function retrieveOrgs() {
+export function retrieveOrgs(userName) {
+
+  let queryString = `{orgs(userName: ${userName}) {orgs {id login url avatarUrl } } }`
+
+  let request = { query: queryString };
+
   return (dispatch, getState, { Api }) => {
-    return Api.fetchData()
+    return Api.fetchData(request)
     .then(orgsObj => dispatch({
       type: GET_ORGS,
       responseObj: orgsObj
