@@ -79,7 +79,12 @@ const logger = store => next => (action) => {
 
 const middleware = [
   thunk,
+<<<<<<< HEAD
   // logger,
+=======
+  // thunkMiddleware.withExtraArgument({ Api }),
+  logger,
+>>>>>>> 813da6e... updated store
   // error,
 ];
 
