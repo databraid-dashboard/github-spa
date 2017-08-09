@@ -48,8 +48,12 @@ function orgComponents(orgIds) {
 >>>>>>> 2f2a056... Adding with fewer linting errors
 export class Organizations extends Component {
   componentDidMount() {
+<<<<<<< HEAD
 >>>>>>> 02a66ea... Adding with some linting errors addressed
     this.props.retrieveOrgs();
+=======
+    this.props.retrieveOrgs(this.props.userName);
+>>>>>>> 979ef55... editing .gitignore
   }
 
 <<<<<<< HEAD
@@ -150,6 +154,7 @@ export const mapStateToProps = state => ({
   orgIds: state.orgs.ids,
   orgsById: state.orgs.orgsById,
   currentPage: state.currentPage.render,
+  userName: state.currentPage.userName,
 });
 >>>>>>> 2c48835... Adding repo view
 

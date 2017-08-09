@@ -39,20 +39,22 @@ import { renderRepos } from '../../actions/renderActions';
 import './Org.css';
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 export const Org = ({ avatarUrl, orgName, renderRepos }) => (
 >>>>>>> 564c283... Fixing warning messages from tests
 =======
 export const Org = ({ avatarUrl, orgName, renderRepos, selectedOrgName }) => (
 >>>>>>> 4bf6324... Adding some api calls
+=======
+export const Org = ({ avatarUrl, orgName, renderRepos }) => (
+>>>>>>> 979ef55... editing .gitignore
   <Grid.Column>
-    {console.log('state current1', selectedOrgName)};
     <Image className="hoverable" onClick={() => renderRepos(orgName)} src={avatarUrl} size="small" />
     <List.Item as="a" className="hoverable" onClick={() => renderRepos(orgName)}>{orgName}</List.Item>
   </Grid.Column>
 );
 
 export const mapStateToProps = (state, { orgId }) => {
-  const selectedOrgName = state.currentPage.selectedOrgName;
   const org = state.orgs.orgsById[orgId];
 <<<<<<< HEAD
 >>>>>>> 2c48835... Adding repo view
@@ -87,6 +89,7 @@ export const mapStateToProps = (state, { orgId }) => {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     reposUrl
   }
 }
@@ -100,6 +103,8 @@ export default connect(
 =======
     selectedOrgName,
 >>>>>>> 4bf6324... Adding some api calls
+=======
+>>>>>>> 979ef55... editing .gitignore
   };
 };
 

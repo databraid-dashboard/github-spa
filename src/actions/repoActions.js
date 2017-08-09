@@ -3,8 +3,13 @@
 import reposByOrg from '../SampleJSONResponses/reposByORGmock';
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 export GET_REPOS = 'GET_REPOS';
 =======
+=======
+// const request = { query: '{orgs(userName: "michaelmurray6298") {orgs {id login url avatarUrl } } }' };
+
+>>>>>>> 979ef55... editing .gitignore
 export const GET_REPOS = 'GET_REPOS';
 >>>>>>> 2c48835... Adding repo view
 

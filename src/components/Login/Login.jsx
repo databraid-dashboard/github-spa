@@ -10,7 +10,6 @@ import './Login.css';
 
 
 export const Login = ({ currentPage, renderOrgs, userName }) => {
-  console.log('state current', userName);
   if (currentPage !== 'login') {
     return <div />;
   }

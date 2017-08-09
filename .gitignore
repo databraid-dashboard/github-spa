@@ -25,6 +25,7 @@ worksheet.js
 
  # unfinished components
 <<<<<<< HEAD
+<<<<<<< HEAD
 /src/components/Repo/
 /src/components/RepoList/
 
@@ -33,3 +34,5 @@ worksheet.js
 
 /src/utils/Api.js
 >>>>>>> b6ccb44... Parsed strings properly in ProgressArc, passed milestoneId down into ProgressArc
+=======
+>>>>>>> 979ef55... editing .gitignore

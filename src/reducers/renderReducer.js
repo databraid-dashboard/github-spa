@@ -72,6 +72,7 @@ const renderPage = (state = { render: 'login', repoName: null, userName: 'michae
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       return state = 'dashboard';
 <<<<<<< HEAD
   }
@@ -84,6 +85,9 @@ const renderPage = (state = { render: 'login', repoName: null, userName: 'michae
 >>>>>>> 564c283... Fixing warning messages from tests
 =======
       return { render: 'dashboard',
+=======
+      return { ...state, render: 'dashboard',
+>>>>>>> 979ef55... editing .gitignore
         repoName: action.repoName };
 >>>>>>> 79473f9... Fixed linting errors, installed redux-mock-store
 =======
