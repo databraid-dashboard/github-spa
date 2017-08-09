@@ -37,6 +37,7 @@ import ProgressArc from '../ProgressArc/ProgressArc';
 import './Milestone.css';
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 const Milestone = ({ title, due, created, percentComplete }) => {
 >>>>>>> 4def070... Adding percent complete feature
 =======
@@ -49,6 +50,9 @@ export const Milestone = ({ title, due, created }) => {
 =======
 export const Milestone = ({ title, due, created, percentComplete }) => {
 >>>>>>> 02a66ea... Adding with some linting errors addressed
+=======
+export const Milestone = ({ title, due, created, percentComplete, milestoneId }) => {
+>>>>>>> b6ccb44... Parsed strings properly in ProgressArc, passed milestoneId down into ProgressArc
   function convertDate(ISOdate) {
     const date = new Date(ISOdate);
     const formatOptions = {
@@ -102,7 +106,11 @@ export const Milestone = ({ title, due, created, percentComplete }) => {
             {convertDate(created)}
             {getDueDate(due)}
             <Header sub className="space-milestones">Percent Complete:</Header>
-            <ProgressArc percentComplete={percentComplete} duration={2000} />
+            <ProgressArc
+              milestoneId={milestoneId}
+              percentComplete={percentComplete}
+              duration={2000}
+            />
           </List.Content>
         </List.Item>
       </List>
@@ -182,11 +190,16 @@ export const mapStateToProps = (state, { milestoneId }) => {
 >>>>>>> edbe0e0... fml
 =======
     percentComplete,
+<<<<<<< HEAD
 >>>>>>> 02a66ea... Adding with some linting errors addressed
+=======
+    milestoneId,
+>>>>>>> b6ccb44... Parsed strings properly in ProgressArc, passed milestoneId down into ProgressArc
   };
 };
 
 Milestone.propTypes = {
+  milestoneId: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   due: PropTypes.string.isRequired,
   created: PropTypes.string.isRequired,

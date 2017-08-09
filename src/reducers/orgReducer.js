@@ -16,7 +16,7 @@ function createState(json, incomingState) {
     state.orgsById[org.id] = {};
     state.orgsById[org.id].avatarUrl = org.avatar_url;
     state.orgsById[org.id].orgName = org.login;
-    state.orgsById[org.id].reposUrl = org.repos_url;
+    state.orgsById[org.id].reposUrl = org.url;
   });
   return { ...state };
 }
@@ -78,6 +78,7 @@ const orgReducer = (state = { ids: [], orgsById: {} }, action) => {
 };
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function createState(json){
  let state = { ids: [], orgsByID: {} };
  json.forEach(org => {
@@ -98,4 +99,6 @@ function createState(json){
 =======
 >>>>>>> edbe0e0... fml
 
+=======
+>>>>>>> b6ccb44... Parsed strings properly in ProgressArc, passed milestoneId down into ProgressArc
 export default orgReducer;

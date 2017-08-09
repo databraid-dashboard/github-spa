@@ -21,11 +21,15 @@ yarn-debug.log*
 yarn-error.log*
 
 # worksheets, Mock data
-/src/SampleJSONResponses/
 worksheet.js
 
  # unfinished components
+<<<<<<< HEAD
 /src/components/Repo/
 /src/components/RepoList/
 
 /src/components/Login/
+=======
+
+/src/utils/Api.js
+>>>>>>> b6ccb44... Parsed strings properly in ProgressArc, passed milestoneId down into ProgressArc

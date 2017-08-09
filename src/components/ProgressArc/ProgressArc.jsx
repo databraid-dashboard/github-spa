@@ -63,7 +63,7 @@ class ProgressArc extends Component {
 
   arcTween(transition, newAngle, arc) {
     transition.attrTween('d', (d) => {
-      const interpolate = d3.interpolate(d.endAngle, newAngle);
+      const interpolate = d3.interpolate(parseInt(d.endAngle, 10), newAngle);
       const newArc = d;
       return (t) => {
         newArc.endAngle = interpolate(t);
@@ -83,12 +83,26 @@ ProgressArc.propTypes = {
   id: PropTypes.number.isRequired,
   duration: PropTypes.number.isRequired,
   percentComplete: PropTypes.number.isRequired,
+<<<<<<< HEAD
 
 };
 
 const mapStateToProps = (state) => {
   state.milestones.percentComplete;
 };
+=======
+};
+
+ProgressArc.defaultProps = {
+  id: 0,
+  percentComplete: 0,
+  duration: 2000,
+};
+
+const mapStateToProps = (state, { milestoneId }) => ({
+  percentComplete: state.milestones.milestonesById[milestoneId].percentComplete,
+});
+>>>>>>> b6ccb44... Parsed strings properly in ProgressArc, passed milestoneId down into ProgressArc
 
 export default connect(
   mapStateToProps,
