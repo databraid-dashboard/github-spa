@@ -1,7 +1,8 @@
 /* eslint-disable max-len, no-unused-vars */
 
 import { createStore, applyMiddleware, compose } from 'redux';
-import thunkMiddleware from 'redux-thunk';
+import thunk from 'redux-thunk';
+// import thunkMiddleware from 'redux-thunk';
 import rootReducer from './reducers/index';
 
 const logger = store => next => (action) => {
