@@ -9,7 +9,8 @@ import './Login.css';
 // import validateInput from './loginUtils';
 
 
-export const Login = ({ currentPage, renderOrgs }) => {
+export const Login = ({ currentPage, renderOrgs, userName }) => {
+  console.log('state current', userName);
   if (currentPage !== 'login') {
     return <div />;
   }
@@ -17,7 +18,7 @@ export const Login = ({ currentPage, renderOrgs }) => {
 
     return (
       <div>
-        <Button onClick={() => renderOrgs()}>
+        <Button onClick={() => renderOrgs(userName)}>
         Login
         </Button>
       </div>
@@ -35,11 +36,16 @@ export const Login = ({ currentPage, renderOrgs }) => {
 Login.propTypes = {
   currentPage: PropTypes.string.isRequired,
   renderOrgs: PropTypes.func.isRequired,
+  userName: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = state => ({
   currentPage: state.currentPage.render,
+<<<<<<< HEAD
   session: state.currentPage.session,
+=======
+  userName: state.currentPage.userName,
+>>>>>>> 4bf6324... Adding some api calls
 });
 
 export const mapDispatchToProps = dispatch => bindActionCreators({

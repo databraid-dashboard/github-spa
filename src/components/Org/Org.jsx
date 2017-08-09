@@ -38,16 +38,23 @@ import PropTypes from 'prop-types';
 import { renderRepos } from '../../actions/renderActions';
 import './Org.css';
 
+<<<<<<< HEAD
 export const Org = ({ avatarUrl, orgName, renderRepos }) => (
 >>>>>>> 564c283... Fixing warning messages from tests
+=======
+export const Org = ({ avatarUrl, orgName, renderRepos, selectedOrgName }) => (
+>>>>>>> 4bf6324... Adding some api calls
   <Grid.Column>
-    <Image className="hoverable" onClick={() => renderRepos()} src={avatarUrl} size="small" />
-    <List.Item as="a" className="hoverable" onClick={() => renderRepos()}>{orgName}</List.Item>
+    {console.log('state current1', selectedOrgName)};
+    <Image className="hoverable" onClick={() => renderRepos(orgName)} src={avatarUrl} size="small" />
+    <List.Item as="a" className="hoverable" onClick={() => renderRepos(orgName)}>{orgName}</List.Item>
   </Grid.Column>
 );
 
 export const mapStateToProps = (state, { orgId }) => {
+  const selectedOrgName = state.currentPage.selectedOrgName;
   const org = state.orgs.orgsById[orgId];
+<<<<<<< HEAD
 >>>>>>> 2c48835... Adding repo view
 =======
 import { Image, List } from 'semantic-ui-react';
@@ -71,11 +78,13 @@ export const mapStateToProps = (state, { orgId }) => {
   const org = state.orgs.orgsById[orgId];
 >>>>>>> 88f4b03... Added passing tests on <Org and <Orgs
 
+=======
+>>>>>>> 4bf6324... Adding some api calls
   const { avatarUrl, orgName } = org;
-
   return {
     avatarUrl,
     orgName,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     reposUrl
@@ -88,6 +97,9 @@ export default connect(
     reposUrl,
 =======
 >>>>>>> 2f2a056... Adding with fewer linting errors
+=======
+    selectedOrgName,
+>>>>>>> 4bf6324... Adding some api calls
   };
 };
 

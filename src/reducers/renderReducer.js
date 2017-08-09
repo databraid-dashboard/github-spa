@@ -37,6 +37,7 @@ const renderPage = (state = '', action) => {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 const renderPage = (state = 'orgs', action) => {
 >>>>>>> b56b9a4... Adding conditional views
 =======
@@ -54,6 +55,15 @@ const renderPage = (state = { render: 'login', repoName: null, fetching: true },
 
     case RENDER_REPOS:
       return { ...state, render: 'repos', session: {...action.payload.session.passport.user }, fetching: false;
+=======
+const renderPage = (state = { render: 'login', repoName: null, userName: 'michaelmurray6298', selectedOrgName: null, }, action) => {
+  switch (action.type) {
+    case RENDER_ORGS:
+      return { ...state, render: 'orgs', userName: 'michaelmurray6298' };
+
+    case RENDER_REPOS:
+      return { ...state, render: 'repos', selectedOrgName: action.selectedOrgName };
+>>>>>>> 4bf6324... Adding some api calls
 
     case RENDER_LOGIN:
       return { ...state, render: 'login' , session: {...action.payload.session.passport.user}, fetching: false};

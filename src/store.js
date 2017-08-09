@@ -10,10 +10,17 @@ import thunk from 'redux-thunk';
 import promise from 'redux-promise-middleware';
 >>>>>>> b8942b0... exploring Oauth hookup not finished, will need to accept sandeep's next update to sync
 import { createStore, applyMiddleware, compose } from 'redux';
+<<<<<<< HEAD
 import thunk from 'redux-thunk';
 // import thunkMiddleware from 'redux-thunk';
 >>>>>>> 18b5958... Updating store
+=======
+// import thunk from 'redux-thunk';
+import thunkMiddleware from 'redux-thunk';
+>>>>>>> 4bf6324... Adding some api calls
 import rootReducer from './reducers/index';
+import Api from './utils/Api'
+
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -88,6 +95,7 @@ const logger = store => next => (action) => {
 <<<<<<< HEAD
 
 const middleware = [
+<<<<<<< HEAD
   promise();
   thunk,
 <<<<<<< HEAD
@@ -95,6 +103,10 @@ const middleware = [
   // logger,
 =======
   // thunkMiddleware.withExtraArgument({ Api }),
+=======
+  // thunk,
+  thunkMiddleware.withExtraArgument({ Api }),
+>>>>>>> 4bf6324... Adding some api calls
   logger,
 >>>>>>> 813da6e... updated store
   // error,
