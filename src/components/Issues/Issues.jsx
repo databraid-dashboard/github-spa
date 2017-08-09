@@ -1,6 +1,6 @@
 /* eslint-disable import/no-named-as-default */
 import React, { Component } from 'react';
-import { Card, List } from 'semantic-ui-react';
+import { Card } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
@@ -29,14 +29,10 @@ export class Issues extends Component {
       <Card>
         <Card.Content>
           <Card.Header className="ui center aligned">
-            Git Issues
+            Issues
           </Card.Header>
         </Card.Content>
-        <Card.Content>
-          <List divided relaxed>
-            {issueComponents(this.props.issuesIds)}
-          </List>
-        </Card.Content>
+        {issueComponents(this.props.issuesIds)}
       </Card>
     );
   }
@@ -44,9 +40,14 @@ export class Issues extends Component {
 
 Issues.propTypes = {
   retrieveIssues: PropTypes.func.isRequired,
-  loadingIssues: PropTypes.bool.isRequired,
-  issuesIds: PropTypes.arrayOf.isRequired,
+  loadingIssues: PropTypes.bool,
+  issuesIds: PropTypes.arrayOf(PropTypes.number).isRequired,
 };
+
+Issues.defaultProps = {
+  loadingIssues: false,
+};
+
 
 export const mapStateToProps = state => ({
   issuesIds: state.issues.ids,

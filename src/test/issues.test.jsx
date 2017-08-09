@@ -22,10 +22,12 @@ const state = {
 
 describe('Issues component', () => {
   it('should render a component with props as specified ', () => {
+    const retrieveIssues = jest.fn();
     const component = shallow(
       <Issues
         issuesIds={state.issues.ids}
         loadingIssues={false}
+        retrieveIssues={retrieveIssues}
       />,
     );
     expect(toJson(component)).toMatchSnapshot();
@@ -56,10 +58,12 @@ describe('Issues component', () => {
     expect(mapDispatchToProps(dispatch)).toHaveProperty('retrieveIssues');
   });
   it('Should have a Cart Header in the center', () => {
+    const retrieveIssues = jest.fn();
     const component = shallow(
       <Issues
         issuesIds={state.issues.ids}
-        issuesLoading={false}
+        loadingIssues={false}
+        retrieveIssues={retrieveIssues}
       />,
     );
     expect(component.find('.aligned').exists()).toBe(true);

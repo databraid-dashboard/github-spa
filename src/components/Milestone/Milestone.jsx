@@ -5,22 +5,17 @@ import PropTypes from 'prop-types';
 import ProgressArc from '../ProgressArc/ProgressArc';
 import './Milestone.css';
 
-export const Milestone = ({ title, due, created, percentComplete }) => {
+export const Milestone = ({ title, due, created, percentComplete, milestoneId }) => {
   function convertDate(ISOdate) {
     const date = new Date(ISOdate);
     const formatOptions = {
       day: '2-digit',
       month: '2-digit',
       year: 'numeric',
-      // hour: '2-digit',
-      // minute: '2-digit',
-      // hour12: true
     };
 
-    let dateString = date.toLocaleDateString('en-US', formatOptions);
-    dateString = dateString.replace(',', '')
-      .replace('PM', 'p.m.')
-      .replace('AM', 'a.m.');
+    const dateString = date.toLocaleDateString('en-US', formatOptions);
+
     return dateString;
   }
 
@@ -28,7 +23,13 @@ export const Milestone = ({ title, due, created, percentComplete }) => {
     if (date === null) {
       return <div />;
     }
-    return <div><Header sub>Date Due:</Header> {convertDate(date)}</div>;
+    return (
+      <div>
+        <Header sub className="space-milestones">
+        Date Due:
+        </Header> {convertDate(date)}
+      </div>
+    );
   }
 
   return (
@@ -37,11 +38,15 @@ export const Milestone = ({ title, due, created, percentComplete }) => {
         <List.Item>
           <List.Content className="ui center aligned">
             <List.Header>{title}</List.Header>
-            <Header sub>Date Created:</Header>
+            <Header sub className="space-milestones">Date Created:</Header>
             {convertDate(created)}
             {getDueDate(due)}
-            <Header sub className="space">Percent Complete:</Header>
-            <ProgressArc percentComplete={percentComplete} duration={2000} />
+            <Header sub className="space-milestones">Percent Complete:</Header>
+            <ProgressArc
+              milestoneId={milestoneId}
+              percentComplete={percentComplete}
+              duration={2000}
+            />
           </List.Content>
         </List.Item>
       </List>
@@ -57,14 +62,20 @@ export const mapStateToProps = (state, { milestoneId }) => {
     due,
     created,
     percentComplete,
+    milestoneId,
   };
 };
 
 Milestone.propTypes = {
+  milestoneId: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
-  due: PropTypes.string.isRequired,
+  due: PropTypes.string,
   created: PropTypes.string.isRequired,
   percentComplete: PropTypes.number.isRequired,
+};
+
+Milestone.defaultProps = {
+  due: undefined,
 };
 
 export default connect(

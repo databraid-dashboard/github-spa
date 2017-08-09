@@ -1,3 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App component should render a component with props as specified  1`] = `<Connect(App) />`;
+exports[`App component should render a component with props as specified  1`] = `
+<Container>
+  <Connect(Component) />
+  <Connect(Organizations) />
+  <Connect(RepoList) />
+  <Connect(Component) />
+</Container>
+`;

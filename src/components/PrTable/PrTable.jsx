@@ -1,6 +1,6 @@
 /* eslint-disable import/no-named-as-default */
 import React, { Component } from 'react';
-import { Table } from 'semantic-ui-react';
+import { Card } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
@@ -24,34 +24,47 @@ export class PrTable extends Component {
         <div>Loading Pull Requests</div>
       );
     }
-    
+
     return (
-      <Table celled fixed>
-        <Table.Header>
-          <Table.Row>
-            <Table.HeaderCell colSpan="4" textAlign="center">Pull Requests</Table.HeaderCell>
-          </Table.Row>
+      <Card>
+        <Card.Content>
+          <Card.Header className="ui center aligned">
+            Pull Requests
+          </Card.Header>
+        </Card.Content>
+        {prComponents(this.props.prIds)}
+      </Card>
 
-          <Table.Row>
-            <Table.HeaderCell>Title</Table.HeaderCell>
-            <Table.HeaderCell>Created</Table.HeaderCell>
-            <Table.HeaderCell>Submitted By</Table.HeaderCell>
-            <Table.HeaderCell>Meargeability</Table.HeaderCell>
-          </Table.Row>
-        </Table.Header>
-        <Table.Body>
-          {prComponents(this.props.prIds)}
-
-        </Table.Body>
-      </Table>
+      // <Table celled fixed>
+      //   <Table.Header>
+      //     <Table.Row>
+      //       <Table.HeaderCell colSpan="4" textAlign="center">Pull Requests</Table.HeaderCell>
+      //     </Table.Row>
+      //
+      //     <Table.Row>
+      //       <Table.HeaderCell>Title</Table.HeaderCell>
+      //       <Table.HeaderCell>Created</Table.HeaderCell>
+      //       <Table.HeaderCell>Submitted By</Table.HeaderCell>
+      //       <Table.HeaderCell>Meargeability</Table.HeaderCell>
+      //     </Table.Row>
+      //   </Table.Header>
+      //   <Table.Body>
+      //     {prComponents(this.props.prIds)}
+      //
+      //   </Table.Body>
+      // </Table>
     );
   }
 }
 
 PrTable.propTypes = {
   retrievePrs: PropTypes.func.isRequired,
-  prIds: PropTypes.arrayOf.isRequired,
-  loadingPrTable: PropTypes.bool.isRequired,
+  prIds: PropTypes.arrayOf(PropTypes.number).isRequired,
+  loadingPrTable: PropTypes.bool,
+};
+
+PrTable.defaultProps = {
+  loadingPrTable: false,
 };
 
 export const mapStateToProps = state => ({

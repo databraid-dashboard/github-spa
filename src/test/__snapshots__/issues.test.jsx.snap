@@ -6,18 +6,11 @@ exports[`Issues component should render a component with props as specified  1`]
     <CardHeader
       className="ui center aligned"
     >
-      Git Issues
+      Issues
     </CardHeader>
   </CardContent>
-  <CardContent>
-    <List
-      divided={true}
-      relaxed={true}
-    >
-      <Connect(Component)
-        issueId={246869449}
-      />
-    </List>
-  </CardContent>
+  <Connect(Component)
+    issueId={246869449}
+  />
 </Card>
 `;
