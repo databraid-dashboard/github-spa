@@ -1,8 +1,14 @@
 <<<<<<< HEAD
 /* eslint-disable max-len, no-unused-vars */
 
+<<<<<<< HEAD
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
+=======
+import { createStore, applyMiddleware, compose } from 'redux';
+import thunk from 'redux-thunk';
+// import thunkMiddleware from 'redux-thunk';
+>>>>>>> 18b5958... Updating store
 import rootReducer from './reducers/index';
 
 <<<<<<< HEAD
