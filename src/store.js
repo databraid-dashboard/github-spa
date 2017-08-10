@@ -1,9 +1,10 @@
 /* eslint-disable max-len, no-unused-vars */
 import promise from 'redux-promise-middleware';
 import { createStore, applyMiddleware, compose } from 'redux';
-import thunk from 'redux-thunk';
-// import thunkMiddleware from 'redux-thunk';
+// import thunk from 'redux-thunk';
+import thunkMiddleware from 'redux-thunk';
 import rootReducer from './reducers/index';
+import Api from './utils/Api';
 
 const logger = store => next => (action) => {
   next(action);
@@ -20,6 +21,7 @@ const logger = store => next => (action) => {
 
 const middleware = [
   promise();
+  thunkMiddleware.withExtraArgument({ Api}),
   thunk,
 ];
 

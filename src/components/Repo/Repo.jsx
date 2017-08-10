@@ -21,9 +21,7 @@ Repo.propTypes = {
 
 export const mapStateToProps = (state, { repoId }) => {
   const repo = state.repos.reposById[repoId];
-
   const { repoName } = repo;
-
   return {
     repoName,
   };
