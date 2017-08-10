@@ -1,5 +1,5 @@
 /* eslint-disable max-len, no-unused-vars */
-
+import promise from 'redux-promise-middleware';
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 // import thunkMiddleware from 'redux-thunk';
@@ -19,10 +19,8 @@ const logger = store => next => (action) => {
 // };
 
 const middleware = [
+  promise();
   thunk,
-  // thunkMiddleware.withExtraArgument({ Api }),
-  logger,
-  // error,
 ];
 
 /* eslint-disable no-underscore-dangle */
