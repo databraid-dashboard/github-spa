@@ -7,6 +7,13 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import store from './store';
 
+/* eslint-disable react/jsx-filename-extension */
+
 ReactDOM.render(
-  React.createElement(Provider, { store }, React.createElement(App)), document.getElementById('root'));
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root'),
+);
+
 registerServiceWorker();
