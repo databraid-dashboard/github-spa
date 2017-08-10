@@ -5,7 +5,11 @@ import PropTypes from 'prop-types';
 import './Issue.css';
 
 function getDescription(assignedTo) {
+<<<<<<< HEAD
   if (assignedTo[0] !== 'Not assigned') {
+=======
+  if (assignedTo[0] !== "Not assigned") {
+>>>>>>> Adding syced app
     return (
       <div className="ui center aligned">
         <div><Header sub className="space-issues">Assigned To: </Header>{assignedTo[0]}</div>
@@ -44,7 +48,11 @@ export const Issue = ({ title, number, assignedTo, labels }) => {
 Issue.propTypes = {
   title: PropTypes.string.isRequired,
   number: PropTypes.number.isRequired,
+<<<<<<< HEAD
   assignedTo: PropTypes.arrayOf(PropTypes.array).isRequired,
+=======
+  assignedTo: PropTypes.arrayOf(PropTypes.string).isRequired,
+>>>>>>> Adding syced app
   labels: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 

@@ -49,10 +49,21 @@ export class RepoList extends Component {
         </div>
       );
     }
+<<<<<<< HEAD
+=======
+  }
+<<<<<<< HEAD
+>>>>>>> Adding syced app
 }
+=======
+>>>>>>> Adding syced app
 
 RepoList.propTypes = {
   retrieveRepos: PropTypes.func.isRequired,
+<<<<<<< HEAD
+=======
+  currentPage: PropTypes.string.isRequired,
+>>>>>>> Adding syced app
   renderOrgs: PropTypes.func.isRequired,
   userName: PropTypes.string.isRequired,
   orgName: PropTypes.string.isRequired,
@@ -64,11 +75,20 @@ RepoList.defaultProps = {
 };
 
 export const mapStateToProps = state => ({
+<<<<<<< HEAD
   reposByOrg: state.repos.reposByOrg,
   repoIds: state.repos.ids,
   reposById: state.repos.reposById,
   userName: state.currentPage.userName,
   orgName: state.currentPage.selectedOrgName,
+=======
+  reposByOrg:  state.repos.reposByOrg ,
+  repoIds: state.repos.ids,
+  reposById: state.repos.reposById,
+  currentPage: state.currentPage.render,
+  userName: state.currentPage.userName,
+  orgName: state.currentPage.selectedOrgName
+>>>>>>> Adding syced app
 });
 
 export const mapDispatchToProps = dispatch =>

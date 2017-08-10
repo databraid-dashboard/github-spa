@@ -63,6 +63,10 @@ PrTable.defaultProps = {
 export const mapStateToProps = state => ({
   prsByRepo: state.pullRequests.prsByRepo,
   prsById: state.pullRequests.prsById,
+<<<<<<< HEAD
+=======
+  prIds: state.pullRequests.ids,
+>>>>>>> Adding syced app
   loadingPrTable: state.loadingPrTable,
   userName: state.currentPage.userName,
   orgName: state.currentPage.selectedOrgName,
