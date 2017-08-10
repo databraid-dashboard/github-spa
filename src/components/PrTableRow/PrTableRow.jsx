@@ -37,8 +37,7 @@ export const PrTableRow = ({ created, mergeable, submittedBy, title }) => (
             { convertDate(created)}
           </List.Description>
           <List.Description className="space-item">
-            <Header sub>Submitted by:</Header>{submittedBy[0]}<div>
-              <Item.Image size="mini" src={submittedBy[1]} /></div>
+            <Header sub>Submitted by:</Header>{submittedBy}
           </List.Description>
         </List.Content>
       </List.Item>

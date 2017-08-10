@@ -11,12 +11,16 @@ import Organizations from '../Organizations/Organizations';
 import './Organizations.css';
 
 function orgComponents(orgIds) {
-  return orgIds.map(id => <Org key={id} orgId={id} />);
+  return orgIds.map(id => <Org orgId={id} />);
 }
 
 export class Organizations extends Component {
   componentDidMount() {
+<<<<<<< HEAD
     this.props.retrieveOrgs();
+=======
+    this.props.retrieveOrgs(this.props.userName);
+>>>>>>> Adding syced app
   }
 
   render() {

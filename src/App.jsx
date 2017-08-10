@@ -9,10 +9,17 @@ import './App.css';
 
 const App = () => (
   <Container>
+<<<<<<< HEAD
     <Login />
     <Organizations />
     <RepoList />
     <Dashboard />
+=======
+    {renderIf(currentPage==='login')(<Login />)}
+    {renderIf(currentPage==='orgs')(<Organizations />)}
+    {renderIf(currentPage==='repos')(<RepoList />)}
+    {renderIf(currentPage==='dashboard')(<Dashboard />)}
+>>>>>>> Adding syced app
   </Container>
 );
 
