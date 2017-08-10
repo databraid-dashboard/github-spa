@@ -14,11 +14,10 @@ function createState(json, incomingState, repoName) {
     state.milestonesById[milestone.id].percentComplete =
     milestone.closedIssues / (milestone.closedIssues +
     milestone.openIssues);
-    if(state.milestonesByRepo[repoName])
-    state.milestonesByRepo[repoName] =
-    state.milestonesByRepo[repoName].concat(milestone.id)
-    else
-    state.milestonesByRepo[repoName] = [milestone.id]
+    if (state.milestonesByRepo[repoName]) {
+      state.milestonesByRepo[repoName] =
+    state.milestonesByRepo[repoName].concat(milestone.id);
+    } else { state.milestonesByRepo[repoName] = [milestone.id]; }
   });
   return { ...state, loadingMilestones: false };
 }

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import './Issue.css';
 
 function getDescription(assignedTo) {
-  if (assignedTo[0] !== "Not assigned") {
+  if (assignedTo[0] !== 'Not assigned') {
     return (
       <div className="ui center aligned">
         <div><Header sub className="space-issues">Assigned To: </Header>{assignedTo[0]}</div>

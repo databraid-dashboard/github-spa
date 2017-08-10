@@ -9,9 +9,25 @@ import './Org.css';
 
 export const Org = ({ avatarUrl, orgName, renderRepos, selectedOrgName }) => (
   <Grid.Column>
+<<<<<<< HEAD
     {console.log('state current1', selectedOrgName)};
     <Image className="hoverable" onClick={() => renderRepos(orgName)} src={avatarUrl} size="small" />
     <List.Item as="a" className="hoverable" onClick={() => renderRepos(orgName)}>{orgName}</List.Item>
+=======
+    <Image
+      className="hoverable"
+      onClick={() => renderRepos(orgName)}
+      src={avatarUrl}
+      size="small"
+    />
+    <List.Item
+      as="a"
+      className="hoverable"
+      onClick={() => renderRepos(orgName)}
+    >
+      {orgName}
+    </List.Item>
+>>>>>>> Frontend/Backend sync
   </Grid.Column>
 );
 

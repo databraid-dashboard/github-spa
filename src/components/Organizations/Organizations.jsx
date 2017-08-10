@@ -11,7 +11,7 @@ import Organizations from '../Organizations/Organizations';
 import './Organizations.css';
 
 function orgComponents(orgIds) {
-  return orgIds.map(id => <Org orgId={id} />);
+  return orgIds.map(id => (<Org key={id} orgId={id} />));
 }
 
 export class Organizations extends Component {
@@ -24,6 +24,7 @@ export class Organizations extends Component {
   }
 
   render() {
+<<<<<<< HEAD
     if (this.props.currentPage !== 'orgs') {
       return <div />;
     }
@@ -37,30 +38,44 @@ export class Organizations extends Component {
             <Header as="h2" icon textAlign="center">
               <Icon name="github" />
               <Header.Content>
+=======
+    return (
+      <div>
+        <Button icon onClick={() => this.props.renderLogin()}>
+          <Icon name="arrow left" />
+        </Button>
+        <Grid centered columns={3} padded>
+          <Header as="h2" icon textAlign="center">
+            <Icon name="github" />
+            <Header.Content>
+>>>>>>> Frontend/Backend sync
                 Which organization are you interested in?
-              </Header.Content>
-            </Header>
-            <Grid.Row>
-              {orgComponents(this.props.orgIds)}
-            </Grid.Row>
-          </Grid>
-        </div>
-      );
-    }
+            </Header.Content>
+          </Header>
+          <Grid.Row>
+            {orgComponents(this.props.orgIds)}
+          </Grid.Row>
+        </Grid>
+      </div>
+    );
   }
 }
 
 Organizations.propTypes = {
   retrieveOrgs: PropTypes.func.isRequired,
-  orgIds: PropTypes.arrayOf(PropTypes.number).isRequired,
-  currentPage: PropTypes.string.isRequired,
+  orgIds: PropTypes.arrayOf(PropTypes.string).isRequired,
   renderLogin: PropTypes.func.isRequired,
+  userName: PropTypes.string.isRequired,
 };
 
 export const mapStateToProps = state => ({
   orgIds: state.orgs.ids,
   orgsById: state.orgs.orgsById,
+<<<<<<< HEAD
   currentPage: state.currentPage.render,
+=======
+  userName: state.currentPage.userName,
+>>>>>>> Frontend/Backend sync
 });
 
 export const mapDispatchToProps = dispatch =>

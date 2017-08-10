@@ -2,7 +2,7 @@ import {
   RENDER_ORGS, RENDER_REPOS, RENDER_LOGIN, RENDER_DASHBOARD,
 } from '../actions/renderActions';
 
-const renderPage = (state = { render: 'login', repoName: null, userName: 'michaelmurray6298', selectedOrgName: null, }, action) => {
+const renderPage = (state = { render: 'login', repoName: null, userName: 'michaelmurray6298', selectedOrgName: null }, action) => {
   switch (action.type) {
     case RENDER_ORGS:
       return { ...state, render: 'orgs', userName: 'michaelmurray6298' };
@@ -15,10 +15,15 @@ const renderPage = (state = { render: 'login', repoName: null, userName: 'michae
 
     case RENDER_DASHBOARD:
 <<<<<<< HEAD
+<<<<<<< HEAD
       return { render: 'dashboard',
         repoName: action.repoName };
 =======
       return { ...state, render: 'dashboard',
+=======
+      return { ...state,
+        render: 'dashboard',
+>>>>>>> Frontend/Backend sync
         repoName: action.repoName,
         repoId: action.repoId };
 >>>>>>> Adding syced app

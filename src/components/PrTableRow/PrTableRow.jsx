@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Item, List, Header } from 'semantic-ui-react';
+import { Card, List, Header } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import './PrTableRow.css';
@@ -43,6 +43,7 @@ export const PrTableRow = ({ created, mergeable, submittedBy, title }) => (
       </List.Item>
     </List>
   </Card.Content>
+<<<<<<< HEAD
   // <Table.Row>
   //   <Table.Cell textAlign="center">{ title }</Table.Cell>
   //   <Table.Cell textAlign="center">{ convertDate(created) }</Table.Cell>
@@ -51,12 +52,14 @@ export const PrTableRow = ({ created, mergeable, submittedBy, title }) => (
   //   <Table.Cell textAlign="center">{getMergeableCheckbox(mergeable) }</Table.Cell>
   // </Table.Row>
 
+=======
+>>>>>>> Frontend/Backend sync
 );
 
 PrTableRow.propTypes = {
   created: PropTypes.string.isRequired,
   mergeable: PropTypes.bool,
-  submittedBy: PropTypes.arrayOf(PropTypes.string).isRequired,
+  submittedBy: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
 };
 
