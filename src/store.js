@@ -19,7 +19,7 @@ import thunk from 'redux-thunk';
 import thunkMiddleware from 'redux-thunk';
 >>>>>>> 4bf6324... Adding some api calls
 import rootReducer from './reducers/index';
-import Api from './utils/Api'
+import Api from './utils/Api';
 
 <<<<<<< HEAD
 

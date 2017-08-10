@@ -49,8 +49,19 @@ export const Org = ({ avatarUrl, orgName, renderRepos, selectedOrgName }) => (
 export const Org = ({ avatarUrl, orgName, renderRepos }) => (
 >>>>>>> 979ef55... editing .gitignore
   <Grid.Column>
-    <Image className="hoverable" onClick={() => renderRepos(orgName)} src={avatarUrl} size="small" />
-    <List.Item as="a" className="hoverable" onClick={() => renderRepos(orgName)}>{orgName}</List.Item>
+    <Image
+      className="hoverable"
+      onClick={() => renderRepos(orgName)}
+      src={avatarUrl}
+      size="small"
+    />
+    <List.Item
+      as="a"
+      className="hoverable"
+      onClick={() => renderRepos(orgName)}
+    >
+      {orgName}
+    </List.Item>
   </Grid.Column>
 );
 

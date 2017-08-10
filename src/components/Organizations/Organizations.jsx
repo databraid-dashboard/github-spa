@@ -42,12 +42,11 @@ import './Organizations.css';
 =======
 =======
 function orgComponents(orgIds) {
-  return orgIds.map(id => <Org orgId={id} />);
+  return orgIds.map(id => (<Org key={id} orgId={id} />));
 }
 
 >>>>>>> 2f2a056... Adding with fewer linting errors
 export class Organizations extends Component {
-
   componentDidMount() {
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -82,6 +81,7 @@ export class Organizations extends Component {
 =======
 >>>>>>> 2f2a056... Adding with fewer linting errors
   render() {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -156,19 +156,40 @@ const mapStateToProps = state => ({
 }
 =======
 >>>>>>> e342caa... Adding latest work
+=======
+    return (
+      <div>
+        <Button icon onClick={() => this.props.renderLogin()}>
+          <Icon name="arrow left" />
+        </Button>
+        <Grid centered columns={3} padded>
+          <Header as="h2" icon textAlign="center">
+            <Icon name="github" />
+            <Header.Content>
+                Which organization are you interested in?
+            </Header.Content>
+          </Header>
+          <Grid.Row>
+            {orgComponents(this.props.orgIds)}
+          </Grid.Row>
+        </Grid>
+      </div>
+    );
+  }
+}
+>>>>>>> 8213532... Frontend/Backend sync
 
 Organizations.propTypes = {
   retrieveOrgs: PropTypes.func.isRequired,
-  orgIds: PropTypes.arrayOf(PropTypes.number).isRequired,
-  currentPage: PropTypes.string.isRequired,
+  orgIds: PropTypes.arrayOf(PropTypes.string).isRequired,
   renderLogin: PropTypes.func.isRequired,
+  userName: PropTypes.string.isRequired,
 };
 
 export const mapStateToProps = state => ({
 >>>>>>> 02a66ea... Adding with some linting errors addressed
   orgIds: state.orgs.ids,
   orgsById: state.orgs.orgsById,
-  currentPage: state.currentPage.render,
   userName: state.currentPage.userName,
 });
 >>>>>>> 2c48835... Adding repo view

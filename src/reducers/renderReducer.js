@@ -29,6 +29,7 @@ export const renderPage = (state = '', action) => {
   RENDER_ORGS, RENDER_REPOS, RENDER_LOGIN, RENDER_DASHBOARD,
 } from '../actions/renderActions';
 
+<<<<<<< HEAD
 const renderPage = (state = '', action) => {
 =======
   RENDER_ORGS, RENDER_REPOS, RENDER_LOGIN, RENDER_DASHBOARD,
@@ -57,6 +58,9 @@ const renderPage = (state = { render: 'login', repoName: null, fetching: true },
       return { ...state, render: 'repos', session: {...action.payload.session.passport.user }, fetching: false;
 =======
 const renderPage = (state = { render: 'login', repoName: null, userName: 'michaelmurray6298', selectedOrgName: null, }, action) => {
+=======
+const renderPage = (state = { render: 'login', repoName: null, userName: 'michaelmurray6298', selectedOrgName: null }, action) => {
+>>>>>>> 8213532... Frontend/Backend sync
   switch (action.type) {
     case RENDER_ORGS:
       return { ...state, render: 'orgs', userName: 'michaelmurray6298' };
@@ -69,6 +73,7 @@ const renderPage = (state = { render: 'login', repoName: null, userName: 'michae
       return { ...state, render: 'login' , session: {...action.payload.session.passport.user}, fetching: false};
 
     case RENDER_DASHBOARD:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -96,6 +101,10 @@ const renderPage = (state = { render: 'login', repoName: null, userName: 'michae
         repoName: action.repoName , session: {...action.payload.session.passport.user}, fetching: false};
 >>>>>>> b8942b0... exploring Oauth hookup not finished, will need to accept sandeep's next update to sync
 =======
+=======
+      return { ...state,
+        render: 'dashboard',
+>>>>>>> 8213532... Frontend/Backend sync
         repoName: action.repoName,
         repoId: action.repoId };
 >>>>>>> e19f169... Adding syced app

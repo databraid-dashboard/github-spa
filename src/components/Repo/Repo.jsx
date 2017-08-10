@@ -74,6 +74,7 @@ export const mapStateToProps = (state, { repoId }) => {
   const { repoName } = repo;
   return {
 <<<<<<< HEAD
+<<<<<<< HEAD
     repoName,
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -90,6 +91,9 @@ export default connect(
 =======
     repoName
 >>>>>>> e19f169... Adding syced app
+=======
+    repoName,
+>>>>>>> 8213532... Frontend/Backend sync
   };
 };
 

@@ -48,15 +48,17 @@ import Repo from '../Repo/Repo';
 import './RepoList.css';
 
 function repoComponents(repos, org) {
-  if(repos && repos[org]){ return repos[org].map(id =>
-    <Repo key={id} repoId={id} />
-  )} else {
-    return ''
+  if (repos && repos[org]) {
+    return repos[org].map(id =>
+      <Repo key={id} repoId={id} />,
+    );
   }
+  return '';
 }
 
 export class RepoList extends Component {
   componentDidMount() {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -72,6 +74,9 @@ export class RepoList extends Component {
 =======
       this.props.retrieveRepos(this.props.userName, this.props.orgName);
 >>>>>>> e19f169... Adding syced app
+=======
+    this.props.retrieveRepos(this.props.userName, this.props.orgName);
+>>>>>>> 8213532... Frontend/Backend sync
   }
 
 <<<<<<< HEAD
@@ -88,6 +93,7 @@ export class RepoList extends Component {
 =======
 >>>>>>> 564c283... Fixing warning messages from tests
   render() {
+<<<<<<< HEAD
       return (
         <div>
           <Button icon padded onClick={() => this.props.renderOrgs()}>
@@ -171,26 +177,57 @@ const mapDispatchToProps = dispatch =>
     );
 =======
 >>>>>>> 564c283... Fixing warning messages from tests
+=======
+    return (
+      <div>
+        <Button icon onClick={() => this.props.renderOrgs(this.props.userName)}>
+          <Icon name="arrow left" />
+        </Button>
+        <Grid centered padded>
+          <Grid.Column width={8}>
+            <Header as="h2" icon textAlign="center">
+              <Icon name="github" />
+              <Header.Content>
+                  Which repository are you interested in?
+              </Header.Content>
+            </Header>
+            <List animated divided relaxed size="huge">
+              {repoComponents(this.props.reposByOrg, this.props.orgName)}
+            </List>
+          </Grid.Column>
+        </Grid>
+      </div>
+    );
+>>>>>>> 8213532... Frontend/Backend sync
   }
+}
 
 RepoList.propTypes = {
-  // repoComponents: PropTypes.func.isRequired,
   retrieveRepos: PropTypes.func.isRequired,
+<<<<<<< HEAD
 <<<<<<< HEAD
   repoIds: PropTypes.number.isRequired,
 =======
 >>>>>>> e19f169... Adding syced app
   currentPage: PropTypes.string.isRequired,
+=======
+>>>>>>> 8213532... Frontend/Backend sync
   renderOrgs: PropTypes.func.isRequired,
+  userName: PropTypes.string.isRequired,
+  orgName: PropTypes.string.isRequired,
+  reposByOrg: PropTypes.objectOf(PropTypes.array),
+};
+
+RepoList.defaultProps = {
+  reposByOrg: {},
 };
 
 export const mapStateToProps = state => ({
-  reposByOrg:  state.repos.reposByOrg ,
+  reposByOrg: state.repos.reposByOrg,
   repoIds: state.repos.ids,
   reposById: state.repos.reposById,
-  currentPage: state.currentPage.render,
   userName: state.currentPage.userName,
-  orgName: state.currentPage.selectedOrgName
+  orgName: state.currentPage.selectedOrgName,
 });
 
 export const mapDispatchToProps = dispatch =>

@@ -43,12 +43,19 @@ function createState(json, incomingState) {
     state.milestonesById[milestone.id].percentComplete =
     milestone.closedIssues / (milestone.closedIssues +
     milestone.openIssues);
+<<<<<<< HEAD
     if(state.milestonesByRepo[repoName])
     state.milestonesByRepo[repoName] =
     state.milestonesByRepo[repoName].concat(milestone.id)
     else
     state.milestonesByRepo[repoName] = [milestone.id]
 >>>>>>> e19f169... Adding syced app
+=======
+    if (state.milestonesByRepo[repoName]) {
+      state.milestonesByRepo[repoName] =
+    state.milestonesByRepo[repoName].concat(milestone.id);
+    } else { state.milestonesByRepo[repoName] = [milestone.id]; }
+>>>>>>> 8213532... Frontend/Backend sync
   });
   return { ...state, loadingMilestones: false };
 }

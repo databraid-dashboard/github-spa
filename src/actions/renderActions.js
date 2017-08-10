@@ -4,7 +4,7 @@ export const RENDER_LOGIN = 'RENDER_LOGIN';
 export const RENDER_REPOS = 'RENDER_REPOS';
 export const RENDER_DASHBOARD = 'RENDER_DASHBOARD';
 
-export const renderOrgs = (userName) => (dispatch) => {
+export const renderOrgs = userName => (dispatch) => {
   dispatch({
     type: RENDER_ORGS,
     responseStr: 'orgs',
@@ -27,7 +27,7 @@ export const renderLogin = () => (dispatch) => {
   });
 };
 
-export const renderRepos = (selectedOrgName) => (dispatch) => {
+export const renderRepos = selectedOrgName => (dispatch) => {
   dispatch({
     type: RENDER_REPOS,
     responseStr: 'repos',
@@ -35,7 +35,7 @@ export const renderRepos = (selectedOrgName) => (dispatch) => {
   });
 };
 
-export const renderDashboard = (repoName) => (dispatch) => {
+export const renderDashboard = repoName => (dispatch) => {
   dispatch({
     type: RENDER_DASHBOARD,
     reponseStr: 'dashboard',

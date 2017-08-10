@@ -23,16 +23,18 @@ function createState(json, incomingState, orgName) {
 >>>>>>> e19f169... Adding syced app
   const state = incomingState;
   state.reposByOrg = {};
-  if(json) {
+  if (json) {
     json.forEach((repo) => {
       state.ids = state.ids.concat(repo.id);
       state.reposById[repo.id] = {};
       state.reposById[repo.id].repoName = repo.name;
       state.reposById[repo.id].repoUrl = repo.html_url;
-      if(state.reposByOrg[orgName])
-      state.reposByOrg[orgName] = state.reposByOrg[orgName].concat(repo.id)
-      else
-      state.reposByOrg[orgName] = [repo.id]
+      if (state.reposByOrg[orgName]) {
+        state.reposByOrg[orgName] =
+        state.reposByOrg[orgName].concat(repo.id);
+      } else {
+        state.reposByOrg[orgName] = [repo.id];
+      }
     });
   }
   return { ...state };

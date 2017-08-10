@@ -112,11 +112,12 @@ import { retrieveIssues } from '../../actions/issueActions';
 import './Issues.css';
 
 function issueComponents(issues, repo) {
-  if(issues && issues[repo]){ return issues[repo].map(id => <Issue issueId={id} />
-  )}
-  else {
-    return ''
+  if (issues && issues[repo]) {
+    return issues[repo].map(id => <Issue key={id} issueId={id} />,
+    );
   }
+
+  return '';
 }
 
 export class Issues extends Component {
@@ -179,6 +180,7 @@ export class Issues extends Component {
 
 Issues.propTypes = {
   retrieveIssues: PropTypes.func.isRequired,
+<<<<<<< HEAD
   loadingIssues: PropTypes.bool.isRequired,
   issuesIds: PropTypes.arrayOf(PropTypes.number).isRequired,
 };
@@ -192,6 +194,20 @@ export const mapStateToProps = state => {
     }
 }
 >>>>>>> c317919... Adding Issues component
+=======
+  loadingIssues: PropTypes.bool,
+  userName: PropTypes.string.isRequired,
+  orgName: PropTypes.string.isRequired,
+  repoName: PropTypes.string.isRequired,
+  issuesByRepo: PropTypes.objectOf(PropTypes.array),
+
+};
+
+Issues.defaultProps = {
+  loadingIssues: false,
+  issuesByRepo: {},
+};
+>>>>>>> 8213532... Frontend/Backend sync
 
 <<<<<<< HEAD
     </div>
@@ -207,10 +223,13 @@ export const mapDispatchToProps = dispatch => bindActionCreators ({
 
 export const mapStateToProps = state => ({
   issuesByRepo: state.issues.issuesByRepo,
+<<<<<<< HEAD
   issuesIds: state.issues.ids,
 <<<<<<< HEAD
   loadingIssues: state.issues.loadingIssues,
 =======
+=======
+>>>>>>> 8213532... Frontend/Backend sync
   loadingIssues: state.loadingIssues,
   orgName: state.currentPage.selectedOrgName,
   userName: state.currentPage.userName,

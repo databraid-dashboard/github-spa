@@ -2,6 +2,7 @@ import React from 'react';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import './PrTableRow.css'
 =======
 >>>>>>> edbe0e0... fml
@@ -12,6 +13,9 @@ import { Card, Item, Label, List, Header, Icon } from 'semantic-ui-react';
 =======
 import { Card, Item, List, Header } from 'semantic-ui-react';
 >>>>>>> 79473f9... Fixed linting errors, installed redux-mock-store
+=======
+import { Card, List, Header } from 'semantic-ui-react';
+>>>>>>> 8213532... Frontend/Backend sync
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import './PrTableRow.css';
@@ -120,6 +124,7 @@ export const PrTableRow = ({ created, mergeable, submittedBy, title }) => (
       </List.Item>
     </List>
   </Card.Content>
+<<<<<<< HEAD
 >>>>>>> 79473f9... Fixed linting errors, installed redux-mock-store
   // <Table.Row>
   //   <Table.Cell textAlign="center">{ title }</Table.Cell>
@@ -129,13 +134,25 @@ export const PrTableRow = ({ created, mergeable, submittedBy, title }) => (
   //   <Table.Cell textAlign="center">{getMergeableCheckbox(mergeable) }</Table.Cell>
   // </Table.Row>
 >>>>>>> 564c283... Fixing warning messages from tests
+=======
+>>>>>>> 8213532... Frontend/Backend sync
 );
 
 PrTableRow.propTypes = {
   created: PropTypes.string.isRequired,
+<<<<<<< HEAD
   mergeable: PropTypes.bool.isRequired,
   submittedBy: PropTypes.string.isRequired,
   title: PropTypes.number.isRequired,
+=======
+  mergeable: PropTypes.bool,
+  submittedBy: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+};
+
+PrTableRow.defaultProps = {
+  mergeable: undefined,
+>>>>>>> 8213532... Frontend/Backend sync
 };
 <<<<<<< HEAD
 >>>>>>> df38d77... Adding working orgs page

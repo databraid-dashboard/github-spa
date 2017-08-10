@@ -9,11 +9,12 @@ import './PrTable.css';
 
 
 function prComponents(prs, repo) {
-  if(prs && prs[repo]){ return prs[repo].map(id =>
-    <PrTableRow prId={id} />
-  )} else {
-    return ''
+  if (prs && prs[repo]) {
+    return prs[repo].map(id =>
+      <PrTableRow key={id} prId={id} />,
+    );
   }
+  return '';
 }
 
 export class PrTable extends Component {
@@ -56,15 +57,27 @@ export class PrTable extends Component {
 
 PrTable.propTypes = {
   retrievePrs: PropTypes.func.isRequired,
+<<<<<<< HEAD
   prIds: PropTypes.arrayOf(PropTypes.number).isRequired,
   loadingPrTable: PropTypes.bool.isRequired,
+=======
+  loadingPrTable: PropTypes.bool,
+  userName: PropTypes.string.isRequired,
+  orgName: PropTypes.string.isRequired,
+  repoName: PropTypes.string.isRequired,
+  prsByRepo: PropTypes.objectOf(PropTypes.array),
+};
+
+PrTable.defaultProps = {
+  loadingPrTable: false,
+  prsByRepo: {},
+>>>>>>> 8213532... Frontend/Backend sync
 };
 
 <<<<<<< HEAD
 export const mapStateToProps = state => ({
   prsByRepo: state.pullRequests.prsByRepo,
   prsById: state.pullRequests.prsById,
-  prIds: state.pullRequests.ids,
   loadingPrTable: state.loadingPrTable,
   userName: state.currentPage.userName,
   orgName: state.currentPage.selectedOrgName,

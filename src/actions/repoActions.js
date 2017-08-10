@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import reposByOrg from '../SampleJSONResponses/reposByORGmock';
 =======
 // import reposByOrg from '../SampleJSONResponses/reposByORGmock';
@@ -14,6 +15,8 @@ export GET_REPOS = 'GET_REPOS';
 // const request = { query: '{orgs(userName: "michaelmurray6298") {orgs {id login url avatarUrl } } }' };
 
 >>>>>>> 979ef55... editing .gitignore
+=======
+>>>>>>> 8213532... Frontend/Backend sync
 export const GET_REPOS = 'GET_REPOS';
 >>>>>>> 2c48835... Adding repo view
 
@@ -57,23 +60,22 @@ export const retrieveRepos = () => (dispatch) => {
 >>>>>>> 02a66ea... Adding with some linting errors addressed
 =======
 export function retrieveRepos(userName, orgName) {
+  const queryString =
+    `{repos (userName: "${userName}", orgName:"${orgName}") {repos {id name } } }`;
 
-  let queryString = `{repos (userName: "${userName}", orgName:"${orgName}") {repos {id name } } }`
+  const request = { query: queryString };
 
-  let request = { query: queryString };
-
-  return (dispatch, getState, { Api }) => {
-    return Api.fetchData(request)
+  return (dispatch, getState, { Api }) => Api.fetchData(request)
     .then(response => response.data.repos.repos)
-    .then(repos => {
+    .then((repos) => {
       dispatch({
-      type: GET_REPOS,
-      responseObj: repos,
-      orgName: orgName
-      })
-    })
-  }
+        type: GET_REPOS,
+        responseObj: repos,
+        orgName,
+      });
+    });
 }
+<<<<<<< HEAD
 //  => (dispatch) => {
 //   dispatch({
 //     type: GET_REPOS,
@@ -81,3 +83,5 @@ export function retrieveRepos(userName, orgName) {
 //   });
 // };
 >>>>>>> e19f169... Adding syced app
+=======
+>>>>>>> 8213532... Frontend/Backend sync

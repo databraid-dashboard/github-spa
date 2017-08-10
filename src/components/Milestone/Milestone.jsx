@@ -38,6 +38,7 @@ import './Milestone.css';
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 const Milestone = ({ title, due, created, percentComplete }) => {
 >>>>>>> 4def070... Adding percent complete feature
 =======
@@ -53,6 +54,9 @@ export const Milestone = ({ title, due, created, percentComplete }) => {
 =======
 export const Milestone = ({ title, due, created, percentComplete, milestoneId }) => {
 >>>>>>> b6ccb44... Parsed strings properly in ProgressArc, passed milestoneId down into ProgressArc
+=======
+export const Milestone = ({ title, due, percentComplete, milestoneId }) => {
+>>>>>>> 8213532... Frontend/Backend sync
   function convertDate(ISOdate) {
     const date = new Date(ISOdate);
     const formatOptions = {
@@ -102,8 +106,6 @@ export const Milestone = ({ title, due, created, percentComplete, milestoneId })
         <List.Item>
           <List.Content className="ui center aligned">
             <List.Header>{title}</List.Header>
-            <Header sub className="space-milestones">Date Created:</Header>
-            {convertDate(created)}
             {getDueDate(due)}
             <Header sub className="space-milestones">Percent Complete:</Header>
             <ProgressArc
@@ -167,6 +169,7 @@ export const mapStateToProps = (state, { milestoneId }) => {
 =======
 export const mapStateToProps = (state, { milestoneId }) => {
   const milestone = state.milestones.milestonesById[milestoneId];
+<<<<<<< HEAD
   const { title, due, created, percentComplete } = milestone;
 <<<<<<< HEAD
   console.log('state', due === null);
@@ -189,6 +192,12 @@ export const mapStateToProps = (state, { milestoneId }) => {
     created,
 >>>>>>> edbe0e0... fml
 =======
+=======
+  const { title, due, percentComplete } = milestone;
+  return {
+    title,
+    due,
+>>>>>>> 8213532... Frontend/Backend sync
     percentComplete,
 <<<<<<< HEAD
 >>>>>>> 02a66ea... Adding with some linting errors addressed
@@ -199,10 +208,14 @@ export const mapStateToProps = (state, { milestoneId }) => {
 };
 
 Milestone.propTypes = {
-  milestoneId: PropTypes.number.isRequired,
+  milestoneId: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
+<<<<<<< HEAD
   due: PropTypes.string.isRequired,
   created: PropTypes.string.isRequired,
+=======
+  due: PropTypes.string,
+>>>>>>> 8213532... Frontend/Backend sync
   percentComplete: PropTypes.number.isRequired,
 };
 <<<<<<< HEAD

@@ -12,7 +12,8 @@ import logo from './logo.svg';
 >>>>>>> 7e05dfe... mapped store, state, readme, mockAPI calls, and began wiring up components
 =======
 import { Container } from 'semantic-ui-react';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import renderIf from 'render-if';
 import RepoList from './components/RepoList/RepoList';
 import Login from './components/Login/Login';
@@ -47,8 +48,9 @@ import { Container } from 'semantic-ui-react';
 =======
 >>>>>>> 79473f9... Fixed linting errors, installed redux-mock-store
 
-const App = ({ currentPage, store }) => (
+const App = ({ currentPage }) => (
   <Container>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -270,13 +272,23 @@ export default App;
     {renderIf(currentPage==='orgs')(<Organizations />)}
     {renderIf(currentPage==='repos')(<RepoList />)}
     {renderIf(currentPage==='dashboard')(<Dashboard />)}
+=======
+    {renderIf(currentPage === 'login')(<Login />)}
+    {renderIf(currentPage === 'orgs')(<Organizations />)}
+    {renderIf(currentPage === 'repos')(<RepoList />)}
+    {renderIf(currentPage === 'dashboard')(<Dashboard />)}
+>>>>>>> 8213532... Frontend/Backend sync
   </Container>
 );
+
+App.propTypes = {
+  currentPage: PropTypes.string.isRequired,
+};
 
 const mapStateToProps = state => ({
   currentPage: state.currentPage.render,
   store: state,
-})
+});
 
 export default connect(
   mapStateToProps,

@@ -123,6 +123,7 @@ export default connect(
 import './Dashboard.css';
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 const Dashboard = () => (
   <Container>
     <Issues />
@@ -200,12 +201,45 @@ export const Dashboard = ({ repoName, currentPage, renderRepos, orgName }) => {
 Dashboard.propTypes = {
   repoName: PropTypes.string.isRequired,
   currentPage: PropTypes.string.isRequired,
+=======
+export const Dashboard = ({ repoName, renderRepos, orgName }) => (
+  <div>
+    <Button icon onClick={() => renderRepos(orgName)}>
+      <Icon name="arrow left" />
+    </Button>
+    <Container>
+      <Grid padded>
+        <Header as="h2" icon textAlign="center">
+          <Icon name="github" />
+          <Header.Content>
+            {repoName}
+          </Header.Content>
+        </Header>
+        <Grid.Row columns={3}>
+          <Grid.Column>
+            <PrTable repoName={repoName} />
+          </Grid.Column>
+          <Grid.Column>
+            <Issues repoName={repoName} />
+          </Grid.Column>
+          <Grid.Column>
+            <Milestones repoName={repoName} />
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
+    </Container>
+  </div>
+);
+
+Dashboard.propTypes = {
+  repoName: PropTypes.string,
+>>>>>>> 8213532... Frontend/Backend sync
   renderRepos: PropTypes.func.isRequired,
+  orgName: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = state => ({
   repoName: state.currentPage.repoName,
-  currentPage: state.currentPage.render,
   orgName: state.currentPage.selectedOrgName,
 });
 

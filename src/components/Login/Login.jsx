@@ -9,6 +9,7 @@ import './Login.css';
 // import validateInput from './loginUtils';
 
 
+<<<<<<< HEAD
 export const Login = ({ currentPage, renderOrgs, userName }) => {
 <<<<<<< HEAD
   if (currentPage !== 'login') {
@@ -21,11 +22,15 @@ export const Login = ({ currentPage, renderOrgs, userName }) => {
     return (
       <div>
         <Button onClick={() => renderOrgs(userName)}>
+=======
+export const Login = ({ renderOrgs, userName }) => (
+  <div>
+    <Button onClick={() => renderOrgs(userName)}>
+>>>>>>> 8213532... Frontend/Backend sync
         Login
-        </Button>
-      </div>
-    );
-  };
+    </Button>
+  </div>
+);
 
 
 // hitAuthRoute( AUTH_ROUTE) => {
@@ -35,16 +40,18 @@ export const Login = ({ currentPage, renderOrgs, userName }) => {
 // }
 
 Login.propTypes = {
-  currentPage: PropTypes.string.isRequired,
   renderOrgs: PropTypes.func.isRequired,
   userName: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = state => ({
+<<<<<<< HEAD
   currentPage: state.currentPage.render,
 <<<<<<< HEAD
   session: state.currentPage.session,
 =======
+=======
+>>>>>>> 8213532... Frontend/Backend sync
   userName: state.currentPage.userName,
 >>>>>>> 4bf6324... Adding some api calls
 });
