@@ -82,11 +82,11 @@ export const Issue = ({ title, repoIssueNumber, assignedTo, labels, issueId }) =
 =======
 =======
 function getDescription(assignedTo) {
-  if (assignedTo.length > 0) {
+  if (assignedTo[0] !== "Not assigned") {
     return (
       <div className="ui center aligned">
-        <div><Header sub className="space-issues">Assigned To: </Header>{assignedTo[0][0]}</div>
-        <Item.Image size="mini" src={assignedTo[0][1]} />
+        <div><Header sub className="space-issues">Assigned To: </Header>{assignedTo[0]}</div>
+        <Item.Image size="mini" src={assignedTo[1]} />
       </div>
     );
   }
@@ -95,8 +95,12 @@ function getDescription(assignedTo) {
   );
 }
 
+<<<<<<< HEAD
 export const Issue = ({ title, repoIssueNumber, assignedTo, labels }) => {
 >>>>>>> 02a66ea... Adding with some linting errors addressed
+=======
+export const Issue = ({ title, number, assignedTo, labels }) => {
+>>>>>>> e19f169... Adding syced app
   const renderedLabels = labels.map(label => (
     <div className="space-labels" key={label}>
       <Label className="ui mini label" ribbon="right" color="grey">{label}
@@ -132,7 +136,7 @@ export const Issue = ({ title, repoIssueNumber, assignedTo, labels }) => {
       <List divided relaxed>
         <List.Item>
           <List.Content>
-            <List.Header>#{repoIssueNumber} {title}</List.Header>{renderedLabels}
+            <List.Header>#{number} {title}</List.Header>{renderedLabels}
             <List.Description> {getDescription(assignedTo)}</List.Description>
           </List.Content>
         </List.Item>
@@ -144,7 +148,11 @@ export const Issue = ({ title, repoIssueNumber, assignedTo, labels }) => {
 
 Issue.propTypes = {
   title: PropTypes.string.isRequired,
+<<<<<<< HEAD
   repoIssueNumber: PropTypes.number.isRequired,
+=======
+  number: PropTypes.number.isRequired,
+>>>>>>> e19f169... Adding syced app
   assignedTo: PropTypes.arrayOf(PropTypes.string).isRequired,
   labels: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
@@ -172,10 +180,10 @@ export const mapStateToProps = (state, { issueId }) => {
 export const mapStateToProps = (state, { issueId }) => {
 >>>>>>> db00290... renamed files, finished tests for issue
   const issue = state.issues.issuesById[issueId];
-  const { title, repoIssueNumber, assignedTo, labels } = issue;
+  const { title, number, assignedTo, labels } = issue;
   return {
     title,
-    repoIssueNumber,
+    number,
     assignedTo,
     labels,
   };

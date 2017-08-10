@@ -5,15 +5,21 @@ import {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 const milestonesReducer = (state = { ids:[], milestonesByID: {}}, action) => {
 
 =======
 function createState(json, incomingState) {
+=======
+function createState(json, incomingState, repoName) {
+>>>>>>> e19f169... Adding syced app
   const state = incomingState;
+  state.milestonesByRepo = {};
   json.forEach((milestone) => {
     state.ids = state.ids.concat(milestone.id);
     state.milestonesById[milestone.id] = {};
     state.milestonesById[milestone.id].title = milestone.title;
+<<<<<<< HEAD
     state.milestonesById[milestone.id].due = milestone.due_on;
     state.milestonesById[milestone.id].created = milestone.created_at;
     state.milestonesById[milestone.id].percentComplete = milestone.closed_issues / (milestone.closed_issues + milestone.open_issues);
@@ -32,19 +38,34 @@ function createState(json, incomingState) {
     state.milestonesById[milestone.id].title = milestone.title;
     state.milestonesById[milestone.id].due = milestone.due_on;
     state.milestonesById[milestone.id].created = milestone.created_at;
+=======
+    state.milestonesById[milestone.id].due = milestone.dueOn;
+    state.milestonesById[milestone.id].percentComplete =
+    milestone.closedIssues / (milestone.closedIssues +
+    milestone.openIssues);
+    if(state.milestonesByRepo[repoName])
+    state.milestonesByRepo[repoName] =
+    state.milestonesByRepo[repoName].concat(milestone.id)
+    else
+    state.milestonesByRepo[repoName] = [milestone.id]
+>>>>>>> e19f169... Adding syced app
   });
   return { ...state, loadingMilestones: false };
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 const milestonesReducer = (state = { ids: [], milestonesByID: {} }, action) => {
 >>>>>>> edbe0e0... fml
 =======
 const milestonesReducer = (state = { ids: [], milestonesById: {} }, action) => {
 >>>>>>> 88f4b03... Added passing tests on <Org and <Orgs
+=======
+const milestonesReducer = (state = { ids: [], milestonesById: {}, repoName: '' }, action) => {
+>>>>>>> e19f169... Adding syced app
   switch (action.type) {
     case GET_MILESTONES:
-      return createState(action.responseObj, state);
+      return createState(action.responseObj, state, action.repoName);
 
     case LOADING_MILESTONES:
       return {

@@ -122,6 +122,7 @@ export default connect(
 =======
 import './Dashboard.css';
 
+<<<<<<< HEAD
 const Dashboard = () => (
   <Container>
     <Issues />
@@ -163,6 +164,12 @@ export const Dashboard = ({ repoName, currentPage, renderRepos }) => {
     return (
       <div>
         <Button icon padded onClick={() => renderRepos()}>
+=======
+export const Dashboard = ({ repoName, currentPage, renderRepos, orgName }) => {
+    return (
+      <div>
+        <Button icon onClick={() => renderRepos(orgName)}>
+>>>>>>> e19f169... Adding syced app
           <Icon name="arrow left" />
         </Button>
         <Container>
@@ -175,20 +182,19 @@ export const Dashboard = ({ repoName, currentPage, renderRepos }) => {
             </Header>
             <Grid.Row columns={3}>
               <Grid.Column>
-                <PrTable />
+                <PrTable repoName={repoName} />
               </Grid.Column>
               <Grid.Column>
-                <Issues />
+                <Issues repoName={repoName} />
               </Grid.Column>
               <Grid.Column>
-                <Milestones />
+                <Milestones repoName={repoName} />
               </Grid.Column>
             </Grid.Row>
           </Grid>
         </Container>
       </div>
     );
-  }
 };
 
 Dashboard.propTypes = {
@@ -200,6 +206,7 @@ Dashboard.propTypes = {
 const mapStateToProps = state => ({
   repoName: state.currentPage.repoName,
   currentPage: state.currentPage.render,
+  orgName: state.currentPage.selectedOrgName,
 });
 
 export const mapDispatchToProps = dispatch => bindActionCreators({

@@ -42,13 +42,14 @@ import './Organizations.css';
 =======
 =======
 function orgComponents(orgIds) {
-  return orgIds.map(id => <Org key={id} orgId={id} />);
+  return orgIds.map(id => <Org orgId={id} />);
 }
 
 >>>>>>> 2f2a056... Adding with fewer linting errors
 export class Organizations extends Component {
 
   componentDidMount() {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 02a66ea... Adding with some linting errors addressed
@@ -71,6 +72,9 @@ export class Organizations extends Component {
 =======
     // this.props.retrieveOrgs(this.props.userName);
 >>>>>>> e342caa... Adding latest work
+=======
+    this.props.retrieveOrgs(this.props.userName);
+>>>>>>> e19f169... Adding syced app
   }
 
   render(){

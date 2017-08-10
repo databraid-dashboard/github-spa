@@ -13,17 +13,28 @@ function createState(json, incomingState) {
   GET_REPOS,
 } from '../actions/repoActions';
 
+<<<<<<< HEAD
 function createState(json, incomingState) {
 >>>>>>> edbe0e0... fml
 =======
 >>>>>>> 564c283... Fixing warning messages from tests
+=======
+function createState(json, incomingState, orgName) {
+>>>>>>> e19f169... Adding syced app
   const state = incomingState;
-  json.forEach((repo) => {
-    state.ids = state.ids.concat(repo.id);
-    state.reposById[repo.id] = {};
-    state.reposById[repo.id].repoName = repo.name;
-    state.reposById[repo.id].repoUrl = repo.html_url;
-  });
+  state.reposByOrg = {};
+  if(json) {
+    json.forEach((repo) => {
+      state.ids = state.ids.concat(repo.id);
+      state.reposById[repo.id] = {};
+      state.reposById[repo.id].repoName = repo.name;
+      state.reposById[repo.id].repoUrl = repo.html_url;
+      if(state.reposByOrg[orgName])
+      state.reposByOrg[orgName] = state.reposByOrg[orgName].concat(repo.id)
+      else
+      state.reposByOrg[orgName] = [repo.id]
+    });
+  }
   return { ...state };
 }
 <<<<<<< HEAD
@@ -31,11 +42,15 @@ function createState(json, incomingState) {
 
 =======
 
+<<<<<<< HEAD
 const repoReducer = (state = { ids: [], reposById: {} }, action) => {
 >>>>>>> edbe0e0... fml
+=======
+const repoReducer = (state = { ids: [], reposById: {}, orgName: '' }, action) => {
+>>>>>>> e19f169... Adding syced app
   switch (action.type) {
     case GET_REPOS:
-      return createState(action.responseObj, state);
+      return createState(action.responseObj, state, action.orgName);
 
     default:
 <<<<<<< HEAD

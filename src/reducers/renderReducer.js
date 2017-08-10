@@ -87,6 +87,7 @@ const renderPage = (state = { render: 'login', repoName: null, userName: 'michae
       return { render: 'dashboard',
 =======
       return { ...state, render: 'dashboard',
+<<<<<<< HEAD
 >>>>>>> 979ef55... editing .gitignore
         repoName: action.repoName };
 >>>>>>> 79473f9... Fixed linting errors, installed redux-mock-store
@@ -94,6 +95,10 @@ const renderPage = (state = { render: 'login', repoName: null, userName: 'michae
       return { ...state, render: 'dashboard',
         repoName: action.repoName , session: {...action.payload.session.passport.user}, fetching: false};
 >>>>>>> b8942b0... exploring Oauth hookup not finished, will need to accept sandeep's next update to sync
+=======
+        repoName: action.repoName,
+        repoId: action.repoId };
+>>>>>>> e19f169... Adding syced app
 
     default:
       return state;

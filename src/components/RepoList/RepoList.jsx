@@ -47,13 +47,17 @@ import { renderOrgs } from '../../actions/renderActions';
 import Repo from '../Repo/Repo';
 import './RepoList.css';
 
-function repoComponents(repoIds) {
-  return repoIds.map(id => <Repo key={id} repoId={id} />);
+function repoComponents(repos, org) {
+  if(repos && repos[org]){ return repos[org].map(id =>
+    <Repo key={id} repoId={id} />
+  )} else {
+    return ''
+  }
 }
 
 export class RepoList extends Component {
-
   componentDidMount() {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -65,6 +69,9 @@ export class RepoList extends Component {
 =======
       this.props.retrieveRepos();
 >>>>>>> e342caa... Adding latest work
+=======
+      this.props.retrieveRepos(this.props.userName, this.props.orgName);
+>>>>>>> e19f169... Adding syced app
   }
 
 <<<<<<< HEAD
@@ -95,7 +102,7 @@ export class RepoList extends Component {
                 </Header.Content>
               </Header>
               <List animated divided relaxed size="huge">
-                {repoComponents(this.props.repoIds)}
+                {repoComponents(this.props.reposByOrg, this.props.orgName)}
               </List>
             </Grid.Column>
           </Grid>
@@ -166,19 +173,24 @@ const mapDispatchToProps = dispatch =>
 >>>>>>> 564c283... Fixing warning messages from tests
   }
 
-
 RepoList.propTypes = {
   // repoComponents: PropTypes.func.isRequired,
   retrieveRepos: PropTypes.func.isRequired,
+<<<<<<< HEAD
   repoIds: PropTypes.number.isRequired,
+=======
+>>>>>>> e19f169... Adding syced app
   currentPage: PropTypes.string.isRequired,
   renderOrgs: PropTypes.func.isRequired,
 };
 
 export const mapStateToProps = state => ({
+  reposByOrg:  state.repos.reposByOrg ,
   repoIds: state.repos.ids,
   reposById: state.repos.reposById,
   currentPage: state.currentPage.render,
+  userName: state.currentPage.userName,
+  orgName: state.currentPage.selectedOrgName
 });
 
 export const mapDispatchToProps = dispatch =>

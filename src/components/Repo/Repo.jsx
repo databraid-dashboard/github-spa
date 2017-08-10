@@ -71,10 +71,9 @@ Repo.propTypes = {
 
 export const mapStateToProps = (state, { repoId }) => {
   const repo = state.repos.reposById[repoId];
-
   const { repoName } = repo;
-
   return {
+<<<<<<< HEAD
     repoName,
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -88,6 +87,9 @@ export default connect(
     repoUrl,
 =======
 >>>>>>> 564c283... Fixing warning messages from tests
+=======
+    repoName
+>>>>>>> e19f169... Adding syced app
   };
 };
 

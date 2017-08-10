@@ -56,6 +56,7 @@ const App = ({ currentPage, store }) => (
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Issues/>
 <<<<<<< HEAD
     <PR_Table/>
@@ -263,10 +264,12 @@ export default App;
 =======
     {console.log(currentPage)}
     {console.log(store)}
+=======
+>>>>>>> e19f169... Adding syced app
     {renderIf(currentPage==='login')(<Login />)}
-    {/* {renderIf(currentPage==='orgs')(<Organizations />)}
+    {renderIf(currentPage==='orgs')(<Organizations />)}
     {renderIf(currentPage==='repos')(<RepoList />)}
-    {renderIf(currentPage==='dashboard')(<Dashboard />)} */}
+    {renderIf(currentPage==='dashboard')(<Dashboard />)}
   </Container>
 );
 

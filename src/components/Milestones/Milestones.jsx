@@ -19,15 +19,16 @@ import { retrieveMilestones } from '../../actions/milestonesActions';
 import Milestone from '../Milestone/Milestone';
 import './Milestones.css';
 
-function milestoneComponents(milestonesIds) {
-  return milestonesIds.map(id => (
-    <Milestone key={id} milestoneId={id} />
-  ));
+function milestoneComponents(milestones, repo) {
+  if(milestones && milestones[repo]){ return milestones[repo].map(id => <Milestone milestoneId={id} />
+  )} else {
+    return ''
+  }
 }
 
 export class Milestones extends Component {
   componentDidMount() {
-    this.props.retrieveMilestones();
+    this.props.retrieveMilestones(this.props.userName, this.props.orgName, this.props.repoName);
   }
 
 <<<<<<< HEAD
@@ -95,6 +96,7 @@ export class Milestones extends Component {
         </Card.Content>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
               {this.milestoneComponents(this.props.milestonesIds)}
 >>>>>>> 4def070... Adding percent complete feature
@@ -104,6 +106,9 @@ export class Milestones extends Component {
 =======
         {milestoneComponents(this.props.milestonesIds)}
 >>>>>>> 2f2a056... Adding with fewer linting errors
+=======
+        {milestoneComponents(this.props.milestonesByRepo, this.props.repoName)}
+>>>>>>> e19f169... Adding syced app
       </Card>
     );
   }
@@ -133,9 +138,12 @@ export const mapStateToProps = state => ({
 >>>>>>> 2c48835... Adding repo view
 =======
 export const mapStateToProps = state => ({
+  milestonesByRepo: state.milestones.milestonesByRepo,
   milestonesIds: state.milestones.ids,
   milestonesById: state.milestones.milestonesById,
   loadingMilestones: state.loadingMilestones,
+  userName: state.currentPage.userName,
+  orgName: state.currentPage.selectedOrgName,
 });
 >>>>>>> edbe0e0... fml
 

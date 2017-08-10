@@ -8,13 +8,17 @@ import { retrievePrs } from '../../actions/prActions';
 import './PrTable.css';
 
 
-function prComponents(prIds) {
-  return prIds.sort((a, b) => a - b).map(id => <PrTableRow key={id} prId={id} />);
+function prComponents(prs, repo) {
+  if(prs && prs[repo]){ return prs[repo].map(id =>
+    <PrTableRow prId={id} />
+  )} else {
+    return ''
+  }
 }
 
 export class PrTable extends Component {
   componentDidMount() {
-    this.props.retrievePrs();
+    this.props.retrievePrs(this.props.userName, this.props.orgName, this.props.repoName);
   }
 
 <<<<<<< HEAD
@@ -37,7 +41,6 @@ export class PrTable extends Component {
         <div>Loading Pull Requests</div>
       );
     }
-
     return (
       <Card>
         <Card.Content>
@@ -45,27 +48,8 @@ export class PrTable extends Component {
             Pull Requests
           </Card.Header>
         </Card.Content>
-        {prComponents(this.props.prIds)}
+        {prComponents(this.props.prsByRepo, this.props.repoName)}
       </Card>
-
-      // <Table celled fixed>
-      //   <Table.Header>
-      //     <Table.Row>
-      //       <Table.HeaderCell colSpan="4" textAlign="center">Pull Requests</Table.HeaderCell>
-      //     </Table.Row>
-      //
-      //     <Table.Row>
-      //       <Table.HeaderCell>Title</Table.HeaderCell>
-      //       <Table.HeaderCell>Created</Table.HeaderCell>
-      //       <Table.HeaderCell>Submitted By</Table.HeaderCell>
-      //       <Table.HeaderCell>Meargeability</Table.HeaderCell>
-      //     </Table.Row>
-      //   </Table.Header>
-      //   <Table.Body>
-      //     {prComponents(this.props.prIds)}
-      //
-      //   </Table.Body>
-      // </Table>
     );
   }
 }
@@ -78,9 +62,12 @@ PrTable.propTypes = {
 
 <<<<<<< HEAD
 export const mapStateToProps = state => ({
+  prsByRepo: state.pullRequests.prsByRepo,
+  prsById: state.pullRequests.prsById,
   prIds: state.pullRequests.ids,
-  // prsById: state.pullRequests.prsById
   loadingPrTable: state.loadingPrTable,
+  userName: state.currentPage.userName,
+  orgName: state.currentPage.selectedOrgName,
 });
 =======
 export const mapStateToProps = state => {

@@ -1,6 +1,10 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import reposByOrg from '../SampleJSONResponses/reposByORGmock';
+=======
+// import reposByOrg from '../SampleJSONResponses/reposByORGmock';
+>>>>>>> e19f169... Adding syced app
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -13,6 +17,7 @@ export GET_REPOS = 'GET_REPOS';
 export const GET_REPOS = 'GET_REPOS';
 >>>>>>> 2c48835... Adding repo view
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 export const retrieveRepos = () => {
   return dispatch => {
@@ -50,3 +55,29 @@ export const retrieveRepos = () => (dispatch) => {
   });
 };
 >>>>>>> 02a66ea... Adding with some linting errors addressed
+=======
+export function retrieveRepos(userName, orgName) {
+
+  let queryString = `{repos (userName: "${userName}", orgName:"${orgName}") {repos {id name } } }`
+
+  let request = { query: queryString };
+
+  return (dispatch, getState, { Api }) => {
+    return Api.fetchData(request)
+    .then(response => response.data.repos.repos)
+    .then(repos => {
+      dispatch({
+      type: GET_REPOS,
+      responseObj: repos,
+      orgName: orgName
+      })
+    })
+  }
+}
+//  => (dispatch) => {
+//   dispatch({
+//     type: GET_REPOS,
+//     responseObj: reposByOrg,
+//   });
+// };
+>>>>>>> e19f169... Adding syced app
