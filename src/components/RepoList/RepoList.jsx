@@ -14,15 +14,12 @@ function repoComponents(repoIds) {
 }
 
 export class RepoList extends Component {
+
   componentDidMount() {
-    this.props.retrieveRepos();
+      this.props.retrieveRepos();
   }
 
   render() {
-    if (this.props.currentPage !== 'repos') {
-      return <div />;
-    }
-    if (this.props.currentPage === 'repos') {
       return (
         <div>
           <Button icon onClick={() => this.props.renderOrgs()}>
@@ -45,7 +42,7 @@ export class RepoList extends Component {
       );
     }
   }
-}
+
 
 RepoList.propTypes = {
   // repoComponents: PropTypes.func.isRequired,

@@ -14,15 +14,12 @@ function orgComponents(orgIds) {
 }
 
 export class Organizations extends Component {
+
   componentDidMount() {
-    this.props.retrieveOrgs(this.props.userName);
+    // this.props.retrieveOrgs(this.props.userName);
   }
 
   render() {
-    if (this.props.currentPage !== 'orgs') {
-      return <div />;
-    }
-    if (this.props.currentPage === 'orgs') {
       return (
         <div>
           <Button icon onClick={() => this.props.renderLogin()}>
@@ -43,7 +40,6 @@ export class Organizations extends Component {
       );
     }
   }
-}
 
 Organizations.propTypes = {
   retrieveOrgs: PropTypes.func.isRequired,

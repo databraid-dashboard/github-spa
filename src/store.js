@@ -6,7 +6,6 @@ import thunkMiddleware from 'redux-thunk';
 import rootReducer from './reducers/index';
 import Api from './utils/Api'
 
-
 const logger = store => next => (action) => {
   next(action);
 };

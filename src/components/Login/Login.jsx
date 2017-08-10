@@ -8,10 +8,6 @@ import { renderOrgs } from '../../actions/renderActions';
 import './Login.css';
 
 export const Login = ({ currentPage, renderOrgs, userName }) => {
-  if (currentPage !== 'login') {
-    return <div />;
-  }
-  if (currentPage === 'login') {
     return (
       <div>
         <Button onClick={() => renderOrgs(userName)}>
@@ -19,8 +15,7 @@ export const Login = ({ currentPage, renderOrgs, userName }) => {
         </Button>
       </div>
     );
-  }
-};
+  };
 
 Login.propTypes = {
   currentPage: PropTypes.string.isRequired,
