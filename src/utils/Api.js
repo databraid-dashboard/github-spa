@@ -9,6 +9,7 @@ export default class Api {
       body: JSON.stringify(request),
     })
       .then(response => response.json())
+
       .catch((err) => {
         throw err;
       });

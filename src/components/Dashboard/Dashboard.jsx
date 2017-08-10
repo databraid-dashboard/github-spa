@@ -1,17 +1,18 @@
-import Issues from './Issues/Issues.jsx';
-import PrTable from './PrTable/PrTable.jsx';
-import Milestones from './Milestones/Milestones.jsx';
+/* eslint-disable import/no-named-as-default, no-shadow, consistent-return */
 import React from 'react';
-import PropTypes from 'prop-types';
-import { renderRepos } from '../../actions/renderActions';
 import { Container, Grid, Header, Icon, Button } from 'semantic-ui-react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { renderRepos } from '../../actions/renderActions';
+import Issues from '../Issues/Issues';
+import PrTable from '../PrTable/PrTable';
+import Milestones from '../Milestones/Milestones';
+import LineChart from '../LineChart/LineChart';
 import './Dashboard.css';
 
 export const Dashboard = ({ repoName, renderRepos, orgName }) => (
   <div>
-
     <Button icon onClick={() => renderRepos(orgName)}>
       <Icon name="arrow left" />
     </Button>
@@ -42,12 +43,11 @@ export const Dashboard = ({ repoName, renderRepos, orgName }) => (
 Dashboard.propTypes = {
   repoName: PropTypes.string,
   renderRepos: PropTypes.func.isRequired,
-  orgName: PropTypes.string,
+  orgName: PropTypes.string.isRequired,
 };
 
 Dashboard.defaultProps = {
   repoName: null,
-  orgName: null,
 };
 
 const mapStateToProps = state => ({

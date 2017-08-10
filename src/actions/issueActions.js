@@ -29,7 +29,6 @@ export function retrieveIssues(userName, orgName, repoName) {
   `;
 
   const request = { query: queryString };
-
   return (dispatch, getState, { Api }) => Api.fetchData(request)
     .then(response => response.data.repos.repos[0].issues)
     .then((issues) => {

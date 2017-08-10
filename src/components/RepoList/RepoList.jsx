@@ -24,46 +24,31 @@ export class RepoList extends Component {
   }
 
   render() {
-    if (this.props.currentPage !== 'repos') {
-      return <div />;
-    }
-    if (this.props.currentPage === 'repos') {
-      return (
-        <div>
-          <Button icon onClick={() => this.props.renderOrgs(this.props.userName)}>
-            <Icon name="arrow left" />
-          </Button>
-          <Grid centered padded>
-            <Grid.Column width={8}>
-              <Header as="h2" icon textAlign="center">
-                <Icon name="github" />
-                <Header.Content>
-                    Which repository are you interested in?
-                </Header.Content>
-              </Header>
-              <List animated divided relaxed size="huge">
-                {repoComponents(this.props.reposByOrg, this.props.orgName)}
-              </List>
-            </Grid.Column>
-          </Grid>
-        </div>
-      );
-    }
-<<<<<<< HEAD
-=======
+    return (
+      <div>
+        <Button icon onClick={() => this.props.renderOrgs(this.props.userName)}>
+          <Icon name="arrow left" />
+        </Button>
+        <Grid centered padded>
+          <Grid.Column width={8}>
+            <Header as="h2" icon textAlign="center">
+              <Icon name="github" />
+              <Header.Content>
+                  Which repository are you interested in?
+              </Header.Content>
+            </Header>
+            <List animated divided relaxed size="huge">
+              {repoComponents(this.props.reposByOrg, this.props.orgName)}
+            </List>
+          </Grid.Column>
+        </Grid>
+      </div>
+    );
   }
-<<<<<<< HEAD
->>>>>>> Adding syced app
 }
-=======
->>>>>>> Adding syced app
 
 RepoList.propTypes = {
   retrieveRepos: PropTypes.func.isRequired,
-<<<<<<< HEAD
-=======
-  currentPage: PropTypes.string.isRequired,
->>>>>>> Adding syced app
   renderOrgs: PropTypes.func.isRequired,
   userName: PropTypes.string.isRequired,
   orgName: PropTypes.string.isRequired,
@@ -75,20 +60,11 @@ RepoList.defaultProps = {
 };
 
 export const mapStateToProps = state => ({
-<<<<<<< HEAD
   reposByOrg: state.repos.reposByOrg,
   repoIds: state.repos.ids,
   reposById: state.repos.reposById,
   userName: state.currentPage.userName,
   orgName: state.currentPage.selectedOrgName,
-=======
-  reposByOrg:  state.repos.reposByOrg ,
-  repoIds: state.repos.ids,
-  reposById: state.repos.reposById,
-  currentPage: state.currentPage.render,
-  userName: state.currentPage.userName,
-  orgName: state.currentPage.selectedOrgName
->>>>>>> Adding syced app
 });
 
 export const mapDispatchToProps = dispatch =>

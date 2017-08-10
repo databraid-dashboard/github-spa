@@ -1,27 +1,8 @@
-// import prMock from '../SampleJSONResponses/PRmock';
-
 export const GET_PRS = 'GET_PRS';
 export const LOADING_PRS = 'LOADING_PRS';
 
 export function retrievePrs(userName, orgName, repoName) {
-  const queryString = `
-    {
-      repos
-      (userName: "${userName}",
-      orgName:"${orgName}",
-      repoName:"${repoName}") {
-        repos {
-          pullRequests {
-            id
-            title
-            submittedBy
-            createdAt
-            mergeable
-          }
-        }
-      }
-    }
-    `;
+  const queryString = `{repos (userName: "${userName}", orgName:"${orgName}", repoName:"${repoName}") {repos {pullRequests {id title submittedBy createdAt mergeable } } } }`;
 
   const request = { query: queryString };
 

@@ -8,7 +8,6 @@ import PrTableRow from '../PrTableRow/PrTableRow';
 import { retrievePrs } from '../../actions/prActions';
 import './PrTable.css';
 
-
 function prComponents(prs, repo) {
   if (prs && prs[repo]) {
     return prs[repo].map(id =>
@@ -57,16 +56,11 @@ PrTable.defaultProps = {
   userName: '',
   orgName: '',
   repoName: '',
-
 };
 
 export const mapStateToProps = state => ({
   prsByRepo: state.pullRequests.prsByRepo,
   prsById: state.pullRequests.prsById,
-<<<<<<< HEAD
-=======
-  prIds: state.pullRequests.ids,
->>>>>>> Adding syced app
   loadingPrTable: state.loadingPrTable,
   userName: state.currentPage.userName,
   orgName: state.currentPage.selectedOrgName,
@@ -74,12 +68,9 @@ export const mapStateToProps = state => ({
 
 export const mapDispatchToProps = dispatch => bindActionCreators({
   retrievePrs,
-
-export const mapDispatchToProps = dispatch => bindActionCreators({
-  retrievePrs,
 }, dispatch);
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(PrTable);

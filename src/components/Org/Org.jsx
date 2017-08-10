@@ -9,7 +9,6 @@ import './Org.css';
 
 export const Org = ({ avatarUrl, orgName, renderRepos, selectedOrgName }) => (
   <Grid.Column>
-
     <Image
       className="hoverable"
       onClick={() => renderRepos(orgName)}

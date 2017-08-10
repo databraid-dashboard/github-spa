@@ -42,11 +42,11 @@ export class Milestones extends Component {
 
 Milestones.propTypes = {
   retrieveMilestones: PropTypes.func.isRequired,
-  loadingMilestones: PropTypes.bool.isRequired,
+  loadingMilestones: PropTypes.bool,
   userName: PropTypes.string.isRequired,
   orgName: PropTypes.string.isRequired,
   repoName: PropTypes.string.isRequired,
-  milestonesByRepo: PropTypes.objectOf(PropTypes.array).isRequired,
+  milestonesByRepo: PropTypes.objectOf(PropTypes.array),
 };
 
 Milestones.defaultProps = {

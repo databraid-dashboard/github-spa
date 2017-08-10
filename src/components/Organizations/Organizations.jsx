@@ -39,17 +39,13 @@ export class Organizations extends Component {
       </div>
     );
   }
+}
 
 Organizations.propTypes = {
   retrieveOrgs: PropTypes.func.isRequired,
-  orgIds: PropTypes.arrayOf(PropTypes.number).isRequired,
+  orgIds: PropTypes.arrayOf(PropTypes.string).isRequired,
   renderLogin: PropTypes.func.isRequired,
   userName: PropTypes.string.isRequired,
-};
-
-Organizations.defaultProps = {
-  orgIds: [],
-  userName: '',
 };
 
 export const mapStateToProps = state => ({

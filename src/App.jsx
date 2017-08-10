@@ -29,9 +29,9 @@ App.defaultProps = {
 
 const mapStateToProps = state => ({
   currentPage: state.currentPage.render,
+  store: state,
 });
 
 export default connect(
   mapStateToProps,
-  null,
 )(App);
