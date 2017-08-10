@@ -9,10 +9,11 @@ import Milestone from '../Milestone/Milestone';
 import './Milestones.css';
 
 function milestoneComponents(milestones, repo) {
-  if(milestones && milestones[repo]){ return milestones[repo].map(id => <Milestone milestoneId={id} />
-  )} else {
-    return ''
+  if (milestones && milestones[repo]) {
+    return milestones[repo].map(id => <Milestone key={id} milestoneId={id} />,
+    );
   }
+  return '';
 }
 
 export class Milestones extends Component {
@@ -42,16 +43,19 @@ export class Milestones extends Component {
 Milestones.propTypes = {
   retrieveMilestones: PropTypes.func.isRequired,
   loadingMilestones: PropTypes.bool,
-  milestonesIds: PropTypes.arrayOf(PropTypes.number).isRequired,
+  userName: PropTypes.string.isRequired,
+  orgName: PropTypes.string.isRequired,
+  repoName: PropTypes.string.isRequired,
+  milestonesByRepo: PropTypes.objectOf(PropTypes.array),
 };
 
 Milestones.defaultProps = {
   loadingMilestones: false,
+  milestonesByRepo: {},
 };
 
 export const mapStateToProps = state => ({
   milestonesByRepo: state.milestones.milestonesByRepo,
-  milestonesIds: state.milestones.ids,
   milestonesById: state.milestones.milestonesById,
   loadingMilestones: state.loadingMilestones,
   userName: state.currentPage.userName,

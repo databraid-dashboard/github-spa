@@ -9,11 +9,12 @@ import { retrieveIssues } from '../../actions/issueActions';
 import './Issues.css';
 
 function issueComponents(issues, repo) {
-  if(issues && issues[repo]){ return issues[repo].map(id => <Issue issueId={id} />
-  )}
-  else {
-    return ''
+  if (issues && issues[repo]) {
+    return issues[repo].map(id => <Issue key={id} issueId={id} />,
+    );
   }
+
+  return '';
 }
 
 export class Issues extends Component {
@@ -43,17 +44,21 @@ export class Issues extends Component {
 Issues.propTypes = {
   retrieveIssues: PropTypes.func.isRequired,
   loadingIssues: PropTypes.bool,
-  issuesIds: PropTypes.arrayOf(PropTypes.number).isRequired,
+  userName: PropTypes.string.isRequired,
+  orgName: PropTypes.string.isRequired,
+  repoName: PropTypes.string.isRequired,
+  issuesByRepo: PropTypes.objectOf(PropTypes.array),
+
 };
 
 Issues.defaultProps = {
   loadingIssues: false,
+  issuesByRepo: {},
 };
 
 
 export const mapStateToProps = state => ({
   issuesByRepo: state.issues.issuesByRepo,
-  issuesIds: state.issues.ids,
   loadingIssues: state.loadingIssues,
   orgName: state.currentPage.selectedOrgName,
   userName: state.currentPage.userName,

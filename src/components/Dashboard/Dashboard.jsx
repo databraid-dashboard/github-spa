@@ -10,41 +10,39 @@ import PrTable from '../PrTable/PrTable';
 import Milestones from '../Milestones/Milestones';
 import './Dashboard.css';
 
-export const Dashboard = ({ repoName, currentPage, renderRepos, orgName }) => {
-    return (
-      <div>
-        <Button icon onClick={() => renderRepos(orgName)}>
-          <Icon name="arrow left" />
-        </Button>
-        <Container>
-          <Grid padded>
-            <Header as="h2" icon textAlign="center">
-              <Icon name="github" />
-              <Header.Content>
-                {repoName}
-              </Header.Content>
-            </Header>
-            <Grid.Row columns={3}>
-              <Grid.Column>
-                <PrTable repoName={repoName} />
-              </Grid.Column>
-              <Grid.Column>
-                <Issues repoName={repoName} />
-              </Grid.Column>
-              <Grid.Column>
-                <Milestones repoName={repoName} />
-              </Grid.Column>
-            </Grid.Row>
-          </Grid>
-        </Container>
-      </div>
-    );
-};
+export const Dashboard = ({ repoName, renderRepos, orgName }) => (
+  <div>
+    <Button icon onClick={() => renderRepos(orgName)}>
+      <Icon name="arrow left" />
+    </Button>
+    <Container>
+      <Grid padded>
+        <Header as="h2" icon textAlign="center">
+          <Icon name="github" />
+          <Header.Content>
+            {repoName}
+          </Header.Content>
+        </Header>
+        <Grid.Row columns={3}>
+          <Grid.Column>
+            <PrTable repoName={repoName} />
+          </Grid.Column>
+          <Grid.Column>
+            <Issues repoName={repoName} />
+          </Grid.Column>
+          <Grid.Column>
+            <Milestones repoName={repoName} />
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
+    </Container>
+  </div>
+);
 
 Dashboard.propTypes = {
   repoName: PropTypes.string,
-  currentPage: PropTypes.string.isRequired,
   renderRepos: PropTypes.func.isRequired,
+  orgName: PropTypes.string.isRequired,
 };
 
 Dashboard.defaultProps = {
@@ -53,7 +51,6 @@ Dashboard.defaultProps = {
 
 const mapStateToProps = state => ({
   repoName: state.currentPage.repoName,
-  currentPage: state.currentPage.render,
   orgName: state.currentPage.selectedOrgName,
 });
 

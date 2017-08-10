@@ -13,11 +13,10 @@ function createState(json, incomingState, repoName) {
     state.prsById[pr.id].title = pr.title;
     state.prsById[pr.id].created = pr.createdAt;
     state.prsById[pr.id].mergeable = pr.mergeable;
-    if(state.prsByRepo[repoName])
-    state.prsByRepo[repoName] =
-    state.prsByRepo[repoName].concat(pr.id)
-    else
-    state.prsByRepo[repoName] = [pr.id]
+    if (state.prsByRepo[repoName]) {
+      state.prsByRepo[repoName] =
+    state.prsByRepo[repoName].concat(pr.id);
+    } else { state.prsByRepo[repoName] = [pr.id]; }
   });
   return { ...state, loadingPrTable: false };
 }
