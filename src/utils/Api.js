@@ -11,10 +11,9 @@ export default class Api {
       body: JSON.stringify(request),
     })
       .then(response => response.json())
-      .then(console.log)
 
       .catch((err) => {
         throw err;
       });
+    }
   }
-}

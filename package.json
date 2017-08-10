@@ -50,6 +50,10 @@
     "redux-promise-middleware": "^4.3.0",
     "redux-thunk": "2.2.0",
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    "render-if": "0.1.1",
+>>>>>>> e342caa... Adding latest work
     "semantic-ui-react": "0.71.3"
 >>>>>>> 79473f9... Fixed linting errors, installed redux-mock-store
 =======

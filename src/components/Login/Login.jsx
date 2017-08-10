@@ -10,11 +10,14 @@ import './Login.css';
 
 
 export const Login = ({ currentPage, renderOrgs, userName }) => {
+<<<<<<< HEAD
   if (currentPage !== 'login') {
     return <div />;
   }
   if (currentPage === 'login') {
 
+=======
+>>>>>>> e342caa... Adding latest work
     return (
       <div>
         <Button onClick={() => renderOrgs(userName)}>
@@ -22,8 +25,7 @@ export const Login = ({ currentPage, renderOrgs, userName }) => {
         </Button>
       </div>
     );
-  }
-};
+  };
 
 
 // hitAuthRoute( AUTH_ROUTE) => {

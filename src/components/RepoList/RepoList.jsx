@@ -52,7 +52,9 @@ function repoComponents(repoIds) {
 }
 
 export class RepoList extends Component {
+
   componentDidMount() {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     // this.props.retrieveRepos();
@@ -60,6 +62,9 @@ export class RepoList extends Component {
 =======
     this.props.retrieveRepos();
 >>>>>>> 2c48835... Adding repo view
+=======
+      this.props.retrieveRepos();
+>>>>>>> e342caa... Adding latest work
   }
 
 <<<<<<< HEAD
@@ -76,10 +81,6 @@ export class RepoList extends Component {
 =======
 >>>>>>> 564c283... Fixing warning messages from tests
   render() {
-    if (this.props.currentPage !== 'repos') {
-      return <div />;
-    }
-    if (this.props.currentPage === 'repos') {
       return (
         <div>
           <Button icon padded onClick={() => this.props.renderOrgs()}>
@@ -164,7 +165,7 @@ const mapDispatchToProps = dispatch =>
 =======
 >>>>>>> 564c283... Fixing warning messages from tests
   }
-}
+
 
 RepoList.propTypes = {
   // repoComponents: PropTypes.func.isRequired,

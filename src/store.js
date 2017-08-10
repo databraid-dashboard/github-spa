@@ -21,6 +21,7 @@ import thunkMiddleware from 'redux-thunk';
 import rootReducer from './reducers/index';
 import Api from './utils/Api'
 
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -77,6 +78,8 @@ const initialState = {
 
 =======
 >>>>>>> edbe0e0... fml
+=======
+>>>>>>> e342caa... Adding latest work
 const logger = store => next => (action) => {
   next(action);
 };

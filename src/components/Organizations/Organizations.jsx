@@ -47,7 +47,9 @@ function orgComponents(orgIds) {
 
 >>>>>>> 2f2a056... Adding with fewer linting errors
 export class Organizations extends Component {
+
   componentDidMount() {
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 02a66ea... Adding with some linting errors addressed
     this.props.retrieveOrgs();
@@ -66,6 +68,9 @@ export class Organizations extends Component {
 <<<<<<< HEAD:src/components/Orgs/Orgs.jsx
   renderOrgs(){
     this.setState( {showOrgs: !this.state.showOrgs });
+=======
+    // this.props.retrieveOrgs(this.props.userName);
+>>>>>>> e342caa... Adding latest work
   }
 
   render(){
@@ -73,6 +78,7 @@ export class Organizations extends Component {
 =======
 >>>>>>> 2f2a056... Adding with fewer linting errors
   render() {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> df38d77... Adding working orgs page:src/components/Organizations/Organizations.jsx
@@ -115,6 +121,8 @@ const mapStateToProps = state => {
 >>>>>>> 79473f9... Fixed linting errors, installed redux-mock-store
     }
     if (this.props.currentPage === 'orgs') {
+=======
+>>>>>>> e342caa... Adding latest work
       return (
         <div>
           <Button icon onClick={() => this.props.renderLogin()}>
@@ -136,11 +144,14 @@ const mapStateToProps = state => {
     }
 >>>>>>> 564c283... Fixing warning messages from tests
   }
+<<<<<<< HEAD
 }
 =======
 const mapStateToProps = state => ({
 =======
 }
+=======
+>>>>>>> e342caa... Adding latest work
 
 Organizations.propTypes = {
   retrieveOrgs: PropTypes.func.isRequired,
