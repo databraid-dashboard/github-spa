@@ -1,3 +1,4 @@
+const AUTH_ROUTE = 'http://localhost:3000/auth/github';
 export const RENDER_ORGS = 'RENDER_ORGS';
 export const RENDER_LOGIN = 'RENDER_LOGIN';
 export const RENDER_REPOS = 'RENDER_REPOS';
@@ -7,6 +8,11 @@ export const renderOrgs = () => (dispatch) => {
   dispatch({
     type: RENDER_ORGS,
     responseStr: 'orgs',
+    fetching : true,
+    payload: fetch(AUTH_ROUTE)
+      .then(response => {
+        dispatch
+      })
   });
 };
 

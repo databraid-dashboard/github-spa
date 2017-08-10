@@ -1,3 +1,4 @@
+import promise from 'redux-promise-middleware';
 import {
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -35,6 +36,7 @@ const renderPage = (state = '', action) => {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 const renderPage = (state = 'orgs', action) => {
 >>>>>>> b56b9a4... Adding conditional views
 =======
@@ -43,17 +45,21 @@ const renderPage = (state = {render: 'orgs', repoName:null }, action) => {
 =======
 const renderPage = (state = { render: 'login', repoName: null }, action) => {
 >>>>>>> 79473f9... Fixed linting errors, installed redux-mock-store
+=======
+const renderPage = (state = { render: 'login', repoName: null, fetching: true }, action) => {
+>>>>>>> b8942b0... exploring Oauth hookup not finished, will need to accept sandeep's next update to sync
   switch (action.type) {
     case RENDER_ORGS:
-      return { ...state, render: 'orgs' };
+      return { ...state, render: 'orgs', session: {...action.payload.session.passport.user }, fetching: false};
 
     case RENDER_REPOS:
-      return { ...state, render: 'repos' };
+      return { ...state, render: 'repos', session: {...action.payload.session.passport.user }, fetching: false;
 
     case RENDER_LOGIN:
-      return { ...state, render: 'login' };
+      return { ...state, render: 'login' , session: {...action.payload.session.passport.user}, fetching: false};
 
     case RENDER_DASHBOARD:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       return state = 'dashboard';
@@ -70,6 +76,10 @@ const renderPage = (state = { render: 'login', repoName: null }, action) => {
       return { render: 'dashboard',
         repoName: action.repoName };
 >>>>>>> 79473f9... Fixed linting errors, installed redux-mock-store
+=======
+      return { ...state, render: 'dashboard',
+        repoName: action.repoName , session: {...action.payload.session.passport.user}, fetching: false};
+>>>>>>> b8942b0... exploring Oauth hookup not finished, will need to accept sandeep's next update to sync
 
     default:
       return state;

@@ -39,6 +39,7 @@
 >>>>>>> 49a3039... combined efforts (#1)
 =======
     "d3": "4.10.0",
+    "lodash": "^4.17.4",
     "prop-types": "15.5.10",
     "react": "15.6.1",
     "react-dom": "15.6.1",
@@ -46,9 +47,15 @@
     "react-redux": "5.0.5",
     "redux": "3.7.2",
     "redux-mock-store": "1.2.3",
+    "redux-promise-middleware": "^4.3.0",
     "redux-thunk": "2.2.0",
+<<<<<<< HEAD
     "semantic-ui-react": "0.71.3"
 >>>>>>> 79473f9... Fixed linting errors, installed redux-mock-store
+=======
+    "semantic-ui-react": "0.71.3",
+    "validator-js": "^0.2.1"
+>>>>>>> b8942b0... exploring Oauth hookup not finished, will need to accept sandeep's next update to sync
   },
   "devDependencies": {
     "enzyme": "2.9.1",

@@ -6,7 +6,8 @@ import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import { renderOrgs } from '../../actions/renderActions';
 import './Login.css';
-const AUTH_ROUTE = 'http://localhost:3000/auth/github';
+// import validateInput from './loginUtils';
+
 
 export const Login = ({ currentPage, renderOrgs }) => {
   if (currentPage !== 'login') {
@@ -24,11 +25,12 @@ export const Login = ({ currentPage, renderOrgs }) => {
   }
 };
 
-hitAuthRoute( AUTH_ROUTE) => {
-  fetch(AUTH_ROUTE)
-    .then(response =>
-    fetch())
-}
+
+// hitAuthRoute( AUTH_ROUTE) => {
+//   fetch(AUTH_ROUTE)
+//     .then(response =>
+//     fetch())
+// }
 
 Login.propTypes = {
   currentPage: PropTypes.string.isRequired,
@@ -37,6 +39,7 @@ Login.propTypes = {
 
 const mapStateToProps = state => ({
   currentPage: state.currentPage.render,
+  session: state.currentPage.session,
 });
 
 export const mapDispatchToProps = dispatch => bindActionCreators({

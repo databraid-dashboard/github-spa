@@ -1,10 +1,14 @@
 <<<<<<< HEAD
 /* eslint-disable max-len, no-unused-vars */
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 =======
+=======
+import promise from 'redux-promise-middleware';
+>>>>>>> b8942b0... exploring Oauth hookup not finished, will need to accept sandeep's next update to sync
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 // import thunkMiddleware from 'redux-thunk';
@@ -84,7 +88,9 @@ const logger = store => next => (action) => {
 <<<<<<< HEAD
 
 const middleware = [
+  promise();
   thunk,
+<<<<<<< HEAD
 <<<<<<< HEAD
   // logger,
 =======
@@ -92,6 +98,8 @@ const middleware = [
   logger,
 >>>>>>> 813da6e... updated store
   // error,
+=======
+>>>>>>> b8942b0... exploring Oauth hookup not finished, will need to accept sandeep's next update to sync
 ];
 
 /* eslint-disable no-underscore-dangle */
