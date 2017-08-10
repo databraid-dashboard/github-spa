@@ -10,14 +10,10 @@ import PrTable from '../PrTable/PrTable';
 import Milestones from '../Milestones/Milestones';
 import './Dashboard.css';
 
-export const Dashboard = ({ repoName, currentPage, renderRepos }) => {
-  if (currentPage !== 'dashboard') {
-    return <div />;
-  }
-  if (currentPage === 'dashboard') {
+export const Dashboard = ({ repoName, currentPage, renderRepos, orgName }) => {
     return (
       <div>
-        <Button icon onClick={() => renderRepos()}>
+        <Button icon onClick={() => renderRepos(orgName)}>
           <Icon name="arrow left" />
         </Button>
         <Container>
@@ -30,20 +26,19 @@ export const Dashboard = ({ repoName, currentPage, renderRepos }) => {
             </Header>
             <Grid.Row columns={3}>
               <Grid.Column>
-                <PrTable />
+                <PrTable repoName={repoName} />
               </Grid.Column>
               <Grid.Column>
-                <Issues />
+                <Issues repoName={repoName} />
               </Grid.Column>
               <Grid.Column>
-                <Milestones />
+                <Milestones repoName={repoName} />
               </Grid.Column>
             </Grid.Row>
           </Grid>
         </Container>
       </div>
     );
-  }
 };
 
 Dashboard.propTypes = {
@@ -59,6 +54,7 @@ Dashboard.defaultProps = {
 const mapStateToProps = state => ({
   repoName: state.currentPage.repoName,
   currentPage: state.currentPage.render,
+  orgName: state.currentPage.selectedOrgName,
 });
 
 export const mapDispatchToProps = dispatch => bindActionCreators({

@@ -8,15 +8,16 @@ import { retrieveMilestones } from '../../actions/milestonesActions';
 import Milestone from '../Milestone/Milestone';
 import './Milestones.css';
 
-function milestoneComponents(milestonesIds) {
-  return milestonesIds.map(id => (
-    <Milestone key={id} milestoneId={id} />
-  ));
+function milestoneComponents(milestones, repo) {
+  if(milestones && milestones[repo]){ return milestones[repo].map(id => <Milestone milestoneId={id} />
+  )} else {
+    return ''
+  }
 }
 
 export class Milestones extends Component {
   componentDidMount() {
-    this.props.retrieveMilestones();
+    this.props.retrieveMilestones(this.props.userName, this.props.orgName, this.props.repoName);
   }
 
   render() {
@@ -32,7 +33,7 @@ export class Milestones extends Component {
             Milestones
           </Card.Header>
         </Card.Content>
-        {milestoneComponents(this.props.milestonesIds)}
+        {milestoneComponents(this.props.milestonesByRepo, this.props.repoName)}
       </Card>
     );
   }
@@ -49,9 +50,12 @@ Milestones.defaultProps = {
 };
 
 export const mapStateToProps = state => ({
+  milestonesByRepo: state.milestones.milestonesByRepo,
   milestonesIds: state.milestones.ids,
   milestonesById: state.milestones.milestonesById,
   loadingMilestones: state.loadingMilestones,
+  userName: state.currentPage.userName,
+  orgName: state.currentPage.selectedOrgName,
 });
 
 export const mapDispatchToProps = dispatch =>

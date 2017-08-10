@@ -9,14 +9,17 @@ import { renderOrgs } from '../../actions/renderActions';
 import Repo from '../Repo/Repo';
 import './RepoList.css';
 
-function repoComponents(repoIds) {
-  return repoIds.map(id => <Repo key={id} repoId={id} />);
+function repoComponents(repos, org) {
+  if(repos && repos[org]){ return repos[org].map(id =>
+    <Repo key={id} repoId={id} />
+  )} else {
+    return ''
+  }
 }
 
 export class RepoList extends Component {
-
   componentDidMount() {
-      this.props.retrieveRepos();
+      this.props.retrieveRepos(this.props.userName, this.props.orgName);
   }
 
   render() {
@@ -34,7 +37,7 @@ export class RepoList extends Component {
                 </Header.Content>
               </Header>
               <List animated divided relaxed size="huge">
-                {repoComponents(this.props.repoIds)}
+                {repoComponents(this.props.reposByOrg, this.props.orgName)}
               </List>
             </Grid.Column>
           </Grid>
@@ -43,19 +46,20 @@ export class RepoList extends Component {
     }
   }
 
-
 RepoList.propTypes = {
   // repoComponents: PropTypes.func.isRequired,
   retrieveRepos: PropTypes.func.isRequired,
-  repoIds: PropTypes.arrayOf(PropTypes.number).isRequired,
   currentPage: PropTypes.string.isRequired,
   renderOrgs: PropTypes.func.isRequired,
 };
 
 export const mapStateToProps = state => ({
+  reposByOrg:  state.repos.reposByOrg ,
   repoIds: state.repos.ids,
   reposById: state.repos.reposById,
   currentPage: state.currentPage.render,
+  userName: state.currentPage.userName,
+  orgName: state.currentPage.selectedOrgName
 });
 
 export const mapDispatchToProps = dispatch =>

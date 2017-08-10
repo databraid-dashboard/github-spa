@@ -11,12 +11,10 @@ import './App.css';
 
 const App = ({ currentPage, store }) => (
   <Container>
-    {console.log(currentPage)}
-    {console.log(store)}
     {renderIf(currentPage==='login')(<Login />)}
-    {/* {renderIf(currentPage==='orgs')(<Organizations />)}
+    {renderIf(currentPage==='orgs')(<Organizations />)}
     {renderIf(currentPage==='repos')(<RepoList />)}
-    {renderIf(currentPage==='dashboard')(<Dashboard />)} */}
+    {renderIf(currentPage==='dashboard')(<Dashboard />)}
   </Container>
 );
 

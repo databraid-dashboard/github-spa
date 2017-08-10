@@ -10,13 +10,13 @@ import Org from '../Org/Org';
 import './Organizations.css';
 
 function orgComponents(orgIds) {
-  return orgIds.map(id => <Org key={id} orgId={id} />);
+  return orgIds.map(id => <Org orgId={id} />);
 }
 
 export class Organizations extends Component {
 
   componentDidMount() {
-    // this.props.retrieveOrgs(this.props.userName);
+    this.props.retrieveOrgs(this.props.userName);
   }
 
   render() {
