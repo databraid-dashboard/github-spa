@@ -50,10 +50,21 @@ Dashboard.defaultProps = {
   orgName: null,
 };
 
-const mapStateToProps = state => ({
-  repoName: state.currentPage.repoName,
-  orgName: state.currentPage.selectedOrgName,
-});
+// const mapStateToProps = state => ({
+//   repoName: state.currentPage.repoName,
+//   orgName: state.currentPage.selectedOrgName,
+// });
+
+export const mapStateToProps = (state, ownProps) => {
+  const id = ownProps.widgetId;
+  const repoName = state.widgets.byId[id].currentPage.repoName;
+  const orgName = state.widgets.byId[id].currentPage.selectedOrgName;
+
+  return {
+    repoName,
+    orgName,
+  };
+};
 
 export const mapDispatchToProps = dispatch =>
   bindActionCreators(

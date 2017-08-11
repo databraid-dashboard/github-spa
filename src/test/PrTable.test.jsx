@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 import toJson from 'enzyme-to-json';
@@ -12,7 +11,6 @@ const state = {
         submittedBy: [],
         created: '2017-07-31T20:17:36Z',
         title: 'disregard #2',
-
       },
     },
   },
@@ -34,7 +32,7 @@ describe('PrTable component', () => {
     expect(toJson(component)).toMatchSnapshot();
   });
 
-  it('map\'s given State To Props ', () => {
+  it("map's given State To Props ", () => {
     const expected = {
       loadingPrTable: false,
       userName: undefined,
@@ -44,11 +42,9 @@ describe('PrTable component', () => {
           submittedBy: [],
           created: '2017-07-31T20:17:36Z',
           title: 'disregard #2',
-
         },
       },
       prsByRepo: undefined,
-
     };
     expect(mapStateToProps(state)).toEqual(expected);
   });

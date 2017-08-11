@@ -57,7 +57,8 @@ exports[`Issue entry component should render a component with props as specified
                 className="space-issues"
                 sub={true}
               >
-                Assigned To: 
+                Assigned To:
+                 
               </Header>
               Gwillison415
               https://avatars2.githubusercontent.com/u/22106099?v=4

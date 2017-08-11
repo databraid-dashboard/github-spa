@@ -4,7 +4,11 @@ import React from 'react';
 import toJson from 'enzyme-to-json';
 import { shallow } from 'enzyme';
 
-import { Organizations, mapStateToProps, mapDispatchToProps } from '../components/Organizations/Organizations';
+import {
+  Organizations,
+  mapStateToProps,
+  mapDispatchToProps,
+} from '../components/Organizations/Organizations';
 
 const state = {
   orgs: {
@@ -48,7 +52,7 @@ describe('Organizations component', () => {
   //   expect(retrieveOrgs).toBeCalled();
   // });
 
-  it('map\'s given State To Props ', () => {
+  it("map's given State To Props ", () => {
     const expected = {
       orgIds: [246869449],
       orgsById: {

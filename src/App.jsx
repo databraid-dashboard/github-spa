@@ -53,9 +53,17 @@ App.childContextTypes = {
   widgetId: PropTypes.string,
 };
 
-const mapStateToProps = state => ({
-  currentPage: state.currentPage.render,
-  store: state,
-});
+// const mapStateToProps = state => ({
+//   currentPage: state.currentPage.render,
+// });
+
+export const mapStateToProps = (state, ownProps) => {
+  const id = ownProps.widgetId;
+  const currentPage = state.widgets.byId[id].currentPage.render;
+
+  return {
+    currentPage,
+  };
+};
 
 export default injectWidgetId(connect(mapStateToProps)(App)); // ////////////// ?
