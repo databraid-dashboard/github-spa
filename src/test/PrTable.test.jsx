@@ -20,7 +20,7 @@ const state = {
   loadingPrTable: false,
 };
 
-describe('PrTable component', () => {
+xdescribe('PrTable component', () => {
   it('should render a component with props as specified ', () => {
     const retrievePrs = jest.fn();
     const component = shallow(

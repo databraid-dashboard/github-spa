@@ -10,7 +10,7 @@ const state = {
       238923429: {
         assignedTo: [['Gwillison415', 'https://avatars2.githubusercontent.com/u/22106099?v=4']],
         labels: ['duplicate', 'help wanted', 'question'],
-        repoIssueNumber: 16,
+        number: 16,
         title: 'login tst JWT token',
 
       },
@@ -25,7 +25,7 @@ describe('Issue entry component', () => {
         labels={state.issues.issuesById[238923429].labels}
         issueId={238923429}
         assignedTo={[['Gwillison415', 'https://avatars2.githubusercontent.com/u/22106099?v=4']]}
-        repoIssueNumber={16}
+        number={16}
         title={'login tst JWT token'}
       />,
     );
@@ -35,7 +35,7 @@ describe('Issue entry component', () => {
     const expected = {
       assignedTo: [['Gwillison415', 'https://avatars2.githubusercontent.com/u/22106099?v=4']],
       labels: ['duplicate', 'help wanted', 'question'],
-      repoIssueNumber: 16,
+      number: 16,
       title: 'login tst JWT token',
     };
     expect(mapStateToProps(state, { issueId: 238923429 })).toEqual(expected);
@@ -44,7 +44,7 @@ describe('Issue entry component', () => {
   it('Should have a Cart Header in the center', () => {
     const component = shallow(
       <Issue
-        repoIssueNumber={16}
+        number={16}
         title={'login tst JWT token'}
         issueId={238923429}
         labels={state.issues.issuesById[238923429].labels}

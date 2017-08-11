@@ -20,7 +20,7 @@ const state = {
   loadingIssues: false,
 };
 
-describe('Issues component', () => {
+xdescribe('Issues component', () => {
   it('should render a component with props as specified ', () => {
     const retrieveIssues = jest.fn();
     const component = shallow(

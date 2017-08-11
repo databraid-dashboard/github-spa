@@ -29,6 +29,7 @@ export class PrTable extends Component {
         <div>Loading Pull Requests</div>
       );
     }
+
     return (
       <Card>
         <Card.Content>
