@@ -45,7 +45,7 @@ export class PrTable extends Component {
 
 PrTable.propTypes = {
   retrievePrs: PropTypes.func.isRequired,
-  loadingPrTable: PropTypes.bool,
+  loadingPrTable: PropTypes.bool.isRequired,
   userName: PropTypes.string.isRequired,
   orgName: PropTypes.string.isRequired,
   repoName: PropTypes.string.isRequired,
@@ -55,6 +55,10 @@ PrTable.propTypes = {
 PrTable.defaultProps = {
   loadingPrTable: false,
   prsByRepo: {},
+  userName: '',
+  orgName: '',
+  repoName: '',
+
 };
 
 export const mapStateToProps = state => ({

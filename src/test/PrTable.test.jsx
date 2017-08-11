@@ -7,7 +7,6 @@ import { PrTable, mapStateToProps, mapDispatchToProps } from '../components/PrTa
 
 const state = {
   pullRequests: {
-    ids: [246869449],
     prsById: {
       246869449: {
         submittedBy: [],
@@ -18,21 +17,38 @@ const state = {
     },
   },
   loadingPrTable: false,
+  currentPage: { userName: undefined },
+  prsByRepo: undefined,
 };
 
-xdescribe('PrTable component', () => {
+describe('PrTable component', () => {
   it('should render a component with props as specified ', () => {
     const retrievePrs = jest.fn();
     const component = shallow(
-      <PrTable prIds={state.pullRequests.ids} loadingPrTable={false} retrievePrs={retrievePrs} />,
+      <PrTable
+        loadingPrTable={false}
+        retrievePrs={retrievePrs}
+        userName={state.currentPage.userName}
+      />,
     );
     expect(toJson(component)).toMatchSnapshot();
   });
 
   it('map\'s given State To Props ', () => {
     const expected = {
-      prIds: [246869449],
       loadingPrTable: false,
+      userName: undefined,
+      orgName: undefined,
+      prsById: {
+        246869449: {
+          submittedBy: [],
+          created: '2017-07-31T20:17:36Z',
+          title: 'disregard #2',
+
+        },
+      },
+      prsByRepo: undefined,
+
     };
     expect(mapStateToProps(state)).toEqual(expected);
   });
