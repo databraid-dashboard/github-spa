@@ -7,23 +7,6 @@ import PropTypes from 'prop-types';
 import { renderOrgs } from '../../actions/renderActions';
 import './Login.css';
 
-<<<<<<< HEAD
-export const Login = ({ currentPage, renderOrgs, userName }) => {
-  console.log('state current', userName);
-  if (currentPage !== 'login') {
-    return <div />;
-  }
-  if (currentPage === 'login') {
-    return (
-      <div>
-        <Button onClick={() => renderOrgs(userName)}>
-        Login
-        </Button>
-      </div>
-    );
-  }
-};
-=======
 export const Login = ({ renderOrgs, userName }) => (
   <div>
     <Button onClick={() => renderOrgs(userName)}>
@@ -31,7 +14,6 @@ export const Login = ({ renderOrgs, userName }) => (
     </Button>
   </div>
 );
->>>>>>> Frontend/Backend sync
 
 Login.propTypes = {
   renderOrgs: PropTypes.func.isRequired,

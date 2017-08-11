@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-// import reposByOrg from '../SampleJSONResponses/reposByORGmock';
-
-=======
->>>>>>> Frontend/Backend sync
 export const GET_REPOS = 'GET_REPOS';
 
 export function retrieveRepos(userName, orgName) {

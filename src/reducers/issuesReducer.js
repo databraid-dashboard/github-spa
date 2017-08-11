@@ -6,7 +6,6 @@ import {
 function createState(json, incomingState, repoName) {
   const state = incomingState;
   state.issuesByRepo = {};
-  // const jsonFiltered = json.filter(repo => !repo.pull_request);
   json.forEach((issue) => {
     state.ids = state.ids.concat(issue.id);
     state.issuesById[issue.id] = {};
@@ -30,7 +29,7 @@ const issuesReducer = (state = { ids: [], issuesById: {}, loadingIssues: true, r
       return {
         ...state,
         loadingIssues: true,
-      }
+      };
 
     default:
       return state;

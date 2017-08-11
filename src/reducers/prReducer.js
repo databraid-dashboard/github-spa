@@ -24,7 +24,6 @@ function createState(json, incomingState, repoName) {
 const prReducer = (state = { ids: [], prsById: {}, loadingPrTable: true, repoName: '' }, action) => {
   switch (action.type) {
     case GET_PRS:
-
       return createState(action.responseObj, state, action.repoName);
     case LOADING_PRS:
       return { ...state, loadingPrTable: true };

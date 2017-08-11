@@ -12,6 +12,7 @@
     "redux": "3.7.2",
     "redux-mock-store": "1.2.3",
     "redux-thunk": "2.2.0",
+    "render-if": "^0.1.1",
     "semantic-ui-react": "0.71.3"
   },
   "devDependencies": {

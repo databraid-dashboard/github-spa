@@ -8,53 +8,11 @@ import { renderRepos } from '../../actions/renderActions';
 import Issues from '../Issues/Issues';
 import PrTable from '../PrTable/PrTable';
 import Milestones from '../Milestones/Milestones';
-import LineChart from '../LineChart/LineChart';
 import './Dashboard.css';
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-const Dashboard = () => (
-  <Container>
-    <Issues />
-    <PrTable />
-    <Milestones />
-  </Container>
-);
-=======
-export const Dashboard = ({ repoName, currentPage, renderRepos, orgName }) => {
-    return (
-      <div>
-        <Button icon onClick={() => renderRepos(orgName)}>
-          <Icon name="arrow left" />
-        </Button>
-        <Container>
-          <Grid padded>
-            <Header as="h2" icon textAlign="center">
-              <Icon name="github" />
-              <Header.Content>
-                {repoName}
-              </Header.Content>
-            </Header>
-            <Grid.Row columns={3}>
-              <Grid.Column>
-                <PrTable repoName={repoName} />
-              </Grid.Column>
-              <Grid.Column>
-                <Issues repoName={repoName} />
-              </Grid.Column>
-              <Grid.Column>
-                <Milestones repoName={repoName} />
-              </Grid.Column>
-            </Grid.Row>
-          </Grid>
-        </Container>
-      </div>
-    );
-};
->>>>>>> Adding syced app
-=======
 export const Dashboard = ({ repoName, renderRepos, orgName }) => (
   <div>
+
     <Button icon onClick={() => renderRepos(orgName)}>
       <Icon name="arrow left" />
     </Button>
@@ -81,16 +39,16 @@ export const Dashboard = ({ repoName, renderRepos, orgName }) => (
     </Container>
   </div>
 );
->>>>>>> Frontend/Backend sync
 
 Dashboard.propTypes = {
   repoName: PropTypes.string,
   renderRepos: PropTypes.func.isRequired,
-  orgName: PropTypes.string.isRequired,
+  orgName: PropTypes.string,
 };
 
 Dashboard.defaultProps = {
   repoName: null,
+  orgName: null,
 };
 
 const mapStateToProps = state => ({

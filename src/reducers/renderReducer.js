@@ -14,19 +14,9 @@ const renderPage = (state = { render: 'login', repoName: null, userName: 'michae
       return { ...state, render: 'login' };
 
     case RENDER_DASHBOARD:
-<<<<<<< HEAD
-<<<<<<< HEAD
-      return { render: 'dashboard',
-        repoName: action.repoName };
-=======
-      return { ...state, render: 'dashboard',
-=======
       return { ...state,
         render: 'dashboard',
->>>>>>> Frontend/Backend sync
-        repoName: action.repoName,
-        repoId: action.repoId };
->>>>>>> Adding syced app
+        repoName: action.repoName };
 
     default:
       return state;

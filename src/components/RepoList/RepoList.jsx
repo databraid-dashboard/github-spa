@@ -20,30 +20,6 @@ function repoComponents(repos, org) {
 
 export class RepoList extends Component {
   componentDidMount() {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    this.props.retrieveRepos();
-=======
-      this.props.retrieveRepos(this.props.userName, this.props.orgName);
->>>>>>> Adding syced app
-  }
-
-  render() {
-    if (this.props.currentPage !== 'repos') {
-      return <div />;
-    }
-    if (this.props.currentPage === 'repos') {
-      return (
-        <div>
-          <Button icon onClick={() => this.props.renderOrgs()}>
-            <Icon name="arrow left" />
-          </Button>
-          <Grid centered padded>
-            <Grid.Column width={8}>
-              <Header as="h2" icon textAlign="center">
-                <Icon name="github" />
-                <Header.Content>
-=======
     this.props.retrieveRepos(this.props.userName, this.props.orgName);
   }
 
@@ -58,7 +34,6 @@ export class RepoList extends Component {
             <Header as="h2" icon textAlign="center">
               <Icon name="github" />
               <Header.Content>
->>>>>>> Frontend/Backend sync
                   Which repository are you interested in?
               </Header.Content>
             </Header>
@@ -70,14 +45,7 @@ export class RepoList extends Component {
       </div>
     );
   }
-<<<<<<< HEAD
-<<<<<<< HEAD
 }
-=======
->>>>>>> Adding syced app
-=======
-}
->>>>>>> Frontend/Backend sync
 
 RepoList.propTypes = {
   retrieveRepos: PropTypes.func.isRequired,

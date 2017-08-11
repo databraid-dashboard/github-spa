@@ -43,17 +43,6 @@ export const PrTableRow = ({ created, mergeable, submittedBy, title }) => (
       </List.Item>
     </List>
   </Card.Content>
-<<<<<<< HEAD
-  // <Table.Row>
-  //   <Table.Cell textAlign="center">{ title }</Table.Cell>
-  //   <Table.Cell textAlign="center">{ convertDate(created) }</Table.Cell>
-  //   <Table.Cell textAlign="center">{ submittedBy[0] }
-  //     <div><Label size="mini" image={submittedBy[1]} /></div></Table.Cell>
-  //   <Table.Cell textAlign="center">{getMergeableCheckbox(mergeable) }</Table.Cell>
-  // </Table.Row>
-
-=======
->>>>>>> Frontend/Backend sync
 );
 
 PrTableRow.propTypes = {

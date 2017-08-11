@@ -66,12 +66,9 @@ export const mapStateToProps = state => ({
 
 export const mapDispatchToProps = dispatch => bindActionCreators({
   retrievePrs,
-
-export const mapDispatchToProps = dispatch => bindActionCreators({
-  retrievePrs,
 }, dispatch);
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(PrTable);
