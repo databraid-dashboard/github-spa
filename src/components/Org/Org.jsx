@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 import { renderRepos } from '../../actions/renderActions';
 import './Org.css';
 
-export const Org = ({ avatarUrl, orgName, renderRepos, selectedOrgName }) => (
+export const Org = ({ avatarUrl, orgName, renderRepos }) => (
   <Grid.Column>
     <Image
       className="hoverable"
@@ -26,13 +26,11 @@ export const Org = ({ avatarUrl, orgName, renderRepos, selectedOrgName }) => (
 );
 
 export const mapStateToProps = (state, { orgId }) => {
-  const selectedOrgName = state.currentPage.selectedOrgName;
   const org = state.orgs.orgsById[orgId];
   const { avatarUrl, orgName } = org;
   return {
     avatarUrl,
     orgName,
-    selectedOrgName,
   };
 };
 

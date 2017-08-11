@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 // State = {
 //  users : {
 //    ids: [],
@@ -51,6 +51,7 @@
 //     }
 //    },
 // };
+<<<<<<< HEAD
 =======
 State = {
  users : {
@@ -105,3 +106,5 @@ State = {
    },
 };
 >>>>>>> Added passing tests on <Org and <Orgs
+=======
+>>>>>>> resolved issues

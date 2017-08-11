@@ -3,11 +3,10 @@ import React, { Component } from 'react';
 import { Header, Icon, Grid, Button } from 'semantic-ui-react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import { renderLogin } from '../../actions/renderActions';
 import { retrieveOrgs } from '../../actions/orgActions';
-import Organizations from '../Organizations/Organizations';
+import Org from '../Org/Org';
 import './Organizations.css';
 
 function orgComponents(orgIds) {
@@ -59,7 +58,7 @@ export const mapDispatchToProps = dispatch =>
     retrieveOrgs, renderLogin,
   }, dispatch);
 
-  export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(Organizations);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Organizations);

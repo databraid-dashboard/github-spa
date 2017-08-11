@@ -8,11 +8,11 @@ import { renderRepos } from '../../actions/renderActions';
 import Issues from '../Issues/Issues';
 import PrTable from '../PrTable/PrTable';
 import Milestones from '../Milestones/Milestones';
-import LineChart from '../LineChart/LineChart';
 import './Dashboard.css';
 
 export const Dashboard = ({ repoName, renderRepos, orgName }) => (
   <div>
+
     <Button icon onClick={() => renderRepos(orgName)}>
       <Icon name="arrow left" />
     </Button>
@@ -43,11 +43,12 @@ export const Dashboard = ({ repoName, renderRepos, orgName }) => (
 Dashboard.propTypes = {
   repoName: PropTypes.string,
   renderRepos: PropTypes.func.isRequired,
-  orgName: PropTypes.string.isRequired,
+  orgName: PropTypes.string,
 };
 
 Dashboard.defaultProps = {
   repoName: null,
+  orgName: null,
 };
 
 const mapStateToProps = state => ({
