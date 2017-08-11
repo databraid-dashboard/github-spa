@@ -7,13 +7,11 @@ import { bindActionCreators } from 'redux';
 import PrTableRow from '../PrTableRow/PrTableRow';
 import { retrievePrs } from '../../actions/prActions';
 import './PrTable.css';
-
+import injectWidgetId from '../../utils/utils';
 
 function prComponents(prs, repo) {
   if (prs && prs[repo]) {
-    return prs[repo].map(id =>
-      <PrTableRow key={id} prId={id} />,
-    );
+    return prs[repo].map(id => <PrTableRow key={id} prId={id} />);
   }
   return '';
 }
@@ -25,16 +23,12 @@ export class PrTable extends Component {
 
   render() {
     if (this.props.loadingPrTable) {
-      return (
-        <div>Loading Pull Requests</div>
-      );
+      return <div>Loading Pull Requests</div>;
     }
     return (
       <Card>
         <Card.Content>
-          <Card.Header className="ui center aligned">
-            Pull Requests
-          </Card.Header>
+          <Card.Header className="ui center aligned">Pull Requests</Card.Header>
         </Card.Content>
         {prComponents(this.props.prsByRepo, this.props.repoName)}
       </Card>
@@ -57,7 +51,6 @@ PrTable.defaultProps = {
   userName: '',
   orgName: '',
   repoName: '',
-
 };
 
 export const mapStateToProps = state => ({
@@ -68,11 +61,12 @@ export const mapStateToProps = state => ({
   orgName: state.currentPage.selectedOrgName,
 });
 
-export const mapDispatchToProps = dispatch => bindActionCreators({
-  retrievePrs,
-}, dispatch);
+export const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      retrievePrs,
+    },
+    dispatch,
+  );
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(PrTable);
+export default injectWidgetId(connect(mapStateToProps, mapDispatchToProps)(PrTable));

@@ -9,10 +9,10 @@ import Issues from '../Issues/Issues';
 import PrTable from '../PrTable/PrTable';
 import Milestones from '../Milestones/Milestones';
 import './Dashboard.css';
+import injectWidgetId from '../../utils/utils';
 
-export const Dashboard = ({ repoName, renderRepos, orgName }) => (
-  <div>
-
+export const Dashboard = ({ repoName, renderRepos, orgName }) =>
+  (<div>
     <Button icon onClick={() => renderRepos(orgName)}>
       <Icon name="arrow left" />
     </Button>
@@ -37,8 +37,7 @@ export const Dashboard = ({ repoName, renderRepos, orgName }) => (
         </Grid.Row>
       </Grid>
     </Container>
-  </div>
-);
+  </div>);
 
 Dashboard.propTypes = {
   repoName: PropTypes.string,
@@ -56,11 +55,12 @@ const mapStateToProps = state => ({
   orgName: state.currentPage.selectedOrgName,
 });
 
-export const mapDispatchToProps = dispatch => bindActionCreators({
-  renderRepos,
-}, dispatch);
+export const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      renderRepos,
+    },
+    dispatch,
+  );
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(Dashboard);
+export default injectWidgetId(connect(mapStateToProps, mapDispatchToProps)(Dashboard));

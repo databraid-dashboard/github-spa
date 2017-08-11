@@ -7,11 +7,11 @@ import PropTypes from 'prop-types';
 import { retrieveMilestones } from '../../actions/milestonesActions';
 import Milestone from '../Milestone/Milestone';
 import './Milestones.css';
+import injectWidgetId from '../../utils/utils';
 
 function milestoneComponents(milestones, repo) {
   if (milestones && milestones[repo]) {
-    return milestones[repo].map(id => <Milestone key={id} milestoneId={id} />,
-    );
+    return milestones[repo].map(id => <Milestone key={id} milestoneId={id} />);
   }
   return '';
 }
@@ -23,16 +23,12 @@ export class Milestones extends Component {
 
   render() {
     if (this.props.loadingMilestones) {
-      return (
-        <div>Loading Milestones</div>
-      );
+      return <div>Loading Milestones</div>;
     }
     return (
       <Card>
         <Card.Content>
-          <Card.Header className="ui center aligned">
-            Milestones
-          </Card.Header>
+          <Card.Header className="ui center aligned">Milestones</Card.Header>
         </Card.Content>
         {milestoneComponents(this.props.milestonesByRepo, this.props.repoName)}
       </Card>
@@ -66,11 +62,11 @@ export const mapStateToProps = state => ({
 });
 
 export const mapDispatchToProps = dispatch =>
-  bindActionCreators({
-    retrieveMilestones,
-  }, dispatch);
+  bindActionCreators(
+    {
+      retrieveMilestones,
+    },
+    dispatch,
+  );
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(Milestones);
+export default injectWidgetId(connect(mapStateToProps, mapDispatchToProps)(Milestones));

@@ -8,9 +8,10 @@ import { renderLogin } from '../../actions/renderActions';
 import { retrieveOrgs } from '../../actions/orgActions';
 import Org from '../Org/Org';
 import './Organizations.css';
+import injectWidgetId from '../../utils/utils';
 
 function orgComponents(orgIds) {
-  return orgIds.map(id => (<Org key={id} orgId={id} />));
+  return orgIds.map(id => <Org key={id} orgId={id} />);
 }
 
 export class Organizations extends Component {
@@ -27,9 +28,7 @@ export class Organizations extends Component {
         <Grid centered columns={3} padded>
           <Header as="h2" icon textAlign="center">
             <Icon name="github" />
-            <Header.Content>
-                Which organization are you interested in?
-            </Header.Content>
+            <Header.Content>Which organization are you interested in?</Header.Content>
           </Header>
           <Grid.Row>
             {orgComponents(this.props.orgIds)}
@@ -59,11 +58,12 @@ export const mapStateToProps = state => ({
 });
 
 export const mapDispatchToProps = dispatch =>
-  bindActionCreators({
-    retrieveOrgs, renderLogin,
-  }, dispatch);
+  bindActionCreators(
+    {
+      retrieveOrgs,
+      renderLogin,
+    },
+    dispatch,
+  );
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(Organizations);
+export default injectWidgetId(connect(mapStateToProps, mapDispatchToProps)(Organizations));

@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import ProgressArc from '../ProgressArc/ProgressArc';
 import './Milestone.css';
+import injectWidgetId from '../../utils/utils';
 
 export const Milestone = ({ title, due, percentComplete, milestoneId }) => {
   function convertDate(ISOdate) {
@@ -26,8 +27,9 @@ export const Milestone = ({ title, due, percentComplete, milestoneId }) => {
     return (
       <div>
         <Header sub className="space-milestones">
-        Date Due:
-        </Header> {convertDate(date)}
+          Date Due:
+        </Header>{' '}
+        {convertDate(date)}
       </div>
     );
   }
@@ -37,9 +39,13 @@ export const Milestone = ({ title, due, percentComplete, milestoneId }) => {
       <List divided relaxed>
         <List.Item>
           <List.Content className="ui center aligned">
-            <List.Header>{title}</List.Header>
+            <List.Header>
+              {title}
+            </List.Header>
             {getDueDate(due)}
-            <Header sub className="space-milestones">Percent Complete:</Header>
+            <Header sub className="space-milestones">
+              Percent Complete:
+            </Header>
             <ProgressArc
               milestoneId={milestoneId}
               percentComplete={percentComplete}
@@ -77,6 +83,4 @@ Milestone.defaultProps = {
   percentComplete: 0,
 };
 
-export default connect(
-  mapStateToProps,
-)(Milestone);
+export default injectWidgetId(connect(mapStateToProps)(Milestone));
