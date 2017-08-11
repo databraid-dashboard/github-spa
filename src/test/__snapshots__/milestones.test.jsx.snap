@@ -9,8 +9,11 @@ exports[`Milestones component should render a component with props as specified 
       Milestones
     </CardHeader>
   </CardContent>
+<<<<<<< HEAD
   <Connect(Component)
     milestoneId={2601714}
   />
+=======
+>>>>>>> 5922d6860302d4613325259663003e370624d94f
 </Card>
 `;

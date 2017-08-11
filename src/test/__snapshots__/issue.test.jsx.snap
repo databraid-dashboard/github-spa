@@ -6,6 +6,7 @@ exports[`Issue entry component should render a component with props as specified
     divided={true}
     relaxed={true}
   >
+<<<<<<< HEAD
     <ListItem>
       <ListContent>
         <ListHeader>
@@ -23,28 +24,56 @@ exports[`Issue entry component should render a component with props as specified
             ribbon="right"
           >
             duplicate
+=======
+    <ListHeader>
+      #
+      16
+
+      login tst JWT token
+    </ListHeader>
+    <div>
+      <LabelGroup>
+        <div
+          className="space-labels"
+        >
+          <Label>
+            duplicate
+
+>>>>>>> 5922d6860302d4613325259663003e370624d94f
           </Label>
         </div>
         <div
           className="space-labels"
         >
+<<<<<<< HEAD
           <Label
             className="ui mini label"
             color="grey"
             ribbon="right"
           >
             help wanted
+=======
+          <Label>
+            help wanted
+
+>>>>>>> 5922d6860302d4613325259663003e370624d94f
           </Label>
         </div>
         <div
           className="space-labels"
         >
+<<<<<<< HEAD
           <Label
             className="ui mini label"
             color="grey"
             ribbon="right"
           >
             question
+=======
+          <Label>
+            question
+
+>>>>>>> 5922d6860302d4613325259663003e370624d94f
           </Label>
         </div>
         <ListDescription>
@@ -60,10 +89,17 @@ exports[`Issue entry component should render a component with props as specified
                 Assigned To: 
               </Header>
               Gwillison415
+<<<<<<< HEAD
             </div>
             <ItemImage
               size="mini"
               src="https://avatars2.githubusercontent.com/u/22106099?v=4"
+=======
+              https://avatars2.githubusercontent.com/u/22106099?v=4
+            </div>
+            <ItemImage
+              size="mini"
+>>>>>>> 5922d6860302d4613325259663003e370624d94f
             />
           </div>
         </ListDescription>

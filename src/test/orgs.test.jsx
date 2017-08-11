@@ -16,11 +16,19 @@ const state = {
         reposUrl: 'https://api.github.com/orgs/ShareCastG52/repos',
       },
     },
+<<<<<<< HEAD
   },
   currentPage: { render: 'orgs', repoName: null },
 };
 
 describe('Organizations component', () => {
+=======
+    currentPage: { render: 'orgs', repoName: null },
+  },
+};
+
+xdescribe('Organizations component', () => {
+>>>>>>> 5922d6860302d4613325259663003e370624d94f
   it('should render a component with props as specified ', () => {
     const retrieveOrgs = jest.fn();
     const renderLogin = jest.fn();

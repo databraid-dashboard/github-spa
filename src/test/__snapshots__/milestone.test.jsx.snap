@@ -19,6 +19,10 @@ exports[`Milestone entry component should render a component with props as speci
         >
           Date Created:
         </Header>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5922d6860302d4613325259663003e370624d94f
         06/23/2017
         <div>
           <Header
@@ -27,7 +31,11 @@ exports[`Milestone entry component should render a component with props as speci
           >
             Date Due:
           </Header>
+<<<<<<< HEAD
            
+=======
+
+>>>>>>> 5922d6860302d4613325259663003e370624d94f
           06/23/2018
         </div>
         <Header
