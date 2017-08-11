@@ -9,6 +9,7 @@ import { Provider } from 'react-redux';
 import Api from './utils/Api';
 import App from './App.jsx';
 
+
 const middleware = [
   promiseMiddleware(),
   thunkMiddleware.withExtraArgument({ Api }),
