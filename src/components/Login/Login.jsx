@@ -1,6 +1,7 @@
 /* eslint-disable import/no-named-as-default, no-shadow, consistent-return */
 import React from 'react';
 import { Button } from 'semantic-ui-react';
+// import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
@@ -9,24 +10,19 @@ import './Login.css';
 // import validateInput from './loginUtils';
 
 
-export const Login = ({ renderOrgs, userName }) => (
+export const Login = ({ renderOrgs }) => (
   <div>
-    <Button onClick={() => renderOrgs(userName)}>
+    <Button as='a' href='http://localhost:8000/auth/github/' onClick={() => {renderOrgs()}}>
         Login
     </Button>
   </div>
 );
 
 
-// hitAuthRoute( AUTH_ROUTE) => {
-//   fetch(AUTH_ROUTE)
-//     .then(response =>
-//     fetch())
-// }
 
 Login.propTypes = {
   renderOrgs: PropTypes.func.isRequired,
-  userName: PropTypes.string.isRequired,
+  userName: PropTypes.string,
 };
 
 const mapStateToProps = state => ({
