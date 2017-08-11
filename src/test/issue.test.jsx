@@ -12,9 +12,9 @@ const state = {
         labels: ['duplicate', 'help wanted', 'question'],
         number: 16,
         title: 'login tst JWT token',
-
       },
-    } },
+    },
+  },
 
 };
 
