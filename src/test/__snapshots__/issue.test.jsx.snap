@@ -38,12 +38,28 @@ exports[`Issue entry component should render a component with props as specified
 
           </Label>
         </div>
-      </LabelGroup>
-    </div>
-    <ListDescription>
-      Assigned To:
-      grant
-    </ListDescription>
-  </ListContent>
-</ListItem>
+        <ListDescription>
+           
+          <div
+            className="ui center aligned"
+          >
+            <div>
+              <Header
+                className="space-issues"
+                sub={true}
+              >
+                Assigned To: 
+              </Header>
+              Gwillison415
+              https://avatars2.githubusercontent.com/u/22106099?v=4
+            </div>
+            <ItemImage
+              size="mini"
+            />
+          </div>
+        </ListDescription>
+      </ListContent>
+    </ListItem>
+  </List>
+</CardContent>
 `;

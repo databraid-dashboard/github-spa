@@ -27,7 +27,6 @@ describe('Milestone entry component', () => {
         title={'sprint 1'}
         due={'2018-06-23T22:45:34Z'}
         milestoneId={2601714}
-        created={'2017-06-23T22:45:34Z'}
         percentComplete={0.4}
       />,
     );
@@ -37,7 +36,6 @@ describe('Milestone entry component', () => {
   it('map\'s given State To Props ', () => {
     const expected = {
       title: 'building paths and auth',
-      created: '2017-06-23T22:45:34Z',
       due: '2018-06-23T22:45:34Z',
       percentComplete: 0.4,
       milestoneId: 2601714,
@@ -50,7 +48,6 @@ describe('Milestone entry component', () => {
       <Milestone
         title={'sprint 1'}
         due={'2018-06-23T22:45:34Z'}
-        created={'2017-06-23T22:45:34Z'}
         percentComplete={0.4}
         milestoneId={2601714}
       />,

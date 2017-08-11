@@ -19,7 +19,7 @@ const state = {
   loadingMilestones: false,
 };
 
-describe('Milestones component', () => {
+xdescribe('Milestones component', () => {
   it('should render a component with props as specified ', () => {
     const retrieveMilestones = jest.fn();
     const component = shallow(
