@@ -20,7 +20,7 @@ const state = {
   },
 };
 
-xdescribe('Organizations component', () => {
+describe('Organizations component', () => {
   it('should render a component with props as specified ', () => {
     const retrieveOrgs = jest.fn();
     const renderLogin = jest.fn();

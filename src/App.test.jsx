@@ -5,7 +5,7 @@ import toJson from 'enzyme-to-json';
 import { shallow } from 'enzyme';
 import App from './App.jsx';
 
-xdescribe('App component', () => {
+describe('App component', () => {
   it('should render a component with props as specified ', () => {
     const component = shallow(
       <App />,
