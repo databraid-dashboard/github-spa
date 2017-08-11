@@ -72,8 +72,8 @@ const renderPage = (state = { render: 'login', repoName: null, userName: 'michae
 const renderPage = (state = { render: 'login', repoName: null, fetching: true, userName: '', selectedOrgName: null, session: {} }, action) => {
   switch (action.type) {
     case RENDER_ORGS_FULLFILLED:
-    console.log('username', action.payload);
-      return { ...state, render: 'orgs', session: {...action.payload.session.passport.user._json }, userName: action.payload.session.passport.user._json.login , fetching: false};
+    console.log('username in RENDER_ORGS_FULLFILLED reducer', action.payload);
+      return { ...state, render: 'orgs',  userName: action.payload.session.passport.user._json.login , fetching: false};
     case RENDER_ORGS_PENDING:
       return { ...state, fetching: true};
     case RENDER_ORGS_REJECTED:
