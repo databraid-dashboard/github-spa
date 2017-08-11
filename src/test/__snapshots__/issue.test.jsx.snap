@@ -6,44 +6,69 @@ exports[`Issue entry component should render a component with props as specified
     divided={true}
     relaxed={true}
   >
-    <ListHeader>
-      #
-      16
-
-      login tst JWT token
-    </ListHeader>
-    <div>
-      <LabelGroup>
+    <ListItem>
+      <ListContent>
+        <ListHeader>
+          #
+          16
+           
+          login tst JWT token
+        </ListHeader>
         <div
           className="space-labels"
         >
-          <Label>
+          <Label
+            className="ui mini label"
+            color="grey"
+            ribbon="right"
+          >
             duplicate
-
           </Label>
         </div>
         <div
           className="space-labels"
         >
-          <Label>
+          <Label
+            className="ui mini label"
+            color="grey"
+            ribbon="right"
+          >
             help wanted
-
           </Label>
         </div>
         <div
           className="space-labels"
         >
-          <Label>
+          <Label
+            className="ui mini label"
+            color="grey"
+            ribbon="right"
+          >
             question
-
           </Label>
         </div>
-      </LabelGroup>
-    </div>
-    <ListDescription>
-      Assigned To:
-      grant
-    </ListDescription>
-  </ListContent>
-</ListItem>
+        <ListDescription>
+           
+          <div
+            className="ui center aligned"
+          >
+            <div>
+              <Header
+                className="space-issues"
+                sub={true}
+              >
+                Assigned To: 
+              </Header>
+              Gwillison415
+              https://avatars2.githubusercontent.com/u/22106099?v=4
+            </div>
+            <ItemImage
+              size="mini"
+            />
+          </div>
+        </ListDescription>
+      </ListContent>
+    </ListItem>
+  </List>
+</CardContent>
 `;
