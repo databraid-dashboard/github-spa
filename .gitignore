@@ -19,3 +19,10 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# worksheets, Mock data
+worksheet.js
+
+ # unfinished components
+
+/src/utils/Api.js

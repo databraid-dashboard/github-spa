@@ -1,17 +1,33 @@
+/* eslint-disable import/no-named-as-default */
 import React from 'react';
-import logo from './logo.svg';
+import { Container } from 'semantic-ui-react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import renderIf from 'render-if';
+import RepoList from './components/RepoList/RepoList';
+import Login from './components/Login/Login';
+import Organizations from './components/Organizations/Organizations';
+import Dashboard from './components/Dashboard/Dashboard';
 import './App.css';
 
-const App = () => (
-  <div className="App">
-    <div className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <h2>Welcome to React</h2>
-    </div>
-    <p className="App-intro">
-      To get started, edit <code>src/App.js</code> and save to reload.
-    </p>
-  </div>
+const App = ({ currentPage }) => (
+  <Container>
+    {renderIf(currentPage === 'login')(<Login />)}
+    {renderIf(currentPage === 'orgs')(<Organizations />)}
+    {renderIf(currentPage === 'repos')(<RepoList />)}
+    {renderIf(currentPage === 'dashboard')(<Dashboard />)}
+  </Container>
 );
 
-export default App;
+App.propTypes = {
+  currentPage: PropTypes.string.isRequired,
+};
+
+const mapStateToProps = state => ({
+  currentPage: state.currentPage.render,
+  store: state,
+});
+
+export default connect(
+  mapStateToProps,
+)(App);

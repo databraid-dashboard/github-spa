@@ -1,7 +1,15 @@
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+# Do NOT  Delete
 
-Below you will find some information on how to perform common tasks.<br>
-You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
+## Getting Started  *Interfacing with the Dashboard*
+    To begin, an owner must grant access to DataBraid Dashboard and be a public member of a repository.
+    The Owner will receive and email regarding granting access to the DataBraid Dashboard (INSERT SCREENSHOT). Granting this access allows for DataBraid to view your Organizations repositories.
+    NOTE need scope language
+
+
+
+
+    More on [github access permissions](https://help.github.com/articles/access-permissions-on-github/).
+    More on[disabling access restrictions](https://help.github.com/articles/disabling-oauth-app-access-restrictions-for-your-organization/) for your organizations.
 
 ## Table of Contents
 
@@ -1760,7 +1768,7 @@ If you’re using [Apache HTTP Server](https://httpd.apache.org/), you need to c
     RewriteRule ^ index.html [QSA,L]
 ```
 
-It will get copied to the `build` folder when you run `npm run build`. 
+It will get copied to the `build` folder when you run `npm run build`.
 
 If you’re using [Apache Tomcat](http://tomcat.apache.org/), you need to follow [this Stack Overflow answer](https://stackoverflow.com/a/41249464/4878474).
 
