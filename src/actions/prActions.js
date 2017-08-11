@@ -6,13 +6,14 @@ export function retrievePrs(userName, orgName, repoName) {
 
   const request = { query: queryString };
 
-  return (dispatch, getState, { Api }) => Api.fetchData(request)
-    .then(response => response.data.repos.repos[0].pullRequests)
-    .then((pullRequests) => {
-      dispatch({
-        type: GET_PRS,
-        responseObj: pullRequests,
-        repoName,
+  return (dispatch, getState, { GITHUB_API }) =>
+    GITHUB_API.fetchData(request)
+      .then(response => response.data.repos.repos[0].pullRequests)
+      .then((pullRequests) => {
+        dispatch({
+          type: GET_PRS,
+          responseObj: pullRequests,
+          repoName,
+        });
       });
-    });
 }

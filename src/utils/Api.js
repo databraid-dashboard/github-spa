@@ -1,4 +1,4 @@
-export default class Api {
+export default class GITHUB_API {
   static fetchData(request) {
     return fetch('http://localhost:8000/graphql', {
       method: 'POST',
@@ -9,7 +9,6 @@ export default class Api {
       body: JSON.stringify(request),
     })
       .then(response => response.json())
-
       .catch((err) => {
         throw err;
       });

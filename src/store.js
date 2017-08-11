@@ -3,9 +3,9 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 // import thunk from 'redux-thunk';
 import thunkMiddleware from 'redux-thunk';
-import rootReducer from './reducers/index';
-import Api from './utils/Api';
 
+import rootReducer from './reducers/index';
+import GITHUB_API from './utils/Api';
 
 
 const logger = store => next => (action) => {
@@ -21,19 +21,24 @@ const logger = store => next => (action) => {
 //   next(action);
 // };
 
-const middleware = [
-  // thunk,
-  thunkMiddleware.withExtraArgument({ Api }),
-  logger,
-  // error,
-];
+// const middleware = [
+//   // thunk,
+//   thunkMiddleware.withExtraArgument({ GITHUB_API }),
+//   logger,
+//   // error,
+// ];
 
-/* eslint-disable no-underscore-dangle */
 const store = createStore(
   rootReducer,
-  compose(applyMiddleware(...middleware),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-  ),
+  applyMiddleware(thunkMiddleware.withExtraArgument({ GITHUB_API })),
 );
+
+/* eslint-disable no-underscore-dangle */
+// const store = createStore(
+//   rootReducer,
+//   compose(applyMiddleware(...middleware),
+//     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+//   ),
+// );
 
 export default store;

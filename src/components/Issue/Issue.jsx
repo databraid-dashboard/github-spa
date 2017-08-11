@@ -3,28 +3,32 @@ import { Card, Item, List, Label, Header } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import './Issue.css';
+import injectWidgetId from '../../utils/utils';
 
 function getDescription(assignedTo) {
   if (assignedTo[0] !== 'Not assigned') {
     return (
       <div className="ui center aligned">
-        <div><Header sub className="space-issues">Assigned To: </Header>{assignedTo[0]}</div>
+        <div>
+          <Header sub className="space-issues">
+            Assigned To:{' '}
+          </Header>
+          {assignedTo[0]}
+        </div>
         <Item.Image size="mini" src={assignedTo[1]} />
       </div>
     );
   }
-  return (
-    <div />
-  );
+  return <div />;
 }
 
 export const Issue = ({ title, number, assignedTo, labels }) => {
-  const renderedLabels = labels.map(label => (
-    <div className="space-labels" key={label}>
-      <Label className="ui mini label" ribbon="right" color="grey">{label}
+  const renderedLabels = labels.map(label =>
+    (<div className="space-labels" key={label}>
+      <Label className="ui mini label" ribbon="right" color="grey">
+        {label}
       </Label>
-    </div>
-  ),
+    </div>),
   );
 
   return (
@@ -32,8 +36,13 @@ export const Issue = ({ title, number, assignedTo, labels }) => {
       <List divided relaxed>
         <List.Item>
           <List.Content>
-            <List.Header>#{number} {title}</List.Header>{renderedLabels}
-            <List.Description> {getDescription(assignedTo)}</List.Description>
+            <List.Header>
+              #{number} {title}
+            </List.Header>
+            {renderedLabels}
+            <List.Description>
+              {' '}{getDescription(assignedTo)}
+            </List.Description>
           </List.Content>
         </List.Item>
       </List>
@@ -59,6 +68,4 @@ export const mapStateToProps = (state, { issueId }) => {
   };
 };
 
-export default connect(
-  mapStateToProps,
-)(Issue);
+export default injectWidgetId(connect(mapStateToProps)(Issue));

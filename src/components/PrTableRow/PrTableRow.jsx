@@ -3,6 +3,7 @@ import { Card, List, Header } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import './PrTableRow.css';
+import injectWidgetId from '../../utils/utils';
 
 const getMergeable = (able) => {
   if (able) {
@@ -25,24 +26,26 @@ const convertDate = (ISOdate) => {
   return dateString;
 };
 
-export const PrTableRow = ({ created, mergeable, submittedBy, title }) => (
-  <Card.Content className={getMergeable(mergeable)}>
+export const PrTableRow = ({ created, mergeable, submittedBy, title }) =>
+  (<Card.Content className={getMergeable(mergeable)}>
     <List divided relaxed>
       <List.Item>
         <List.Content className="ui center aligned">
-          <List.Header className="space-item">{title}</List.Header>
+          <List.Header className="space-item">
+            {title}
+          </List.Header>
           <List.Description className="space-item">
             <Header sub>date created:</Header>
-            { convertDate(created)}
+            {convertDate(created)}
           </List.Description>
           <List.Description className="space-item">
-            <Header sub>Submitted by:</Header>{submittedBy}
+            <Header sub>Submitted by:</Header>
+            {submittedBy}
           </List.Description>
         </List.Content>
       </List.Item>
     </List>
-  </Card.Content>
-);
+  </Card.Content>);
 
 PrTableRow.propTypes = {
   created: PropTypes.string.isRequired,
@@ -66,6 +69,4 @@ export const mapStateToProps = (state, { prId }) => {
   };
 };
 
-export default connect(
-  mapStateToProps,
-)(PrTableRow);
+export default injectWidgetId(connect(mapStateToProps)(PrTableRow));
