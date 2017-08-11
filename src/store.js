@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 /* eslint-disable max-len, no-unused-vars */
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 import { createStore, applyMiddleware } from 'redux';
@@ -16,6 +17,11 @@ import thunk from 'redux-thunk';
 >>>>>>> 18b5958... Updating store
 =======
 // import thunk from 'redux-thunk';
+=======
+import promiseMiddleware from 'redux-promise-middleware';
+import { createStore, applyMiddleware, compose } from 'redux';
+import thunk from 'redux-thunk';
+>>>>>>> 18ae6cd... Played with render action, reducer login component and store, all..day...
 import thunkMiddleware from 'redux-thunk';
 >>>>>>> 4bf6324... Adding some api calls
 import rootReducer from './reducers/index';
@@ -99,7 +105,12 @@ const logger = store => next => (action) => {
 
 const middleware = [
 <<<<<<< HEAD
+<<<<<<< HEAD
   promise();
+=======
+  promiseMiddleware(),
+  thunkMiddleware.withExtraArgument({ Api}),
+>>>>>>> 18ae6cd... Played with render action, reducer login component and store, all..day...
   thunk,
 <<<<<<< HEAD
 <<<<<<< HEAD

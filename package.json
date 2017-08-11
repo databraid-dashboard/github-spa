@@ -58,8 +58,13 @@
 >>>>>>> 79473f9... Fixed linting errors, installed redux-mock-store
 =======
     "semantic-ui-react": "0.71.3",
+<<<<<<< HEAD
     "validator-js": "^0.2.1"
 >>>>>>> b8942b0... exploring Oauth hookup not finished, will need to accept sandeep's next update to sync
+=======
+    "validator-js": "0.2.1",
+    "render-if": "0.1.1"
+>>>>>>> 18ae6cd... Played with render action, reducer login component and store, all..day...
   },
   "devDependencies": {
     "enzyme": "2.9.1",

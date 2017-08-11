@@ -1,5 +1,6 @@
-import promise from 'redux-promise-middleware';
+
 import {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   RENDER_ORGS, RENDER_REPOS, RENDER_LOGIN, RENDER_DASHBOARD
@@ -64,6 +65,20 @@ const renderPage = (state = { render: 'login', repoName: null, userName: 'michae
   switch (action.type) {
     case RENDER_ORGS:
       return { ...state, render: 'orgs', userName: 'michaelmurray6298' };
+=======
+  RENDER_ORGS, RENDER_REPOS, RENDER_LOGIN, RENDER_ORGS_FULLFILLED, RENDER_ORGS_PENDING, RENDER_ORGS_REJECTED, RENDER_DASHBOARD,
+} from '../actions/renderActions';
+
+const renderPage = (state = { render: 'login', repoName: null, fetching: true, userName: '', selectedOrgName: null, session: {} }, action) => {
+  switch (action.type) {
+    case RENDER_ORGS_FULLFILLED:
+    console.log('username', action.payload);
+      return { ...state, render: 'orgs', session: {...action.payload.session.passport.user._json }, userName: action.payload.session.passport.user._json.login , fetching: false};
+    case RENDER_ORGS_PENDING:
+      return { ...state, fetching: true};
+    case RENDER_ORGS_REJECTED:
+      return { ...state, };  // NOTE handle error flow
+>>>>>>> 18ae6cd... Played with render action, reducer login component and store, all..day...
 
     case RENDER_REPOS:
       return { ...state, render: 'repos', selectedOrgName: action.selectedOrgName };
