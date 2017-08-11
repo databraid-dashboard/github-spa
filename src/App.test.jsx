@@ -11,6 +11,7 @@ import Api from './utils/Api';
 import App from './App.jsx';
 // import rootReducer from './reducers/index';
 
+
 const middleware = [
   promiseMiddleware(),
   thunkMiddleware.withExtraArgument({ Api }),
