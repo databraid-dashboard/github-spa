@@ -1,9 +1,11 @@
 {
   "name": "@databraid/github-widget",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "",
   "main": "index.js",
-  "files": ["lib"],
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "NODE_ENV=development babel --presets react-app -D -d lib ../../src/"
@@ -24,6 +26,8 @@
     "semantic-ui-react": "0.71.3"
   },
   "devDependencies": {
+    "babel-cli": "6.24.1",
+    "babel-eslint": "6.1.2",
     "enzyme": "2.9.1",
     "enzyme-to-json": "1.5.1",
     "eslint": "4.3.0",
