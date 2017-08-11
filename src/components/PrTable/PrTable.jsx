@@ -53,13 +53,30 @@ PrTable.defaultProps = {
   repoName: '',
 };
 
-export const mapStateToProps = state => ({
-  prsByRepo: state.pullRequests.prsByRepo,
-  prsById: state.pullRequests.prsById,
-  loadingPrTable: state.loadingPrTable,
-  userName: state.currentPage.userName,
-  orgName: state.currentPage.selectedOrgName,
-});
+// export const mapStateToProps = state => ({
+//   prsByRepo: state.pullRequests.prsByRepo,
+//   prsById: state.pullRequests.prsById,
+//   loadingPrTable: state.loadingPrTable,
+//   userName: state.currentPage.userName,
+//   orgName: state.currentPage.selectedOrgName,
+// });
+
+export const mapStateToProps = (state, ownProps) => {
+  const id = ownProps.widgetId;
+  const prsByRepo = state.widgets.byId[id].pullRequests.prsByRepo;
+  const prsById = state.widgets.byId[id].pullRequests.prsById;
+  const loadingPrTable = state.widgets.byId[id].loadingPrTable;
+  const userName = state.widgets.byId[id].currentPage.userName;
+  const orgName = state.widgets.byId[id].currentPage.selectedOrgName;
+
+  return {
+    prsByRepo,
+    prsById,
+    loadingPrTable,
+    userName,
+    orgName,
+  };
+};
 
 export const mapDispatchToProps = dispatch =>
   bindActionCreators(

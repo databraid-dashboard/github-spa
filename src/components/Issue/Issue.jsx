@@ -57,8 +57,20 @@ Issue.propTypes = {
   labels: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
-export const mapStateToProps = (state, { issueId }) => {
-  const issue = state.issues.issuesById[issueId];
+// export const mapStateToProps = (state, { issueId }) => {
+//   const issue = state.issues.issuesById[issueId];
+//   const { title, number, assignedTo, labels } = issue;
+//   return {
+//     title,
+//     number,
+//     assignedTo,
+//     labels,
+//   };
+// };
+
+export const mapStateToProps = (state, ownProps, { issueId }) => {
+  const id = ownProps.widgetId;
+  const issue = state.widgets.byId[id].issues.issuesById[issueId];
   const { title, number, assignedTo, labels } = issue;
   return {
     title,

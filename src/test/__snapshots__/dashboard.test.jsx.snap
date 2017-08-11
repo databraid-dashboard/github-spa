@@ -33,17 +33,17 @@ exports[`Should render a Dashboard that holds Connected Components Should render
         columns={3}
       >
         <GridColumn>
-          <Connect(PrTable)
+          <Wrapper
             repoName="Some Repo"
           />
         </GridColumn>
         <GridColumn>
-          <Connect(Issues)
+          <Wrapper
             repoName="Some Repo"
           />
         </GridColumn>
         <GridColumn>
-          <Connect(Milestones)
+          <Wrapper
             repoName="Some Repo"
           />
         </GridColumn>

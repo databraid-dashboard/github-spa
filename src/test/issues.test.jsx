@@ -3,7 +3,6 @@ import toJson from 'enzyme-to-json';
 import { shallow } from 'enzyme';
 import { Issues, mapStateToProps, mapDispatchToProps } from '../components/Issues/Issues';
 
-
 const state = {
   issues: {
     issuesById: {
@@ -12,7 +11,6 @@ const state = {
         labels: [],
         repoIssueNumber: 36,
         title: 'disregard this PR',
-
       },
     },
   },
@@ -45,7 +43,7 @@ xdescribe('Issues component', () => {
   //   expect(retrieveIssues).toBeCalled();
   // });
 
-  it('map\'s given State To Props ', () => {
+  it("map's given State To Props ", () => {
     const expected = {
       issuesByRepo: undefined,
       loadingIssues: false,

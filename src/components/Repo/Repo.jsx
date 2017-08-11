@@ -20,8 +20,17 @@ Repo.propTypes = {
   renderDashboard: PropTypes.func.isRequired,
 };
 
-export const mapStateToProps = (state, { repoId }) => {
-  const repo = state.repos.reposById[repoId];
+// export const mapStateToProps = (state, { repoId }) => {
+//   const repo = state.repos.reposById[repoId];
+//   const { repoName } = repo;
+//   return {
+//     repoName,
+//   };
+// };
+
+export const mapStateToProps = (state, ownProps, { repoId }) => {
+  const id = ownProps.widgetId;
+  const repo = state.widgets.byId[id].repos.reposById[repoId];
   const { repoName } = repo;
   return {
     repoName,

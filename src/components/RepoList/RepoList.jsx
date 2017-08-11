@@ -56,13 +56,31 @@ RepoList.defaultProps = {
   reposByOrg: {},
 };
 
-export const mapStateToProps = state => ({
-  reposByOrg: state.repos.reposByOrg,
-  repoIds: state.repos.ids,
-  reposById: state.repos.reposById,
-  userName: state.currentPage.userName,
-  orgName: state.currentPage.selectedOrgName,
-});
+// export const mapStateToProps = state => ({
+//   reposByOrg: state.repos.reposByOrg,
+//   repoIds: state.repos.ids,
+//   reposById: state.repos.reposById,
+//   userName: state.currentPage.userName,
+//   orgName: state.currentPage.selectedOrgName,
+// });
+
+export const mapStateToProps = (state, ownProps) => {
+  const id = ownProps.widgetId;
+  const reposByOrg = state.widgets.byId[id].repos.reposByOrg;
+  const repoIds = state.widgets.byId[id].repos.ids;
+  const reposById = state.widgets.byId[id].repos.reposById;
+  const userName = state.widgets.byId[id].currentPage.userName;
+  const orgName = state.widgets.byId[id].currentPage.selectedOrgName;
+
+  return {
+    origin,
+    reposByOrg,
+    repoIds,
+    reposById,
+    userName,
+    orgName,
+  };
+};
 
 export const mapDispatchToProps = dispatch =>
   bindActionCreators(

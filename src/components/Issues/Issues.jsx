@@ -53,12 +53,27 @@ Issues.defaultProps = {
   repoName: '',
 };
 
-export const mapStateToProps = state => ({
-  issuesByRepo: state.issues.issuesByRepo,
-  loadingIssues: state.loadingIssues,
-  orgName: state.currentPage.selectedOrgName,
-  userName: state.currentPage.userName,
-});
+// export const mapStateToProps = state => ({
+//   issuesByRepo: state.issues.issuesByRepo,
+//   loadingIssues: state.loadingIssues,
+//   orgName: state.currentPage.selectedOrgName,
+//   userName: state.currentPage.userName,
+// });
+
+export const mapStateToProps = (state, ownProps) => {
+  const id = ownProps.widgetId;
+  const issuesByRepo = state.widgets.byId[id].issues.issuesByRepo;
+  const loadingIssues = state.widgets.byId[id].loadingIssues;
+  const orgName = state.widgets.byId[id].currentPage.selectedOrgName;
+  const userName = state.widgets.byId[id].currentPage.userName;
+
+  return {
+    issuesByRepo,
+    loadingIssues,
+    orgName,
+    userName,
+  };
+};
 
 export const mapDispatchToProps = dispatch =>
   bindActionCreators(

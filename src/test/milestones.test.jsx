@@ -1,7 +1,11 @@
 import React from 'react';
 import toJson from 'enzyme-to-json';
 import { shallow } from 'enzyme';
-import { Milestones, mapStateToProps, mapDispatchToProps } from '../components/Milestones/Milestones';
+import {
+  Milestones,
+  mapStateToProps,
+  mapDispatchToProps,
+} from '../components/Milestones/Milestones';
 
 const state = {
   milestones: {
@@ -13,7 +17,6 @@ const state = {
       labels: [],
       repoIssueNumber: 36,
       title: 'disregard this PR',
-
     },
   },
   loadingMilestones: false,
@@ -24,15 +27,12 @@ xdescribe('Milestones component', () => {
   it('should render a component with props as specified ', () => {
     const retrieveMilestones = jest.fn();
     const component = shallow(
-      <Milestones
-        loadingMilestones={false}
-        retrieveMilestones={retrieveMilestones}
-      />,
+      <Milestones loadingMilestones={false} retrieveMilestones={retrieveMilestones} />,
     );
     expect(toJson(component)).toMatchSnapshot();
   });
 
-  it('map\'s given State To Props ', () => {
+  it("map's given State To Props ", () => {
     const expected = {
       loadingMilestones: false,
       userName: 'michaelmurray6298',

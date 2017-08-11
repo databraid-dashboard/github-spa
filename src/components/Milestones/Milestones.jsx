@@ -53,13 +53,30 @@ Milestones.defaultProps = {
   repoName: '',
 };
 
-export const mapStateToProps = state => ({
-  milestonesByRepo: state.milestones.milestonesByRepo,
-  milestonesById: state.milestones.milestonesById,
-  loadingMilestones: state.loadingMilestones,
-  userName: state.currentPage.userName,
-  orgName: state.currentPage.selectedOrgName,
-});
+// export const mapStateToProps = state => ({
+//   milestonesByRepo: state.milestones.milestonesByRepo,
+//   milestonesById: state.milestones.milestonesById,
+//   loadingMilestones: state.loadingMilestones,
+//   userName: state.currentPage.userName,
+//   orgName: state.currentPage.selectedOrgName,
+// });
+
+export const mapStateToProps = (state, ownProps) => {
+  const id = ownProps.widgetId;
+  const milestonesByRepo = state.widgets.byId[id].milestones.milestonesByRepo;
+  const milestonesById = state.widgets.byId[id].milestones.milestonesById;
+  const loadingMilestones = state.widgets.byId[id].loadingMilestones;
+  const userName = state.widgets.byId[id].currentPage.userName;
+  const orgName = state.widgets.byId[id].currentPage.selectedOrgName;
+
+  return {
+    milestonesByRepo,
+    milestonesById,
+    loadingMilestones,
+    userName,
+    orgName,
+  };
+};
 
 export const mapDispatchToProps = dispatch =>
   bindActionCreators(

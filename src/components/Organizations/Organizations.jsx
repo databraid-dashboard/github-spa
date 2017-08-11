@@ -51,11 +51,24 @@ Organizations.defaultProps = {
   userName: '',
 };
 
-export const mapStateToProps = state => ({
-  orgIds: state.orgs.ids,
-  orgsById: state.orgs.orgsById,
-  userName: state.currentPage.userName,
-});
+// export const mapStateToProps = state => ({
+//   orgIds: state.orgs.ids,
+//   orgsById: state.orgs.orgsById,
+//   userName: state.currentPage.userName,
+// });
+
+export const mapStateToProps = (state, ownProps, { milestoneId }) => {
+  const id = ownProps.widgetId;
+  const orgIds = state.widgets.byId[id].orgs.ids;
+  const orgsById = state.widgets.byId[id].orgs.orgsById;
+  const userName = state.widgets.byId[id].currentPage.userName;
+
+  return {
+    orgIds,
+    orgsById,
+    userName,
+  };
+};
 
 export const mapDispatchToProps = dispatch =>
   bindActionCreators(
