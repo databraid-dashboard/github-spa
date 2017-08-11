@@ -1,10 +1,18 @@
-import reposByOrg from '../SampleJSONResponses/reposByORGmock';
-
 export const GET_REPOS = 'GET_REPOS';
 
-export const retrieveRepos = () => (dispatch) => {
-  dispatch({
-    type: GET_REPOS,
-    responseObj: reposByOrg,
-  });
-};
+export function retrieveRepos(userName, orgName) {
+  const queryString =
+    `{repos (userName: "${userName}", orgName:"${orgName}") {repos {id name } } }`;
+
+  const request = { query: queryString };
+
+  return (dispatch, getState, { Api }) => Api.fetchData(request)
+    .then(response => response.data.repos.repos)
+    .then((repos) => {
+      dispatch({
+        type: GET_REPOS,
+        responseObj: repos,
+        orgName,
+      });
+    });
+}

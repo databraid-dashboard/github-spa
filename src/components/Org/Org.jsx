@@ -9,16 +9,26 @@ import './Org.css';
 
 export const Org = ({ avatarUrl, orgName, renderRepos }) => (
   <Grid.Column>
-    <Image className="hoverable" onClick={() => renderRepos()} src={avatarUrl} size="small" />
-    <List.Item as="a" className="hoverable" onClick={() => renderRepos()}>{orgName}</List.Item>
+
+    <Image
+      className="hoverable"
+      onClick={() => renderRepos(orgName)}
+      src={avatarUrl}
+      size="small"
+    />
+    <List.Item
+      as="a"
+      className="hoverable"
+      onClick={() => renderRepos(orgName)}
+    >
+      {orgName}
+    </List.Item>
   </Grid.Column>
 );
 
 export const mapStateToProps = (state, { orgId }) => {
   const org = state.orgs.orgsById[orgId];
-
   const { avatarUrl, orgName } = org;
-
   return {
     avatarUrl,
     orgName,
