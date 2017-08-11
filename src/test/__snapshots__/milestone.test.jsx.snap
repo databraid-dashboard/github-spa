@@ -13,6 +13,14 @@ exports[`Milestone entry component should render a component with props as speci
         <ListHeader>
           sprint 1
         </ListHeader>
+        <Header
+          className="space-milestones"
+          sub={true}
+        >
+          Date Created:
+        </Header>
+
+        06/23/2017
         <div>
           <Header
             className="space-milestones"
@@ -20,7 +28,7 @@ exports[`Milestone entry component should render a component with props as speci
           >
             Date Due:
           </Header>
-           
+
           06/23/2018
         </div>
         <Header
