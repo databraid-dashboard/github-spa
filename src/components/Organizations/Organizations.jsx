@@ -31,7 +31,6 @@ export class Organizations extends Component {
             <Header.Content>Which organization are you interested in?</Header.Content>
           </Header>
           <Grid.Row>
-            {console.log(this.props.orgIds)}
             {orgComponents(this.props.orgIds)}
           </Grid.Row>
         </Grid>
