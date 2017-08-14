@@ -31,6 +31,7 @@ export class Organizations extends Component {
             <Header.Content>Which organization are you interested in?</Header.Content>
           </Header>
           <Grid.Row>
+            {console.log(this.props.orgIds)}
             {orgComponents(this.props.orgIds)}
           </Grid.Row>
         </Grid>
@@ -51,13 +52,7 @@ Organizations.defaultProps = {
   userName: '',
 };
 
-// export const mapStateToProps = state => ({
-//   orgIds: state.orgs.ids,
-//   orgsById: state.orgs.orgsById,
-//   userName: state.currentPage.userName,
-// });
-
-export const mapStateToProps = (state, ownProps, { milestoneId }) => {
+export const mapStateToProps = (state, ownProps) => {
   const id = ownProps.widgetId;
   const orgIds = state.widgets.byId[id].orgs.ids;
   const orgsById = state.widgets.byId[id].orgs.orgsById;

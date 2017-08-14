@@ -59,19 +59,9 @@ PrTableRow.defaultProps = {
   mergeable: undefined,
 };
 
-// export const mapStateToProps = (state, { prId }) => {
-//   const pr = state.pullRequests.prsById[prId];
-//   const { created, mergeable, submittedBy, title } = pr;
-//   return {
-//     created,
-//     mergeable,
-//     submittedBy,
-//     title,
-//   };
-// };
-
-export const mapStateToProps = (state, ownProps, { prId }) => {
+export const mapStateToProps = (state, ownProps) => {
   const id = ownProps.widgetId;
+  const prId = ownProps.prId;
   const pr = state.widgets.byId[id].pullRequests.prsById[prId];
   const { created, mergeable, submittedBy, title } = pr;
   return {

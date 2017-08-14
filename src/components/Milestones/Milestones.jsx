@@ -53,14 +53,6 @@ Milestones.defaultProps = {
   repoName: '',
 };
 
-// export const mapStateToProps = state => ({
-//   milestonesByRepo: state.milestones.milestonesByRepo,
-//   milestonesById: state.milestones.milestonesById,
-//   loadingMilestones: state.loadingMilestones,
-//   userName: state.currentPage.userName,
-//   orgName: state.currentPage.selectedOrgName,
-// });
-
 export const mapStateToProps = (state, ownProps) => {
   const id = ownProps.widgetId;
   const milestonesByRepo = state.widgets.byId[id].milestones.milestonesByRepo;

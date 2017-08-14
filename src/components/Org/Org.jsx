@@ -21,17 +21,10 @@ export const Org = ({ avatarUrl, orgName, renderRepos }) =>
     </List.Item>
   </Grid.Column>);
 
-// export const mapStateToProps = (state, { orgId }) => {
-//   const org = state.orgs.orgsById[orgId];
-//   const { avatarUrl, orgName } = org;
-//   return {
-//     avatarUrl,
-//     orgName,
-//   };
-// };
-
-export const mapStateToProps = (state, ownProps, { orgId }) => {
+export const mapStateToProps = (state, ownProps) => {
   const id = ownProps.widgetId;
+  const orgId = ownProps.orgId;
+
   const org = state.widgets.byId[id].orgs.orgsById[orgId];
   const { avatarUrl, orgName } = org;
   return {

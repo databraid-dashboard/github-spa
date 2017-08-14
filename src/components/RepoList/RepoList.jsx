@@ -56,14 +56,6 @@ RepoList.defaultProps = {
   reposByOrg: {},
 };
 
-// export const mapStateToProps = state => ({
-//   reposByOrg: state.repos.reposByOrg,
-//   repoIds: state.repos.ids,
-//   reposById: state.repos.reposById,
-//   userName: state.currentPage.userName,
-//   orgName: state.currentPage.selectedOrgName,
-// });
-
 export const mapStateToProps = (state, ownProps) => {
   const id = ownProps.widgetId;
   const reposByOrg = state.widgets.byId[id].repos.reposByOrg;
@@ -73,7 +65,6 @@ export const mapStateToProps = (state, ownProps) => {
   const orgName = state.widgets.byId[id].currentPage.selectedOrgName;
 
   return {
-    origin,
     reposByOrg,
     repoIds,
     reposById,
