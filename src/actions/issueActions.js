@@ -9,14 +9,9 @@ export function retrieveIssues(userName, orgName, repoName) {
 
   const request = { query: queryString };
 
-  console.log(request);
-
   return (dispatch, getState, { GITHUB_API }) =>
     GITHUB_API.fetchData(request)
-      .then((response) => {
-        console.log(response);
-        return response.data.repos.repos[0].issues;
-      })
+      .then(response => response.data.repos.repos[0].issues)
       .then((issues) => {
         dispatch({
           type: GET_ISSUES,
