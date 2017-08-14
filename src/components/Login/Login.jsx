@@ -32,10 +32,6 @@ Login.propTypes = {
   userName: PropTypes.string.isRequired,
 };
 
-// const mapStateToProps = state => ({
-//   userName: state.currentPage.userName,
-// });
-
 export const mapStateToProps = (state, ownProps) => {
   const id = ownProps.widgetId;
   const userName = state.widgets.byId[id].currentPage.userName;

@@ -58,19 +58,9 @@ export const Milestone = ({ title, due, percentComplete, milestoneId }) => {
   );
 };
 
-// export const mapStateToProps = (state, { milestoneId }) => {
-//   const milestone = state.milestones.milestonesById[milestoneId];
-//   const { title, due, percentComplete } = milestone;
-//   return {
-//     title,
-//     due,
-//     percentComplete,
-//     milestoneId,
-//   };
-// };
-
-export const mapStateToProps = (state, ownProps, { milestoneId }) => {
+export const mapStateToProps = (state, ownProps) => {
   const id = ownProps.widgetId;
+  const milestoneId = ownProps.milestoneId;
   const milestone = state.widgets.byId[id].milestones.milestonesById[milestoneId];
   const { title, due, percentComplete } = milestone;
 

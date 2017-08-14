@@ -50,11 +50,6 @@ Dashboard.defaultProps = {
   orgName: null,
 };
 
-// const mapStateToProps = state => ({
-//   repoName: state.currentPage.repoName,
-//   orgName: state.currentPage.selectedOrgName,
-// });
-
 export const mapStateToProps = (state, ownProps) => {
   const id = ownProps.widgetId;
   const repoName = state.widgets.byId[id].currentPage.repoName;

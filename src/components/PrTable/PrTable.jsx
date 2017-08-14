@@ -54,14 +54,6 @@ PrTable.defaultProps = {
   repoName: '',
 };
 
-// export const mapStateToProps = state => ({
-//   prsByRepo: state.pullRequests.prsByRepo,
-//   prsById: state.pullRequests.prsById,
-//   loadingPrTable: state.loadingPrTable,
-//   userName: state.currentPage.userName,
-//   orgName: state.currentPage.selectedOrgName,
-// });
-
 export const mapStateToProps = (state, ownProps) => {
   const id = ownProps.widgetId;
   const prsByRepo = state.widgets.byId[id].pullRequests.prsByRepo;

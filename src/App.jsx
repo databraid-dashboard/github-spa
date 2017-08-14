@@ -10,16 +10,7 @@ import Login from './components/Login/Login';
 import Organizations from './components/Organizations/Organizations';
 import Dashboard from './components/Dashboard/Dashboard';
 import './App.css';
-import injectWidgetId from './utils/utils';
-
-// const App = ({ currentPage }) => (
-//   <Container>
-//     {renderIf(currentPage === 'login')(<Login />)}
-//     {renderIf(currentPage === 'orgs')(<Organizations />)}
-//     {renderIf(currentPage === 'repos')(<RepoList />)}
-//     {renderIf(currentPage === 'dashboard')(<Dashboard />)}
-//   </Container>
-// );
+// import injectWidgetId from './utils/utils';
 
 class App extends Component {
   getChildContext() {
@@ -53,10 +44,6 @@ App.childContextTypes = {
   widgetId: PropTypes.string,
 };
 
-// const mapStateToProps = state => ({
-//   currentPage: state.currentPage.render,
-// });
-
 export const mapStateToProps = (state, ownProps) => {
   const id = ownProps.widgetId;
   const currentPage = state.widgets.byId[id].currentPage.render;
@@ -66,4 +53,4 @@ export const mapStateToProps = (state, ownProps) => {
   };
 };
 
-export default injectWidgetId(connect(mapStateToProps)(App)); // ////////////// ?
+export default connect(mapStateToProps)(App);

@@ -95,12 +95,9 @@ ProgressArc.defaultProps = {
   duration: 2000,
 };
 
-// const mapStateToProps = (state, { milestoneId }) => ({
-//   percentComplete: state.milestones.milestonesById[milestoneId].percentComplete,
-// });
-
-export const mapStateToProps = (state, ownProps, { milestoneId }) => {
+export const mapStateToProps = (state, ownProps) => {
   const id = ownProps.widgetId;
+  const milestoneId = ownProps.milestoneId;
   const percentComplete =
     state.widgets.byId[id].milestones.milestonesById[milestoneId].percentComplete;
 
