@@ -1,7 +1,19 @@
 export const GET_ORGS = 'GET_ORGS';
 
 export function retrieveOrgs(userName) {
-  const queryString = `{orgs(userName: "${userName}") {orgs {id login url avatarUrl } } }`;
+  const queryString = `
+    {
+      orgs(
+        userName: "${userName}") {
+          orgs {
+            id
+            login
+            url
+            avatarUrl
+          }
+        }
+      }
+      `;
 
   const request = { query: queryString };
   return (dispatch, getState, { Api }) => {

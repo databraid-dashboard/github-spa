@@ -4,7 +4,7 @@ import React from 'react';
 import toJson from 'enzyme-to-json';
 import { shallow } from 'enzyme';
 import configureStore from 'redux-mock-store';
-import thunkMiddlewareit from 'redux-thunk';
+import thunkMiddleware from 'redux-thunk';
 import { Provider } from 'react-redux';
 import Api from './utils/Api';
 import App from './App.jsx';
