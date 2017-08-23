@@ -42,6 +42,7 @@
     "lodash": "^4.17.4",
     "prop-types": "15.5.10",
     "react": "15.6.1",
+    "react-cookies": "^0.1.0",
     "react-dom": "15.6.1",
     "react-linechart": "1.1.9",
     "react-redux": "5.0.5",
@@ -49,6 +50,7 @@
     "redux-mock-store": "1.2.3",
     "redux-promise-middleware": "^4.3.0",
     "redux-thunk": "2.2.0",
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -65,6 +67,11 @@
     "validator-js": "0.2.1",
     "render-if": "0.1.1"
 >>>>>>> 18ae6cd... Played with render action, reducer login component and store, all..day...
+=======
+    "render-if": "0.1.1",
+    "semantic-ui-react": "0.71.3",
+    "validator-js": "0.2.1"
+>>>>>>> 4b55b56... Fixed merge conflict iwth Oauth feature, need to ipull down latest
   },
   "devDependencies": {
     "enzyme": "2.9.1",
@@ -80,6 +87,7 @@
     "react-router-dom": "4.1.2",
     "react-scripts": "1.0.10",
     "react-test-renderer": "15.6.1",
+<<<<<<< HEAD
 <<<<<<< HEAD
     "enzyme": "2.9.1",
     "enzyme-to-json": "1.5.1",
@@ -97,6 +105,9 @@
 =======
     "redux-mock-store": "^1.2.3"
 >>>>>>> 88f4b03... Added passing tests on <Org and <Orgs
+=======
+    "redux-mock-store": "1.2.3"
+>>>>>>> 4b55b56... Fixed merge conflict iwth Oauth feature, need to ipull down latest
   },
   "scripts": {
     "start": "react-scripts start",

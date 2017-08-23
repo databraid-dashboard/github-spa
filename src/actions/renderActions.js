@@ -1,12 +1,10 @@
-const AUTH_ROUTE = 'http://localhost:8000/isAuthenticated';
-export const RENDER_ORGS = 'RENDER_ORGS';
 export const RENDER_LOGIN = 'RENDER_LOGIN';
 export const RENDER_REPOS = 'RENDER_REPOS';
-export const RENDER_ORGS_FULLFILLED = 'RENDER_ORGS_FULLFILLED';
-export const RENDER_ORGS_PENDING = 'RENDER_ORGS_PENDING';
-export const RENDER_ORGS_REJECTED = 'RENDER_ORGS_REJECTED';
 export const RENDER_DASHBOARD = 'RENDER_DASHBOARD';
+export const GET_USERNAME = 'GET_USERNAME';
+// const AUTH_ROUTE = 'http://localhost:8000/isAuthenticated';
 
+<<<<<<< HEAD
 export const renderOrgs = () => (dispatch) => {
   dispatch({
     type: RENDER_ORGS,
@@ -45,6 +43,14 @@ export const renderOrgs = () => (dispatch) => {
 //   };
 // };
 
+=======
+export const renderOrgs = (userName) => (dispatch) => {
+  return dispatch({
+    type: GET_USERNAME,
+    userName,
+  })
+}
+>>>>>>> 4b55b56... Fixed merge conflict iwth Oauth feature, need to ipull down latest
 export const renderLogin = () => (dispatch) => {
   dispatch({
     type: RENDER_LOGIN,

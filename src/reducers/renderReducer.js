@@ -3,6 +3,7 @@ import {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   RENDER_ORGS, RENDER_REPOS, RENDER_LOGIN, RENDER_DASHBOARD
 } from '../actions/renderActions';
 
@@ -67,10 +68,14 @@ const renderPage = (state = { render: 'login', repoName: null, userName: 'michae
       return { ...state, render: 'orgs', userName: 'michaelmurray6298' };
 =======
   RENDER_ORGS, RENDER_REPOS, RENDER_LOGIN, RENDER_ORGS_FULLFILLED, RENDER_ORGS_PENDING, RENDER_ORGS_REJECTED, RENDER_DASHBOARD,
+=======
+   RENDER_REPOS, RENDER_LOGIN, RENDER_DASHBOARD, GET_USERNAME
+>>>>>>> 4b55b56... Fixed merge conflict iwth Oauth feature, need to ipull down latest
 } from '../actions/renderActions';
 
 const renderPage = (state = { render: 'login', repoName: null, fetching: true, userName: '', selectedOrgName: null, session: {} }, action) => {
   switch (action.type) {
+<<<<<<< HEAD
     case RENDER_ORGS_FULLFILLED:
     console.log('username in RENDER_ORGS_FULLFILLED reducer', action.payload);
       return { ...state, render: 'orgs',  userName: action.payload.session.passport.user._json.login , fetching: false};
@@ -83,9 +88,15 @@ const renderPage = (state = { render: 'login', repoName: null, fetching: true, u
     case RENDER_REPOS:
       return { ...state, render: 'repos', selectedOrgName: action.selectedOrgName };
 >>>>>>> 4bf6324... Adding some api calls
+=======
+    case GET_USERNAME:
+    return {...state, userName : action.userName, render: 'orgs'};
+    case RENDER_REPOS:
+      return { ...state, render: 'repos', fetching: false, selectedOrgName: action.selectedOrgName};
+>>>>>>> 4b55b56... Fixed merge conflict iwth Oauth feature, need to ipull down latest
 
     case RENDER_LOGIN:
-      return { ...state, render: 'login' , session: {...action.payload.session.passport.user}, fetching: false};
+      return { ...state, render: 'login', fetching: false};
 
     case RENDER_DASHBOARD:
 <<<<<<< HEAD
@@ -113,6 +124,7 @@ const renderPage = (state = { render: 'login', repoName: null, fetching: true, u
 >>>>>>> 79473f9... Fixed linting errors, installed redux-mock-store
 =======
       return { ...state, render: 'dashboard',
+<<<<<<< HEAD
         repoName: action.repoName , session: {...action.payload.session.passport.user}, fetching: false};
 >>>>>>> b8942b0... exploring Oauth hookup not finished, will need to accept sandeep's next update to sync
 =======
@@ -121,6 +133,9 @@ const renderPage = (state = { render: 'login', repoName: null, fetching: true, u
         render: 'dashboard',
 >>>>>>> 8213532... Frontend/Backend sync
         repoName: action.repoName,
+=======
+        repoName: action.repoName , fetching: false, repoName: action.repoName,
+>>>>>>> 4b55b56... Fixed merge conflict iwth Oauth feature, need to ipull down latest
         repoId: action.repoId };
 >>>>>>> e19f169... Adding syced app
 
