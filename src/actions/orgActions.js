@@ -23,7 +23,6 @@ export function retrieveOrgs(userName) {
     }
     return Api.fetchData(request)
       .then(response => {
-        console.log(response);
         return response.data.orgs.orgs})
       .then((orgs) => {
         dispatch({
