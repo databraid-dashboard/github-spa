@@ -55,7 +55,6 @@ export class Login extends Component {
   }
 
   render() {
-    console.log(cookie.load('userName'));
     return (
       <Grid verticalAlign={'middle'}>
         <Grid.Row centered verticalAlign={'middle'}>

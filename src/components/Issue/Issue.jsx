@@ -152,7 +152,10 @@ Issue.propTypes = {
   repoIssueNumber: PropTypes.number.isRequired,
 =======
   number: PropTypes.number.isRequired,
+<<<<<<< HEAD
 >>>>>>> e19f169... Adding syced app
+=======
+>>>>>>> fdc01a4... Removed express middleware to store user from req to res
   assignedTo: PropTypes.arrayOf(PropTypes.string).isRequired,
   labels: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
