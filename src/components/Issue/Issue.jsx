@@ -44,7 +44,7 @@ export const Issue = ({ title, number, assignedTo, labels }) => {
 Issue.propTypes = {
   title: PropTypes.string.isRequired,
   number: PropTypes.number.isRequired,
-  assignedTo: PropTypes.arrayOf(PropTypes.array).isRequired,
+  assignedTo: PropTypes.arrayOf(PropTypes.string).isRequired,
   labels: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 

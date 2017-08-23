@@ -11,7 +11,6 @@ import App from './App.jsx';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import Api from './utils/Api';
-import thunkMiddleware from 'redux-thunk';
 import { Provider } from 'react-redux';
 import rootReducer from './reducers/index';
 
