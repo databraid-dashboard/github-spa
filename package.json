@@ -7,15 +7,16 @@
     "lodash": "^4.17.4",
     "prop-types": "15.5.10",
     "react": "15.6.1",
+    "react-cookies": "^0.1.0",
     "react-dom": "15.6.1",
     "react-linechart": "1.1.9",
     "react-redux": "5.0.5",
     "redux": "3.7.2",
     "redux-promise-middleware": "^4.3.0",
     "redux-thunk": "2.2.0",
+    "render-if": "0.1.1",
     "semantic-ui-react": "0.71.3",
-    "validator-js": "0.2.1",
-    "render-if": "0.1.1"
+    "validator-js": "0.2.1"
   },
   "devDependencies": {
     "enzyme": "2.9.1",
@@ -28,8 +29,7 @@
     "react-router-dom": "4.1.2",
     "react-scripts": "1.0.10",
     "react-test-renderer": "15.6.1",
-    "redux-mock-store": "1.2.3",
-  
+    "redux-mock-store": "1.2.3"
   },
   "scripts": {
     "start": "react-scripts start",

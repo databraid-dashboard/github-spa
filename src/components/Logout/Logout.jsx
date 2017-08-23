@@ -6,18 +6,17 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import { renderOrgs } from '../../actions/renderActions';
-import './Login.css';
+import './Logout.css';
 
-export class Login extends Component {
-  componentDidMount() {
-    if (cookie.load('userName') !== undefined) {
-    let name = cookie.load('userName')
-    this.props.renderOrgs(name);
-    }
-  }
+export class Logout extends Component {
+  // componentDidMount() {
+  //   if (cookie.load('userName') !== undefined) {
+  //   let name = cookie.load('userName')
+  //   this.props.renderOrgs(name);
+  //   }
+  // }
 
   render() {
-    console.log(cookie.load('userName'));
     return (
       <Grid verticalAlign={'middle'}>
         <Grid.Row centered verticalAlign={'middle'}>
@@ -26,10 +25,10 @@ export class Login extends Component {
               <Card.Content>
                 <Button
                   as='a'
-                  href='http://localhost:8000/auth/github/'
+                  onClick={()=>{cookie.remove('userName')}}
                   className="butterButton"
                   size="massive"
-                  content="Login with Github"
+                  content="Logout"
                   icon="github"
                   // onClick={() => renderOrgs(cookie.load('userName'))}
                 />
@@ -43,7 +42,7 @@ export class Login extends Component {
 
 };
 
-Login.propTypes = {
+Logout.propTypes = {
   renderOrgs: PropTypes.func.isRequired,
   userName: PropTypes.string,
 };
@@ -59,4 +58,4 @@ export const mapDispatchToProps = dispatch => bindActionCreators({
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Login);
+)(Logout);
