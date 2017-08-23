@@ -211,6 +211,7 @@ Milestone.propTypes = {
   milestoneId: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
 <<<<<<< HEAD
+<<<<<<< HEAD
   due: PropTypes.string.isRequired,
   created: PropTypes.string.isRequired,
 =======
@@ -222,6 +223,18 @@ Milestone.propTypes = {
 >>>>>>> 4def070... Adding percent complete feature
 =======
 >>>>>>> edbe0e0... fml
+=======
+  due: PropTypes.string,
+  percentComplete: PropTypes.number.isRequired,
+};
+
+Milestone.defaultProps = {
+  due: undefined,
+  milestoneId: '',
+  title: '',
+  percentComplete: 0,
+};
+>>>>>>> da9105a... updated proptypes and removed console.logs
 
 export default connect(
   mapStateToProps,
