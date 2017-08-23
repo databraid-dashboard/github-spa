@@ -44,11 +44,10 @@ export const Issue = ({ title, number, assignedTo, labels }) => {
 Issue.propTypes = {
   title: PropTypes.string.isRequired,
   number: PropTypes.number.isRequired,
-  assignedTo: PropTypes.arrayOf(PropTypes.string).isRequired,
+  assignedTo: PropTypes.arrayOf(PropTypes.array).isRequired,
   labels: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
-// NOTE replace Line 43 with below
-// assignedTo: PropTypes.arrayOf(PropTypes.number),
+
 export const mapStateToProps = (state, { issueId }) => {
   const issue = state.issues.issuesById[issueId];
   const { title, number, assignedTo, labels } = issue;

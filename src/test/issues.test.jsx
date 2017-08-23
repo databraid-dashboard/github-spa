@@ -6,7 +6,6 @@ import { Issues, mapStateToProps, mapDispatchToProps } from '../components/Issue
 
 const state = {
   issues: {
-    ids: [246869449],
     issuesById: {
       246869449: {
         assignedTo: [],
@@ -18,13 +17,18 @@ const state = {
     },
   },
   loadingIssues: false,
+  currentPage: { selectedOrgName: 'ski-ski', userName: 'michaelmurray6298' },
 };
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 describe('Issues component', () => {
 =======
 xdescribe('Issues component', () => {
 >>>>>>> 5922d6860302d4613325259663003e370624d94f
+=======
+describe('Issues component', () => {
+>>>>>>> 9bb3ee40508f72e0e4c80f9c064c2ef4cced7394
   it('should render a component with props as specified ', () => {
     const retrieveIssues = jest.fn();
     const component = shallow(
@@ -32,6 +36,7 @@ xdescribe('Issues component', () => {
         issuesIds={state.issues.ids}
         loadingIssues={false}
         retrieveIssues={retrieveIssues}
+        orgName={state.currentPage.selectedOrgName}
       />,
     );
     expect(toJson(component)).toMatchSnapshot();
@@ -50,9 +55,10 @@ xdescribe('Issues component', () => {
 
   it('map\'s given State To Props ', () => {
     const expected = {
-      issuesIds: [246869449],
-
+      issuesByRepo: undefined,
       loadingIssues: false,
+      orgName: 'ski-ski',
+      userName: 'michaelmurray6298',
     };
     expect(mapStateToProps(state)).toEqual(expected);
   });
@@ -68,6 +74,8 @@ xdescribe('Issues component', () => {
         issuesIds={state.issues.ids}
         loadingIssues={false}
         retrieveIssues={retrieveIssues}
+        orgName={state.currentPage.selectedOrgName}
+        userName={state.currentPage.userName}
       />,
     );
     expect(component.find('.aligned').exists()).toBe(true);

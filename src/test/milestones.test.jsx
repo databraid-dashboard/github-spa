@@ -17,14 +17,14 @@ const state = {
     },
   },
   loadingMilestones: false,
+  currentPage: { userName: 'michaelmurray6298' },
 };
 
-xdescribe('Milestones component', () => {
+describe('Milestones component', () => {
   it('should render a component with props as specified ', () => {
     const retrieveMilestones = jest.fn();
     const component = shallow(
       <Milestones
-        milestonesIds={state.milestones.ids}
         loadingMilestones={false}
         retrieveMilestones={retrieveMilestones}
       />,
@@ -34,8 +34,11 @@ xdescribe('Milestones component', () => {
 
   it('map\'s given State To Props ', () => {
     const expected = {
-      milestonesIds: [2601714],
       loadingMilestones: false,
+      userName: 'michaelmurray6298',
+      orgName: undefined,
+      milestonesById: undefined,
+      milestonesByRepo: undefined,
     };
     expect(mapStateToProps(state)).toEqual(expected);
   });
@@ -48,9 +51,9 @@ xdescribe('Milestones component', () => {
     const retrieveMilestones = jest.fn();
     const component = shallow(
       <Milestones
-        milestonesIds={state.milestones.ids}
         loadingMilestones={false}
         retrieveMilestones={retrieveMilestones}
+        userName={state.currentPage.userName}
       />,
     );
     expect(component.find('.aligned').exists()).toBe(true);

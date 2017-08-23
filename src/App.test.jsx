@@ -3,6 +3,10 @@ import promiseMiddleware from 'redux-promise-middleware';
 import React from 'react';
 import toJson from 'enzyme-to-json';
 import { shallow } from 'enzyme';
+import configureStore from 'redux-mock-store';
+import thunkMiddleware from 'redux-thunk';
+import { Provider } from 'react-redux';
+import Api from './utils/Api';
 import App from './App.jsx';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
@@ -22,14 +26,19 @@ describe('App component', () => {
     const component = shallow(
       <Provider>
 
-        <App   />
-      </Provider>
-    );
-    expect(toJson(component)).toMatchSnapshot();
-  });
+
+const middleware = [
+  promiseMiddleware(),
+  thunkMiddleware.withExtraArgument({ Api }),
+];
+const mockStore = configureStore(middleware);
+describe('App component', () => {
   it('should render a component with props as specified ', () => {
     const component = shallow(
-      <App store={mockStore}/>,
+      <Provider store={mockStore({})}>
+
+        <App />
+      </Provider>,
     );
     expect(toJson(component)).toMatchSnapshot();
   });

@@ -42,16 +42,19 @@ export class Milestones extends Component {
 
 Milestones.propTypes = {
   retrieveMilestones: PropTypes.func.isRequired,
-  loadingMilestones: PropTypes.bool,
+  loadingMilestones: PropTypes.bool.isRequired,
   userName: PropTypes.string.isRequired,
   orgName: PropTypes.string.isRequired,
   repoName: PropTypes.string.isRequired,
-  milestonesByRepo: PropTypes.objectOf(PropTypes.array),
+  milestonesByRepo: PropTypes.objectOf(PropTypes.array).isRequired,
 };
 
 Milestones.defaultProps = {
   loadingMilestones: false,
   milestonesByRepo: {},
+  userName: '',
+  orgName: '',
+  repoName: '',
 };
 
 export const mapStateToProps = state => ({

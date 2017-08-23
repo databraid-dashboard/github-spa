@@ -13,6 +13,7 @@ exports[`Milestone entry component should render a component with props as speci
         <ListHeader>
           sprint 1
         </ListHeader>
+<<<<<<< HEAD
         <Header
           className="space-milestones"
           sub={true}
@@ -24,6 +25,8 @@ exports[`Milestone entry component should render a component with props as speci
 
 >>>>>>> 5922d6860302d4613325259663003e370624d94f
         06/23/2017
+=======
+>>>>>>> 9bb3ee40508f72e0e4c80f9c064c2ef4cced7394
         <div>
           <Header
             className="space-milestones"
@@ -32,10 +35,14 @@ exports[`Milestone entry component should render a component with props as speci
             Date Due:
           </Header>
 <<<<<<< HEAD
+<<<<<<< HEAD
            
 =======
 
 >>>>>>> 5922d6860302d4613325259663003e370624d94f
+=======
+           
+>>>>>>> 9bb3ee40508f72e0e4c80f9c064c2ef4cced7394
           06/23/2018
         </div>
         <Header

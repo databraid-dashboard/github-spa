@@ -54,6 +54,8 @@ Issues.propTypes = {
 Issues.defaultProps = {
   loadingIssues: false,
   issuesByRepo: {},
+  userName: '',
+  repoName: '',
 };
 
 

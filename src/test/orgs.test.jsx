@@ -16,19 +16,11 @@ const state = {
         reposUrl: 'https://api.github.com/orgs/ShareCastG52/repos',
       },
     },
-<<<<<<< HEAD
   },
-  currentPage: { render: 'orgs', repoName: null },
+  currentPage: { render: 'orgs', repoName: null, userName: 'michaelmurray6298' },
 };
 
 describe('Organizations component', () => {
-=======
-    currentPage: { render: 'orgs', repoName: null },
-  },
-};
-
-xdescribe('Organizations component', () => {
->>>>>>> 5922d6860302d4613325259663003e370624d94f
   it('should render a component with props as specified ', () => {
     const retrieveOrgs = jest.fn();
     const renderLogin = jest.fn();
@@ -39,6 +31,7 @@ xdescribe('Organizations component', () => {
         currentPage={state.currentPage.render}
         retrieveOrgs={retrieveOrgs}
         renderLogin={renderLogin}
+        userName={state.currentPage.userName}
       />,
     );
     expect(toJson(component)).toMatchSnapshot();
@@ -64,7 +57,7 @@ xdescribe('Organizations component', () => {
           reposUrl: 'https://api.github.com/orgs/ShareCastG52/repos',
         },
       },
-      currentPage: 'orgs',
+      userName: 'michaelmurray6298',
     };
     expect(mapStateToProps(state)).toEqual(expected);
   });

@@ -7,6 +7,9 @@ exports[`Issue entry component should render a component with props as specified
     relaxed={true}
   >
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 9bb3ee40508f72e0e4c80f9c064c2ef4cced7394
     <ListItem>
       <ListContent>
         <ListHeader>
@@ -15,6 +18,7 @@ exports[`Issue entry component should render a component with props as specified
            
           login tst JWT token
         </ListHeader>
+<<<<<<< HEAD
         <div
           className="space-labels"
         >
@@ -33,47 +37,70 @@ exports[`Issue entry component should render a component with props as specified
     </ListHeader>
     <div>
       <LabelGroup>
+=======
+>>>>>>> 9bb3ee40508f72e0e4c80f9c064c2ef4cced7394
         <div
           className="space-labels"
         >
-          <Label>
+          <Label
+            className="ui mini label"
+            color="grey"
+            ribbon="right"
+          >
             duplicate
+<<<<<<< HEAD
 
 >>>>>>> 5922d6860302d4613325259663003e370624d94f
+=======
+>>>>>>> 9bb3ee40508f72e0e4c80f9c064c2ef4cced7394
           </Label>
         </div>
         <div
           className="space-labels"
         >
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 9bb3ee40508f72e0e4c80f9c064c2ef4cced7394
           <Label
             className="ui mini label"
             color="grey"
             ribbon="right"
           >
+<<<<<<< HEAD
             help wanted
 =======
           <Label>
             help wanted
 
 >>>>>>> 5922d6860302d4613325259663003e370624d94f
+=======
+            help wanted
+>>>>>>> 9bb3ee40508f72e0e4c80f9c064c2ef4cced7394
           </Label>
         </div>
         <div
           className="space-labels"
         >
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 9bb3ee40508f72e0e4c80f9c064c2ef4cced7394
           <Label
             className="ui mini label"
             color="grey"
             ribbon="right"
           >
+<<<<<<< HEAD
             question
 =======
           <Label>
             question
 
 >>>>>>> 5922d6860302d4613325259663003e370624d94f
+=======
+            question
+>>>>>>> 9bb3ee40508f72e0e4c80f9c064c2ef4cced7394
           </Label>
         </div>
         <ListDescription>
