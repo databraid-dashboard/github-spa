@@ -2,7 +2,6 @@ export const RENDER_LOGIN = 'RENDER_LOGIN';
 export const RENDER_REPOS = 'RENDER_REPOS';
 export const RENDER_DASHBOARD = 'RENDER_DASHBOARD';
 export const GET_USERNAME = 'GET_USERNAME';
-// const AUTH_ROUTE = 'http://localhost:8000/isAuthenticated';
 
 <<<<<<< HEAD
 export const renderOrgs = () => (dispatch) => {
