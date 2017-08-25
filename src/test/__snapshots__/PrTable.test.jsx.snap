@@ -9,11 +9,5 @@ exports[`PrTable component should render a component with props as specified  1`
       Pull Requests
     </CardHeader>
   </CardContent>
-<<<<<<< HEAD
-  <Connect(Component)
-    prId={246869449}
-  />
-=======
->>>>>>> 5922d6860302d4613325259663003e370624d94f
 </Card>
 `;

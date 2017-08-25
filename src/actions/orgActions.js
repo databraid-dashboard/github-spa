@@ -1,4 +1,3 @@
-import { GET_USERNAME } from '../actions/renderActions';
 export const GET_ORGS = 'GET_ORGS';
 
 export function retrieveOrgs(userName) {
@@ -22,8 +21,7 @@ export function retrieveOrgs(userName) {
       return null;
     }
     return Api.fetchData(request)
-      .then(response => {
-        return response.data.orgs.orgs})
+      .then(response => response.data.orgs.orgs)
       .then((orgs) => {
         dispatch({
           type: GET_ORGS,

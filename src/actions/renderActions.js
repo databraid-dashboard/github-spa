@@ -4,12 +4,10 @@ export const RENDER_DASHBOARD = 'RENDER_DASHBOARD';
 export const GET_USERNAME = 'GET_USERNAME';
 // const AUTH_ROUTE = 'http://localhost:8000/isAuthenticated';
 
-export const renderOrgs = (userName) => (dispatch) => {
-  return dispatch({
-    type: GET_USERNAME,
-    userName,
-  })
-}
+export const renderOrgs = userName => dispatch => dispatch({
+  type: GET_USERNAME,
+  userName,
+});
 export const renderLogin = () => (dispatch) => {
   dispatch({
     type: RENDER_LOGIN,

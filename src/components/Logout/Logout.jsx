@@ -1,6 +1,6 @@
 /* eslint-disable import/no-named-as-default, no-shadow, consistent-return */
-import cookie from 'react-cookies'
-import React, { Component }from 'react';
+import cookie from 'react-cookies';
+import React, { Component } from 'react';
 import { Grid, Card, Button } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -9,12 +9,12 @@ import { renderOrgs } from '../../actions/renderActions';
 import './Logout.css';
 
 export class Logout extends Component {
-  // componentDidMount() {
-  //   if (cookie.load('userName') !== undefined) {
-  //   let name = cookie.load('userName')
-  //   this.props.renderOrgs(name);
-  //   }
-  // }
+  componentDidMount() {
+    if (cookie.load('userName') !== undefined) {
+      const name = cookie.load('userName');
+      this.props.renderOrgs(name);
+    }
+  }
 
   render() {
     return (
@@ -24,8 +24,8 @@ export class Logout extends Component {
             <Card raised centered className="island">
               <Card.Content>
                 <Button
-                  as='a'
-                  onClick={()=>{cookie.remove('userName')}}
+                  as="a"
+                  onClick={() => { cookie.remove('userName'); }}
                   className="butterButton"
                   size="massive"
                   content="Logout"
@@ -37,11 +37,15 @@ export class Logout extends Component {
           </Grid.Column>
         </Grid.Row>
       </Grid>
-    )
+    );
   }
+}
 
-};
+// cookie lib requires .remove arguement to be passed in as a string
+// username is not generated until a user is authenticated such that we
+// have a 'chicken or egg' type problem and this justifies use of eslint-disable
 
+/* eslint-disable react/require-default-props, react/no-unused-prop-types */
 Logout.propTypes = {
   renderOrgs: PropTypes.func.isRequired,
   userName: PropTypes.string,

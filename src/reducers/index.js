@@ -13,7 +13,6 @@ const rootReducer = combineReducers({
   repos: repoReducer,
   orgs: orgReducer,
   currentPage: renderPage,
-  // users: userReducer,
 });
 
 export default rootReducer;
