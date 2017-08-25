@@ -1,8 +1,28 @@
+/* eslint-disable import/extensions */
+import promiseMiddleware from 'redux-promise-middleware';
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import toJson from 'enzyme-to-json';
+import { shallow } from 'enzyme';
+import configureStore from 'redux-mock-store';
+import thunkMiddleware from 'redux-thunk';
+import { Provider } from 'react-redux';
+import Api from './utils/Api';
+import App from './App.jsx';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
+
+const middleware = [
+  promiseMiddleware(),
+  thunkMiddleware.withExtraArgument({ Api }),
+];
+const mockStore = configureStore(middleware);
+describe('App component', () => {
+  it('should render a component with props as specified ', () => {
+    const component = shallow(
+      <Provider store={mockStore({})}>
+
+        <App />
+      </Provider>,
+    );
+    expect(toJson(component)).toMatchSnapshot();
+  });
 });

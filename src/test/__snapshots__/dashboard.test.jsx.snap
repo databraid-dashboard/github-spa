@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render a Dashboard that holds Connected Components Should render the Dashboard 1`] = `
+<div>
+  <Button
+    as="button"
+    icon={true}
+    onClick={[Function]}
+  >
+    <Icon
+      as="i"
+      name="arrow left"
+    />
+  </Button>
+  <Container>
+    <Grid
+      padded={true}
+    >
+      <Header
+        as="h2"
+        icon={true}
+        textAlign="center"
+      >
+        <Icon
+          as="i"
+          name="github"
+        />
+        <HeaderContent>
+          Some Repo
+        </HeaderContent>
+      </Header>
+      <GridRow
+        columns={3}
+      >
+        <GridColumn>
+          <Connect(PrTable)
+            repoName="Some Repo"
+          />
+        </GridColumn>
+        <GridColumn>
+          <Connect(Issues)
+            repoName="Some Repo"
+          />
+        </GridColumn>
+        <GridColumn>
+          <Connect(Milestones)
+            repoName="Some Repo"
+          />
+        </GridColumn>
+      </GridRow>
+    </Grid>
+  </Container>
+</div>
+`;
