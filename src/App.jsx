@@ -23,11 +23,15 @@ App.propTypes = {
   currentPage: PropTypes.string.isRequired,
 };
 
+App.defaultProps = {
+  currentPage: '',
+};
+
 const mapStateToProps = state => ({
   currentPage: state.currentPage.render,
-  store: state,
 });
 
 export default connect(
   mapStateToProps,
+  null,
 )(App);

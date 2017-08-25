@@ -18,6 +18,7 @@ const state = {
     },
     currentPage: { render: 'orgs', repoName: null },
   },
+  currentPage: { render: 'orgs', repoName: null, userName: 'michaelmurray6298' },
 };
 
 describe('Organizations component', () => {
@@ -31,6 +32,7 @@ describe('Organizations component', () => {
         currentPage={state.currentPage.render}
         retrieveOrgs={retrieveOrgs}
         renderLogin={renderLogin}
+        userName={state.currentPage.userName}
       />,
     );
     expect(toJson(component)).toMatchSnapshot();
@@ -56,7 +58,7 @@ describe('Organizations component', () => {
           reposUrl: 'https://api.github.com/orgs/ShareCastG52/repos',
         },
       },
-      currentPage: 'orgs',
+      userName: 'michaelmurray6298',
     };
     expect(mapStateToProps(state)).toEqual(expected);
   });

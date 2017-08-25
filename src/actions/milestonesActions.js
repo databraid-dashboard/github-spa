@@ -4,7 +4,24 @@ export const GET_MILESTONES = 'GET_MILESTONES';
 export const LOADING_MILESTONES = 'LOADING_MILESTONES';
 
 export function retrieveMilestones(userName, orgName, repoName) {
-  const queryString = `{repos (userName: "${userName}", orgName:"${orgName}", repoName:"${repoName}"){repos {milestones { id title openIssues closedIssues dueOn } } } }`;
+  const queryString = `
+    {
+      repos (
+        userName: "${userName}",
+        orgName:"${orgName}",
+        repoName:"${repoName}"){
+          repos {
+            milestones {
+              id
+              title
+              openIssues
+              closedIssues
+              dueOn
+            }
+          }
+        }
+      }
+      `;
 
   const request = { query: queryString };
 

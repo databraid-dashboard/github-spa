@@ -66,12 +66,15 @@ export const mapStateToProps = (state, { milestoneId }) => {
 Milestone.propTypes = {
   milestoneId: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  due: PropTypes.string,
+  due: PropTypes.string.isRequired,
   percentComplete: PropTypes.number.isRequired,
 };
 
 Milestone.defaultProps = {
   due: undefined,
+  milestoneId: 0,
+  title: '',
+  percentComplete: 0,
 };
 
 export default connect(
