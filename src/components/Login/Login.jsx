@@ -6,9 +6,10 @@ import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import { renderOrgs } from '../../actions/renderActions';
 import './Login.css';
+import injectWidgetId from '../../utils/utils';
 
-export const Login = ({ renderOrgs, userName }) => (
-  <Grid verticalAlign={'middle'}>
+export const Login = ({ renderOrgs, userName }) =>
+  (<Grid verticalAlign={'middle'}>
     <Grid.Row centered verticalAlign={'middle'}>
       <Grid.Column centered verticalAlign={'middle'}>
         <Card raised centered className="island">
@@ -24,23 +25,27 @@ export const Login = ({ renderOrgs, userName }) => (
         </Card>
       </Grid.Column>
     </Grid.Row>
-  </Grid>
-);
+  </Grid>);
 
 Login.propTypes = {
   renderOrgs: PropTypes.func.isRequired,
   userName: PropTypes.string.isRequired,
 };
 
-const mapStateToProps = state => ({
-  userName: state.currentPage.userName,
-});
+export const mapStateToProps = (state, ownProps) => {
+  const id = ownProps.widgetId;
+  const userName = state.widgets.byId[id].currentPage.userName;
+  return {
+    userName,
+  };
+};
 
-export const mapDispatchToProps = dispatch => bindActionCreators({
-  renderOrgs,
-}, dispatch);
+export const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      renderOrgs,
+    },
+    dispatch,
+  );
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(Login);
+export default injectWidgetId(connect(mapStateToProps, mapDispatchToProps)(Login));

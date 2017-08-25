@@ -1,11 +1,11 @@
 /* eslint-disable react/no-string-refs,
 react/sort-comp, class-methods-use-this, no-unused-expressions */
 
-
 import React, { Component } from 'react';
 import * as d3 from 'd3';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import injectWidgetId from '../../utils/utils';
 
 class ProgressArc extends Component {
   componentDidMount() {
@@ -17,7 +17,9 @@ class ProgressArc extends Component {
   }
 
   setContext() {
-    return d3.select(this.refs.arc).append('svg')
+    return d3
+      .select(this.refs.arc)
+      .append('svg')
       .attr('height', '60px')
       .attr('width', '60px')
       .attr('id', 'd3-arc')
@@ -26,21 +28,20 @@ class ProgressArc extends Component {
   }
 
   arc() {
-    return d3.arc()
-      .innerRadius(20)
-      .outerRadius(30)
-      .startAngle(0);
+    return d3.arc().innerRadius(20).outerRadius(30).startAngle(0);
   }
 
   setBackground(context) {
-    return context.append('path')
-      .datum({ endAngle: (Math.PI * 2) })
+    return context
+      .append('path')
+      .datum({ endAngle: Math.PI * 2 })
       .style('fill', '#e6e6e6')
       .attr('d', this.arc());
   }
 
   setForeground(context) {
-    return context.append('path')
+    return context
+      .append('path')
       .datum({ endAngle: 0 })
       .style('fill', '#756bb1')
       .attr('d', this.arc());
@@ -60,9 +61,10 @@ class ProgressArc extends Component {
   }
 
   updatePercent(context) {
-    return this.setForeground(context).transition()
+    return this.setForeground(context)
+      .transition()
       .duration(this.props.duration)
-      .call(this.arcTween, (Math.PI * 2) * this.props.percentComplete, this.arc());
+      .call(this.arcTween, Math.PI * 2 * this.props.percentComplete, this.arc());
   }
 
   arcTween(transition, newAngle, arc) {
@@ -77,9 +79,7 @@ class ProgressArc extends Component {
   }
 
   render() {
-    return (
-      <div ref="arc" />
-    );
+    return <div ref="arc" />;
   }
 }
 
@@ -95,10 +95,15 @@ ProgressArc.defaultProps = {
   duration: 2000,
 };
 
-const mapStateToProps = (state, { milestoneId }) => ({
-  percentComplete: state.milestones.milestonesById[milestoneId].percentComplete,
-});
+export const mapStateToProps = (state, ownProps) => {
+  const id = ownProps.widgetId;
+  const milestoneId = ownProps.milestoneId;
+  const percentComplete =
+    state.widgets.byId[id].milestones.milestonesById[milestoneId].percentComplete;
 
-export default connect(
-  mapStateToProps,
-)(ProgressArc);
+  return {
+    percentComplete,
+  };
+};
+
+export default injectWidgetId(connect(mapStateToProps)(ProgressArc));

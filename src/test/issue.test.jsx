@@ -3,26 +3,33 @@ import toJson from 'enzyme-to-json';
 import { shallow } from 'enzyme';
 import { Issue, mapStateToProps } from '../components/Issue/Issue';
 
+const ownProps = { widgetId: 1 };
 const state = {
-
-  issues: {
-    issuesById: {
-      238923429: {
-        assignedTo: [['Gwillison415', 'https://avatars2.githubusercontent.com/u/22106099?v=4']],
-        labels: ['duplicate', 'help wanted', 'question'],
-        number: 16,
-        title: 'login tst JWT token',
+  widgets: {
+    byId: {
+      1: {
+        issues: {
+          issuesById: {
+            238923429: {
+              assignedTo: [
+                ['Gwillison415', 'https://avatars2.githubusercontent.com/u/22106099?v=4'],
+              ],
+              labels: ['duplicate', 'help wanted', 'question'],
+              number: 16,
+              title: 'login tst JWT token',
+            },
+          },
+        },
       },
     },
   },
-
 };
 
 describe('Issue entry component', () => {
   it('should render a component with props as specified ', () => {
     const component = shallow(
       <Issue
-        labels={state.issues.issuesById[238923429].labels}
+        labels={state.widgets.byId[1].issues.issuesById[238923429].labels}
         issueId={238923429}
         assignedTo={[['Gwillison415', 'https://avatars2.githubusercontent.com/u/22106099?v=4']]}
         number={16}
@@ -31,14 +38,14 @@ describe('Issue entry component', () => {
     );
     expect(toJson(component)).toMatchSnapshot();
   });
-  it('map\'s given State To Props ', () => {
+  it("map's given State To Props ", () => {
     const expected = {
       assignedTo: [['Gwillison415', 'https://avatars2.githubusercontent.com/u/22106099?v=4']],
       labels: ['duplicate', 'help wanted', 'question'],
       number: 16,
       title: 'login tst JWT token',
     };
-    expect(mapStateToProps(state, { issueId: 238923429 })).toEqual(expected);
+    expect(mapStateToProps(state, ownProps, { issueId: 238923429 })).toEqual(expected);
   });
 
   it('Should have a Cart Header in the center', () => {
@@ -47,7 +54,7 @@ describe('Issue entry component', () => {
         number={16}
         title={'login tst JWT token'}
         issueId={238923429}
-        labels={state.issues.issuesById[238923429].labels}
+        labels={state.widgets.byId[1].issues.issuesById[238923429].labels}
         assignedTo={[['Gwillison415', 'https://avatars2.githubusercontent.com/u/22106099?v=4']]}
       />,
     );
