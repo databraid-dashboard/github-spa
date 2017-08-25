@@ -1,22 +1,24 @@
+
 import {
-  RENDER_ORGS, RENDER_REPOS, RENDER_LOGIN, RENDER_DASHBOARD,
+  RENDER_REPOS, RENDER_LOGIN, RENDER_DASHBOARD, GET_USERNAME,
 } from '../actions/renderActions';
 
-const renderPage = (state = { render: 'login', repoName: null, userName: 'michaelmurray6298', selectedOrgName: null }, action) => {
+const renderPage = (state = { render: 'login', repoName: null, fetching: true, userName: '', selectedOrgName: null, session: {} }, action) => {
   switch (action.type) {
-    case RENDER_ORGS:
-      return { ...state, render: 'orgs', userName: 'michaelmurray6298' };
-
+    case GET_USERNAME:
+      return { ...state, userName: action.userName, render: 'orgs' };
     case RENDER_REPOS:
-      return { ...state, render: 'repos', selectedOrgName: action.selectedOrgName };
+      return { ...state, render: 'repos', fetching: false, selectedOrgName: action.selectedOrgName };
 
     case RENDER_LOGIN:
-      return { ...state, render: 'login' };
+      return { ...state, render: 'login', fetching: false };
 
     case RENDER_DASHBOARD:
       return { ...state,
         render: 'dashboard',
-        repoName: action.repoName };
+        fetching: false,
+        repoName: action.repoName,
+        repoId: action.repoId };
 
     default:
       return state;

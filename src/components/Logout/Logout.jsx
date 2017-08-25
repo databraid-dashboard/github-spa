@@ -6,9 +6,9 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import { renderOrgs } from '../../actions/renderActions';
-import './Login.css';
+import './Logout.css';
 
-export class Login extends Component {
+export class Logout extends Component {
   componentDidMount() {
     if (cookie.load('userName') !== undefined) {
       const name = cookie.load('userName');
@@ -25,12 +25,12 @@ export class Login extends Component {
               <Card.Content>
                 <Button
                   as="a"
-                  href="http://localhost:8000/auth/github/"
+                  onClick={() => { cookie.remove('userName'); }}
                   className="butterButton"
                   size="massive"
-                  content="Login with Github"
+                  content="Logout"
                   icon="github"
-                  onClick={() => renderOrgs(cookie.load('userName'))}
+                  // onClick={() => renderOrgs(cookie.load('userName'))}
                 />
               </Card.Content>
             </Card>
@@ -41,11 +41,12 @@ export class Login extends Component {
   }
 }
 
-// cookie lib requires .load arguement to be passed in as a string
+// cookie lib requires .remove arguement to be passed in as a string
 // username is not generated until a user is authenticated such that we
 // have a 'chicken or egg' type problem and this justifies use of eslint-disable
+
 /* eslint-disable react/require-default-props, react/no-unused-prop-types */
-Login.propTypes = {
+Logout.propTypes = {
   renderOrgs: PropTypes.func.isRequired,
   userName: PropTypes.string,
 };
@@ -61,4 +62,4 @@ export const mapDispatchToProps = dispatch => bindActionCreators({
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Login);
+)(Logout);

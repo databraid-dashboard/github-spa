@@ -1,11 +1,10 @@
-/* eslint-disable max-len, no-unused-vars */
-
+/* eslint-disable max-len, no-unused-vars, import/no-duplicates */
+import promiseMiddleware from 'redux-promise-middleware';
 import { createStore, applyMiddleware, compose } from 'redux';
-// import thunk from 'redux-thunk';
+import thunk from 'redux-thunk';
 import thunkMiddleware from 'redux-thunk';
 import rootReducer from './reducers/index';
 import Api from './utils/Api';
-
 
 const logger = store => next => (action) => {
   next(action);
@@ -21,10 +20,9 @@ const logger = store => next => (action) => {
 // };
 
 const middleware = [
-  // thunk,
+  promiseMiddleware(),
   thunkMiddleware.withExtraArgument({ Api }),
-  logger,
-  // error,
+  thunk,
 ];
 
 /* eslint-disable no-underscore-dangle */

@@ -9,7 +9,6 @@ import './Org.css';
 
 export const Org = ({ avatarUrl, orgName, renderRepos }) => (
   <Grid.Column>
-
     <Image
       className="hoverable"
       onClick={() => renderRepos(orgName)}
@@ -34,7 +33,7 @@ export const mapStateToProps = (state, { orgId }) => {
     orgName,
   };
 };
-
+// this comment
 const mapDispatchToProps = dispatch => bindActionCreators({
   renderRepos,
 }, dispatch);
