@@ -22,30 +22,32 @@ function getDescription(assignedTo) {
   return <div />;
 }
 
-export const Issue = ({ title, number, assignedTo, labels }) =>
-  // const renderedLabels = labels.map(label =>
-  //   (<div className="space-labels" key={label}>
-  //     <Label className="ui mini label" ribbon="right" color="grey">
-  //       {label}
-  //     </Label>
-  //   </div>),
-  // );
+export const Issue = ({ title, number, assignedTo, labels }) => {
+  const renderedLabels = labels.map(label =>
+    (<div className="space-labels" key={label}>
+      <Label className="ui mini label" ribbon="right" color="grey">
+        {label}
+      </Label>
+    </div>),
+  );
 
-  (<Card.Content>
-    <List divided relaxed>
-      <List.Item>
-        <List.Content>
-          <List.Header>
+  return (
+    <Card.Content>
+      <List divided relaxed>
+        <List.Item>
+          <List.Content>
+            <List.Header>
             #{number} {title}
-          </List.Header>
-          {/* {renderedLabels} */}
-          <List.Description>
-            {' '}{getDescription(assignedTo)}
-          </List.Description>
-        </List.Content>
-      </List.Item>
-    </List>
-  </Card.Content>);
+            </List.Header>
+            {renderedLabels}
+            <List.Description>
+              {' '}{getDescription(assignedTo)}
+            </List.Description>
+          </List.Content>
+        </List.Item>
+      </List>
+    </Card.Content>);
+};
 
 Issue.propTypes = {
   title: PropTypes.string.isRequired,
@@ -59,6 +61,7 @@ export const mapStateToProps = (state, ownProps) => {
   const issueId = ownProps.issueId;
   const issue = state.widgets.byId[id].issues.issuesById[issueId];
   const { title, number, assignedTo, labels } = issue;
+  console.log(labels);
   return {
     title,
     number,
