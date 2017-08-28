@@ -189,8 +189,4 @@ const reposByOrg = [
   },
 ];
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 9bb3ee40508f72e0e4c80f9c064c2ef4cced7394
 export default reposByOrg;

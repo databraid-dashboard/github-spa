@@ -5,14 +5,14 @@ import { Grid, Card, Button } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
-import { renderOrgs } from '../../actions/renderActions';
+import { fetchOrgs } from '../../actions/renderActions';
 import './Login.css';
 
 export class Login extends Component {
   componentDidMount() {
     if (cookie.load('userName') !== undefined) {
       const name = cookie.load('userName');
-      this.props.renderOrgs(name);
+      this.props.fetchOrgs(name);
     }
   }
   render() {
@@ -29,7 +29,7 @@ export class Login extends Component {
                   size="massive"
                   content="Login with Github"
                   icon="github"
-                  // onClick={() => renderOrgs(cookie.load('userName'))}
+                  // onClick={() => fetchOrgs(cookie.load('userName'))}
                 />
               </Card.Content>
             </Card>
@@ -43,7 +43,7 @@ export class Login extends Component {
 Login.propTypes = {
   /* eslint-disable react/no-unused-prop-types, react/require-default-props
 */
-  renderOrgs: PropTypes.func.isRequired,
+  fetchOrgs: PropTypes.func.isRequired,
   userName: PropTypes.string,
 };
 
@@ -53,7 +53,7 @@ const mapStateToProps = state => ({
 });
 
 export const mapDispatchToProps = dispatch => bindActionCreators({
-  renderOrgs,
+  fetchOrgs,
 }, dispatch);
 
 export default connect(
