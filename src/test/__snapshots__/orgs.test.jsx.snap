@@ -1,28 +1,40 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Organizations component should render a component with props as specified  1`] = `
-<Grid
-  centered={true}
-  columns={3}
-  padded={true}
->
-  <Header
-    as="h2"
+<div>
+  <Button
+    as="button"
     icon={true}
-    textAlign="center"
+    onClick={[Function]}
   >
     <Icon
       as="i"
-      name="github"
+      name="arrow left"
     />
-    <HeaderContent>
-      Which organization are you interested in?
-    </HeaderContent>
-  </Header>
-  <GridRow>
-    <Connect(Component)
-      orgId={246869449}
-    />
-  </GridRow>
-</Grid>
+  </Button>
+  <Grid
+    centered={true}
+    columns={3}
+    padded={true}
+  >
+    <Header
+      as="h2"
+      icon={true}
+      textAlign="center"
+    >
+      <Icon
+        as="i"
+        name="github"
+      />
+      <HeaderContent>
+        Which organization are you interested in?
+      </HeaderContent>
+    </Header>
+    <GridRow>
+      <Connect(Component)
+        orgId={246869449}
+      />
+    </GridRow>
+  </Grid>
+</div>
 `;

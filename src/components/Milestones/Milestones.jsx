@@ -8,15 +8,17 @@ import { retrieveMilestones } from '../../actions/milestonesActions';
 import Milestone from '../Milestone/Milestone';
 import './Milestones.css';
 
-function milestoneComponents(milestonesIds) {
-  return milestonesIds.map(id => (
-    <Milestone key={id} milestoneId={id} />
-  ));
+function milestoneComponents(milestones, repo) {
+  if (milestones && milestones[repo]) {
+    return milestones[repo].map(id => <Milestone key={id} milestoneId={id} />,
+    );
+  }
+  return '';
 }
 
 export class Milestones extends Component {
   componentDidMount() {
-    this.props.retrieveMilestones();
+    this.props.retrieveMilestones(this.props.userName, this.props.orgName, this.props.repoName);
   }
 
   render() {
@@ -32,7 +34,7 @@ export class Milestones extends Component {
             Milestones
           </Card.Header>
         </Card.Content>
-        {milestoneComponents(this.props.milestonesIds)}
+        {milestoneComponents(this.props.milestonesByRepo, this.props.repoName)}
       </Card>
     );
   }
@@ -41,13 +43,26 @@ export class Milestones extends Component {
 Milestones.propTypes = {
   retrieveMilestones: PropTypes.func.isRequired,
   loadingMilestones: PropTypes.bool.isRequired,
-  milestonesIds: PropTypes.number.isRequired,
+  userName: PropTypes.string.isRequired,
+  orgName: PropTypes.string.isRequired,
+  repoName: PropTypes.string.isRequired,
+  milestonesByRepo: PropTypes.objectOf(PropTypes.array).isRequired,
+};
+
+Milestones.defaultProps = {
+  loadingMilestones: false,
+  milestonesByRepo: {},
+  userName: '',
+  orgName: '',
+  repoName: '',
 };
 
 export const mapStateToProps = state => ({
-  milestonesIds: state.milestones.ids,
+  milestonesByRepo: state.milestones.milestonesByRepo,
   milestonesById: state.milestones.milestonesById,
   loadingMilestones: state.loadingMilestones,
+  userName: state.currentPage.userName,
+  orgName: state.currentPage.selectedOrgName,
 });
 
 export const mapDispatchToProps = dispatch =>

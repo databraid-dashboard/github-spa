@@ -1,8 +1,11 @@
 /* eslint-disable max-len, no-unused-vars */
 
 import { createStore, applyMiddleware, compose } from 'redux';
-import thunk from 'redux-thunk';
+// import thunk from 'redux-thunk';
+import thunkMiddleware from 'redux-thunk';
 import rootReducer from './reducers/index';
+import Api from './utils/Api';
+
 
 const logger = store => next => (action) => {
   next(action);
@@ -18,7 +21,8 @@ const logger = store => next => (action) => {
 // };
 
 const middleware = [
-  thunk,
+  // thunk,
+  thunkMiddleware.withExtraArgument({ Api }),
   logger,
   // error,
 ];
@@ -31,7 +35,4 @@ const store = createStore(
   ),
 );
 
-store.subscribe(() => {
-  console.log(store.getState());
-});
 export default store;

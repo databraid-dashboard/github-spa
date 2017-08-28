@@ -1,56 +1,74 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Issue entry component should render a component with props as specified  1`] = `
-<ListItem>
-  <ListContent
-    className="ui center aligned"
+<CardContent>
+  <List
+    divided={true}
+    relaxed={true}
   >
-    <ListHeader>
-      #
-      16
-       
-      login tst JWT token
-    </ListHeader>
-    <div>
-      <LabelGroup>
+    <ListItem>
+      <ListContent>
+        <ListHeader>
+          #
+          16
+           
+          login tst JWT token
+        </ListHeader>
         <div
-          className="ui tiny label"
+          className="space-labels"
         >
-          duplicate
+          <Label
+            className="ui mini label"
+            color="grey"
+            ribbon="right"
+          >
+            duplicate
+          </Label>
         </div>
-      </LabelGroup>
-    </div>
-    <div>
-      <LabelGroup>
         <div
-          className="ui tiny label"
+          className="space-labels"
         >
-          help wanted
+          <Label
+            className="ui mini label"
+            color="grey"
+            ribbon="right"
+          >
+            help wanted
+          </Label>
         </div>
-      </LabelGroup>
-    </div>
-    <div>
-      <LabelGroup>
         <div
-          className="ui tiny label"
+          className="space-labels"
         >
-          question
+          <Label
+            className="ui mini label"
+            color="grey"
+            ribbon="right"
+          >
+            question
+          </Label>
         </div>
-      </LabelGroup>
-    </div>
-    <ListDescription>
-       
-      <div>
-        Assigned To: 
-        g
-        <div>
-          <ItemImage
-            size="mini"
-            src="r"
-          />
-        </div>
-      </div>
-    </ListDescription>
-  </ListContent>
-</ListItem>
+        <ListDescription>
+           
+          <div
+            className="ui center aligned"
+          >
+            <div>
+              <Header
+                className="space-issues"
+                sub={true}
+              >
+                Assigned To: 
+              </Header>
+              Gwillison415
+              https://avatars2.githubusercontent.com/u/22106099?v=4
+            </div>
+            <ItemImage
+              size="mini"
+            />
+          </div>
+        </ListDescription>
+      </ListContent>
+    </ListItem>
+  </List>
+</CardContent>
 `;

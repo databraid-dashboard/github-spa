@@ -6,7 +6,6 @@ import { Issues, mapStateToProps, mapDispatchToProps } from '../components/Issue
 
 const state = {
   issues: {
-    ids: [246869449],
     issuesById: {
       246869449: {
         assignedTo: [],
@@ -18,14 +17,18 @@ const state = {
     },
   },
   loadingIssues: false,
+  currentPage: { selectedOrgName: 'ski-ski', userName: 'michaelmurray6298' },
 };
 
 describe('Issues component', () => {
   it('should render a component with props as specified ', () => {
+    const retrieveIssues = jest.fn();
     const component = shallow(
       <Issues
         issuesIds={state.issues.ids}
         loadingIssues={false}
+        retrieveIssues={retrieveIssues}
+        orgName={state.currentPage.selectedOrgName}
       />,
     );
     expect(toJson(component)).toMatchSnapshot();
@@ -44,9 +47,10 @@ describe('Issues component', () => {
 
   it('map\'s given State To Props ', () => {
     const expected = {
-      issuesIds: [246869449],
-
+      issuesByRepo: undefined,
       loadingIssues: false,
+      orgName: 'ski-ski',
+      userName: 'michaelmurray6298',
     };
     expect(mapStateToProps(state)).toEqual(expected);
   });
@@ -56,10 +60,14 @@ describe('Issues component', () => {
     expect(mapDispatchToProps(dispatch)).toHaveProperty('retrieveIssues');
   });
   it('Should have a Cart Header in the center', () => {
+    const retrieveIssues = jest.fn();
     const component = shallow(
       <Issues
         issuesIds={state.issues.ids}
-        issuesLoading={false}
+        loadingIssues={false}
+        retrieveIssues={retrieveIssues}
+        orgName={state.currentPage.selectedOrgName}
+        userName={state.currentPage.userName}
       />,
     );
     expect(component.find('.aligned').exists()).toBe(true);

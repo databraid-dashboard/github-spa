@@ -1,6 +1,6 @@
 /* eslint-disable import/no-named-as-default */
 import React, { Component } from 'react';
-import { Card, List } from 'semantic-ui-react';
+import { Card } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
@@ -8,15 +8,18 @@ import Issue from '../Issue/Issue';
 import { retrieveIssues } from '../../actions/issueActions';
 import './Issues.css';
 
-function issueComponents(issuesIds) {
-  return issuesIds.sort((a, b) => a - b).map(id => (
-    <Issue key={id} issueId={id} />
-  ));
+function issueComponents(issues, repo) {
+  if (issues && issues[repo]) {
+    return issues[repo].map(id => <Issue key={id} issueId={id} />,
+    );
+  }
+
+  return '';
 }
 
 export class Issues extends Component {
   componentDidMount() {
-    this.props.retrieveIssues();
+    this.props.retrieveIssues(this.props.userName, this.props.orgName, this.props.repoName);
   }
 
   render() {
@@ -29,14 +32,10 @@ export class Issues extends Component {
       <Card>
         <Card.Content>
           <Card.Header className="ui center aligned">
-            Git Issues
+            Issues
           </Card.Header>
         </Card.Content>
-        <Card.Content>
-          <List divided relaxed>
-            {issueComponents(this.props.issuesIds)}
-          </List>
-        </Card.Content>
+        {issueComponents(this.props.issuesByRepo, this.props.repoName)}
       </Card>
     );
   }
@@ -44,13 +43,27 @@ export class Issues extends Component {
 
 Issues.propTypes = {
   retrieveIssues: PropTypes.func.isRequired,
-  loadingIssues: PropTypes.bool.isRequired,
-  issuesIds: PropTypes.arrayOf.isRequired,
+  loadingIssues: PropTypes.bool,
+  userName: PropTypes.string.isRequired,
+  orgName: PropTypes.string.isRequired,
+  repoName: PropTypes.string.isRequired,
+  issuesByRepo: PropTypes.objectOf(PropTypes.array),
+
 };
 
+Issues.defaultProps = {
+  loadingIssues: false,
+  issuesByRepo: {},
+  userName: '',
+  repoName: '',
+};
+
+
 export const mapStateToProps = state => ({
-  issuesIds: state.issues.ids,
+  issuesByRepo: state.issues.issuesByRepo,
   loadingIssues: state.loadingIssues,
+  orgName: state.currentPage.selectedOrgName,
+  userName: state.currentPage.userName,
 });
 
 export const mapDispatchToProps = dispatch => bindActionCreators({

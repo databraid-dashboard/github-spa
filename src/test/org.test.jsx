@@ -19,12 +19,12 @@ const state = {
 
 describe('Org entry component', () => {
   it('should render a component with props as specified ', () => {
+    const renderRepos = jest.fn();
     const component = shallow(
       <Org
-
         avatarUrl={'https://avatars1.githubusercontent.com/u/29614654?v=4'}
         orgName={'ShareCastG52'}
-        reposUrl={'https://api.github.com/orgs/ShareCastG52/repos'}
+        renderRepos={renderRepos}
       />,
     );
     expect(toJson(component)).toMatchSnapshot();
