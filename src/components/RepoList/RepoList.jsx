@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import { retrieveRepos } from '../../actions/repoActions';
-import { fetchOrgs } from '../../actions/renderActions';
+import { renderOrgs } from '../../actions/renderActions';
 import Repo from '../Repo/Repo';
 import './RepoList.css';
 
@@ -26,7 +26,7 @@ export class RepoList extends Component {
   render() {
     return (
       <div>
-        <Button icon onClick={() => this.props.fetchOrgs(this.props.userName)}>
+        <Button icon onClick={() => this.props.renderOrgs(this.props.userName)}>
           <Icon name="arrow left" />
         </Button>
         <Grid centered padded>
@@ -49,7 +49,7 @@ export class RepoList extends Component {
 
 RepoList.propTypes = {
   retrieveRepos: PropTypes.func.isRequired,
-  fetchOrgs: PropTypes.func.isRequired,
+  renderOrgs: PropTypes.func.isRequired,
   userName: PropTypes.string.isRequired,
   orgName: PropTypes.string.isRequired,
   reposByOrg: PropTypes.objectOf(PropTypes.array),
@@ -69,7 +69,7 @@ export const mapStateToProps = state => ({
 
 export const mapDispatchToProps = dispatch =>
   bindActionCreators({
-    retrieveRepos, fetchOrgs,
+    retrieveRepos, renderOrgs,
   }, dispatch);
 
 export default connect(
