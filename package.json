@@ -1,6 +1,6 @@
 {
   "name": "databraid-react-starter",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "private": true,
   "dependencies": {
     "d3": "4.10.0",
