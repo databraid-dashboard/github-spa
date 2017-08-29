@@ -51,15 +51,9 @@ describe('Milestones component', () => {
     const retrieveMilestones = jest.fn();
     const component = shallow(
       <Milestones
-<<<<<<< HEAD
         loadingMilestones={false}
         retrieveMilestones={retrieveMilestones}
         userName={state.currentPage.userName}
-=======
-        milestonesIds={state.milestones.ids}
-        loadingMilestones={false}
-        retrieveMilestones={retrieveMilestones}
->>>>>>> Fixed linting errors, installed redux-mock-store
       />,
     );
     expect(component.find('.aligned').exists()).toBe(true);

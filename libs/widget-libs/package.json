@@ -1,6 +1,6 @@
 {
   "name": "@databraid/github-widget",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "",
   "main": "index.js",
   "files": [
@@ -16,6 +16,7 @@
     "d3": "4.10.0",
     "prop-types": "15.5.10",
     "react": "15.6.1",
+    "react-cookies": "0.1.0",
     "react-dom": "15.6.1",
     "react-linechart": "1.1.9",
     "react-redux": "5.0.5",

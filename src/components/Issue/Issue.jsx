@@ -23,13 +23,12 @@ function getDescription(assignedTo) {
 }
 
 export const Issue = ({ title, number, assignedTo, labels }) => {
-  const renderedLabels = labels.map(label =>
-    (<div className="space-labels" key={label}>
+  const renderedLabels = labels.map(label => (
+    <div className="space-labels" key={label}>
       <Label className="ui mini label" ribbon="right" color="grey">
         {label}
       </Label>
-    </div>),
-  );
+    </div>));
 
   return (
     <Card.Content>
