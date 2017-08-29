@@ -2,10 +2,10 @@ import {
   RENDER_ORGS, RENDER_REPOS, RENDER_LOGIN, RENDER_DASHBOARD,
 } from '../actions/renderActions';
 
-const renderPage = (state = { render: 'login', repoName: null, userName: 'michaelmurray6298', selectedOrgName: null }, action) => {
+const renderPage = (state = { render: 'login', repoName: null, userName: '', selectedOrgName: null }, action) => {
   switch (action.type) {
     case RENDER_ORGS:
-      return { ...state, render: 'orgs', userName: 'michaelmurray6298' };
+      return { ...state, render: 'orgs', userName: action.userName };
 
     case RENDER_REPOS:
       return { ...state, render: 'repos', selectedOrgName: action.selectedOrgName };
@@ -16,8 +16,7 @@ const renderPage = (state = { render: 'login', repoName: null, userName: 'michae
     case RENDER_DASHBOARD:
       return { ...state,
         render: 'dashboard',
-        repoName: action.repoName,
-      };
+        repoName: action.repoName };
 
     default:
       return state;

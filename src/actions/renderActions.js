@@ -3,7 +3,7 @@ export const RENDER_LOGIN = 'RENDER_LOGIN';
 export const RENDER_REPOS = 'RENDER_REPOS';
 export const RENDER_DASHBOARD = 'RENDER_DASHBOARD';
 
-export const renderOrgs = userName => (dispatch) => {
+export const fetchOrgs = userName => (dispatch) => {
   dispatch({
     type: RENDER_ORGS,
     responseStr: 'orgs',

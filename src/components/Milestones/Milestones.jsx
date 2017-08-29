@@ -6,8 +6,8 @@ import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import { retrieveMilestones } from '../../actions/milestonesActions';
 import Milestone from '../Milestone/Milestone';
-import './Milestones.css';
 import injectWidgetId from '../../utils/utils';
+import './Milestones.css';
 
 function milestoneComponents(milestones, repo) {
   if (milestones && milestones[repo]) {

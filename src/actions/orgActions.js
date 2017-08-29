@@ -19,11 +19,13 @@ export function retrieveOrgs(userName) {
     if (getState().widgets.byId.github.orgs.ids.length > 0) {
       return null;
     }
-    return GITHUB_API.fetchData(request).then(response => response.data.orgs.orgs).then((orgs) => {
-      dispatch({
-        type: GET_ORGS,
-        responseObj: orgs,
+    return GITHUB_API.fetchData(request)
+      .then(response => response.data.orgs.orgs)
+      .then((orgs) => {
+        dispatch({
+          type: GET_ORGS,
+          responseObj: orgs,
+        });
       });
-    });
   };
 }

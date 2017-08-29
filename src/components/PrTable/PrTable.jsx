@@ -6,8 +6,8 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import PrTableRow from '../PrTableRow/PrTableRow';
 import { retrievePrs } from '../../actions/prActions';
-import './PrTable.css';
 import injectWidgetId from '../../utils/utils';
+import './PrTable.css';
 
 function prComponents(prs, repo) {
   if (prs && prs[repo]) {
@@ -72,11 +72,8 @@ export const mapStateToProps = (state, ownProps) => {
 };
 
 export const mapDispatchToProps = dispatch =>
-  bindActionCreators(
-    {
-      retrievePrs,
-    },
-    dispatch,
-  );
+  bindActionCreators({
+    retrievePrs,
+  }, dispatch);
 
 export default injectWidgetId(connect(mapStateToProps, mapDispatchToProps)(PrTable));

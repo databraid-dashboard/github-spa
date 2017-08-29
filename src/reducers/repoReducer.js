@@ -1,6 +1,4 @@
-import {
-  GET_REPOS,
-} from '../actions/repoActions';
+import { GET_REPOS } from '../actions/repoActions';
 
 function createState(json, incomingState, orgName) {
   const state = incomingState;
@@ -26,7 +24,6 @@ const repoReducer = (state = { ids: [], reposById: {}, orgName: '' }, action) =>
   switch (action.type) {
     case GET_REPOS:
       return createState(action.responseObj, state, action.orgName);
-
     default:
       return state;
   }

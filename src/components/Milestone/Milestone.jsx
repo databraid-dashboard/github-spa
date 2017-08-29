@@ -3,8 +3,8 @@ import { Card, List, Header } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import ProgressArc from '../ProgressArc/ProgressArc';
-import './Milestone.css';
 import injectWidgetId from '../../utils/utils';
+import './Milestone.css';
 
 export const Milestone = ({ title, due, percentComplete, milestoneId }) => {
   function convertDate(ISOdate) {
@@ -26,9 +26,7 @@ export const Milestone = ({ title, due, percentComplete, milestoneId }) => {
     }
     return (
       <div>
-        <Header sub className="space-milestones">
-          Date Due:
-        </Header>{' '}
+        <Header sub className="space-milestones">Date Due: </Header>
         {convertDate(date)}
       </div>
     );
@@ -43,9 +41,7 @@ export const Milestone = ({ title, due, percentComplete, milestoneId }) => {
               {title}
             </List.Header>
             {getDueDate(due)}
-            <Header sub className="space-milestones">
-              Percent Complete:
-            </Header>
+            <Header sub className="space-milestones">Percent Complete: </Header>
             <ProgressArc
               milestoneId={milestoneId}
               percentComplete={percentComplete}

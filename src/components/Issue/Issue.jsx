@@ -2,24 +2,24 @@ import React from 'react';
 import { Card, Item, List, Label, Header } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import './Issue.css';
 import injectWidgetId from '../../utils/utils';
+import './Issue.css';
 
 function getDescription(assignedTo) {
   if (assignedTo[0] !== 'Not assigned') {
     return (
       <div className="ui center aligned">
         <div>
-          <Header sub className="space-issues">
-            Assigned To:{' '}
-          </Header>
+          <Header sub className="space-issues">Assigned To: </Header>
           {assignedTo[0]}
         </div>
         <Item.Image size="mini" src={assignedTo[1]} />
       </div>
     );
   }
-  return <div />;
+  return (
+    <div />
+  );
 }
 
 export const Issue = ({ title, number, assignedTo, labels }) => {
@@ -61,7 +61,7 @@ export const mapStateToProps = (state, ownProps) => {
   const issueId = ownProps.issueId;
   const issue = state.widgets.byId[id].issues.issuesById[issueId];
   const { title, number, assignedTo, labels } = issue;
-  console.log(labels);
+
   return {
     title,
     number,

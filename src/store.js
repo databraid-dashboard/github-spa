@@ -1,15 +1,8 @@
 /* eslint-disable max-len, no-unused-vars */
-
 import { createStore, applyMiddleware, compose } from 'redux';
-// import thunk from 'redux-thunk';
 import thunkMiddleware from 'redux-thunk';
-
 import rootReducer from './reducers/index';
 import GITHUB_API from './utils/Api';
-
-// const logger = store => next => (action) => {
-//   next(action);
-// };
 
 const store = createStore(
   rootReducer,

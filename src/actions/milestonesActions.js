@@ -1,5 +1,3 @@
-// import milestoneMock from '../SampleJSONResponses/milestonesMock';
-
 export const GET_MILESTONES = 'GET_MILESTONES';
 export const LOADING_MILESTONES = 'LOADING_MILESTONES';
 

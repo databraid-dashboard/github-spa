@@ -7,8 +7,8 @@ import PropTypes from 'prop-types';
 import { renderLogin } from '../../actions/renderActions';
 import { retrieveOrgs } from '../../actions/orgActions';
 import Org from '../Org/Org';
-import './Organizations.css';
 import injectWidgetId from '../../utils/utils';
+import './Organizations.css';
 
 function orgComponents(orgIds) {
   return orgIds.map(id => <Org key={id} orgId={id} />);
@@ -65,12 +65,9 @@ export const mapStateToProps = (state, ownProps) => {
 };
 
 export const mapDispatchToProps = dispatch =>
-  bindActionCreators(
-    {
-      retrieveOrgs,
-      renderLogin,
-    },
-    dispatch,
-  );
+  bindActionCreators({
+    retrieveOrgs,
+    renderLogin,
+  }, dispatch);
 
 export default injectWidgetId(connect(mapStateToProps, mapDispatchToProps)(Organizations));

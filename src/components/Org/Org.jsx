@@ -5,8 +5,8 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { renderRepos } from '../../actions/renderActions';
-import './Org.css';
 import injectWidgetId from '../../utils/utils';
+import './Org.css';
 
 export const Org = ({ avatarUrl, orgName, renderRepos }) => (
   <Grid.Column>
@@ -16,10 +16,21 @@ export const Org = ({ avatarUrl, orgName, renderRepos }) => (
       src={avatarUrl}
       size="small"
     />
-    <List.Item as="a" className="hoverable" onClick={() => renderRepos(orgName)}>
+    <List.Item
+      as="a"
+      className="hoverable"
+      onClick={() => renderRepos(orgName)}
+    >
       {orgName}
     </List.Item>
-  </Grid.Column>);
+  </Grid.Column>
+);
+
+Org.propTypes = {
+  avatarUrl: PropTypes.string.isRequired,
+  orgName: PropTypes.string.isRequired,
+  renderRepos: PropTypes.func.isRequired,
+};
 
 export const mapStateToProps = (state, ownProps) => {
   const id = ownProps.widgetId;
@@ -34,17 +45,8 @@ export const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch =>
-  bindActionCreators(
-    {
-      renderRepos,
-    },
-    dispatch,
-  );
-
-Org.propTypes = {
-  avatarUrl: PropTypes.string.isRequired,
-  orgName: PropTypes.string.isRequired,
-  renderRepos: PropTypes.func.isRequired,
-};
+  bindActionCreators({
+    renderRepos,
+  }, dispatch);
 
 export default injectWidgetId(connect(mapStateToProps, mapDispatchToProps)(Org));

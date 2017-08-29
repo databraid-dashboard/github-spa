@@ -8,8 +8,8 @@ import { renderRepos } from '../../actions/renderActions';
 import Issues from '../Issues/Issues';
 import PrTable from '../PrTable/PrTable';
 import Milestones from '../Milestones/Milestones';
-import './Dashboard.css';
 import injectWidgetId from '../../utils/utils';
+import './Dashboard.css';
 
 export const Dashboard = ({ repoName, renderRepos, orgName }) =>
   (<div>

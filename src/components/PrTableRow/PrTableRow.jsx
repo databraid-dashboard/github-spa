@@ -2,8 +2,8 @@ import React from 'react';
 import { Card, List, Header } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import './PrTableRow.css';
 import injectWidgetId from '../../utils/utils';
+import './PrTableRow.css';
 
 const getMergeable = (able) => {
   if (able) {
@@ -21,7 +21,6 @@ const convertDate = (ISOdate) => {
     month: '2-digit',
     year: 'numeric',
   };
-
   const dateString = date.toLocaleDateString('en-US', formatOptions);
   return dateString;
 };

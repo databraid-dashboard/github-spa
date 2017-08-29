@@ -5,8 +5,8 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { renderDashboard } from '../../actions/renderActions';
-import './Repo.css';
 import injectWidgetId from '../../utils/utils';
+import './Repo.css';
 
 export const Repo = ({ repoName, renderDashboard }) =>
   (<List.Item as="a" className="hoverable" onClick={() => renderDashboard(repoName)}>
@@ -23,20 +23,17 @@ Repo.propTypes = {
 export const mapStateToProps = (state, ownProps) => {
   const id = ownProps.widgetId;
   const repoId = ownProps.repoId;
-
   const repo = state.widgets.byId[id].repos.reposById[repoId];
   const { repoName } = repo;
+
   return {
     repoName,
   };
 };
 
 const mapDispatchToProps = dispatch =>
-  bindActionCreators(
-    {
-      renderDashboard,
-    },
-    dispatch,
-  );
+  bindActionCreators({
+    renderDashboard,
+  }, dispatch);
 
 export default injectWidgetId(connect(mapStateToProps, mapDispatchToProps)(Repo));

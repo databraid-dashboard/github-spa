@@ -6,14 +6,13 @@ import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import Issue from '../Issue/Issue';
 import { retrieveIssues } from '../../actions/issueActions';
-import './Issues.css';
 import injectWidgetId from '../../utils/utils';
+import './Issues.css';
 
 function issueComponents(issues, repo) {
   if (issues && issues[repo]) {
     return issues[repo].map(id => <Issue key={id} issueId={id} />);
   }
-
   return '';
 }
 
@@ -69,11 +68,8 @@ export const mapStateToProps = (state, ownProps) => {
 };
 
 export const mapDispatchToProps = dispatch =>
-  bindActionCreators(
-    {
-      retrieveIssues,
-    },
-    dispatch,
-  );
+  bindActionCreators({
+    retrieveIssues,
+  }, dispatch);
 
 export default injectWidgetId(connect(mapStateToProps, mapDispatchToProps)(Issues));
