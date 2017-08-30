@@ -4,13 +4,11 @@ import { Container } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import renderIf from 'render-if';
-
 import RepoList from './components/RepoList/RepoList';
 import Login from './components/Login/Login';
 import Organizations from './components/Organizations/Organizations';
 import Dashboard from './components/Dashboard/Dashboard';
 import './App.css';
-// import injectWidgetId from './utils/utils';
 
 class App extends Component {
   getChildContext() {

@@ -7,7 +7,7 @@ export function retrieveOrgs(userName) {
         userName: "${userName}") {
           orgs {
             id
-            loginurl
+            login
             avatarUrl
           }
         }
