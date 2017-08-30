@@ -17,9 +17,7 @@ function getDescription(assignedTo) {
       </div>
     );
   }
-  return (
-    <div />
-  );
+  return <div />;
 }
 
 export const Issue = ({ title, number, assignedTo, labels }) => {

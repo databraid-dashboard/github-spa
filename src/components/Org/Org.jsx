@@ -16,15 +16,10 @@ export const Org = ({ avatarUrl, orgName, renderRepos }) => (
       src={avatarUrl}
       size="small"
     />
-    <List.Item
-      as="a"
-      className="hoverable"
-      onClick={() => renderRepos(orgName)}
-    >
+    <List.Item as="a" className="hoverable" onClick={() => renderRepos(orgName)}>
       {orgName}
     </List.Item>
-  </Grid.Column>
-);
+  </Grid.Column>);
 
 Org.propTypes = {
   avatarUrl: PropTypes.string.isRequired,
