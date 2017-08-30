@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import injectWidgetId from '../../utils/utils';
 import './PrTableRow.css';
-import injectWidgetId from '../../utils/utils';
 
 const getMergeable = (able) => {
   if (able) {

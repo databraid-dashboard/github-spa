@@ -8,7 +8,6 @@ import { retrieveMilestones } from '../../actions/milestonesActions';
 import Milestone from '../Milestone/Milestone';
 import injectWidgetId from '../../utils/utils';
 import './Milestones.css';
-import injectWidgetId from '../../utils/utils';
 
 function milestoneComponents(milestones, repo) {
   if (milestones && milestones[repo]) {
