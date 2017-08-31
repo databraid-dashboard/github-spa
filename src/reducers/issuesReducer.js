@@ -9,7 +9,7 @@ function createState(json, incomingState, repoName) {
     state.issuesById[issue.id].title = issue.title;
     state.issuesById[issue.id].number = issue.number;
     state.issuesById[issue.id].assignedTo = [issue.assignee, issue.assigneeAvatar];
-    // state.issuesById[issue.id].labels = issue.labels.map(label => label.name);
+    state.issuesById[issue.id].labels = issue.labels.map(label => label.name);
     if (state.issuesByRepo[repoName]) {
       state.issuesByRepo[repoName] = state.issuesByRepo[repoName].concat(issue.id);
     } else {
