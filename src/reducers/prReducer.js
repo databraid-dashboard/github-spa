@@ -1,7 +1,4 @@
-import {
-  GET_PRS,
-  LOADING_PRS,
-} from '../actions/prActions';
+import { GET_PRS, LOADING_PRS } from '../actions/prActions';
 
 function createState(json, incomingState, repoName) {
   const state = incomingState;

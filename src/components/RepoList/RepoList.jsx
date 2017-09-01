@@ -5,15 +5,14 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import { retrieveRepos } from '../../actions/repoActions';
-import { renderOrgs } from '../../actions/renderActions';
+import { fetchOrgs } from '../../actions/renderActions';
 import Repo from '../Repo/Repo';
+import injectWidgetId from '../../utils/utils';
 import './RepoList.css';
 
 function repoComponents(repos, org) {
   if (repos && repos[org]) {
-    return repos[org].map(id =>
-      <Repo key={id} repoId={id} />,
-    );
+    return repos[org].map(id => <Repo key={id} repoId={id} />);
   }
   return '';
 }
@@ -26,16 +25,14 @@ export class RepoList extends Component {
   render() {
     return (
       <div>
-        <Button icon onClick={() => this.props.renderOrgs(this.props.userName)}>
+        <Button icon onClick={() => this.props.fetchOrgs(this.props.userName)}>
           <Icon name="arrow left" />
         </Button>
         <Grid centered padded>
           <Grid.Column width={8}>
             <Header as="h2" icon textAlign="center">
               <Icon name="github" />
-              <Header.Content>
-                  Which repository are you interested in?
-              </Header.Content>
+              <Header.Content>Which repository are you interested in?</Header.Content>
             </Header>
             <List animated divided relaxed size="huge">
               {repoComponents(this.props.reposByOrg, this.props.orgName)}
@@ -49,7 +46,7 @@ export class RepoList extends Component {
 
 RepoList.propTypes = {
   retrieveRepos: PropTypes.func.isRequired,
-  renderOrgs: PropTypes.func.isRequired,
+  fetchOrgs: PropTypes.func.isRequired,
   userName: PropTypes.string.isRequired,
   orgName: PropTypes.string.isRequired,
   reposByOrg: PropTypes.objectOf(PropTypes.array),
@@ -59,20 +56,27 @@ RepoList.defaultProps = {
   reposByOrg: {},
 };
 
-export const mapStateToProps = state => ({
-  reposByOrg: state.repos.reposByOrg,
-  repoIds: state.repos.ids,
-  reposById: state.repos.reposById,
-  userName: state.currentPage.userName,
-  orgName: state.currentPage.selectedOrgName,
-});
+export const mapStateToProps = (state, ownProps) => {
+  const id = ownProps.widgetId;
+  const reposByOrg = state.widgets.byId[id].repos.reposByOrg;
+  const repoIds = state.widgets.byId[id].repos.ids;
+  const reposById = state.widgets.byId[id].repos.reposById;
+  const userName = state.widgets.byId[id].currentPage.userName;
+  const orgName = state.widgets.byId[id].currentPage.selectedOrgName;
+
+  return {
+    reposByOrg,
+    repoIds,
+    reposById,
+    userName,
+    orgName,
+  };
+};
 
 export const mapDispatchToProps = dispatch =>
   bindActionCreators({
-    retrieveRepos, renderOrgs,
+    retrieveRepos,
+    fetchOrgs,
   }, dispatch);
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(RepoList);
+export default injectWidgetId(connect(mapStateToProps, mapDispatchToProps)(RepoList));

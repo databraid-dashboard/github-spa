@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PrTable component should render a component with props as specified  1`] = `
+<Card>
+  <CardContent>
+    <CardHeader
+      className="ui center aligned"
+    >
+      Pull Requests
+    </CardHeader>
+  </CardContent>
+  <Connect(Component)
+    prId={246869449}
+  />
+</Card>
+`;

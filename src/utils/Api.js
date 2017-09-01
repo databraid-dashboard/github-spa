@@ -1,8 +1,6 @@
-const apiUrl = process.env.GITHUB_API_URL;
-
-export default class Api {
+export default class GITHUB_API {
   static fetchData(request) {
-    return fetch(`${apiUrl}/graphql`, {
+    return fetch('http://localhost:8000/graphql', {
       method: 'POST',
       headers: {
         Accept: 'application/json',

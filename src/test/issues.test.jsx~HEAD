@@ -3,19 +3,21 @@ import toJson from 'enzyme-to-json';
 import { shallow } from 'enzyme';
 import { Issues, mapStateToProps, mapDispatchToProps } from '../components/Issues/Issues';
 
+
 const state = {
   issues: {
+    ids: [246869449],
     issuesById: {
       246869449: {
         assignedTo: [],
         labels: [],
         repoIssueNumber: 36,
         title: 'disregard this PR',
+
       },
     },
   },
   loadingIssues: false,
-  currentPage: { selectedOrgName: 'ski-ski', userName: 'michaelmurray6298' },
 };
 
 describe('Issues component', () => {
@@ -26,7 +28,6 @@ describe('Issues component', () => {
         issuesIds={state.issues.ids}
         loadingIssues={false}
         retrieveIssues={retrieveIssues}
-        orgName={state.currentPage.selectedOrgName}
       />,
     );
     expect(toJson(component)).toMatchSnapshot();
@@ -43,12 +44,11 @@ describe('Issues component', () => {
   //   expect(retrieveIssues).toBeCalled();
   // });
 
-  it("map's given State To Props ", () => {
+  it('map\'s given State To Props ', () => {
     const expected = {
-      issuesByRepo: undefined,
+      issuesIds: [246869449],
+
       loadingIssues: false,
-      orgName: 'ski-ski',
-      userName: 'michaelmurray6298',
     };
     expect(mapStateToProps(state)).toEqual(expected);
   });
@@ -64,8 +64,6 @@ describe('Issues component', () => {
         issuesIds={state.issues.ids}
         loadingIssues={false}
         retrieveIssues={retrieveIssues}
-        orgName={state.currentPage.selectedOrgName}
-        userName={state.currentPage.userName}
       />,
     );
     expect(component.find('.aligned').exists()).toBe(true);
