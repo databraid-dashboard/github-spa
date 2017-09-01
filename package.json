@@ -4,9 +4,10 @@
   "private": true,
   "dependencies": {
     "d3": "4.10.0",
+    "eslint": "3.x",
     "prop-types": "15.5.10",
     "react": "15.6.1",
-    "react-cookies": "^0.1.0",
+    "react-cookies": "0.1.0",
     "react-dom": "15.6.1",
     "react-linechart": "1.1.9",
     "react-redux": "5.0.5",
@@ -19,7 +20,6 @@
   "devDependencies": {
     "enzyme": "2.9.1",
     "enzyme-to-json": "1.5.1",
-    "eslint": "4.3.0",
     "eslint-config-airbnb": "15.1.0",
     "eslint-plugin-import": "2.7.0",
     "eslint-plugin-jsx-a11y": "5.1.1",
@@ -34,7 +34,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "lint": "node_modules/eslint/bin/eslint.js --fix --ext=js --ext=jsx ."
+    "lint": "node_modules/eslint/bin/eslint.js --fix --ext=js --ext=jsx .",
+    "install-module": "npm install --prefix ./libs/widget-libs",
+    "build-module": "npm run build --prefix ./libs/widget-libs",
+    "create-module": "npm run install-module && npm run build-module"
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
   "main": "index.js",

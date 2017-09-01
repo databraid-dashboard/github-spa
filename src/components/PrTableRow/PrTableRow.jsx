@@ -22,7 +22,6 @@ const convertDate = (ISOdate) => {
   };
 
   const dateString = date.toLocaleDateString('en-US', formatOptions);
-
   return dateString;
 };
 

@@ -1,4 +1,4 @@
-const apiUrl = process.env.GITHUB_API_URL
+const apiUrl = process.env.GITHUB_API_URL;
 
 export default class Api {
   static fetchData(request) {

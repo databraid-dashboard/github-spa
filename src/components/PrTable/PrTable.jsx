@@ -8,7 +8,6 @@ import PrTableRow from '../PrTableRow/PrTableRow';
 import { retrievePrs } from '../../actions/prActions';
 import './PrTable.css';
 
-
 function prComponents(prs, repo) {
   if (prs && prs[repo]) {
     return prs[repo].map(id =>
@@ -57,7 +56,6 @@ PrTable.defaultProps = {
   userName: '',
   orgName: '',
   repoName: '',
-
 };
 
 export const mapStateToProps = state => ({
