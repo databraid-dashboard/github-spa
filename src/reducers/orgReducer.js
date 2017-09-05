@@ -1,6 +1,4 @@
-import {
-  GET_ORGS,
-} from '../actions/orgActions';
+import { GET_ORGS } from '../actions/orgActions';
 
 function createState(json, incomingState) {
   const state = incomingState;
@@ -18,7 +16,6 @@ const orgReducer = (state = { ids: [], orgsById: {} }, action) => {
   switch (action.type) {
     case GET_ORGS:
       return createState(action.responseObj, state);
-
     default:
       return state;
   }

@@ -8,11 +8,11 @@ import { renderRepos } from '../../actions/renderActions';
 import Issues from '../Issues/Issues';
 import PrTable from '../PrTable/PrTable';
 import Milestones from '../Milestones/Milestones';
+import injectWidgetId from '../../utils/utils';
 import './Dashboard.css';
 
-export const Dashboard = ({ repoName, renderRepos, orgName }) => (
-  <div>
-
+export const Dashboard = ({ repoName, renderRepos, orgName }) =>
+  (<div>
     <Button icon onClick={() => renderRepos(orgName)}>
       <Icon name="arrow left" />
     </Button>
@@ -37,8 +37,7 @@ export const Dashboard = ({ repoName, renderRepos, orgName }) => (
         </Grid.Row>
       </Grid>
     </Container>
-  </div>
-);
+  </div>);
 
 Dashboard.propTypes = {
   repoName: PropTypes.string,
@@ -51,16 +50,23 @@ Dashboard.defaultProps = {
   orgName: null,
 };
 
-const mapStateToProps = state => ({
-  repoName: state.currentPage.repoName,
-  orgName: state.currentPage.selectedOrgName,
-});
+export const mapStateToProps = (state, ownProps) => {
+  const id = ownProps.widgetId;
+  const repoName = state.widgets.byId[id].currentPage.repoName;
+  const orgName = state.widgets.byId[id].currentPage.selectedOrgName;
 
-export const mapDispatchToProps = dispatch => bindActionCreators({
-  renderRepos,
-}, dispatch);
+  return {
+    repoName,
+    orgName,
+  };
+};
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(Dashboard);
+export const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      renderRepos,
+    },
+    dispatch,
+  );
+
+export default injectWidgetId(connect(mapStateToProps, mapDispatchToProps)(Dashboard));

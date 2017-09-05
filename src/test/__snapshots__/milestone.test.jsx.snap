@@ -18,18 +18,17 @@ exports[`Milestone entry component should render a component with props as speci
             className="space-milestones"
             sub={true}
           >
-            Date Due:
+            Date Due: 
           </Header>
-           
           06/23/2018
         </div>
         <Header
           className="space-milestones"
           sub={true}
         >
-          Percent Complete:
+          Percent Complete: 
         </Header>
-        <Connect(ProgressArc)
+        <Wrapper
           duration={2000}
           milestoneId={2601714}
           percentComplete={0.4}
