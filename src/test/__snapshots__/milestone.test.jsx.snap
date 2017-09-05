@@ -18,16 +18,15 @@ exports[`Milestone entry component should render a component with props as speci
             className="space-milestones"
             sub={true}
           >
-            Date Due:
+            Date Due: 
           </Header>
-           
           06/23/2018
         </div>
         <Header
           className="space-milestones"
           sub={true}
         >
-          Percent Complete:
+          Percent Complete: 
         </Header>
         <Wrapper
           duration={2000}

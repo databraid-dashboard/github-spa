@@ -1,28 +1,27 @@
-/* eslint-disable no-unused-var */
-
 import React from 'react';
 import toJson from 'enzyme-to-json';
 import { shallow } from 'enzyme';
 
-import {
-  Organizations,
-  mapStateToProps,
-  mapDispatchToProps,
-} from '../components/Organizations/Organizations';
+import { Organizations, mapStateToProps, mapDispatchToProps } from '../components/Organizations/Organizations';
 
 const state = {
-  orgs: {
-    ids: [246869449],
-    orgsById: {
-      246869449: {
-        avatarUrl: 'https://avatars1.githubusercontent.com/u/29614654?v=4',
-        orgName: 'ShareCastG52',
-        reposUrl: 'https://api.github.com/orgs/ShareCastG52/repos',
+  widgets: {
+    byId: {
+      github: {
+        orgs: {
+          ids: [246869449],
+          orgsById: {
+            246869449: {
+              avatarUrl: 'https://avatars1.githubusercontent.com/u/29614654?v=4',
+              orgName: 'ShareCastG52',
+              reposUrl: 'https://api.github.com/orgs/ShareCastG52/repos',
+            },
+          },
+        },
+        currentPage: { render: 'orgs', repoName: null, userName: 'michaelmurray6298' },
       },
     },
-    currentPage: { render: 'orgs', repoName: null },
   },
-  currentPage: { render: 'orgs', repoName: null, userName: 'michaelmurray6298' },
 };
 
 describe('Organizations component', () => {
@@ -31,12 +30,12 @@ describe('Organizations component', () => {
     const renderLogin = jest.fn();
     const component = shallow(
       <Organizations
-        orgIds={state.orgs.ids}
+        orgIds={state.widgets.byId.github.orgs.ids}
         loadingOrganizations={false}
-        currentPage={state.currentPage.render}
+        currentPage={state.widgets.byId.github.currentPage.render}
         retrieveOrgs={retrieveOrgs}
         renderLogin={renderLogin}
-        userName={state.currentPage.userName}
+        userName={state.widgets.byId.github.currentPage.userName}
       />,
     );
     expect(toJson(component)).toMatchSnapshot();
@@ -52,7 +51,7 @@ describe('Organizations component', () => {
   //   expect(retrieveOrgs).toBeCalled();
   // });
 
-  it("map's given State To Props ", () => {
+  it('map\'s given State To Props ', () => {
     const expected = {
       orgIds: [246869449],
       orgsById: {
@@ -64,7 +63,7 @@ describe('Organizations component', () => {
       },
       userName: 'michaelmurray6298',
     };
-    expect(mapStateToProps(state)).toEqual(expected);
+    expect(mapStateToProps(state, { widgetId: 'github' })).toEqual(expected);
   });
 
   it('maps component dispatches to props', () => {
