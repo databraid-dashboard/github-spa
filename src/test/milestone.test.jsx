@@ -7,7 +7,7 @@ const ownProps = { widgetId: 1 };
 const state = {
   widgets: {
     byId: {
-      1: {
+      github: {
         milestones: {
           ids: [2601714],
           milestonesById: {
@@ -47,7 +47,11 @@ describe('Milestone entry component', () => {
       percentComplete: 0.4,
       milestoneId: 2601714,
     };
+<<<<<<< HEAD
     expect(mapStateToProps(state, ownProps, { milestoneId: 2601714 })).toEqual(expected);
+=======
+    expect(mapStateToProps(state, { milestoneId: 2601714, widgetId: 'github' })).toEqual(expected);
+>>>>>>> 532ab40cc3e5b65def852c5c061f5e470a588001
   });
 
   it('Should have a List Content aligned in the center', () => {

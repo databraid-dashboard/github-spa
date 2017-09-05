@@ -22,7 +22,11 @@ const ownProps = { widgetId: 1 };
 const state = {
   widgets: {
     byId: {
+<<<<<<< HEAD
       1: {
+=======
+      github: {
+>>>>>>> 532ab40cc3e5b65def852c5c061f5e470a588001
         orgs: {
           ids: [238923429],
           orgsById: {
@@ -51,11 +55,20 @@ describe('Org entry component', () => {
     );
     expect(toJson(component)).toMatchSnapshot();
   });
+<<<<<<< HEAD
   it("map's given State To Props ", () => {
+=======
+
+  it('map\'s given State To Props ', () => {
+>>>>>>> 532ab40cc3e5b65def852c5c061f5e470a588001
     const expected = {
       avatarUrl: 'https://avatars1.githubusercontent.com/u/29614654?v=4',
       orgName: 'ShareCastG52',
     };
+<<<<<<< HEAD
     expect(mapStateToProps(state, ownProps, { orgId: 238923429 })).toEqual(expected);
+=======
+    expect(mapStateToProps(state, { orgId: 238923429, widgetId: 'github' })).toEqual(expected);
+>>>>>>> 532ab40cc3e5b65def852c5c061f5e470a588001
   });
 });
