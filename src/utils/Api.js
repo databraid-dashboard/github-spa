@@ -1,6 +1,6 @@
 export default class GITHUB_API {
   static fetchData(request) {
-    return fetch('http://localhost:8000/graphql', {
+    return fetch(`${process.env.REACT_APP_GRAPHQL_URL}`, {
       method: 'POST',
       headers: {
         Accept: 'application/json',

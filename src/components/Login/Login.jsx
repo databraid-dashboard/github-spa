@@ -17,6 +17,7 @@ export class Login extends Component {
     }
   }
   render() {
+    const GITHUB_OAUTH_URL = process.env.REACT_APP_GITHUB_OAUTH_URL;
     return (
       <Grid verticalAlign={'middle'}>
         <Grid.Row centered verticalAlign={'middle'}>
@@ -25,7 +26,7 @@ export class Login extends Component {
               <Card.Content>
                 <Button
                   as="a"
-                  href="http://localhost:8000/auth/github/"
+                  href={`${GITHUB_OAUTH_URL}`}
                   className="butterButton"
                   size="massive"
                   content="Login with Github"
