@@ -1,6 +1,6 @@
 {
   "name": "@databraid/github-widget",
-  "version": "1.0.14",
+  "version": "1.0.16",
   "description": "",
   "main": "index.js",
   "files": [
@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "NODE_ENV=development babel --presets react-app -D -d lib ../../src/"
+    "build": "NODE_ENV=development babel --presets es2015,react-app -D -d lib ../../src/"
   },
   "author": "",
   "license": "ISC",
