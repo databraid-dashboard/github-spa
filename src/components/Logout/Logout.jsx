@@ -1,7 +1,5 @@
 import React from 'react';
 import { Grid, Card, Button } from 'semantic-ui-react';
-import { connect } from 'react-redux';
-import injectWidgetId from '../../utils/utils';
 import './Logout.css';
 
 export const Logout = () => {
@@ -28,15 +26,4 @@ export const Logout = () => {
   );
 };
 
-export const mapStateToProps = (state, ownProps) => {
-  const id = ownProps.widgetId;
-  const currentPage = state.widgets.byId[id].currentPage.render;
-  const userName = state.widgets.byId[id].currentPage.userName;
-
-  return {
-    currentPage,
-    userName,
-  };
-};
-
-export default injectWidgetId(connect(mapStateToProps, null)(Logout));
+export default Logout;
