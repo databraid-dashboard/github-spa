@@ -19,7 +19,6 @@ export const Logout = () => {
               icon="hand peace"
             />
           </Card.Content>
-
         </Grid.Column>
       </Grid.Row>
     </Grid>
