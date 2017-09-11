@@ -20,7 +20,6 @@ exports[`Milestone entry component should render a component with props as speci
           >
             Date Due:
           </Header>
-           
           06/23/2018
         </div>
         <Header
@@ -29,7 +28,7 @@ exports[`Milestone entry component should render a component with props as speci
         >
           Percent Complete:
         </Header>
-        <Connect(ProgressArc)
+        <Wrapper
           duration={2000}
           milestoneId={2601714}
           percentComplete={0.4}

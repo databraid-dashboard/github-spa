@@ -1,0 +1,44 @@
+{
+  "name": "@databraid/github-widget",
+  "version": "1.0.16",
+  "description": "",
+  "main": "index.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "NODE_ENV=development babel --presets es2015,react-app -D -d lib ../../src/"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "d3": "4.10.0",
+    "prop-types": "15.5.10",
+    "react": "15.6.1",
+    "react-cookies": "0.1.0",
+    "react-dom": "15.6.1",
+    "react-linechart": "1.1.9",
+    "react-redux": "5.0.5",
+    "redux": "3.7.2",
+    "redux-promise-middleware": "4.3.0",
+    "redux-thunk": "2.2.0",
+    "render-if": "0.1.1",
+    "semantic-ui-react": "0.71.3"
+  },
+  "devDependencies": {
+    "babel-cli": "6.24.1",
+    "babel-eslint": "6.1.2",
+    "enzyme": "2.9.1",
+    "enzyme-to-json": "1.5.1",
+    "eslint": "4.3.0",
+    "eslint-config-airbnb": "15.1.0",
+    "eslint-plugin-import": "2.7.0",
+    "eslint-plugin-jsx-a11y": "5.1.1",
+    "eslint-plugin-react": "7.1.0",
+    "react-router-dom": "4.1.2",
+    "react-scripts": "1.0.10",
+    "react-test-renderer": "15.6.1",
+    "redux-mock-store": "1.2.3"
+  }
+}

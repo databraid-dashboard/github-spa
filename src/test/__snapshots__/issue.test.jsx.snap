@@ -60,10 +60,10 @@ exports[`Issue entry component should render a component with props as specified
                 Assigned To: 
               </Header>
               Gwillison415
-              https://avatars2.githubusercontent.com/u/22106099?v=4
             </div>
             <ItemImage
               size="mini"
+              src="https://avatars2.githubusercontent.com/u/22106099?v=4"
             />
           </div>
         </ListDescription>

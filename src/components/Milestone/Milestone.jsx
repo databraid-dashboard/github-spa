@@ -3,6 +3,7 @@ import { Card, List, Header } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import ProgressArc from '../ProgressArc/ProgressArc';
+import injectWidgetId from '../../utils/utils';
 import './Milestone.css';
 
 export const Milestone = ({ title, due, percentComplete, milestoneId }) => {
@@ -25,9 +26,8 @@ export const Milestone = ({ title, due, percentComplete, milestoneId }) => {
     }
     return (
       <div>
-        <Header sub className="space-milestones">
-        Date Due:
-        </Header> {convertDate(date)}
+        <Header sub className="space-milestones">Date Due: </Header>
+        {convertDate(date)}
       </div>
     );
   }
@@ -37,9 +37,11 @@ export const Milestone = ({ title, due, percentComplete, milestoneId }) => {
       <List divided relaxed>
         <List.Item>
           <List.Content className="ui center aligned">
-            <List.Header>{title}</List.Header>
+            <List.Header>
+              {title}
+            </List.Header>
             {getDueDate(due)}
-            <Header sub className="space-milestones">Percent Complete:</Header>
+            <Header sub className="space-milestones">Percent Complete: </Header>
             <ProgressArc
               milestoneId={milestoneId}
               percentComplete={percentComplete}
@@ -52,9 +54,12 @@ export const Milestone = ({ title, due, percentComplete, milestoneId }) => {
   );
 };
 
-export const mapStateToProps = (state, { milestoneId }) => {
-  const milestone = state.milestones.milestonesById[milestoneId];
+export const mapStateToProps = (state, ownProps) => {
+  const id = ownProps.widgetId;
+  const milestoneId = ownProps.milestoneId;
+  const milestone = state.widgets.byId[id].milestones.milestonesById[milestoneId];
   const { title, due, percentComplete } = milestone;
+
   return {
     title,
     due,
@@ -77,6 +82,4 @@ Milestone.defaultProps = {
   percentComplete: 0,
 };
 
-export default connect(
-  mapStateToProps,
-)(Milestone);
+export default injectWidgetId(connect(mapStateToProps)(Milestone));

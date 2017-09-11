@@ -4,20 +4,26 @@ import { shallow } from 'enzyme';
 import { Milestone, mapStateToProps } from '../components/Milestone/Milestone';
 
 const state = {
-  milestones: {
-    ids: [2601714],
-    milestonesById: {
-      2601714: {
-        created: '2017-06-23T22:45:34Z',
-        labels: ['sprint 1'],
-        repoIssueNumber: 36,
-        title: 'building paths and auth',
-        due: '2018-06-23T22:45:34Z',
-        percentComplete: 0.4,
+  widgets: {
+    byId: {
+      github: {
+        milestones: {
+          ids: [2601714],
+          milestonesById: {
+            2601714: {
+              created: '2017-06-23T22:45:34Z',
+              labels: ['sprint 1'],
+              repoIssueNumber: 36,
+              title: 'building paths and auth',
+              due: '2018-06-23T22:45:34Z',
+              percentComplete: 0.4,
+            },
+          },
+        },
+        loadingMilestones: false,
       },
     },
   },
-  loadingMilestones: false,
 };
 
 describe('Milestone entry component', () => {
@@ -40,7 +46,7 @@ describe('Milestone entry component', () => {
       percentComplete: 0.4,
       milestoneId: 2601714,
     };
-    expect(mapStateToProps(state, { milestoneId: 2601714 })).toEqual(expected);
+    expect(mapStateToProps(state, { milestoneId: 2601714, widgetId: 'github' })).toEqual(expected);
   });
 
   it('Should have a List Content aligned in the center', () => {

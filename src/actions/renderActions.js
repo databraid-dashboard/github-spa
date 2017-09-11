@@ -3,10 +3,9 @@ export const RENDER_LOGIN = 'RENDER_LOGIN';
 export const RENDER_REPOS = 'RENDER_REPOS';
 export const RENDER_DASHBOARD = 'RENDER_DASHBOARD';
 
-export const renderOrgs = userName => (dispatch) => {
+export const fetchOrgs = userName => (dispatch) => {
   dispatch({
     type: RENDER_ORGS,
-    responseStr: 'orgs',
     userName,
   });
 };
@@ -14,14 +13,12 @@ export const renderOrgs = userName => (dispatch) => {
 export const renderLogin = () => (dispatch) => {
   dispatch({
     type: RENDER_LOGIN,
-    responseStr: 'login',
   });
 };
 
 export const renderRepos = selectedOrgName => (dispatch) => {
   dispatch({
     type: RENDER_REPOS,
-    responseStr: 'repos',
     selectedOrgName,
   });
 };
@@ -29,7 +26,6 @@ export const renderRepos = selectedOrgName => (dispatch) => {
 export const renderDashboard = repoName => (dispatch) => {
   dispatch({
     type: RENDER_DASHBOARD,
-    reponseStr: 'dashboard',
     repoName,
   });
 };

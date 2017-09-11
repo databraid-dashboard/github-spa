@@ -4,23 +4,28 @@ import { shallow } from 'enzyme';
 import { Milestones, mapStateToProps, mapDispatchToProps } from '../components/Milestones/Milestones';
 
 const state = {
-  milestones: {
-    ids: [2601714],
-  },
-  milestonesById: {
-    2601714: {
-      created: '2017-06-23T22:45:34Z',
-      labels: [],
-      repoIssueNumber: 36,
-      title: 'disregard this PR',
-
+  widgets: {
+    byId: {
+      github: {
+        milestones: {
+          ids: [2601714],
+        },
+        milestonesById: {
+          2601714: {
+            created: '2017-06-23T22:45:34Z',
+            labels: [],
+            repoIssueNumber: 36,
+            title: 'disregard this PR',
+          },
+        },
+        loadingMilestones: false,
+        currentPage: { userName: 'michaelmurray6298' },
+      },
     },
   },
-  loadingMilestones: false,
-  currentPage: { userName: 'michaelmurray6298' },
 };
 
-xdescribe('Milestones component', () => {
+describe('Milestones component', () => {
   it('should render a component with props as specified ', () => {
     const retrieveMilestones = jest.fn();
     const component = shallow(
@@ -40,20 +45,25 @@ xdescribe('Milestones component', () => {
       milestonesById: undefined,
       milestonesByRepo: undefined,
     };
-    expect(mapStateToProps(state)).toEqual(expected);
+    expect(mapStateToProps(state, { widgetId: 'github' })).toEqual(expected);
   });
 
   it('maps component dispatches to props', () => {
     const dispatch = jest.fn();
     expect(mapDispatchToProps(dispatch)).toHaveProperty('retrieveMilestones');
   });
+
   it('Should have a Cart Header in the center', () => {
     const retrieveMilestones = jest.fn();
     const component = shallow(
       <Milestones
         loadingMilestones={false}
         retrieveMilestones={retrieveMilestones}
+<<<<<<< HEAD
         userName={state.currentPage.userName}
+=======
+        userName={state.widgets.byId.github.currentPage.userName}
+>>>>>>> ed7d184e06bb3815422397f25fccc9a2c69c5902
       />,
     );
     expect(component.find('.aligned').exists()).toBe(true);

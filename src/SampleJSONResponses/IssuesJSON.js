@@ -689,5 +689,8 @@ export const issuesMock = [
     body: "i think that we're asking our users route do 'to do too much'\r\ni could be wrong but basically i'm building the auth into users and set-cookie there and that means either we tweak users route to also have get methods or we build a token route as well... hmmmmm",
   },
 ];
+// function findAssignee(data) {
+//   return data.map(issue => issue.assignees.forEach(assignee => assignee));
+// }
 
 export default issuesMock;

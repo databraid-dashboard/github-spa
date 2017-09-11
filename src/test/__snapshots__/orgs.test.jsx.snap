@@ -31,7 +31,7 @@ exports[`Organizations component should render a component with props as specifi
       </HeaderContent>
     </Header>
     <GridRow>
-      <Connect(Component)
+      <Wrapper
         orgId={246869449}
       />
     </GridRow>
