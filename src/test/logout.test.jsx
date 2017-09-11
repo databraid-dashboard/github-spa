@@ -4,12 +4,6 @@ import { shallow } from 'enzyme';
 import { Logout } from '../components/Logout/Logout';
 
 
-// function findLogoutURL() {
-//   if (NODE_ENV === 'development') {
-//     return process.env.development.REACT_APP_GITHUB_OAUTH_LOGOUT;
-//   }
-//   return process.env.production.REACT_APP_GITHUB_OAUTH_LOGOUT;
-// }
 describe('Logout Component', () => {
   const logoutComponent = shallow(<Logout />);
   it('renders a button component as specified', () => {

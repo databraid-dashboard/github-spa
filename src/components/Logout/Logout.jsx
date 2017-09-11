@@ -3,7 +3,7 @@ import { Grid, Card, Button } from 'semantic-ui-react';
 import './Logout.css';
 
 export const Logout = () => {
-  const GITHUB_OAUTH_LOGOUT = process.env.REACT_APP_GITHUB_OAUTH_LOGOUT;
+  const GITHUB_OAUTH_LOGOUT = `${process.env.REACT_APP_GITHUB_WIDGET_API}logout/`;
   return (
     <Grid verticalAlign={'top'} >
       <Grid.Row >

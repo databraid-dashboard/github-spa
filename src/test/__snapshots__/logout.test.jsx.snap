@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Logout Component renders a button component as specified 1`] = `
+<Grid
+  verticalAlign="top"
+>
+  <GridRow>
+    <GridColumn
+      verticalAlign="middle"
+    >
+      <CardContent>
+        <Button
+          as="a"
+          className="hand peace icon"
+          content="Logout"
+          href="undefinedlogout/"
+          icon="hand peace"
+          size="medium"
+        />
+      </CardContent>
+    </GridColumn>
+  </GridRow>
+</Grid>
+`;
