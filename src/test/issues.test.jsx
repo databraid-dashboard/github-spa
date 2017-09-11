@@ -41,7 +41,7 @@ describe('Issues component', () => {
     expect(toJson(component)).toMatchSnapshot();
   });
 
-  it('map\'s given State To Props ', () => {
+  it("map's given State To Props ", () => {
     const expected = {
       issuesByRepo: undefined,
       loadingIssues: false,

@@ -39,13 +39,14 @@ describe('Milestone entry component', () => {
     expect(toJson(component)).toMatchSnapshot();
   });
 
-  it('map\'s given State To Props ', () => {
+  it("map's given State To Props ", () => {
     const expected = {
       title: 'building paths and auth',
       due: '2018-06-23T22:45:34Z',
       percentComplete: 0.4,
       milestoneId: 2601714,
     };
+
     expect(mapStateToProps(state, { milestoneId: 2601714, widgetId: 'github' })).toEqual(expected);
   });
 
