@@ -1,6 +1,0 @@
-- service: github-spa
-  command: npm run lint
-- service: github-spa
-  command: npm run test
-- service: github-spa
-  command: npm run create-module
