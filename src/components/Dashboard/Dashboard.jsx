@@ -12,8 +12,10 @@ import Milestones from '../Milestones/Milestones';
 import injectWidgetId from '../../utils/utils';
 import './Dashboard.css';
 
-export const Dashboard = ({ repoName, renderRepos, orgName }) =>
-  (<div>
+export const Dashboard = ({ repoName, renderRepos, orgName }) =>{
+console.log(repoName, 'repoName');
+  (
+    <div>
     <Button icon onClick={() => renderRepos(orgName)}>
       <Icon name="arrow left" />
     </Button>
@@ -40,7 +42,7 @@ export const Dashboard = ({ repoName, renderRepos, orgName }) =>
         </Grid.Row>
       </Grid>
     </Container>
-  </div>);
+  </div>);}
 
 Dashboard.propTypes = {
   repoName: PropTypes.string,
