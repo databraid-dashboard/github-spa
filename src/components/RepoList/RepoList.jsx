@@ -31,15 +31,17 @@ export class RepoList extends Component {
         </Button>
         <Logout />
         <Grid centered padded>
-          <Grid.Column width={8}>
+          <Grid.Row width={16}>
             <Header as="h2" icon textAlign="center">
               <Icon name="github" />
               <Header.Content>Which repository are you interested in?</Header.Content>
             </Header>
-            <List animated divided relaxed size="huge">
+          </Grid.Row>
+          <Grid.Row width={16}>
+            <List id="repo-list" animated divided horizontal selection size="huge">
               {repoComponents(this.props.reposByOrg, this.props.orgName)}
             </List>
-          </Grid.Column>
+          </Grid.Row>
         </Grid>
       </div>
     );
