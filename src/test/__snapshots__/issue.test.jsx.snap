@@ -11,18 +11,9 @@ exports[`Issue entry component should render a component with props as specified
         <ListHeader>
           #
           16
-
+           
           login tst JWT token
         </ListHeader>
-    <ListHeader>
-      #
-      16
-
-      login tst JWT token
-    </ListHeader>
-    <div>
-      <LabelGroup>
-=======
         <div
           className="space-labels"
         >
@@ -42,12 +33,7 @@ exports[`Issue entry component should render a component with props as specified
             color="grey"
             ribbon="right"
           >
-          <Label>
             help wanted
-
-=======
-            help wanted
->>>>>>> a2a7bb28f4130366619c54bb8b6f148641e7307c
           </Label>
         </div>
         <div
@@ -58,16 +44,11 @@ exports[`Issue entry component should render a component with props as specified
             color="grey"
             ribbon="right"
           >
-          <Label>
             question
-
-=======
-            question
->>>>>>> a2a7bb28f4130366619c54bb8b6f148641e7307c
           </Label>
         </div>
         <ListDescription>
-
+           
           <div
             className="ui center aligned"
           >
@@ -76,19 +57,13 @@ exports[`Issue entry component should render a component with props as specified
                 className="space-issues"
                 sub={true}
               >
-                Assigned To:
+                Assigned To: 
               </Header>
               Gwillison415
-              https://avatars2.githubusercontent.com/u/22106099?v=4
-            </div>
-            <ItemImage
-              size="mini"
-=======
             </div>
             <ItemImage
               size="mini"
               src="https://avatars2.githubusercontent.com/u/22106099?v=4"
->>>>>>> a2a7bb28f4130366619c54bb8b6f148641e7307c
             />
           </div>
         </ListDescription>

@@ -8,23 +8,6 @@ import thunkMiddleware from 'redux-thunk';
 import { Provider } from 'react-redux';
 import GITHUB_API from './utils/Api';
 import App from './App.jsx';
-import configureStore from 'redux-mock-store';
-import thunk from 'redux-thunk';
-import Api from './utils/Api';
-import thunkMiddleware from 'redux-thunk';
-import { Provider } from 'react-redux';
-import rootReducer from './reducers/index';
-
-const middleware = [
-  promiseMiddleware(),
-  thunkMiddleware.withExtraArgument({ Api}),
-  thunk,
-];
-const mockStore = configureStore(middleware);
-describe('App component', () => {
-  it('should render a component with props as specified ', () => {
-    const component = shallow(
-      <Provider>
 
 const middleware = [promiseMiddleware(), thunkMiddleware.withExtraArgument({ GITHUB_API })];
 const mockStore = configureStore(middleware);

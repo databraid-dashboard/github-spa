@@ -28,16 +28,14 @@
     "react-router-dom": "4.1.2",
     "react-scripts": "1.0.10",
     "react-test-renderer": "15.6.1",
-    "redux-mock-store": "1.2.3",
-
+    "redux-mock-store": "1.2.3"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "lint": "node_modules/eslint/bin/eslint.js --fix --ext=js --ext=jsx .",
-
+    "lint": "node_modules/eslint/bin/eslint.js --fix --ext=js --ext=jsx ."
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
   "main": "index.js",

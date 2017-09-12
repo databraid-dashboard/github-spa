@@ -27,10 +27,7 @@ const state = {
   // currentPage: { selectedOrgName: 'ski-ski', userName: 'michaelmurray6298' },
 };
 
-xdescribe('Issues component', () => {
-=======
 describe('Issues component', () => {
->>>>>>> a2a7bb28f4130366619c54bb8b6f148641e7307c
   it('should render a component with props as specified ', () => {
     const retrieveIssues = jest.fn();
     const component = shallow(

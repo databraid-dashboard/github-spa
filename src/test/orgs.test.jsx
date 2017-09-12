@@ -25,17 +25,10 @@ const state = {
         currentPage: { render: 'orgs', repoName: null, userName: 'michaelmurray6298' },
       },
     },
-
-  },
-  currentPage: { render: 'orgs', repoName: null },
-};
-
-describe('Organizations component', () => {
     currentPage: { render: 'orgs', repoName: null },
   },
 };
 
-xdescribe('Organizations component', () => {
 describe('Organizations component', () => {
   it('should render a component with props as specified ', () => {
     const retrieveOrgs = jest.fn();
