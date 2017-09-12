@@ -6,25 +6,14 @@ exports[`Issue entry component should render a component with props as specified
     divided={true}
     relaxed={true}
   >
-<<<<<<< HEAD
     <ListItem>
       <ListContent>
         <ListHeader>
           #
           16
-           
+
           login tst JWT token
         </ListHeader>
-        <div
-          className="space-labels"
-        >
-          <Label
-            className="ui mini label"
-            color="grey"
-            ribbon="right"
-          >
-            duplicate
-=======
     <ListHeader>
       #
       16
@@ -33,51 +22,52 @@ exports[`Issue entry component should render a component with props as specified
     </ListHeader>
     <div>
       <LabelGroup>
+=======
         <div
           className="space-labels"
         >
-          <Label>
+          <Label
+            className="ui mini label"
+            color="grey"
+            ribbon="right"
+          >
             duplicate
-
->>>>>>> 5922d6860302d4613325259663003e370624d94f
           </Label>
         </div>
         <div
           className="space-labels"
         >
-<<<<<<< HEAD
           <Label
             className="ui mini label"
             color="grey"
             ribbon="right"
           >
-            help wanted
-=======
           <Label>
             help wanted
 
->>>>>>> 5922d6860302d4613325259663003e370624d94f
+=======
+            help wanted
+>>>>>>> a2a7bb28f4130366619c54bb8b6f148641e7307c
           </Label>
         </div>
         <div
           className="space-labels"
         >
-<<<<<<< HEAD
           <Label
             className="ui mini label"
             color="grey"
             ribbon="right"
           >
-            question
-=======
           <Label>
             question
 
->>>>>>> 5922d6860302d4613325259663003e370624d94f
+=======
+            question
+>>>>>>> a2a7bb28f4130366619c54bb8b6f148641e7307c
           </Label>
         </div>
         <ListDescription>
-           
+
           <div
             className="ui center aligned"
           >
@@ -86,20 +76,19 @@ exports[`Issue entry component should render a component with props as specified
                 className="space-issues"
                 sub={true}
               >
-                Assigned To: 
+                Assigned To:
               </Header>
               Gwillison415
-<<<<<<< HEAD
-            </div>
-            <ItemImage
-              size="mini"
-              src="https://avatars2.githubusercontent.com/u/22106099?v=4"
-=======
               https://avatars2.githubusercontent.com/u/22106099?v=4
             </div>
             <ItemImage
               size="mini"
->>>>>>> 5922d6860302d4613325259663003e370624d94f
+=======
+            </div>
+            <ItemImage
+              size="mini"
+              src="https://avatars2.githubusercontent.com/u/22106099?v=4"
+>>>>>>> a2a7bb28f4130366619c54bb8b6f148641e7307c
             />
           </div>
         </ListDescription>

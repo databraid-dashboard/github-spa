@@ -13,17 +13,10 @@ exports[`Milestone entry component should render a component with props as speci
         <ListHeader>
           sprint 1
         </ListHeader>
-        <Header
-          className="space-milestones"
-          sub={true}
-        >
-          Date Created:
-        </Header>
-<<<<<<< HEAD
-=======
 
->>>>>>> 5922d6860302d4613325259663003e370624d94f
         06/23/2017
+=======
+>>>>>>> a2a7bb28f4130366619c54bb8b6f148641e7307c
         <div>
           <Header
             className="space-milestones"
@@ -31,11 +24,9 @@ exports[`Milestone entry component should render a component with props as speci
           >
             Date Due:
           </Header>
-<<<<<<< HEAD
-           
-=======
 
->>>>>>> 5922d6860302d4613325259663003e370624d94f
+=======
+>>>>>>> a2a7bb28f4130366619c54bb8b6f148641e7307c
           06/23/2018
         </div>
         <Header
@@ -44,7 +35,7 @@ exports[`Milestone entry component should render a component with props as speci
         >
           Percent Complete:
         </Header>
-        <Connect(ProgressArc)
+        <Wrapper
           duration={2000}
           milestoneId={2601714}
           percentComplete={0.4}

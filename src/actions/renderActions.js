@@ -7,17 +7,10 @@ export const RENDER_ORGS_PENDING = 'RENDER_ORGS_PENDING';
 export const RENDER_ORGS_REJECTED = 'RENDER_ORGS_REJECTED';
 export const RENDER_DASHBOARD = 'RENDER_DASHBOARD';
 
-export const renderOrgs = () => (dispatch) => {
+export const fetchOrgs = userName => (dispatch) => {
   dispatch({
     type: RENDER_ORGS,
-    responseStr: 'orgs',
-    payload: fetch(AUTH_ROUTE)
-      .then(response => console.log('first response', response) )
-      // .then(response => {
-      //   console.log('here!!!!!!');
-      //   console.log(response);
-      //   dispatch({type: RENDER_ORGS_FULLFILLED, payload: response.session})
-      // })
+    userName,
   });
 };
 
@@ -36,14 +29,12 @@ export const renderOrgs = () => (dispatch) => {
 export const renderLogin = () => (dispatch) => {
   dispatch({
     type: RENDER_LOGIN,
-    responseStr: 'login',
   });
 };
 
 export const renderRepos = selectedOrgName => (dispatch) => {
   dispatch({
     type: RENDER_REPOS,
-    responseStr: 'repos',
     selectedOrgName,
   });
 };
@@ -51,7 +42,6 @@ export const renderRepos = selectedOrgName => (dispatch) => {
 export const renderDashboard = repoName => (dispatch) => {
   dispatch({
     type: RENDER_DASHBOARD,
-    reponseStr: 'dashboard',
     repoName,
   });
 };
