@@ -25,7 +25,9 @@ const state = {
 
 describe('Issue entry component', () => {
   it('should render a component with props as specified ', () => {
+    const getDescription = jest.fn();
     const component = shallow(
+
       <Issue
         id={ownProps.widgetId}
         labels={state.widgets.byId.github.issues.issuesById[238923429].labels}
@@ -33,6 +35,7 @@ describe('Issue entry component', () => {
         assignedTo={state.widgets.byId.github.issues.issuesById[238923429].assignedTo[0]}
         number={16}
         title={'login tst JWT token'}
+        getDescription={() => { getDescription(); }}
       />,
     );
     expect(toJson(component)).toMatchSnapshot();

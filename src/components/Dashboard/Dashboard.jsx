@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { renderRepos } from '../../actions/renderActions';
+import Logout from '../Logout/Logout';
 import Issues from '../Issues/Issues';
 import PrTable from '../PrTable/PrTable';
 import Milestones from '../Milestones/Milestones';
@@ -16,7 +17,9 @@ export const Dashboard = ({ repoName, renderRepos, orgName }) =>
     <Button icon onClick={() => renderRepos(orgName)}>
       <Icon name="arrow left" />
     </Button>
+    <Logout />
     <Container>
+
       <Grid padded>
         <Header as="h2" icon textAlign="center">
           <Icon name="github" />
