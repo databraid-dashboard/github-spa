@@ -11,7 +11,7 @@ import './PrTable.css';
 
 function prComponents(prs, repo) {
   if (prs && prs[repo]) {
-    return prs[repo].map(id => <PrTableRow key={id} prId={id} />);
+    return prs[repo].reverse().map(id => <PrTableRow key={id} prId={id} />);
   }
   return '';
 }
@@ -27,12 +27,14 @@ export class PrTable extends Component {
     }
 
     return (
-      <Card>
-        <Card.Content>
-          <Card.Header className="ui center aligned">Pull Requests</Card.Header>
-        </Card.Content>
-        {prComponents(this.props.prsByRepo, this.props.repoName)}
-      </Card>
+      <Card.Group>
+        <Card fluid>
+          <Card.Content className='card-height'>
+            <Card.Header id='title' className="ui center aligned">Pull Requests</Card.Header>
+          </Card.Content>
+          {prComponents(this.props.prsByRepo, this.props.repoName)}
+        </Card>
+      </Card.Group>
     );
   }
 }

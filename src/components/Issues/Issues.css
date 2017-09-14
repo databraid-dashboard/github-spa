@@ -1,1 +1,11 @@
+.card-width {
+  width:200px;
+}
 
+.card-height {
+  height:40px;
+}
+
+#title {
+  font-size:14px;
+}

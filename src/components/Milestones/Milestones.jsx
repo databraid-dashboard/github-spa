@@ -26,12 +26,14 @@ export class Milestones extends Component {
       return <div>Loading Milestones</div>;
     }
     return (
-      <Card>
-        <Card.Content>
-          <Card.Header className="ui center aligned">Milestones</Card.Header>
-        </Card.Content>
-        {milestoneComponents(this.props.milestonesByRepo, this.props.repoName)}
-      </Card>
+      <Card.Group>
+        <Card fluid>
+          <Card.Content>
+            <Card.Header id='title' className='ui center aligned'>Milestones</Card.Header>
+          </Card.Content>
+          {milestoneComponents(this.props.milestonesByRepo, this.props.repoName)}
+        </Card>
+      </Card.Group>
     );
   }
 }

@@ -60,11 +60,7 @@ describe('Milestones component', () => {
       <Milestones
         loadingMilestones={false}
         retrieveMilestones={retrieveMilestones}
-<<<<<<< HEAD
-        userName={state.currentPage.userName}
-=======
         userName={state.widgets.byId.github.currentPage.userName}
->>>>>>> ed7d184e06bb3815422397f25fccc9a2c69c5902
       />,
     );
     expect(component.find('.aligned').exists()).toBe(true);

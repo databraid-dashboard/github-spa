@@ -26,12 +26,16 @@ export class Issues extends Component {
       return <div>Loading Issues</div>;
     }
     return (
-      <Card>
-        <Card.Content>
-          <Card.Header className="ui center aligned">Issues</Card.Header>
-        </Card.Content>
-        {issueComponents(this.props.issuesByRepo, this.props.repoName)}
-      </Card>
+      <Card.Group>
+        <Card fluid>
+          <Card.Content className='card-height'>
+            <Card.Header id='title' className="ui center aligned">
+              Issues
+            </Card.Header>
+          </Card.Content>
+          {issueComponents(this.props.issuesByRepo, this.props.repoName)}
+        </Card>
+      </Card.Group>
     );
   }
 }

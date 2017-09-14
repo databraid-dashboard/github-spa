@@ -5,6 +5,7 @@
   "dependencies": {
     "d3": "4.10.0",
     "eslint": "3.x",
+      "moment": "2.18.1",
     "prop-types": "15.5.10",
     "react": "15.6.1",
     "react-cookies": "0.1.0",

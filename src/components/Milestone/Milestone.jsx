@@ -36,12 +36,12 @@ export const Milestone = ({ title, due, percentComplete, milestoneId }) => {
     <Card.Content>
       <List divided relaxed>
         <List.Item>
-          <List.Content className="ui center aligned">
-            <List.Header>
+          <List.Content className='ui center aligned'>
+            <List.Header className='readable'>
               {title}
             </List.Header>
             {getDueDate(due)}
-            <Header sub className="space-milestones">Percent Complete: </Header>
+            <Header sub className='space-milestones'>Percent Complete: </Header>
             <ProgressArc
               milestoneId={milestoneId}
               percentComplete={percentComplete}

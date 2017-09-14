@@ -1,32 +1,51 @@
 import React from 'react';
-import { Card, List, Header } from 'semantic-ui-react';
+import { Card, List, Header, Icon } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import * as moment from 'moment';
 import injectWidgetId from '../../utils/utils';
 import './PrTableRow.css';
 
 const getMergeable = (able) => {
   if (able) {
-    return 'merge-true';
+    return <div />;
   } else if (able === false) {
-    return 'merge-false';
+    return (
+      <Icon className='merge-float' name='remove' size='big'/>
+    );
   }
-  return 'merge-null';
+  return <div />;
 };
 
-const convertDate = (ISOdate) => {
-  const date = new Date(ISOdate);
-  const formatOptions = {
-    day: '2-digit',
-    month: '2-digit',
-    year: 'numeric',
-  };
-  const dateString = date.toLocaleDateString('en-US', formatOptions);
-  return dateString;
-};
+// function getDescription(assignedTo) {
+//   if (assignedTo[0] !== 'Not assigned') {
+//     return (
+//       <div className="ui center aligned">
+//         <div>
+//           <Header sub className="space-issues">Assigned To: </Header>
+//           {assignedTo[0]}
+//         </div>
+//         <Item.Image size="mini" src={assignedTo[1]} />
+//       </div>
+//     );
+//   }
+//   return <div />;
+// }
+
+// const convertDate = (ISOdate) => {
+//   console.log('::::DATE::::', ISOdate);
+//   const date = new Date(ISOdate);
+//   const formatOptions = {
+//     day: '2-digit',
+//     month: '2-digit',
+//     year: 'numeric',
+//   };
+//   const dateString = date.toLocaleDateString('en-US', formatOptions);
+//   return dateString;
+// };
 
 export const PrTableRow = ({ created, mergeable, submittedBy, title }) =>
-  (<Card.Content className={getMergeable(mergeable)}>
+  (<Card.Content>
     <List divided relaxed>
       <List.Item>
         <List.Content className="ui center aligned">
@@ -34,12 +53,14 @@ export const PrTableRow = ({ created, mergeable, submittedBy, title }) =>
             {title}
           </List.Header>
           <List.Description className="space-item">
-            <Header sub>date created:</Header>
-            {convertDate(created)}
+            date created:
+            <Header sub>{moment(created).fromNow()}</Header>
           </List.Description>
           <List.Description className="space-item">
-            <Header sub>Submitted by:</Header>
-            {submittedBy}
+            submitted by:
+              <Header sub>{submittedBy}</Header>
+              {getMergeable(mergeable)}
+            {/* <Icon className='merge-float' name='remove' size='big'/> */}
           </List.Description>
         </List.Content>
       </List.Item>

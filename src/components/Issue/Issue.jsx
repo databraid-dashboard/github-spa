@@ -13,17 +13,17 @@ function getDescription(assignedTo) {
           <Header sub className="space-issues">Assigned To: </Header>
           {assignedTo[0]}
         </div>
-        <Item.Image size="mini" src={assignedTo[1]} />
+        <Item.Image className='custom-photo' size='tiny' src={assignedTo[1]} />
       </div>
     );
   }
   return <div />;
 }
 
-export const Issue = ({ title, number, assignedTo, labels }) => {
+export const Issue = ({ title, number, assignedTo, labels, issue }) => {
   const renderedLabels = labels.map(label => (
     <div className="space-labels" key={label}>
-      <Label className="ui mini label" ribbon="right" color="grey">
+      <Label className="ui medium label" ribbon="right" color="grey">
         {label}
       </Label>
     </div>));
@@ -32,7 +32,7 @@ export const Issue = ({ title, number, assignedTo, labels }) => {
     <Card.Content>
       <List divided relaxed>
         <List.Item>
-          <List.Content>
+          <List.Content className='readable'>
             <List.Header>
             #{number} {title}
             </List.Header>
@@ -60,6 +60,7 @@ export const mapStateToProps = (state, ownProps) => {
   const { title, number, assignedTo, labels } = issue;
 
   return {
+    issue,
     title,
     number,
     assignedTo,
