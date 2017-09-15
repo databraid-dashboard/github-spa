@@ -1,5 +1,5 @@
 
-import { RENDER_ORGS, RENDER_REPOS, RENDER_LOGIN, RENDER_ORGS_FULLFILLED, RENDER_ORGS_PENDING, RENDER_ORGS_REJECTED, RENDER_DASHBOARD,
+import { RENDER_ORGS, RENDER_REPOS, RENDER_LOGIN, RENDER_DASHBOARD,
 } from '../actions/renderActions';
 
 const renderPage = (state = { render: 'login', repoName: null, userName: '', selectedOrgName: null }, action) => {
