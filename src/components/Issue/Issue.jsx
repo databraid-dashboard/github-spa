@@ -39,10 +39,6 @@ export const Issue = ({ title, number, assignedTo, labels }) => {
     fontSize: '16px',
   }
 
-  // const labelPad = {
-  //   paddingTop: '10px',
-  // }
-
   const renderedLabels = labels.map(label => (
     <div key={label}>
       <Label className="ui medium label" ribbon="right" color="grey">
