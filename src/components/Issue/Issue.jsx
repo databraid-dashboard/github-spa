@@ -26,13 +26,17 @@ function getDescription(assignedTo) {
 }
 
 export const Issue = ({ title, number, assignedTo, labels }) => {
-  
   const styles = {
     borderTop: '0.25px solid black',
   };
 
   const readable = {
     fontSize: '16px',
+  };
+
+  const padRead = {
+    fontSize: '16px',
+    paddingTop: '10px',
   };
 
   const renderedLabels = labels.map(label => (
@@ -51,7 +55,7 @@ export const Issue = ({ title, number, assignedTo, labels }) => {
             #{number} {title}
             </List.Header>
             {renderedLabels}
-            <List.Description style={readable}>
+            <List.Description style={padRead}>
               {' '}{getDescription(assignedTo)}
             </List.Description>
           </List.Content>
