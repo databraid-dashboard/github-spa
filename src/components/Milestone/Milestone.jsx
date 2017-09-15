@@ -69,7 +69,7 @@ export const mapStateToProps = (state, ownProps) => {
 };
 
 Milestone.propTypes = {
-  milestoneId: PropTypes.number.isRequired,
+  milestoneId: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   due: PropTypes.string,
   percentComplete: PropTypes.number.isRequired,

@@ -51,7 +51,7 @@ export class Organizations extends Component {
 
 Organizations.propTypes = {
   retrieveOrgs: PropTypes.func.isRequired,
-  orgIds: PropTypes.arrayOf(PropTypes.number).isRequired,
+  orgIds: PropTypes.arrayOf(PropTypes.string).isRequired,
   renderLogin: PropTypes.func.isRequired,
   userName: PropTypes.string.isRequired,
 };
