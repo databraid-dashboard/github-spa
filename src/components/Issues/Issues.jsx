@@ -17,25 +17,39 @@ function issueComponents(issues, repo) {
 }
 
 export class Issues extends Component {
+
   componentDidMount() {
     this.props.retrieveIssues(this.props.userName, this.props.orgName, this.props.repoName);
   }
 
   render() {
+
+    const styles = {
+      border: '0.25px solid black',
+    }
+
+    const titles = {
+      fontSize: '14px',
+    }
+
+    const height = {
+      height:'40px',
+    }
+
     if (this.props.loadingIssues) {
       return <div>Loading Issues</div>;
     }
 
     if (!Object.keys(this.props.issuesByRepo).length) {
-      return (<Card id="thinlines"><Card.Content id="card-height">
-        <Card.Header id="title" className="ui center aligned">No Issues!</Card.Header>
+      return (<Card style={styles}><Card.Content style={height}>
+        <Card.Header style={titles} className="ui center aligned">No Issues!</Card.Header>
       </Card.Content></Card>);
     }
 
     return (
-      <Card id="thinlines">
-        <Card.Content id="card-height">
-          <Card.Header id="title" className="ui center aligned">
+      <Card style={styles}>
+        <Card.Content style={height}>
+          <Card.Header style={titles} className="ui center aligned">
               Issues
           </Card.Header>
         </Card.Content>

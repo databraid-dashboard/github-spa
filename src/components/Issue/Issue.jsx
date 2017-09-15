@@ -5,6 +5,11 @@ import PropTypes from 'prop-types';
 import injectWidgetId from '../../utils/utils';
 import './Issue.css';
 
+const photo = {
+  height:'70px',
+  width:'70px',
+}
+
 function getDescription(assignedTo) {
   if (assignedTo[0] !== 'Not assigned') {
     return (
@@ -13,7 +18,7 @@ function getDescription(assignedTo) {
           <Header sub id="space-issues">Assigned To: </Header>
           {assignedTo[0]}
         </div>
-        <Item.Image id="custom-photo" size="small" src={assignedTo[1]} />
+        <Item.Image style={photo} size="small" src={assignedTo[1]} />
       </div>
     );
   }
@@ -21,6 +26,19 @@ function getDescription(assignedTo) {
 }
 
 export const Issue = ({ title, number, assignedTo, labels }) => {
+
+  const styles = {
+    borderTop: '0.25px solid black',
+  }
+
+
+  const height = {
+    height:'40px',
+  }
+
+
+
+
   const renderedLabels = labels.map(label => (
     <div id="space-labels" key={label}>
       <Label className="ui medium label" ribbon="right" color="grey">
@@ -28,8 +46,9 @@ export const Issue = ({ title, number, assignedTo, labels }) => {
       </Label>
     </div>));
 
+
   return (
-    <Card.Content id="thinline">
+    <Card.Content style={styles}>
       <List divided relaxed>
         <List.Item>
           <List.Content className='readable'>

@@ -7,6 +7,21 @@ import injectWidgetId from '../../utils/utils';
 import './Milestone.css';
 
 export const Milestone = ({ title, due, percentComplete, milestoneId }) => {
+
+  const styles = {
+    borderTop: '0.25px solid black',
+  }
+
+  const read = {
+    fontSize: '16px',
+  }
+
+  const space = {
+    position: 'relative',
+    paddingTop: '12px',
+    paddingBottom: '6px',
+  }
+
   function convertDate(ISOdate) {
     const date = new Date(ISOdate);
     const formatOptions = {
@@ -26,22 +41,22 @@ export const Milestone = ({ title, due, percentComplete, milestoneId }) => {
     }
     return (
       <div>
-        <Header sub id="space-milestones">Date Due: </Header>
+        <Header sub style={space}>Date Due: </Header>
         {convertDate(date)}
       </div>
     );
   }
 
   return (
-    <Card.Content id="thinline">
+    <Card.Content style={styles}>
       <List divided relaxed>
         <List.Item>
           <List.Content className="ui center aligned">
-            <List.Header id="readable">
+            <List.Header style={read}>
               {title}
             </List.Header>
             {getDueDate(due)}
-            <Header sub id="space-milestones">Percent Complete: </Header>
+            <Header sub className="github-space-milestones">Percent Complete: </Header>
             <ProgressArc
               milestoneId={milestoneId}
               percentComplete={percentComplete}

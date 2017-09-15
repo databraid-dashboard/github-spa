@@ -6,57 +6,49 @@ import * as moment from 'moment';
 import injectWidgetId from '../../utils/utils';
 import './PrTableRow.css';
 
+const merge = {
+  color: 'red',
+  position:'absolute',
+  top:'0',
+  right:'0',
+}
+
 const getMergeable = (able) => {
   if (able) {
     return <div />;
   } else if (able === false) {
     return (
-      <Icon id="merge-float" name="remove" size="big" />
+      <Icon style={merge} name="remove" size="big" />
     );
   }
   return <div />;
 };
 
-// function getDescription(assignedTo) {
-//   if (assignedTo[0] !== 'Not assigned') {
-//     return (
-//       <div className="ui center aligned">
-//         <div>
-//           <Header sub className="space-issues">Assigned To: </Header>
-//           {assignedTo[0]}
-//         </div>
-//         <Item.Image size="mini" src={assignedTo[1]} />
-//       </div>
-//     );
-//   }
-//   return <div />;
-// }
+export const PrTableRow = ({ created, mergeable, submittedBy, title }) => {
 
-// const convertDate = (ISOdate) => {
-//   console.log('::::DATE::::', ISOdate);
-//   const date = new Date(ISOdate);
-//   const formatOptions = {
-//     day: '2-digit',
-//     month: '2-digit',
-//     year: 'numeric',
-//   };
-//   const dateString = date.toLocaleDateString('en-US', formatOptions);
-//   return dateString;
-// };
+  const styles = {
+    borderTop: '0.25px solid black',
+  }
 
-export const PrTableRow = ({ created, mergeable, submittedBy, title }) =>
-  (<Card.Content id="thinline">
+  const space = {
+    position: 'relative',
+    paddingTop: '4px',
+    paddingBottom: '4px',
+    fontSize: '16px',
+  }
+
+  return (<Card.Content style={styles}>
     <List divided relaxed>
       <List.Item>
         <List.Content className="ui center aligned">
-          <List.Header id="space-item">
+          <List.Header style={space}>
             {title}
           </List.Header>
-          <List.Description id="space-item">
+          <List.Description style={space}>
             date created:
             <Header sub>{moment(created).fromNow()}</Header>
           </List.Description>
-          <List.Description id="space-item">
+          <List.Description style={space}>
             submitted by:
             <Header sub>{submittedBy}</Header>
             {getMergeable(mergeable)}
@@ -65,6 +57,8 @@ export const PrTableRow = ({ created, mergeable, submittedBy, title }) =>
       </List.Item>
     </List>
   </Card.Content>);
+
+}
 
 PrTableRow.propTypes = {
   created: PropTypes.string.isRequired,

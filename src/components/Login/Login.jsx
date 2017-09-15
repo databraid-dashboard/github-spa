@@ -17,17 +17,29 @@ export class Login extends Component {
     }
   }
   render() {
+
+    const island = {
+      marginTop:'20%',
+      height: '105px',
+      width:'330px',
+    }
+
+    const butterButton = {
+      height:'75px',
+      width:'300px',
+    }
+
     const GITHUB_OAUTH_URL = process.env.REACT_APP_GITHUB_OAUTH_URL;
     return (
       <Grid verticalAlign={'middle'}>
         <Grid.Row centered verticalAlign={'middle'}>
           <Grid.Column centered verticalAlign={'middle'}>
-            <Card raised centered id="island">
+            <Card raised centered style={island}>
               <Card.Content>
                 <Button
                   as="a"
                   href={`${GITHUB_OAUTH_URL}`}
-                  id="butterButton"
+                  style={butterButton}
                   size="massive"
                   content="Login with Github"
                   icon="github"
