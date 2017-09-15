@@ -31,6 +31,7 @@ describe('Issue entry component', () => {
         id={ownProps.widgetId}
         labels={state.widgets.byId.github.issues.issuesById[238923429].labels}
         issueId={238923429}
+        number={16}
         assignedTo={state.widgets.byId.github.issues.issuesById[238923429].assignedTo[0]}
         title={'login tst JWT token'}
         getDescription={() => { getDescription(); }}
@@ -56,6 +57,7 @@ describe('Issue entry component', () => {
         title={'login tst JWT token'}
         issueId={238923429}
         labels={state.widgets.byId.github.issues.issuesById[238923429].labels}
+        number={16}
         assignedTo={['Gwillison415', 'https://avatars2.githubusercontent.com/u/22106099?v=4']}
       />,
     );

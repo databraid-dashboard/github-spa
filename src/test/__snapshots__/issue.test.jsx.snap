@@ -12,6 +12,7 @@ exports[`Issue entry component should render a component with props as specified
       <ListContent>
         <ListHeader>
           #
+          16
            
           login tst JWT token
         </ListHeader>
