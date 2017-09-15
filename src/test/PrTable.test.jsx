@@ -37,7 +37,7 @@ describe('PrTable component', () => {
     expect(toJson(component)).toMatchSnapshot();
   });
 
-  it('map\'s given State To Props ', () => {
+  it("map's given State To Props ", () => {
     const expected = {
       loadingPrTable: false,
       userName: undefined,

@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 import { retrieveRepos } from '../../actions/repoActions';
 import { fetchOrgs } from '../../actions/renderActions';
 import Repo from '../Repo/Repo';
+import Logout from '../Logout/Logout';
 import injectWidgetId from '../../utils/utils';
 import './RepoList.css';
 
@@ -28,16 +29,19 @@ export class RepoList extends Component {
         <Button icon onClick={() => this.props.fetchOrgs(this.props.userName)}>
           <Icon name="arrow left" />
         </Button>
+        <Logout />
         <Grid centered padded>
-          <Grid.Column width={8}>
+          <Grid.Row width={16}>
             <Header as="h2" icon textAlign="center">
               <Icon name="github" />
               <Header.Content>Which repository are you interested in?</Header.Content>
             </Header>
-            <List animated divided relaxed size="huge">
+          </Grid.Row>
+          <Grid.Row width={16}>
+            <List id="repo-list" animated divided horizontal selection size="huge">
               {repoComponents(this.props.reposByOrg, this.props.orgName)}
             </List>
-          </Grid.Column>
+          </Grid.Row>
         </Grid>
       </div>
     );

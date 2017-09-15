@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 import { renderLogin } from '../../actions/renderActions';
 import { retrieveOrgs } from '../../actions/orgActions';
 import Org from '../Org/Org';
+import Logout from '../Logout/Logout';
 import injectWidgetId from '../../utils/utils';
 import './Organizations.css';
 
@@ -25,6 +26,7 @@ export class Organizations extends Component {
         <Button icon onClick={() => this.props.renderLogin()}>
           <Icon name="arrow left" />
         </Button>
+        <Logout />
         <Grid centered columns={3} padded>
           <Header as="h2" icon textAlign="center">
             <Icon name="github" />

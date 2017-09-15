@@ -18,7 +18,7 @@ class App extends Component {
   render() {
     const { currentPage } = this.props;
     return (
-      <Container>
+      <Container class="github-widget-container">
         {renderIf(currentPage === 'login')(<Login />)}
         {renderIf(currentPage === 'orgs')(<Organizations />)}
         {renderIf(currentPage === 'repos')(<RepoList />)}
