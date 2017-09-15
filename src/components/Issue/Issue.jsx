@@ -15,7 +15,7 @@ function getDescription(assignedTo) {
     return (
       <div className="ui center aligned">
         <div>
-          <Header sub id="space-issues">Assigned To: </Header>
+          <Header sub>Assigned To: </Header>
           {assignedTo[0]}
         </div>
         <Item.Image style={photo} size="small" src={assignedTo[1]} />
