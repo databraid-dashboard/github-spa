@@ -21,7 +21,6 @@ function getDescription(assignedTo) {
 }
 
 export const Issue = ({ title, number, assignedTo, labels }) => {
-
   const renderedLabels = labels.map(label => (
     <div className="space-labels" key={label}>
       <Label className="ui medium label" ribbon="right" color="grey">
