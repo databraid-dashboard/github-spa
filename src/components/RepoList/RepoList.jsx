@@ -1,6 +1,6 @@
 /* eslint-disable import/no-named-as-default, consistent-return */
 import React, { Component } from 'react';
-import { Header, Icon, Grid, List, Button } from 'semantic-ui-react';
+import { Header, Icon, Grid, List, Button, Menu } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
@@ -26,10 +26,16 @@ export class RepoList extends Component {
   render() {
     return (
       <div>
-        <Button icon onClick={() => this.props.fetchOrgs(this.props.userName)}>
-          <Icon name="arrow left" />
-        </Button>
-        <Logout />
+        <Menu compact>
+          <Menu.Item>
+            <Button icon onClick={() => this.props.fetchOrgs(this.props.userName)}>
+              <Icon name="arrow left" />
+            </Button>
+          </Menu.Item>
+          <Menu.Item>
+            <Logout />
+          </Menu.Item>
+        </Menu>
         <Grid centered padded>
           <Grid.Row width={16}>
             <Header as="h2" icon textAlign="center">

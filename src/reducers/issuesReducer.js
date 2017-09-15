@@ -3,7 +3,7 @@ import { GET_ISSUES, LOADING_ISSUES } from '../actions/issueActions';
 function createState(json, incomingState, repoName) {
   const state = incomingState;
   state.issuesByRepo = {};
-  json.forEach((issue) => {
+  json.filter(issue => !issue.isPR).forEach((issue) => {
     state.ids = state.ids.concat(issue.id);
     state.issuesById[issue.id] = {};
     state.issuesById[issue.id].title = issue.title;

@@ -1,50 +1,62 @@
 import React from 'react';
-import { Card, List, Header } from 'semantic-ui-react';
+import { Card, List, Header, Icon } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import * as moment from 'moment';
 import injectWidgetId from '../../utils/utils';
 import './PrTableRow.css';
 
+const merge = {
+  color: 'red',
+  position: 'absolute',
+  top: '0',
+  right: '0',
+};
+
 const getMergeable = (able) => {
   if (able) {
-    return 'merge-true';
+    return <div />;
   } else if (able === false) {
-    return 'merge-false';
+    return (
+      <Icon style={merge} name="remove" size="big" />
+    );
   }
-  return 'merge-null';
+  return <div />;
 };
 
-const convertDate = (ISOdate) => {
-  const date = new Date(ISOdate);
-  const formatOptions = {
-    day: '2-digit',
-    month: '2-digit',
-    year: 'numeric',
+export const PrTableRow = ({ created, mergeable, submittedBy, title }) => {
+  const styles = {
+    borderTop: '0.25px solid black',
   };
-  const dateString = date.toLocaleDateString('en-US', formatOptions);
-  return dateString;
-};
 
-export const PrTableRow = ({ created, mergeable, submittedBy, title }) =>
-  (<Card.Content className={getMergeable(mergeable)}>
+  const space = {
+    position: 'relative',
+    paddingTop: '4px',
+    paddingBottom: '4px',
+    fontSize: '16px',
+  };
+
+  return (<Card.Content style={styles}>
     <List divided relaxed>
       <List.Item>
         <List.Content className="ui center aligned">
-          <List.Header className="space-item">
+          <List.Header style={space}>
             {title}
           </List.Header>
-          <List.Description className="space-item">
-            <Header sub>date created:</Header>
-            {convertDate(created)}
+          <List.Description style={space}>
+            date created:
+            <Header sub>{moment(created).fromNow()}</Header>
           </List.Description>
-          <List.Description className="space-item">
-            <Header sub>Submitted by:</Header>
-            {submittedBy}
+          <List.Description style={space}>
+            submitted by:
+            <Header sub>{submittedBy}</Header>
+            {getMergeable(mergeable)}
           </List.Description>
         </List.Content>
       </List.Item>
     </List>
   </Card.Content>);
+};
 
 PrTableRow.propTypes = {
   created: PropTypes.string.isRequired,

@@ -1,12 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Milestones component should render a component with props as specified  1`] = `
-<Card>
-  <CardContent>
+<Card
+  style={
+    Object {
+      "border": "0.25px solid black",
+    }
+  }
+>
+  <CardContent
+    style={
+      Object {
+        "height": "40px",
+      }
+    }
+  >
     <CardHeader
       className="ui center aligned"
+      style={
+        Object {
+          "fontSize": "14px",
+        }
+      }
     >
-      Milestones
+      No Milestones!
     </CardHeader>
   </CardContent>
 </Card>

@@ -8,7 +8,7 @@ const state = {
     byId: {
       github: {
         milestones: {
-          ids: [2601714],
+          ids: ['2601714'],
           milestonesById: {
             2601714: {
               created: '2017-06-23T22:45:34Z',
@@ -32,7 +32,7 @@ describe('Milestone entry component', () => {
       <Milestone
         title={'sprint 1'}
         due={'2018-06-23T22:45:34Z'}
-        milestoneId={2601714}
+        milestoneId={'2601714'}
         percentComplete={0.4}
       />,
     );
@@ -44,10 +44,10 @@ describe('Milestone entry component', () => {
       title: 'building paths and auth',
       due: '2018-06-23T22:45:34Z',
       percentComplete: 0.4,
-      milestoneId: 2601714,
+      milestoneId: '2601714',
     };
 
-    expect(mapStateToProps(state, { milestoneId: 2601714, widgetId: 'github' })).toEqual(expected);
+    expect(mapStateToProps(state, { milestoneId: '2601714', widgetId: 'github' })).toEqual(expected);
   });
 
   it('Should have a List Content aligned in the center', () => {
@@ -56,7 +56,7 @@ describe('Milestone entry component', () => {
         title={'sprint 1'}
         due={'2018-06-23T22:45:34Z'}
         percentComplete={0.4}
-        milestoneId={2601714}
+        milestoneId={'2601714'}
       />,
     );
     expect(component.find('.aligned').exists()).toBe(true);

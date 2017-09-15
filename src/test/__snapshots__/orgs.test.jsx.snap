@@ -2,17 +2,25 @@
 
 exports[`Organizations component should render a component with props as specified  1`] = `
 <div>
-  <Button
-    as="button"
-    icon={true}
-    onClick={[Function]}
+  <Menu
+    compact={true}
   >
-    <Icon
-      as="i"
-      name="arrow left"
-    />
-  </Button>
-  <Component />
+    <MenuItem>
+      <Button
+        as="button"
+        icon={true}
+        onClick={[Function]}
+      >
+        <Icon
+          as="i"
+          name="arrow left"
+        />
+      </Button>
+    </MenuItem>
+    <MenuItem>
+      <Component />
+    </MenuItem>
+  </Menu>
   <Grid
     centered={true}
     columns={3}
@@ -33,7 +41,7 @@ exports[`Organizations component should render a component with props as specifi
     </Header>
     <GridRow>
       <Wrapper
-        orgId={246869449}
+        orgId="246869449"
       />
     </GridRow>
   </Grid>

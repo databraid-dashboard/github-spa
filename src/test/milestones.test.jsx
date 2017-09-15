@@ -12,7 +12,7 @@ const state = {
     byId: {
       github: {
         milestones: {
-          ids: [2601714],
+          ids: ['2601714'],
         },
         milestonesById: {
           2601714: {
