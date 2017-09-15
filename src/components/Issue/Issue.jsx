@@ -31,32 +31,35 @@ export const Issue = ({ title, number, assignedTo, labels }) => {
     borderTop: '0.25px solid black',
   }
 
-
   const height = {
     height:'40px',
   }
 
+  const readable = {
+    fontSize: '16px',
+  }
 
-
+  // const labelPad = {
+  //   paddingTop: '10px',
+  // }
 
   const renderedLabels = labels.map(label => (
-    <div id="space-labels" key={label}>
+    <div key={label}>
       <Label className="ui medium label" ribbon="right" color="grey">
         {label}
       </Label>
     </div>));
 
-
   return (
     <Card.Content style={styles}>
       <List divided relaxed>
         <List.Item>
-          <List.Content className='readable'>
-            <List.Header>
+          <List.Content>
+            <List.Header style={readable}>
             #{number} {title}
             </List.Header>
             {renderedLabels}
-            <List.Description>
+            <List.Description style={readable}>
               {' '}{getDescription(assignedTo)}
             </List.Description>
           </List.Content>

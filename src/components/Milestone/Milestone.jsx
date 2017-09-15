@@ -56,7 +56,7 @@ export const Milestone = ({ title, due, percentComplete, milestoneId }) => {
               {title}
             </List.Header>
             {getDueDate(due)}
-            <Header sub className="github-space-milestones">Percent Complete: </Header>
+            <Header sub style={space}>Percent Complete: </Header>
             <ProgressArc
               milestoneId={milestoneId}
               percentComplete={percentComplete}
