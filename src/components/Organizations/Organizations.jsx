@@ -23,19 +23,27 @@ export class Organizations extends Component {
   render() {
     return (
       <div>
-        <Button icon onClick={() => this.props.renderLogin()}>
-          <Icon name="arrow left" />
-        </Button>
-        <Logout />
-        <Grid centered columns={3} padded>
-          <Header as="h2" icon textAlign="center">
-            <Icon name="github" />
-            <Header.Content>Which organization are you interested in?</Header.Content>
-          </Header>
-          <Grid.Row>
-            {orgComponents(this.props.orgIds)}
-          </Grid.Row>
-        </Grid>
+        <Menu compact>
+          <Menu.Item>
+            <Button icon onClick={() => this.props.renderLogin()}>
+              <Icon name="arrow left" />
+            </Button>
+          </Menu.Item>
+          <Menu.Item>
+            <Logout />
+          </Menu.Item>
+        </Menu>
+        <Container>
+          <Grid centered columns={3} padded>
+            <Header as="h2" icon textAlign="center">
+              <Icon name="github" />
+              <Header.Content>Which organization are you interested in?</Header.Content>
+            </Header>
+            <Grid.Row>
+              {orgComponents(this.props.orgIds)}
+            </Grid.Row>
+          </Grid>
+        </Container>
       </div>
     );
   }
@@ -43,7 +51,7 @@ export class Organizations extends Component {
 
 Organizations.propTypes = {
   retrieveOrgs: PropTypes.func.isRequired,
-  orgIds: PropTypes.arrayOf(PropTypes.number).isRequired,
+  orgIds: PropTypes.arrayOf(PropTypes.string).isRequired,
   renderLogin: PropTypes.func.isRequired,
   userName: PropTypes.string.isRequired,
 };

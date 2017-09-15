@@ -13,14 +13,15 @@ function getDescription(assignedTo) {
           <Header sub className="space-issues">Assigned To: </Header>
           {assignedTo[0]}
         </div>
-        <Item.Image className='custom-photo' size='tiny' src={assignedTo[1]} />
+        <Item.Image className="custom-photo" size="small" src={assignedTo[1]} />
       </div>
     );
   }
   return <div />;
 }
 
-export const Issue = ({ title, number, assignedTo, labels, issue }) => {
+export const Issue = ({ title, number, assignedTo, labels }) => {
+
   const renderedLabels = labels.map(label => (
     <div className="space-labels" key={label}>
       <Label className="ui medium label" ribbon="right" color="grey">
@@ -29,7 +30,7 @@ export const Issue = ({ title, number, assignedTo, labels, issue }) => {
     </div>));
 
   return (
-    <Card.Content>
+    <Card.Content className="thinline">
       <List divided relaxed>
         <List.Item>
           <List.Content className='readable'>
@@ -49,7 +50,7 @@ export const Issue = ({ title, number, assignedTo, labels, issue }) => {
 Issue.propTypes = {
   title: PropTypes.string.isRequired,
   number: PropTypes.number.isRequired,
-  assignedTo: PropTypes.arrayOf(PropTypes.array).isRequired,
+  assignedTo: PropTypes.arrayOf(PropTypes.string).isRequired,
   labels: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
@@ -60,7 +61,6 @@ export const mapStateToProps = (state, ownProps) => {
   const { title, number, assignedTo, labels } = issue;
 
   return {
-    issue,
     title,
     number,
     assignedTo,

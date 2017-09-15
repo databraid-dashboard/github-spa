@@ -6,5 +6,9 @@
 }
 
 .readable {
-  font-size: 18px;
+  font-size: 16px !important;
+}
+
+.thinline {
+  border-top: 0.25px solid black !important;
 }

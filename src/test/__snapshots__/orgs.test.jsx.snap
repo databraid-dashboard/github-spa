@@ -2,40 +2,50 @@
 
 exports[`Organizations component should render a component with props as specified  1`] = `
 <div>
-  <Button
-    as="button"
-    icon={true}
-    onClick={[Function]}
+  <Menu
+    compact={true}
   >
-    <Icon
-      as="i"
-      name="arrow left"
-    />
-  </Button>
-  <Component />
-  <Grid
-    centered={true}
-    columns={3}
-    padded={true}
-  >
-    <Header
-      as="h2"
-      icon={true}
-      textAlign="center"
+    <MenuItem>
+      <Button
+        as="button"
+        icon={true}
+        onClick={[Function]}
+      >
+        <Icon
+          as="i"
+          name="arrow left"
+        />
+      </Button>
+    </MenuItem>
+    <MenuItem>
+      <Component />
+    </MenuItem>
+  </Menu>
+  <Container>
+    <Grid
+      centered={true}
+      columns={3}
+      padded={true}
     >
-      <Icon
-        as="i"
-        name="github"
-      />
-      <HeaderContent>
-        Which organization are you interested in?
-      </HeaderContent>
-    </Header>
-    <GridRow>
-      <Wrapper
-        orgId={246869449}
-      />
-    </GridRow>
-  </Grid>
+      <Header
+        as="h2"
+        icon={true}
+        textAlign="center"
+      >
+        <Icon
+          as="i"
+          name="github"
+        />
+        <HeaderContent>
+          Which organization are you interested in?
+        </HeaderContent>
+      </Header>
+      <GridRow>
+        <Wrapper
+          orgId={246869449}
+        />
+      </GridRow>
+    </Grid>
+  </Container>
 </div>
 `;

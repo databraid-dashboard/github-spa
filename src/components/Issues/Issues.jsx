@@ -11,7 +11,7 @@ import './Issues.css';
 
 function issueComponents(issues, repo) {
   if (issues && issues[repo]) {
-    return issues[repo].map(id => <Issue key={id} issueId={id} />);
+    return issues[repo].reverse().map(id => <Issue key={id} issueId={id} />);
   }
   return '';
 }
@@ -25,17 +25,22 @@ export class Issues extends Component {
     if (this.props.loadingIssues) {
       return <div>Loading Issues</div>;
     }
+
+    if (!Object.keys(this.props.issuesByRepo).length) {
+      return (<Card className="thinlines"><Card.Content className="card-height">
+        <Card.Header id="title" className="ui center aligned">No Issues!</Card.Header>
+      </Card.Content></Card>);
+    }
+
     return (
-      <Card.Group>
-        <Card fluid>
-          <Card.Content className='card-height'>
-            <Card.Header id='title' className="ui center aligned">
+      <Card className="thinlines">
+        <Card.Content className="card-height">
+          <Card.Header id="title" className="ui center aligned">
               Issues
-            </Card.Header>
-          </Card.Content>
-          {issueComponents(this.props.issuesByRepo, this.props.repoName)}
-        </Card>
-      </Card.Group>
+          </Card.Header>
+        </Card.Content>
+        {issueComponents(this.props.issuesByRepo, this.props.repoName)}
+      </Card>
     );
   }
 }

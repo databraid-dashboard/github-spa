@@ -2,17 +2,25 @@
 
 exports[`Should render a Dashboard that holds Connected Components Should render the Dashboard 1`] = `
 <div>
-  <Button
-    as="button"
-    icon={true}
-    onClick={[Function]}
+  <Menu
+    compact={true}
   >
-    <Icon
-      as="i"
-      name="arrow left"
-    />
-  </Button>
-  <Component />
+    <MenuItem>
+      <Button
+        as="button"
+        icon={true}
+        onClick={[Function]}
+      >
+        <Icon
+          as="i"
+          name="arrow left"
+        />
+      </Button>
+    </MenuItem>
+    <MenuItem>
+      <Component />
+    </MenuItem>
+  </Menu>
   <Container>
     <Grid
       padded={true}

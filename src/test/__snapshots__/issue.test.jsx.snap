@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Issue entry component should render a component with props as specified  1`] = `
-<CardContent>
+<CardContent
+  className="thinline"
+>
   <List
     divided={true}
     relaxed={true}
@@ -10,7 +12,6 @@ exports[`Issue entry component should render a component with props as specified
       <ListContent>
         <ListHeader>
           #
-          16
            
           login tst JWT token
         </ListHeader>
@@ -18,7 +19,7 @@ exports[`Issue entry component should render a component with props as specified
           className="space-labels"
         >
           <Label
-            className="ui mini label"
+            className="ui medium label"
             color="grey"
             ribbon="right"
           >
@@ -29,7 +30,7 @@ exports[`Issue entry component should render a component with props as specified
           className="space-labels"
         >
           <Label
-            className="ui mini label"
+            className="ui medium label"
             color="grey"
             ribbon="right"
           >
@@ -40,7 +41,7 @@ exports[`Issue entry component should render a component with props as specified
           className="space-labels"
         >
           <Label
-            className="ui mini label"
+            className="ui medium label"
             color="grey"
             ribbon="right"
           >
@@ -62,7 +63,8 @@ exports[`Issue entry component should render a component with props as specified
               Gwillison415
             </div>
             <ItemImage
-              size="mini"
+              className="custom-photo"
+              size="small"
               src="https://avatars2.githubusercontent.com/u/22106099?v=4"
             />
           </div>

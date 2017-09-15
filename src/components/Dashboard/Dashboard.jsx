@@ -14,10 +14,16 @@ import './Dashboard.css';
 
 export const Dashboard = ({ repoName, renderRepos, orgName }) =>
   (<div>
-    <Button icon onClick={() => renderRepos(orgName)}>
-      <Icon name="arrow left" />
-    </Button>
-    <Logout />
+    <Menu compact>
+      <Menu.Item>
+        <Button icon onClick={() => renderRepos(orgName)}>
+          <Icon name="arrow left" />
+        </Button>
+      </Menu.Item>
+      <Menu.Item>
+        <Logout />
+      </Menu.Item>
+    </Menu>
     <Container>
 
       <Grid padded>

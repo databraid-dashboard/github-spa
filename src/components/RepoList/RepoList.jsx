@@ -26,23 +26,29 @@ export class RepoList extends Component {
   render() {
     return (
       <div>
-        <Button icon onClick={() => this.props.fetchOrgs(this.props.userName)}>
-          <Icon name="arrow left" />
-        </Button>
-        <Logout />
-        <Grid centered padded>
-          <Grid.Row width={16}>
-            <Header as="h2" icon textAlign="center">
-              <Icon name="github" />
-              <Header.Content>Which repository are you interested in?</Header.Content>
-            </Header>
-          </Grid.Row>
-          <Grid.Row width={16}>
-            <List id="repo-list" animated divided horizontal selection size="huge">
-              {repoComponents(this.props.reposByOrg, this.props.orgName)}
-            </List>
-          </Grid.Row>
-        </Grid>
+        <Menu compact>
+          <Menu.Item>
+            <Button icon onClick={() => this.props.fetchOrgs(this.props.userName)}>
+              <Icon name="arrow left" />
+            </Button>
+          </Menu.Item>
+          <Menu.Item>
+            <Logout />
+          </Menu.Item>
+        </Menu>
+        <Container>
+          <Grid centered padded>
+            <Grid.Column width={8}>
+              <Header as="h2" icon textAlign="center">
+                <Icon name="github" />
+                <Header.Content>Which repository are you interested in?</Header.Content>
+              </Header>
+              <List animated divided relaxed size="huge">
+                {repoComponents(this.props.reposByOrg, this.props.orgName)}
+              </List>
+            </Grid.Column>
+          </Grid>
+        </Container>
       </div>
     );
   }

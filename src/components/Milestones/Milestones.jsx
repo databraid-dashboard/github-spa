@@ -25,15 +25,20 @@ export class Milestones extends Component {
     if (this.props.loadingMilestones) {
       return <div>Loading Milestones</div>;
     }
+
+    if (!Object.keys(this.props.milestonesByRepo).length) {
+      return (<Card className="thinlines"><Card.Content className="card-height">
+        <Card.Header id="title" className="ui center aligned">No Milestones!</Card.Header>
+      </Card.Content></Card>);
+    }
+
     return (
-      <Card.Group>
-        <Card fluid>
-          <Card.Content>
-            <Card.Header id='title' className='ui center aligned'>Milestones</Card.Header>
-          </Card.Content>
-          {milestoneComponents(this.props.milestonesByRepo, this.props.repoName)}
-        </Card>
-      </Card.Group>
+      <Card className="thinlines">
+        <Card.Content className="card-height">
+          <Card.Header id="title" className="ui center aligned">Milestones</Card.Header>
+        </Card.Content>
+        {milestoneComponents(this.props.milestonesByRepo, this.props.repoName)}
+      </Card>
     );
   }
 }

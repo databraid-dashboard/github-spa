@@ -26,15 +26,19 @@ export class PrTable extends Component {
       return <div>Loading Pull Requests</div>;
     }
 
+    if (!Object.keys(this.props.prsByRepo).length) {
+      return (<Card className="thinlines"><Card.Content className="card-height">
+        <Card.Header id="title" className="ui center aligned">No Pull Requests!</Card.Header>
+      </Card.Content></Card>);
+    }
+
     return (
-      <Card.Group>
-        <Card fluid>
-          <Card.Content className='card-height'>
-            <Card.Header id='title' className="ui center aligned">Pull Requests</Card.Header>
-          </Card.Content>
-          {prComponents(this.props.prsByRepo, this.props.repoName)}
-        </Card>
-      </Card.Group>
+      <Card className="thinlines">
+        <Card.Content className="card-height">
+          <Card.Header id="title" className="ui center aligned">Pull Requests</Card.Header>
+        </Card.Content>
+        {prComponents(this.props.prsByRepo, this.props.repoName)}
+      </Card>
     );
   }
 }

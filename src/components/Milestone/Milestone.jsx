@@ -33,15 +33,15 @@ export const Milestone = ({ title, due, percentComplete, milestoneId }) => {
   }
 
   return (
-    <Card.Content>
+    <Card.Content className="thinline">
       <List divided relaxed>
         <List.Item>
-          <List.Content className='ui center aligned'>
-            <List.Header className='readable'>
+          <List.Content className="ui center aligned">
+            <List.Header className="readable">
               {title}
             </List.Header>
             {getDueDate(due)}
-            <Header sub className='space-milestones'>Percent Complete: </Header>
+            <Header sub className="space-milestones">Percent Complete: </Header>
             <ProgressArc
               milestoneId={milestoneId}
               percentComplete={percentComplete}
@@ -69,9 +69,9 @@ export const mapStateToProps = (state, ownProps) => {
 };
 
 Milestone.propTypes = {
-  milestoneId: PropTypes.number.isRequired,
+  milestoneId: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  due: PropTypes.string.isRequired,
+  due: PropTypes.string,
   percentComplete: PropTypes.number.isRequired,
 };
 
