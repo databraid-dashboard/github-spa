@@ -2,14 +2,26 @@
 
 exports[`Milestones component should render a component with props as specified  1`] = `
 <Card
-  id="thinlines"
+  style={
+    Object {
+      "border": "0.25px solid black",
+    }
+  }
 >
   <CardContent
-    id="card-height"
+    style={
+      Object {
+        "height": "40px",
+      }
+    }
   >
     <CardHeader
       className="ui center aligned"
-      id="title"
+      style={
+        Object {
+          "fontSize": "14px",
+        }
+      }
     >
       No Milestones!
     </CardHeader>

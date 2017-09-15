@@ -17,17 +17,16 @@ export class Login extends Component {
     }
   }
   render() {
-
     const island = {
-      marginTop:'20%',
+      marginTop: '20%',
       height: '105px',
-      width:'330px',
-    }
+      width: '330px',
+    };
 
     const butterButton = {
-      height:'75px',
-      width:'300px',
-    }
+      height: '75px',
+      width: '300px',
+    };
 
     const GITHUB_OAUTH_URL = process.env.REACT_APP_GITHUB_OAUTH_URL;
     return (

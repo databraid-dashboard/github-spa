@@ -22,18 +22,17 @@ export class PrTable extends Component {
   }
 
   render() {
-    
     const styles = {
       border: '0.25px solid black',
-    }
+    };
 
     const titles = {
       fontSize: '14px',
-    }
+    };
 
     const height = {
-      height:'40px',
-    }
+      height: '40px',
+    };
 
     if (this.props.loadingPrTable) {
       return <div>Loading Pull Requests</div>;

@@ -22,18 +22,17 @@ export class Milestones extends Component {
   }
 
   render() {
-
     const styles = {
       border: '0.25px solid black',
-    }
+    };
 
     const title = {
       fontSize: '14px',
-    }
+    };
 
     const height = {
-      height:'40px',
-    }
+      height: '40px',
+    };
 
     if (this.props.loadingMilestones) {
       return <div>Loading Milestones</div>;

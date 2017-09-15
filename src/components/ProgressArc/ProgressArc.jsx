@@ -69,7 +69,7 @@ class ProgressArc extends Component {
 
   arcTween(transition, newAngle, arc) {
     transition.attrTween('d', (d) => {
-      const interpolate = d3.interpolate(parseInt(d.endAngle,10), newAngle);
+      const interpolate = d3.interpolate(parseInt(d.endAngle, 10), newAngle);
       const newArc = d;
       return (t) => {
         newArc.endAngle = interpolate(t);

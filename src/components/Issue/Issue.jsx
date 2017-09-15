@@ -6,9 +6,9 @@ import injectWidgetId from '../../utils/utils';
 import './Issue.css';
 
 const photo = {
-  height:'70px',
-  width:'70px',
-}
+  height: '70px',
+  width: '70px',
+};
 
 function getDescription(assignedTo) {
   if (assignedTo[0] !== 'Not assigned') {
@@ -26,18 +26,14 @@ function getDescription(assignedTo) {
 }
 
 export const Issue = ({ title, number, assignedTo, labels }) => {
-
+  
   const styles = {
     borderTop: '0.25px solid black',
-  }
-
-  const height = {
-    height:'40px',
-  }
+  };
 
   const readable = {
     fontSize: '16px',
-  }
+  };
 
   const renderedLabels = labels.map(label => (
     <div key={label}>

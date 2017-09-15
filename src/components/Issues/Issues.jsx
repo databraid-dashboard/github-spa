@@ -23,18 +23,17 @@ export class Issues extends Component {
   }
 
   render() {
-
     const styles = {
       border: '0.25px solid black',
-    }
+    };
 
     const titles = {
       fontSize: '14px',
-    }
+    };
 
     const height = {
-      height:'40px',
-    }
+      height: '40px',
+    };
 
     if (this.props.loadingIssues) {
       return <div>Loading Issues</div>;

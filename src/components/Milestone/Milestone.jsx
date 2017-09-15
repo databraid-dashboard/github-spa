@@ -7,20 +7,19 @@ import injectWidgetId from '../../utils/utils';
 import './Milestone.css';
 
 export const Milestone = ({ title, due, percentComplete, milestoneId }) => {
-
   const styles = {
     borderTop: '0.25px solid black',
-  }
+  };
 
   const read = {
     fontSize: '16px',
-  }
+  };
 
   const space = {
     position: 'relative',
     paddingTop: '12px',
     paddingBottom: '6px',
-  }
+  };
 
   function convertDate(ISOdate) {
     const date = new Date(ISOdate);

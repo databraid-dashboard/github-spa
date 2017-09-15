@@ -8,10 +8,10 @@ import './PrTableRow.css';
 
 const merge = {
   color: 'red',
-  position:'absolute',
-  top:'0',
-  right:'0',
-}
+  position: 'absolute',
+  top: '0',
+  right: '0',
+};
 
 const getMergeable = (able) => {
   if (able) {
@@ -25,17 +25,16 @@ const getMergeable = (able) => {
 };
 
 export const PrTableRow = ({ created, mergeable, submittedBy, title }) => {
-
   const styles = {
     borderTop: '0.25px solid black',
-  }
+  };
 
   const space = {
     position: 'relative',
     paddingTop: '4px',
     paddingBottom: '4px',
     fontSize: '16px',
-  }
+  };
 
   return (<Card.Content style={styles}>
     <List divided relaxed>
@@ -57,8 +56,7 @@ export const PrTableRow = ({ created, mergeable, submittedBy, title }) => {
       </List.Item>
     </List>
   </Card.Content>);
-
-}
+};
 
 PrTableRow.propTypes = {
   created: PropTypes.string.isRequired,

@@ -13,9 +13,9 @@ const state = {
     byId: {
       github: {
         orgs: {
-          ids: ["246869449"],
+          ids: ['246869449'],
           orgsById: {
-            "246869449": {
+            246869449: {
               avatarUrl: 'https://avatars1.githubusercontent.com/u/29614654?v=4',
               orgName: 'ShareCastG52',
               reposUrl: 'https://api.github.com/orgs/ShareCastG52/repos',
@@ -59,9 +59,9 @@ describe('Organizations component', () => {
 
   it("map's given State To Props ", () => {
     const expected = {
-      orgIds: ["246869449"],
+      orgIds: ['246869449'],
       orgsById: {
-        "246869449": {
+        246869449: {
           avatarUrl: 'https://avatars1.githubusercontent.com/u/29614654?v=4',
           orgName: 'ShareCastG52',
           reposUrl: 'https://api.github.com/orgs/ShareCastG52/repos',
