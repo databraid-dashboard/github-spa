@@ -32,7 +32,7 @@ export class Login extends Component {
     return (
       <Grid verticalAlign={'middle'}>
         <Grid.Row centered verticalAlign={'middle'}>
-          <Grid.Column centered verticalAlign={'middle'}>
+          <Grid.Column verticalAlign={'middle'}>
             <Card raised centered style={island}>
               <Card.Content>
                 <Button

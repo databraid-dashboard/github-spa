@@ -21,31 +21,29 @@ exports[`Organizations component should render a component with props as specifi
       <Component />
     </MenuItem>
   </Menu>
-  <Container>
-    <Grid
-      centered={true}
-      columns={3}
-      padded={true}
+  <Grid
+    centered={true}
+    columns={3}
+    padded={true}
+  >
+    <Header
+      as="h2"
+      icon={true}
+      textAlign="center"
     >
-      <Header
-        as="h2"
-        icon={true}
-        textAlign="center"
-      >
-        <Icon
-          as="i"
-          name="github"
-        />
-        <HeaderContent>
-          Which organization are you interested in?
-        </HeaderContent>
-      </Header>
-      <GridRow>
-        <Wrapper
-          orgId="246869449"
-        />
-      </GridRow>
-    </Grid>
-  </Container>
+      <Icon
+        as="i"
+        name="github"
+      />
+      <HeaderContent>
+        Which organization are you interested in?
+      </HeaderContent>
+    </Header>
+    <GridRow>
+      <Wrapper
+        orgId="246869449"
+      />
+    </GridRow>
+  </Grid>
 </div>
 `;

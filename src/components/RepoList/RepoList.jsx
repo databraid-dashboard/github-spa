@@ -1,6 +1,6 @@
 /* eslint-disable import/no-named-as-default, consistent-return */
 import React, { Component } from 'react';
-import { Header, Icon, Grid, List, Button } from 'semantic-ui-react';
+import { Header, Icon, Grid, List, Button, Menu } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
@@ -36,19 +36,19 @@ export class RepoList extends Component {
             <Logout />
           </Menu.Item>
         </Menu>
-        <Container>
-          <Grid centered padded>
-            <Grid.Column width={8}>
-              <Header as="h2" icon textAlign="center">
-                <Icon name="github" />
-                <Header.Content>Which repository are you interested in?</Header.Content>
-              </Header>
-              <List animated divided relaxed size="huge">
-                {repoComponents(this.props.reposByOrg, this.props.orgName)}
-              </List>
-            </Grid.Column>
-          </Grid>
-        </Container>
+        <Grid centered padded>
+          <Grid.Row width={16}>
+            <Header as="h2" icon textAlign="center">
+              <Icon name="github" />
+              <Header.Content>Which repository are you interested in?</Header.Content>
+            </Header>
+          </Grid.Row>
+          <Grid.Row width={16}>
+            <List id="repo-list" animated divided horizontal selection size="huge">
+              {repoComponents(this.props.reposByOrg, this.props.orgName)}
+            </List>
+          </Grid.Row>
+        </Grid>
       </div>
     );
   }

@@ -1,6 +1,6 @@
 /* eslint-disable import/no-named-as-default, no-shadow, consistent-return */
 import React from 'react';
-import { Container, Grid, Header, Icon, Button } from 'semantic-ui-react';
+import { Container, Grid, Header, Icon, Button, Menu } from 'semantic-ui-react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
