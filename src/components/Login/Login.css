@@ -1,10 +1,10 @@
-.butterButton {
-  height:75px!important;
-  width:300px!important;
+#butterButton {
+  height:75px;
+  width:300px;
 }
 
-.island {
-  margin-top:20%!important;
-  height: 105px!important;
-  width:330px!important;
+#island {
+  margin-top:20%;
+  height: 105px;
+  width:330px;
 }

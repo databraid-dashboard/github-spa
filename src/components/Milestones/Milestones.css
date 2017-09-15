@@ -1,11 +1,11 @@
 #title {
-  font-size:14px !important;
+  font-size:14px;
 }
 
-.thinlines {
-  border: 0.25px solid black !important;
+#thinlines {
+  border: 0.25px solid black;
 }
 
-.card-height {
-  height:40px !important;
+#card-height {
+  height:40px;
 }

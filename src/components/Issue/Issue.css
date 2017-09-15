@@ -1,20 +1,8 @@
-.space-issues {
-  position: relative;
-  padding-top: 10px !important;
-  padding-bottom: 0px !important;
+#custom-photo {
+  height:70px;
+  width:70px;
 }
 
-.space-labels {
-  position: relative;
-  padding-top: 4px !important;
-  padding-bottom: 0px !important;
-}
-
-.readable {
-  font-size: 16px !important;
-}
-
-.custom-photo {
-  height:80px !important;
-  width:80px !important;
+#thinline {
+  border-top: 0.25px solid black;
 }

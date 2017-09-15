@@ -2,7 +2,7 @@
 
 exports[`Issue entry component should render a component with props as specified  1`] = `
 <CardContent
-  className="thinline"
+  id="thinline"
 >
   <List
     divided={true}
@@ -17,7 +17,7 @@ exports[`Issue entry component should render a component with props as specified
           login tst JWT token
         </ListHeader>
         <div
-          className="space-labels"
+          id="space-labels"
         >
           <Label
             className="ui medium label"
@@ -28,7 +28,7 @@ exports[`Issue entry component should render a component with props as specified
           </Label>
         </div>
         <div
-          className="space-labels"
+          id="space-labels"
         >
           <Label
             className="ui medium label"
@@ -39,7 +39,7 @@ exports[`Issue entry component should render a component with props as specified
           </Label>
         </div>
         <div
-          className="space-labels"
+          id="space-labels"
         >
           <Label
             className="ui medium label"
@@ -56,7 +56,7 @@ exports[`Issue entry component should render a component with props as specified
           >
             <div>
               <Header
-                className="space-issues"
+                id="space-issues"
                 sub={true}
               >
                 Assigned To: 
@@ -64,7 +64,7 @@ exports[`Issue entry component should render a component with props as specified
               Gwillison415
             </div>
             <ItemImage
-              className="custom-photo"
+              id="custom-photo"
               size="small"
               src="https://avatars2.githubusercontent.com/u/22106099?v=4"
             />

@@ -2,7 +2,7 @@
 
 exports[`Milestone entry component should render a component with props as specified  1`] = `
 <CardContent
-  className="thinline"
+  id="thinline"
 >
   <List
     divided={true}
@@ -13,13 +13,13 @@ exports[`Milestone entry component should render a component with props as speci
         className="ui center aligned"
       >
         <ListHeader
-          className="readable"
+          id="readable"
         >
           sprint 1
         </ListHeader>
         <div>
           <Header
-            className="space-milestones"
+            id="space-milestones"
             sub={true}
           >
             Date Due: 
@@ -27,7 +27,7 @@ exports[`Milestone entry component should render a component with props as speci
           06/23/2018
         </div>
         <Header
-          className="space-milestones"
+          id="space-milestones"
           sub={true}
         >
           Percent Complete: 

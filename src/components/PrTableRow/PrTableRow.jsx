@@ -11,7 +11,7 @@ const getMergeable = (able) => {
     return <div />;
   } else if (able === false) {
     return (
-      <Icon className="merge-float" name="remove" size="big" />
+      <Icon id="merge-float" name="remove" size="big" />
     );
   }
   return <div />;
@@ -45,18 +45,18 @@ const getMergeable = (able) => {
 // };
 
 export const PrTableRow = ({ created, mergeable, submittedBy, title }) =>
-  (<Card.Content className="thinline">
+  (<Card.Content id="thinline">
     <List divided relaxed>
       <List.Item>
         <List.Content className="ui center aligned">
-          <List.Header className="space-item">
+          <List.Header id="space-item">
             {title}
           </List.Header>
-          <List.Description className="space-item">
+          <List.Description id="space-item">
             date created:
             <Header sub>{moment(created).fromNow()}</Header>
           </List.Description>
-          <List.Description className="space-item">
+          <List.Description id="space-item">
             submitted by:
             <Header sub>{submittedBy}</Header>
             {getMergeable(mergeable)}

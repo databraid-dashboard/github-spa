@@ -27,14 +27,14 @@ export class PrTable extends Component {
     }
 
     if (!Object.keys(this.props.prsByRepo).length) {
-      return (<Card className="thinlines"><Card.Content className="card-height">
+      return (<Card id="thinlines"><Card.Content id="card-height">
         <Card.Header id="title" className="ui center aligned">No Pull Requests!</Card.Header>
       </Card.Content></Card>);
     }
 
     return (
-      <Card className="thinlines">
-        <Card.Content className="card-height">
+      <Card id="thinlines">
+        <Card.Content id="card-height">
           <Card.Header id="title" className="ui center aligned">Pull Requests</Card.Header>
         </Card.Content>
         {prComponents(this.props.prsByRepo, this.props.repoName)}

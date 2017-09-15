@@ -21,13 +21,13 @@ export class Login extends Component {
     return (
       <Grid verticalAlign={'middle'}>
         <Grid.Row centered verticalAlign={'middle'}>
-          <Grid.Column verticalAlign={'middle'}>
-            <Card raised centered className="island">
+          <Grid.Column centered verticalAlign={'middle'}>
+            <Card raised centered id="island">
               <Card.Content>
                 <Button
                   as="a"
                   href={`${GITHUB_OAUTH_URL}`}
-                  className="butterButton"
+                  id="butterButton"
                   size="massive"
                   content="Login with Github"
                   icon="github"

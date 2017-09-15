@@ -1,11 +1,15 @@
-.card-width {
-  width:200px !important;
+#card-width {
+  width:200px;
 }
 
-.card-height {
-  height:40px !important;
+#card-height {
+  height:40px;
 }
 
 #title {
-  font-size:14px !important;
+  font-size:14px;
+}
+
+#thinlines {
+  border: 0.25px solid black;
 }

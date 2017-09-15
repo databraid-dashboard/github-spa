@@ -2,10 +2,10 @@
 
 exports[`Milestones component should render a component with props as specified  1`] = `
 <Card
-  className="thinlines"
+  id="thinlines"
 >
   <CardContent
-    className="card-height"
+    id="card-height"
   >
     <CardHeader
       className="ui center aligned"

@@ -27,14 +27,14 @@ export class Milestones extends Component {
     }
 
     if (!Object.keys(this.props.milestonesByRepo).length) {
-      return (<Card className="thinlines"><Card.Content className="card-height">
+      return (<Card id="thinlines"><Card.Content id="card-height">
         <Card.Header id="title" className="ui center aligned">No Milestones!</Card.Header>
       </Card.Content></Card>);
     }
 
     return (
-      <Card className="thinlines">
-        <Card.Content className="card-height">
+      <Card id="thinlines">
+        <Card.Content id="card-height">
           <Card.Header id="title" className="ui center aligned">Milestones</Card.Header>
         </Card.Content>
         {milestoneComponents(this.props.milestonesByRepo, this.props.repoName)}

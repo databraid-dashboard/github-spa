@@ -10,10 +10,10 @@ function getDescription(assignedTo) {
     return (
       <div className="ui center aligned">
         <div>
-          <Header sub className="space-issues">Assigned To: </Header>
+          <Header sub id="space-issues">Assigned To: </Header>
           {assignedTo[0]}
         </div>
-        <Item.Image className="custom-photo" size="small" src={assignedTo[1]} />
+        <Item.Image id="custom-photo" size="small" src={assignedTo[1]} />
       </div>
     );
   }
@@ -22,14 +22,14 @@ function getDescription(assignedTo) {
 
 export const Issue = ({ title, number, assignedTo, labels }) => {
   const renderedLabels = labels.map(label => (
-    <div className="space-labels" key={label}>
+    <div id="space-labels" key={label}>
       <Label className="ui medium label" ribbon="right" color="grey">
         {label}
       </Label>
     </div>));
 
   return (
-    <Card.Content className="thinline">
+    <Card.Content id="thinline">
       <List divided relaxed>
         <List.Item>
           <List.Content className='readable'>
