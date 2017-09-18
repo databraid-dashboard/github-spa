@@ -1,6 +1,10 @@
+
 export const RENDER_ORGS = 'RENDER_ORGS';
 export const RENDER_LOGIN = 'RENDER_LOGIN';
 export const RENDER_REPOS = 'RENDER_REPOS';
+export const RENDER_ORGS_FULLFILLED = 'RENDER_ORGS_FULLFILLED';
+export const RENDER_ORGS_PENDING = 'RENDER_ORGS_PENDING';
+export const RENDER_ORGS_REJECTED = 'RENDER_ORGS_REJECTED';
 export const RENDER_DASHBOARD = 'RENDER_DASHBOARD';
 
 export const fetchOrgs = userName => (dispatch) => {
