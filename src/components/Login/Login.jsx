@@ -28,7 +28,9 @@ export class Login extends Component {
       width: '300px',
     };
 
-    const GITHUB_OAUTH_URL = process.env.REACT_APP_GITHUB_OAUTH_URL;
+    const OAUTH_ENDPOINT = '/auth/github';
+    const GITHUB_OAUTH_URL = `${process.env.REACT_APP_GITHUB_API_URL}${OAUTH_ENDPOINT}`;
+
     return (
       <Grid verticalAlign={'middle'}>
         <Grid.Row centered verticalAlign={'middle'}>
