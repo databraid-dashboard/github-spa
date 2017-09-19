@@ -20,13 +20,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# worksheets, Mock data
-worksheet.js
-
- # unfinished components
-
-/src/utils/Api.js
-
 /libs/widget-libs/lib
 /libs/widget-libs/node_modules
 /src/SampleJSONResponses
