@@ -1,5 +1,5 @@
 {
-  "name": "databraid-react-starter",
+  "name": "github-spa",
   "version": "1.0.7",
   "private": true,
   "dependencies": {
@@ -33,7 +33,9 @@
     "redux-mock-store": "1.2.3"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "down": "scripts/down",
+    "up": "scripts/up",
+    "start": "npm run up && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
