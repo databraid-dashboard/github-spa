@@ -1,6 +1,6 @@
 /* eslint-disable import/no-named-as-default, consistent-return */
 import React, { Component } from 'react';
-import { Header, Icon, Grid, Button } from 'semantic-ui-react';
+import { Menu, Header, Icon, Grid, Button } from 'semantic-ui-react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -23,10 +23,16 @@ export class Organizations extends Component {
   render() {
     return (
       <div>
-        <Button icon onClick={() => this.props.renderLogin()}>
-          <Icon name="arrow left" />
-        </Button>
-        <Logout />
+        <Menu compact>
+          <Menu.Item>
+            <Button icon onClick={() => this.props.renderLogin()}>
+              <Icon name="arrow left" />
+            </Button>
+          </Menu.Item>
+          <Menu.Item>
+            <Logout />
+          </Menu.Item>
+        </Menu>
         <Grid centered columns={3} padded>
           <Header as="h2" icon textAlign="center">
             <Icon name="github" />

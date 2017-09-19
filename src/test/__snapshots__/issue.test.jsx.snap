@@ -1,60 +1,73 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Issue entry component should render a component with props as specified  1`] = `
-<CardContent>
+<CardContent
+  style={
+    Object {
+      "borderTop": "0.25px solid black",
+    }
+  }
+>
   <List
     divided={true}
     relaxed={true}
   >
     <ListItem>
       <ListContent>
-        <ListHeader>
+        <ListHeader
+          style={
+            Object {
+              "fontSize": "16px",
+            }
+          }
+        >
           #
           16
            
           login tst JWT token
         </ListHeader>
-        <div
-          className="space-labels"
-        >
+        <div>
           <Label
-            className="ui mini label"
+            className="ui medium label"
             color="grey"
             ribbon="right"
           >
             duplicate
           </Label>
         </div>
-        <div
-          className="space-labels"
-        >
+        <div>
           <Label
-            className="ui mini label"
+            className="ui medium label"
             color="grey"
             ribbon="right"
           >
             help wanted
           </Label>
         </div>
-        <div
-          className="space-labels"
-        >
+        <div>
           <Label
-            className="ui mini label"
+            className="ui medium label"
             color="grey"
             ribbon="right"
           >
             question
           </Label>
         </div>
-        <ListDescription>
+        <ListDescription
+          style={
+            Object {
+              "fontSize": "16px",
+              "paddingTop": "10px",
+            }
+          }
+        >
            
           <div
             className="ui center aligned"
           >
             <div>
               <Header
-                className="space-issues"
+                id="space-issues"
                 sub={true}
               >
                 Assigned To: 
@@ -62,8 +75,14 @@ exports[`Issue entry component should render a component with props as specified
               Gwillison415
             </div>
             <ItemImage
-              size="mini"
+              size="small"
               src="https://avatars2.githubusercontent.com/u/22106099?v=4"
+              style={
+                Object {
+                  "height": "70px",
+                  "width": "70px",
+                }
+              }
             />
           </div>
         </ListDescription>

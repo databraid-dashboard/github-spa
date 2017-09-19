@@ -9,10 +9,8 @@ import injectWidgetId from '../../utils/utils';
 import './Repo.css';
 
 export const Repo = ({ repoName, renderDashboard }) =>
-  (<List.Item as="a" className="hoverable" onClick={() => renderDashboard(repoName)}>
-    <List.Content>
-      {repoName}
-    </List.Content>
+  (<List.Item as="a" className="hoverable" id="repo" onClick={() => renderDashboard(repoName)}>
+    {repoName}
   </List.Item>);
 
 Repo.propTypes = {

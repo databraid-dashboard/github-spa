@@ -5,15 +5,20 @@ import PropTypes from 'prop-types';
 import injectWidgetId from '../../utils/utils';
 import './Issue.css';
 
+const photo = {
+  height: '70px',
+  width: '70px',
+};
+
 function getDescription(assignedTo) {
   if (assignedTo[0] !== 'Not assigned') {
     return (
       <div className="ui center aligned">
         <div>
-          <Header sub className="space-issues">Assigned To: </Header>
+          <Header sub>Assigned To: </Header>
           {assignedTo[0]}
         </div>
-        <Item.Image size="mini" src={assignedTo[1]} />
+        <Item.Image style={photo} size="small" src={assignedTo[1]} />
       </div>
     );
   }
@@ -21,23 +26,36 @@ function getDescription(assignedTo) {
 }
 
 export const Issue = ({ title, number, assignedTo, labels }) => {
+  const styles = {
+    borderTop: '0.25px solid black',
+  };
+
+  const readable = {
+    fontSize: '16px',
+  };
+
+  const padRead = {
+    fontSize: '16px',
+    paddingTop: '10px',
+  };
+
   const renderedLabels = labels.map(label => (
-    <div className="space-labels" key={label}>
-      <Label className="ui mini label" ribbon="right" color="grey">
+    <div key={label}>
+      <Label className="ui medium label" ribbon="right" color="grey">
         {label}
       </Label>
     </div>));
 
   return (
-    <Card.Content>
+    <Card.Content style={styles}>
       <List divided relaxed>
         <List.Item>
           <List.Content>
-            <List.Header>
+            <List.Header style={readable}>
             #{number} {title}
             </List.Header>
             {renderedLabels}
-            <List.Description>
+            <List.Description style={padRead}>
               {' '}{getDescription(assignedTo)}
             </List.Description>
           </List.Content>
