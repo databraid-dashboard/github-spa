@@ -33,14 +33,12 @@ const state = {
 describe('Organizations component', () => {
   it('should render a component with props as specified ', () => {
     const retrieveOrgs = jest.fn();
-    const displayLogin = jest.fn();
     const component = shallow(
       <Organizations
         orgIds={state.widgets.byId.github.orgs.ids}
         loadingOrganizations={false}
         currentPage={state.widgets.byId.github.currentPage.render}
         retrieveOrgs={retrieveOrgs}
-        displayLogin={displayLogin}
         userName={state.widgets.byId.github.currentPage.userName}
       />,
     );

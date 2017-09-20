@@ -4,7 +4,6 @@ import { Header, Icon, Grid, Menu } from 'semantic-ui-react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { displayLogin } from '../../actions/renderActions';
 import { retrieveOrgs } from '../../actions/orgActions';
 import Org from '../Org/Org';
 import Logout from '../Logout/Logout';
@@ -45,7 +44,6 @@ export class Organizations extends Component {
 Organizations.propTypes = {
   retrieveOrgs: PropTypes.func.isRequired,
   orgIds: PropTypes.arrayOf(PropTypes.string).isRequired,
-  displayLogin: PropTypes.func.isRequired,
   userName: PropTypes.string.isRequired,
 };
 
@@ -70,7 +68,6 @@ export const mapStateToProps = (state, ownProps) => {
 export const mapDispatchToProps = dispatch =>
   bindActionCreators({
     retrieveOrgs,
-    displayLogin,
   }, dispatch);
 
 export default injectWidgetId(connect(mapStateToProps, mapDispatchToProps)(Organizations));

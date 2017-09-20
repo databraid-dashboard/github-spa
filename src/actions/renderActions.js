@@ -12,11 +12,11 @@ export const displayOrgs = userName => (dispatch) => {
   });
 };
 
-export const displayLogin = () => (dispatch) => {
-  dispatch({
-    type: DISPLAY_LOGIN,
-  });
-};
+// export const displayLogin = () => (dispatch) => {
+//   dispatch({
+//     type: DISPLAY_LOGIN,
+//   });
+// };
 
 export const displayRepos = selectedOrgName => (dispatch) => {
   dispatch({
