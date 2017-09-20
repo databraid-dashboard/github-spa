@@ -20,11 +20,11 @@ function createState(json, incomingState, orgName) {
   }
   return { ...state };
 }
-const initialState ={
+const initialState = {
   ids: [],
   reposById: {},
-  orgName: ''
- }
+  orgName: '',
+};
 
 const repoReducer = (state = initialState, action) => {
   switch (action.type) {

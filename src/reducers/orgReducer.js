@@ -14,8 +14,8 @@ function createState(json, incomingState) {
 }
 const initialState = {
   ids: [],
-  orgsById: {}
-}
+  orgsById: {},
+};
 const orgReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_ORGS:
@@ -23,7 +23,7 @@ const orgReducer = (state = initialState, action) => {
 
     case LOGOUT:
       return initialState;
-      
+
     default:
       return state;
   }

@@ -19,11 +19,11 @@ function createState(json, incomingState, repoName) {
   });
   return { ...state, loadingMilestones: false };
 }
-const initialState ={
+const initialState = {
   ids: [],
   milestonesById: {},
-  repoName: ''
- }
+  repoName: '',
+};
 
 const milestonesReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -36,7 +36,7 @@ const milestonesReducer = (state = initialState, action) => {
       };
     case LOGOUT:
       return initialState;
-      
+
     default:
       return state;
   }

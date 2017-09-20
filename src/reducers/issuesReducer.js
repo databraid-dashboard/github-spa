@@ -23,7 +23,7 @@ const initialState = {
   ids: [],
   issuesById: {},
   loadingIssues: true,
-  repoName: ''
+  repoName: '',
 };
 
 const issuesReducer = (
@@ -40,7 +40,7 @@ const issuesReducer = (
       };
     case LOGOUT:
       return initialState;
-      
+
     default:
       return state;
   }

@@ -30,9 +30,7 @@ export const displayDashboard = repoName => (dispatch) => {
     type: DISPLAY_DASHBOARD,
     repoName,
   });
-export const logout = () => {
-  {
-    type: LOGOUT
-  }
-}
 };
+export const logout = () => ({
+  type: LOGOUT,
+});
