@@ -8,6 +8,7 @@ import RepoList from './components/RepoList/RepoList';
 import Login from './components/Login/Login';
 import Organizations from './components/Organizations/Organizations';
 import Dashboard from './components/Dashboard/Dashboard';
+
 import './App.css';
 
 class App extends Component {
@@ -16,7 +17,9 @@ class App extends Component {
   }
 
   render() {
-    const { currentPage } = this.props;
+    //username signifies that the username was found in the cookie and therefore
+    //the user is logged in
+    const { currentPage, userName  } = this.props;
     return (
       <Container class="github-widget-container">
         {renderIf(currentPage === 'login')(<Login />)}

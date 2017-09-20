@@ -1,5 +1,6 @@
 import { GET_ORGS } from '../actions/orgActions';
 
+//TODO: ORGS. PRS and REPOS should follow same pattern as issuesreducer as far as logoug is concernted
 function createState(json, incomingState) {
   const state = incomingState;
   json.forEach((org) => {

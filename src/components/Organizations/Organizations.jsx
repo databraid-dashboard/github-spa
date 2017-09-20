@@ -25,11 +25,6 @@ export class Organizations extends Component {
       <div>
         <Menu compact>
           <Menu.Item>
-            <Button icon onClick={() => this.props.renderLogin()}>
-              <Icon name="arrow left" />
-            </Button>
-          </Menu.Item>
-          <Menu.Item>
             <Logout />
           </Menu.Item>
         </Menu>

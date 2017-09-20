@@ -1,8 +1,15 @@
 
-import { RENDER_ORGS, RENDER_REPOS, RENDER_LOGIN, RENDER_DASHBOARD,
+import { LOGOUT, RENDER_ORGS, RENDER_REPOS, RENDER_LOGIN, RENDER_DASHBOARD,
 } from '../actions/renderActions';
 
-const renderPage = (state = { render: 'login', repoName: null, userName: '', selectedOrgName: null }, action) => {
+const initialState = {
+  render: 'login',
+  repoName: null,
+  userName: '',
+  selectedOrgName: null,
+}
+
+const renderPage = (state = initialState, action) => {
   switch (action.type) {
     case RENDER_ORGS:
       return { ...state, render: 'orgs', userName: action.userName };
@@ -11,7 +18,7 @@ const renderPage = (state = { render: 'login', repoName: null, userName: '', sel
       return { ...state, render: 'repos', fetching: false, selectedOrgName: action.selectedOrgName };
 
     case RENDER_LOGIN:
-      return { ...state, render: 'login', session: { ...action.payload.session.passport.user }, fetching: false };
+      return initialState;
 
     case RENDER_DASHBOARD:
       return { ...state,
@@ -19,6 +26,9 @@ const renderPage = (state = { render: 'login', repoName: null, userName: '', sel
         repoName: action.repoName,
         fetching: false,
         repoId: action.repoId };
+
+    case LOGOUT:
+      return initialState;
 
     default:
       return state;

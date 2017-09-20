@@ -5,7 +5,7 @@ import { Grid, Card, Button } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
-import { fetchOrgs } from '../../actions/renderActions';
+import { renderOrgs } from '../../actions/renderActions';
 import injectWidgetId from '../../utils/utils';
 import './Login.css';
 
@@ -13,7 +13,7 @@ export class Login extends Component {
   componentDidMount() {
     if (cookie.load('userName') !== undefined) {
       const name = cookie.load('userName');
-      this.props.fetchOrgs(name);
+      this.props.renderOrgs(name);
     }
   }
   render() {
@@ -56,7 +56,7 @@ export class Login extends Component {
 
 Login.propTypes = {
   /* eslint-disable react/no-unused-prop-types, react/require-default-props */
-  fetchOrgs: PropTypes.func.isRequired,
+  renderOrgs: PropTypes.func.isRequired,
   userName: PropTypes.string,
 };
 
@@ -72,7 +72,7 @@ export const mapStateToProps = (state, ownProps) => {
 };
 
 export const mapDispatchToProps = dispatch => bindActionCreators({
-  fetchOrgs,
+  renderOrgs,
 }, dispatch);
 
 export default injectWidgetId(connect(mapStateToProps, mapDispatchToProps)(Login));
