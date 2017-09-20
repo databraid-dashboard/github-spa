@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import { retrieveRepos } from '../../actions/repoActions';
-import { fetchOrgs } from '../../actions/renderActions';
+import { displayOrgs } from '../../actions/renderActions';
 import Repo from '../Repo/Repo';
 import Logout from '../Logout/Logout';
 import injectWidgetId from '../../utils/utils';
@@ -28,7 +28,7 @@ export class RepoList extends Component {
       <div>
         <Menu compact>
           <Menu.Item>
-            <Button icon onClick={() => this.props.fetchOrgs(this.props.userName)}>
+            <Button icon onClick={() => this.props.displayOrgs(this.props.userName)}>
               <Icon name="arrow left" />
             </Button>
           </Menu.Item>
@@ -56,7 +56,7 @@ export class RepoList extends Component {
 
 RepoList.propTypes = {
   retrieveRepos: PropTypes.func.isRequired,
-  fetchOrgs: PropTypes.func.isRequired,
+  displayOrgs: PropTypes.func.isRequired,
   userName: PropTypes.string.isRequired,
   orgName: PropTypes.string.isRequired,
   reposByOrg: PropTypes.objectOf(PropTypes.array),
@@ -86,7 +86,7 @@ export const mapStateToProps = (state, ownProps) => {
 export const mapDispatchToProps = dispatch =>
   bindActionCreators({
     retrieveRepos,
-    fetchOrgs,
+    displayOrgs,
   }, dispatch);
 
 export default injectWidgetId(connect(mapStateToProps, mapDispatchToProps)(RepoList));

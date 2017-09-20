@@ -8,3 +8,9 @@ export default function injectWidgetId(Component) {
   Wrapper.contextTypes = { widgetId: PropTypes.string };
   return Wrapper;
 }
+
+export default function injectUserName(Component) {
+  const Wrapper = (props, context) => <Component {...props} userName={context.userName}> </Component>
+  Wrapper.contextTypes={userName: PropTypes.string}
+  return Wrapper;
+}

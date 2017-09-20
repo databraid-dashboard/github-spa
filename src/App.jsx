@@ -9,16 +9,17 @@ import Login from './components/Login/Login';
 import Organizations from './components/Organizations/Organizations';
 import Dashboard from './components/Dashboard/Dashboard';
 import './App.css';
-
+import { injectUserName } from './utils/utils';
 class App extends Component {
   getChildContext() {
     return { widgetId: this.props.widgetId };
   }
 
+
   render() {
-    const { currentPage } = this.props;
+    const { currentPage, userName} = this.props;
     return (
-      <Container class="github-widget-container">
+      <Container className="github-widget-container">
         {renderIf(currentPage === 'login')(<Login />)}
         {renderIf(currentPage === 'orgs')(<Organizations />)}
         {renderIf(currentPage === 'repos')(<RepoList />)}
@@ -51,4 +52,4 @@ export const mapStateToProps = (state, ownProps) => {
   };
 };
 
-export default connect(mapStateToProps)(App);
+export default injectUserName(connect(mapStateToProps)(App));

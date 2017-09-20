@@ -4,7 +4,7 @@ import { Container, Grid, Header, Icon, Button, Menu } from 'semantic-ui-react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { renderRepos } from '../../actions/renderActions';
+import { displayRepos } from '../../actions/renderActions';
 import Logout from '../Logout/Logout';
 import Issues from '../Issues/Issues';
 import PrTable from '../PrTable/PrTable';
@@ -12,11 +12,11 @@ import Milestones from '../Milestones/Milestones';
 import injectWidgetId from '../../utils/utils';
 import './Dashboard.css';
 
-export const Dashboard = ({ repoName, renderRepos, orgName }) =>
+export const Dashboard = ({ repoName, displayRepos, orgName }) =>
   (<div>
     <Menu compact>
       <Menu.Item>
-        <Button icon onClick={() => renderRepos(orgName)}>
+        <Button icon onClick={() => displayRepos(orgName)}>
           <Icon name="arrow left" />
         </Button>
       </Menu.Item>
@@ -50,7 +50,7 @@ export const Dashboard = ({ repoName, renderRepos, orgName }) =>
 
 Dashboard.propTypes = {
   repoName: PropTypes.string,
-  renderRepos: PropTypes.func.isRequired,
+  displayRepos: PropTypes.func.isRequired,
   orgName: PropTypes.string,
 };
 
@@ -73,7 +73,7 @@ export const mapStateToProps = (state, ownProps) => {
 export const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
-      renderRepos,
+      displayRepos,
     },
     dispatch,
   );
