@@ -11,29 +11,6 @@ const logoutComponent = shallow(
   />,
 );
 
-const state = {
-  widgets: {
-    byId: {
-      github: {
-        issues: {
-          issuesById: {
-            246869449: {
-              assignedTo: [],
-              labels: [],
-              repoIssueNumber: 36,
-              title: 'disregard this PR',
-
-            },
-          },
-        },
-        loadingIssues: false,
-        currentPage: { selectedOrgName: 'ski-ski', userName: 'michaelmurray6298' },
-      },
-    },
-  },
-  loadingIssues: false,
-  currentPage: 'login',
-};
 
 describe('Logout Component', () => {
   it('renders a button component as specified', () => {
