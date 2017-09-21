@@ -1,10 +1,6 @@
 {
   "name": "@databraid/github-widget",
-<<<<<<< HEAD
-  "version": "1.0.17",
-=======
-  "version": "1.0.21",
->>>>>>> 9fe4aaa1a9dd47c370d6fdec6a7614b246bec365
+  "version": "1.0.22",
   "description": "",
   "main": "index.js",
   "files": [

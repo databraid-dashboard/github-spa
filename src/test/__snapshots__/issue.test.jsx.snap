@@ -67,7 +67,6 @@ exports[`Issue entry component should render a component with props as specified
           >
             <div>
               <Header
-                id="space-issues"
                 sub={true}
               >
                 Assigned To: 

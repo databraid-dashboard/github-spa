@@ -5,14 +5,6 @@ exports[`Should render a Dashboard that holds Connected Components Should render
   <Menu
     compact={true}
   >
-<<<<<<< HEAD
-    <Icon
-      as="i"
-      name="arrow left"
-    />
-  </Button>
-  <Component />
-=======
     <MenuItem>
       <Button
         as="button"
@@ -26,10 +18,9 @@ exports[`Should render a Dashboard that holds Connected Components Should render
       </Button>
     </MenuItem>
     <MenuItem>
-      <Component />
+      <Connect(Component) />
     </MenuItem>
   </Menu>
->>>>>>> 9fe4aaa1a9dd47c370d6fdec6a7614b246bec365
   <Container>
     <Grid
       padded={true}
