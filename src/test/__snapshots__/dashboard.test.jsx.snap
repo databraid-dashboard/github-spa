@@ -18,7 +18,7 @@ exports[`Should render a Dashboard that holds Connected Components Should render
       </Button>
     </MenuItem>
     <MenuItem>
-      <Component />
+      <Connect(Component) />
     </MenuItem>
   </Menu>
   <Container>

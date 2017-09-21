@@ -1,4 +1,5 @@
 import { GET_ISSUES, LOADING_ISSUES } from '../actions/issueActions';
+import { LOGOUT } from '../actions/renderActions';
 
 function createState(json, incomingState, repoName) {
   const state = incomingState;
@@ -18,9 +19,15 @@ function createState(json, incomingState, repoName) {
   });
   return { ...state, loadingIssues: false };
 }
+const initialState = {
+  ids: [],
+  issuesById: {},
+  loadingIssues: true,
+  repoName: '',
+};
 
 const issuesReducer = (
-  state = { ids: [], issuesById: {}, loadingIssues: true, repoName: '' },
+  state = initialState,
   action,
 ) => {
   switch (action.type) {
@@ -31,6 +38,9 @@ const issuesReducer = (
         ...state,
         loadingIssues: true,
       };
+    case LOGOUT:
+      return initialState;
+
     default:
       return state;
   }

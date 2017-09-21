@@ -10,15 +10,17 @@ import Organizations from './components/Organizations/Organizations';
 import Dashboard from './components/Dashboard/Dashboard';
 import './App.css';
 
+// import { injectUserName } from './utils/utils';
 class App extends Component {
   getChildContext() {
     return { widgetId: this.props.widgetId };
   }
 
+
   render() {
     const { currentPage } = this.props;
     return (
-      <Container class="github-widget-container">
+      <Container className="github-widget-container">
         {renderIf(currentPage === 'login')(<Login />)}
         {renderIf(currentPage === 'orgs')(<Organizations />)}
         {renderIf(currentPage === 'repos')(<RepoList />)}

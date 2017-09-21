@@ -6,19 +6,7 @@ exports[`Organizations component should render a component with props as specifi
     compact={true}
   >
     <MenuItem>
-      <Button
-        as="button"
-        icon={true}
-        onClick={[Function]}
-      >
-        <Icon
-          as="i"
-          name="arrow left"
-        />
-      </Button>
-    </MenuItem>
-    <MenuItem>
-      <Component />
+      <Connect(Component) />
     </MenuItem>
   </Menu>
   <Grid

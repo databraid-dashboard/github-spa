@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, List, Header, Icon } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import * as moment from 'moment';
+import moment from 'moment';
 import injectWidgetId from '../../utils/utils';
 import './PrTableRow.css';
 

@@ -1,4 +1,5 @@
 import { GET_MILESTONES, LOADING_MILESTONES } from '../actions/milestonesActions';
+import { LOGOUT } from '../actions/renderActions';
 
 function createState(json, incomingState, repoName) {
   const state = incomingState;
@@ -18,8 +19,13 @@ function createState(json, incomingState, repoName) {
   });
   return { ...state, loadingMilestones: false };
 }
+const initialState = {
+  ids: [],
+  milestonesById: {},
+  repoName: '',
+};
 
-const milestonesReducer = (state = { ids: [], milestonesById: {}, repoName: '' }, action) => {
+const milestonesReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_MILESTONES:
       return createState(action.responseObj, state, action.repoName);
@@ -28,6 +34,9 @@ const milestonesReducer = (state = { ids: [], milestonesById: {}, repoName: '' }
         ...state,
         loadingMilestones: true,
       };
+    case LOGOUT:
+      return initialState;
+
     default:
       return state;
   }

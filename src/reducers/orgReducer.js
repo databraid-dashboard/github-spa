@@ -1,4 +1,5 @@
 import { GET_ORGS } from '../actions/orgActions';
+import { LOGOUT } from '../actions/renderActions';
 
 function createState(json, incomingState) {
   const state = incomingState;
@@ -11,11 +12,18 @@ function createState(json, incomingState) {
   });
   return { ...state };
 }
-
-const orgReducer = (state = { ids: [], orgsById: {} }, action) => {
+const initialState = {
+  ids: [],
+  orgsById: {},
+};
+const orgReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_ORGS:
       return createState(action.responseObj, state);
+
+    case LOGOUT:
+      return initialState;
+
     default:
       return state;
   }

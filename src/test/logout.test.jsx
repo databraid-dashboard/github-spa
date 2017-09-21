@@ -1,17 +1,18 @@
 import React from 'react';
 import toJson from 'enzyme-to-json';
 import { shallow } from 'enzyme';
-import { Logout } from '../components/Logout/Logout';
+import { Logout, mapDispatchToProps } from '../components/Logout/Logout';
+import { logout } from '../actions/renderActions';
 
 
-// function findLogoutURL() {
-//   if (NODE_ENV === 'development') {
-//     return process.env.development.REACT_APP_GITHUB_OAUTH_LOGOUT;
-//   }
-//   return process.env.production.REACT_APP_GITHUB_OAUTH_LOGOUT;
-// }
+const logoutComponent = shallow(
+  <Logout
+    logout={logout}
+  />,
+);
+
+
 describe('Logout Component', () => {
-  const logoutComponent = shallow(<Logout />);
   it('renders a button component as specified', () => {
     expect(toJson(logoutComponent)).toMatchSnapshot();
   });
@@ -24,10 +25,17 @@ describe('Logout Component', () => {
   it('should contain an icon, the icon should be a hand', () => {
     expect(logoutComponent.find('.hand').exists()).toBe(true);
   });
-  // it('should have a reference to the corect logout url', ()=> {
-  //   expect(logoutComponent.find('.content').prop('href').to.equal(findLogoutURL()))
-  // })
-// )
+  // it('returns State To initialState ', () => {
+  //   const logout = jest.fn();
+  //   const expected = {
+  //     avatarUrl: 'https://avatars1.githubusercontent.com/u/29614654?v=4',
+  //     orgName: 'ShareCastG52',
+  //   };
+  //
+  //   expect(mapStateToProps(state, { orgId: 238923429, widgetId: 'github' })).toEqual(expected);
+  // });
+  it('maps logout dispatches to props', () => {
+    const dispatch = jest.fn();
+    expect(mapDispatchToProps(dispatch)).toHaveProperty('logout');
+  });
 });
-//
-// <div class="content"><a href="http://localhost:8002/logout/" class="ui medium button hand peace icon"><i aria-hidden="true" class="hand peace icon"></i><!-- react-text: 19 -->Logout<!-- /react-text --></a></div>

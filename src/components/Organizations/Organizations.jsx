@@ -1,10 +1,9 @@
 /* eslint-disable import/no-named-as-default, consistent-return */
 import React, { Component } from 'react';
-import { Menu, Header, Icon, Grid, Button } from 'semantic-ui-react';
+import { Header, Icon, Grid, Menu } from 'semantic-ui-react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { renderLogin } from '../../actions/renderActions';
 import { retrieveOrgs } from '../../actions/orgActions';
 import Org from '../Org/Org';
 import Logout from '../Logout/Logout';
@@ -24,11 +23,6 @@ export class Organizations extends Component {
     return (
       <div>
         <Menu compact>
-          <Menu.Item>
-            <Button icon onClick={() => this.props.renderLogin()}>
-              <Icon name="arrow left" />
-            </Button>
-          </Menu.Item>
           <Menu.Item>
             <Logout />
           </Menu.Item>
@@ -50,7 +44,6 @@ export class Organizations extends Component {
 Organizations.propTypes = {
   retrieveOrgs: PropTypes.func.isRequired,
   orgIds: PropTypes.arrayOf(PropTypes.string).isRequired,
-  renderLogin: PropTypes.func.isRequired,
   userName: PropTypes.string.isRequired,
 };
 
@@ -75,7 +68,6 @@ export const mapStateToProps = (state, ownProps) => {
 export const mapDispatchToProps = dispatch =>
   bindActionCreators({
     retrieveOrgs,
-    renderLogin,
   }, dispatch);
 
 export default injectWidgetId(connect(mapStateToProps, mapDispatchToProps)(Organizations));

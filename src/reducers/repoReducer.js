@@ -1,4 +1,5 @@
 import { GET_REPOS } from '../actions/repoActions';
+import { LOGOUT } from '../actions/renderActions';
 
 function createState(json, incomingState, orgName) {
   const state = incomingState;
@@ -19,11 +20,20 @@ function createState(json, incomingState, orgName) {
   }
   return { ...state };
 }
+const initialState = {
+  ids: [],
+  reposById: {},
+  orgName: '',
+};
 
-const repoReducer = (state = { ids: [], reposById: {}, orgName: '' }, action) => {
+const repoReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_REPOS:
       return createState(action.responseObj, state, action.orgName);
+
+    case LOGOUT:
+      return initialState;
+
     default:
       return state;
   }

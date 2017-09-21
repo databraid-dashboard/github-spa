@@ -27,6 +27,7 @@ describe('Issue entry component', () => {
   it('should render a component with props as specified ', () => {
     const getDescription = jest.fn();
     const component = shallow(
+
       <Issue
         id={ownProps.widgetId}
         labels={state.widgets.byId.github.issues.issuesById[238923429].labels}

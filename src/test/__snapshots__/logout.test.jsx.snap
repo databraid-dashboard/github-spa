@@ -13,8 +13,8 @@ exports[`Logout Component renders a button component as specified 1`] = `
           as="a"
           className="hand peace icon"
           content="Logout"
-          href="undefined/logout"
           icon="hand peace"
+          onClick={[Function]}
           size="medium"
         />
       </CardContent>

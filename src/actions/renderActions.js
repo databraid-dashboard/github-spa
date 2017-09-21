@@ -1,35 +1,36 @@
 
-export const RENDER_ORGS = 'RENDER_ORGS';
-export const RENDER_LOGIN = 'RENDER_LOGIN';
-export const RENDER_REPOS = 'RENDER_REPOS';
-export const RENDER_ORGS_FULLFILLED = 'RENDER_ORGS_FULLFILLED';
-export const RENDER_ORGS_PENDING = 'RENDER_ORGS_PENDING';
-export const RENDER_ORGS_REJECTED = 'RENDER_ORGS_REJECTED';
-export const RENDER_DASHBOARD = 'RENDER_DASHBOARD';
+export const DISPLAY_ORGS = 'DISPLAY_ORGS';
+export const DISPLAY_LOGIN = 'DISPLAY_LOGIN';
+export const DISPLAY_REPOS = 'DISPLAY_REPOS';
+export const LOGOUT = 'LOGOUT';
+export const DISPLAY_DASHBOARD = 'DISPLAY_DASHBOARD';
 
-export const fetchOrgs = userName => (dispatch) => {
+export const displayOrgs = userName => (dispatch) => {
   dispatch({
-    type: RENDER_ORGS,
+    type: DISPLAY_ORGS,
     userName,
   });
 };
 
-export const renderLogin = () => (dispatch) => {
-  dispatch({
-    type: RENDER_LOGIN,
-  });
-};
+// export const displayLogin = () => (dispatch) => {
+//   dispatch({
+//     type: DISPLAY_LOGIN,
+//   });
+// };
 
-export const renderRepos = selectedOrgName => (dispatch) => {
+export const displayRepos = selectedOrgName => (dispatch) => {
   dispatch({
-    type: RENDER_REPOS,
+    type: DISPLAY_REPOS,
     selectedOrgName,
   });
 };
 
-export const renderDashboard = repoName => (dispatch) => {
+export const displayDashboard = repoName => (dispatch) => {
   dispatch({
-    type: RENDER_DASHBOARD,
+    type: DISPLAY_DASHBOARD,
     repoName,
   });
 };
+export const logout = () => ({
+  type: LOGOUT,
+});

@@ -4,18 +4,18 @@ import { List } from 'semantic-ui-react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { renderDashboard } from '../../actions/renderActions';
+import { displayDashboard } from '../../actions/renderActions';
 import injectWidgetId from '../../utils/utils';
 import './Repo.css';
 
-export const Repo = ({ repoName, renderDashboard }) =>
-  (<List.Item as="a" className="hoverable" id="repo" onClick={() => renderDashboard(repoName)}>
+export const Repo = ({ repoName, displayDashboard }) =>
+  (<List.Item as="a" className="hoverable" id="repo" onClick={() => displayDashboard(repoName)}>
     {repoName}
   </List.Item>);
 
 Repo.propTypes = {
   repoName: PropTypes.string.isRequired,
-  renderDashboard: PropTypes.func.isRequired,
+  displayDashboard: PropTypes.func.isRequired,
 };
 
 export const mapStateToProps = (state, ownProps) => {
@@ -31,7 +31,7 @@ export const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators({
-    renderDashboard,
+    displayDashboard,
   }, dispatch);
 
 export default injectWidgetId(connect(mapStateToProps, mapDispatchToProps)(Repo));
