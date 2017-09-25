@@ -23,7 +23,7 @@ exports[`Issue entry component should render a component with props as specified
         >
           #
           16
-           
+
           login tst JWT token
         </ListHeader>
         <div>
@@ -61,7 +61,7 @@ exports[`Issue entry component should render a component with props as specified
             }
           }
         >
-           
+
           <div
             className="ui center aligned"
           >
