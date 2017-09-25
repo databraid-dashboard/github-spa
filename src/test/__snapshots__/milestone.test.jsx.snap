@@ -50,7 +50,7 @@ exports[`Milestone entry component should render a component with props as speci
           }
           sub={true}
         >
-          Percent Complete:
+          Percent Complete: 
         </Header>
         <Wrapper
           duration={2000}

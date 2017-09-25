@@ -69,7 +69,7 @@ exports[`Issue entry component should render a component with props as specified
               <Header
                 sub={true}
               >
-                Assigned To:
+                Assigned To: 
               </Header>
               Gwillison415
             </div>
