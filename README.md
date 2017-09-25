@@ -8,10 +8,10 @@ PRs and Issues are displayed in order of most recently submitted.  For PRs, the 
 
 On each view there is the option to step back to the previous view or to logout and login under a different account.  
 
-[![Screen_Shot_2017-09-25_at_2.41.53_PM.png](https://s26.postimg.org/6uyi4508p/Screen_Shot_2017-09-25_at_2.41.53_PM.png)](https://postimg.org/image/z7tzullyt/)
+<img width="358" alt="screen shot 2017-09-25 at 2 41 53 pm" src="https://user-images.githubusercontent.com/12532173/30833027-2c5e0c86-a202-11e7-89c4-b8e776b81bc1.png">
 
-[![Screen_Shot_2017-09-25_at_2.41.12_PM.png](https://s26.postimg.org/wrs6gr3w9/Screen_Shot_2017-09-25_at_2.41.12_PM.png)](https://postimg.org/image/9dk74tlyt/)
+<img width="588" alt="screen shot 2017-09-25 at 2 41 12 pm" src="https://user-images.githubusercontent.com/12532173/30833040-3d2d547c-a202-11e7-8024-63c7b022ab2c.png">
 
-[![Screen_Shot_2017-09-25_at_2.41.22_PM.png](https://s26.postimg.org/ubqd2wltl/Screen_Shot_2017-09-25_at_2.41.22_PM.png)](https://postimg.org/image/gutek1bhx/)
+<img width="585" alt="screen shot 2017-09-25 at 2 41 22 pm" src="https://user-images.githubusercontent.com/12532173/30833066-517bcd0a-a202-11e7-963e-667bb0be19c6.png">
 
-[![Screen_Shot_2017-09-25_at_2.41.38_PM.png](https://s26.postimg.org/sxyq7lmk9/Screen_Shot_2017-09-25_at_2.41.38_PM.png)](https://postimg.org/image/ym50yhqwl/)
+<img width="700" alt="screen shot 2017-09-25 at 2 41 38 pm" src="https://user-images.githubusercontent.com/12532173/30833079-63cf64ee-a202-11e7-9089-991bda4654ed.png">
