@@ -10,7 +10,6 @@ import Organizations from './components/Organizations/Organizations';
 import Dashboard from './components/Dashboard/Dashboard';
 import './App.css';
 
-// import { injectUserName } from './utils/utils';
 class App extends Component {
   getChildContext() {
     return { widgetId: this.props.widgetId };

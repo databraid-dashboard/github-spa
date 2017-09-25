@@ -36,7 +36,7 @@ exports[`Milestone entry component should render a component with props as speci
             }
             sub={true}
           >
-            Date Due: 
+            Date Due:
           </Header>
           06/23/2018
         </div>

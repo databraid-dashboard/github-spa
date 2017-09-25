@@ -25,15 +25,6 @@ describe('Logout Component', () => {
   it('should contain an icon, the icon should be a hand', () => {
     expect(logoutComponent.find('.hand').exists()).toBe(true);
   });
-  // it('returns State To initialState ', () => {
-  //   const logout = jest.fn();
-  //   const expected = {
-  //     avatarUrl: 'https://avatars1.githubusercontent.com/u/29614654?v=4',
-  //     orgName: 'ShareCastG52',
-  //   };
-  //
-  //   expect(mapStateToProps(state, { orgId: 238923429, widgetId: 'github' })).toEqual(expected);
-  // });
   it('maps logout dispatches to props', () => {
     const dispatch = jest.fn();
     expect(mapDispatchToProps(dispatch)).toHaveProperty('logout');

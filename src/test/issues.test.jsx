@@ -23,8 +23,6 @@ const state = {
       },
     },
   },
-  // loadingIssues: false,
-  // currentPage: { selectedOrgName: 'ski-ski', userName: 'michaelmurray6298' },
 };
 
 describe('Issues component', () => {
