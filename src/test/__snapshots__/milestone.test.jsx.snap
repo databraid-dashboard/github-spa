@@ -1,7 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Milestone entry component should render a component with props as specified  1`] = `
-<CardContent>
+<CardContent
+  style={
+    Object {
+      "borderTop": "0.25px solid black",
+    }
+  }
+>
   <List
     divided={true}
     relaxed={true}
@@ -10,27 +16,45 @@ exports[`Milestone entry component should render a component with props as speci
       <ListContent
         className="ui center aligned"
       >
-        <ListHeader>
+        <ListHeader
+          style={
+            Object {
+              "fontSize": "16px",
+            }
+          }
+        >
           sprint 1
         </ListHeader>
         <div>
           <Header
-            className="space-milestones"
+            style={
+              Object {
+                "paddingBottom": "6px",
+                "paddingTop": "12px",
+                "position": "relative",
+              }
+            }
             sub={true}
           >
-            Date Due: 
+            Date Due:
           </Header>
           06/23/2018
         </div>
         <Header
-          className="space-milestones"
+          style={
+            Object {
+              "paddingBottom": "6px",
+              "paddingTop": "12px",
+              "position": "relative",
+            }
+          }
           sub={true}
         >
-          Percent Complete: 
+          Percent Complete:
         </Header>
         <Wrapper
           duration={2000}
-          milestoneId={2601714}
+          milestoneId="2601714"
           percentComplete={0.4}
         />
       </ListContent>

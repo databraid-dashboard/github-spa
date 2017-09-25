@@ -22,13 +22,32 @@ export class Milestones extends Component {
   }
 
   render() {
+    const styles = {
+      border: '0.25px solid black',
+    };
+
+    const title = {
+      fontSize: '14px',
+    };
+
+    const height = {
+      height: '40px',
+    };
+
     if (this.props.loadingMilestones) {
       return <div>Loading Milestones</div>;
     }
+
+    if (!Object.keys(this.props.milestonesByRepo).length) {
+      return (<Card style={styles}><Card.Content style={height}>
+        <Card.Header style={title} className="ui center aligned">No Milestones!</Card.Header>
+      </Card.Content></Card>);
+    }
+
     return (
-      <Card>
-        <Card.Content>
-          <Card.Header className="ui center aligned">Milestones</Card.Header>
+      <Card style={styles}>
+        <Card.Content style={height}>
+          <Card.Header style={title} className="ui center aligned">Milestones</Card.Header>
         </Card.Content>
         {milestoneComponents(this.props.milestonesByRepo, this.props.repoName)}
       </Card>
@@ -38,11 +57,11 @@ export class Milestones extends Component {
 
 Milestones.propTypes = {
   retrieveMilestones: PropTypes.func.isRequired,
-  loadingMilestones: PropTypes.bool,
+  loadingMilestones: PropTypes.bool.isRequired,
   userName: PropTypes.string.isRequired,
   orgName: PropTypes.string.isRequired,
   repoName: PropTypes.string.isRequired,
-  milestonesByRepo: PropTypes.objectOf(PropTypes.array),
+  milestonesByRepo: PropTypes.objectOf(PropTypes.array).isRequired,
 };
 
 Milestones.defaultProps = {

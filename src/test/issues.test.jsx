@@ -23,8 +23,6 @@ const state = {
       },
     },
   },
-  // loadingIssues: false,
-  // currentPage: { selectedOrgName: 'ski-ski', userName: 'michaelmurray6298' },
 };
 
 describe('Issues component', () => {
@@ -41,7 +39,7 @@ describe('Issues component', () => {
     expect(toJson(component)).toMatchSnapshot();
   });
 
-  it('map\'s given State To Props ', () => {
+  it("map's given State To Props ", () => {
     const expected = {
       issuesByRepo: undefined,
       loadingIssues: false,

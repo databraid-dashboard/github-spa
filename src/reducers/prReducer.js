@@ -1,4 +1,5 @@
 import { GET_PRS, LOADING_PRS } from '../actions/prActions';
+import { LOGOUT } from '../actions/renderActions';
 
 function createState(json, incomingState, repoName) {
   const state = incomingState;
@@ -17,13 +18,22 @@ function createState(json, incomingState, repoName) {
   });
   return { ...state, loadingPrTable: false };
 }
-
-const prReducer = (state = { ids: [], prsById: {}, loadingPrTable: true, repoName: '' }, action) => {
+const initialState = {
+  ids: [],
+  prsById: {},
+  loadingPrTable: true,
+  repoName: '',
+};
+const prReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_PRS:
       return createState(action.responseObj, state, action.repoName);
     case LOADING_PRS:
       return { ...state, loadingPrTable: true };
+
+    case LOGOUT:
+      return initialState;
+
     default:
       return state;
   }

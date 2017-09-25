@@ -5,7 +5,7 @@ import { Grid, Card, Button } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
-import { fetchOrgs } from '../../actions/renderActions';
+import { displayOrgs } from '../../actions/renderActions';
 import injectWidgetId from '../../utils/utils';
 import './Login.css';
 
@@ -13,21 +13,33 @@ export class Login extends Component {
   componentDidMount() {
     if (cookie.load('userName') !== undefined) {
       const name = cookie.load('userName');
-      this.props.fetchOrgs(name);
+      this.props.displayOrgs(name);
     }
   }
   render() {
-    const GITHUB_OAUTH_URL = process.env.REACT_APP_GITHUB_OAUTH_URL;
+    const island = {
+      marginTop: '20%',
+      height: '105px',
+      width: '330px',
+    };
+
+    const butterButton = {
+      height: '75px',
+      width: '300px',
+    };
+
+    const GITHUB_OAUTH_URL = `${process.env.REACT_APP_GITHUB_API_URL}/auth/github`;
+
     return (
       <Grid verticalAlign={'middle'}>
         <Grid.Row centered verticalAlign={'middle'}>
-          <Grid.Column centered verticalAlign={'middle'}>
-            <Card raised centered className="island">
+          <Grid.Column verticalAlign={'middle'}>
+            <Card raised centered style={island}>
               <Card.Content>
                 <Button
                   as="a"
                   href={`${GITHUB_OAUTH_URL}`}
-                  className="butterButton"
+                  style={butterButton}
                   size="massive"
                   content="Login with Github"
                   icon="github"
@@ -43,7 +55,7 @@ export class Login extends Component {
 
 Login.propTypes = {
   /* eslint-disable react/no-unused-prop-types, react/require-default-props */
-  fetchOrgs: PropTypes.func.isRequired,
+  displayOrgs: PropTypes.func.isRequired,
   userName: PropTypes.string,
 };
 
@@ -59,7 +71,7 @@ export const mapStateToProps = (state, ownProps) => {
 };
 
 export const mapDispatchToProps = dispatch => bindActionCreators({
-  fetchOrgs,
+  displayOrgs,
 }, dispatch);
 
 export default injectWidgetId(connect(mapStateToProps, mapDispatchToProps)(Login));

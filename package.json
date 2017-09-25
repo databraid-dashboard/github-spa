@@ -1,9 +1,18 @@
 {
+<<<<<<< HEAD
   "name": "databraid-react-starter",
+=======
+  "name": "github-spa",
+>>>>>>> 76b8f545c7af0071673d7f2c90fb6cb892bad138
   "version": "1.0.7",
   "private": true,
   "dependencies": {
     "d3": "4.10.0",
+<<<<<<< HEAD
+=======
+    "eslint": "3.x",
+    "moment": "2.18.1",
+>>>>>>> 76b8f545c7af0071673d7f2c90fb6cb892bad138
     "prop-types": "15.5.10",
     "react": "15.6.1",
     "react-cookies": "0.1.0",
@@ -11,6 +20,10 @@
     "react-linechart": "1.1.9",
     "react-redux": "5.0.5",
     "redux": "3.7.2",
+<<<<<<< HEAD
+=======
+    "redux-logger": "3.0.6",
+>>>>>>> 76b8f545c7af0071673d7f2c90fb6cb892bad138
     "redux-promise-middleware": "4.3.0",
     "redux-thunk": "2.2.0",
     "render-if": "0.1.1",
@@ -20,7 +33,10 @@
     "babel-preset-es2015": "6.24.1",
     "enzyme": "2.9.1",
     "enzyme-to-json": "1.5.1",
+<<<<<<< HEAD
     "eslint": "4.3.0",
+=======
+>>>>>>> 76b8f545c7af0071673d7f2c90fb6cb892bad138
     "eslint-config-airbnb": "15.1.0",
     "eslint-plugin-import": "2.7.0",
     "eslint-plugin-jsx-a11y": "5.1.1",
@@ -31,11 +47,20 @@
     "redux-mock-store": "1.2.3"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "down": "scripts/down",
+    "up": "scripts/up",
+    "start": "npm run up && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
+<<<<<<< HEAD
     "lint": "node_modules/eslint/bin/eslint.js --fix --ext=js --ext=jsx ."
+=======
+    "lint": "node_modules/eslint/bin/eslint.js --fix --ext=js --ext=jsx .",
+    "install-module": "npm install --prefix ./libs/widget-libs/",
+    "build-module": "npm run build --prefix ./libs/widget-libs/",
+    "create-module": "npm run install-module && npm run build-module"
+>>>>>>> 76b8f545c7af0071673d7f2c90fb6cb892bad138
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
   "main": "index.js",

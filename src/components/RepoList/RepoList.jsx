@@ -1,12 +1,13 @@
 /* eslint-disable import/no-named-as-default, consistent-return */
 import React, { Component } from 'react';
-import { Header, Icon, Grid, List, Button } from 'semantic-ui-react';
+import { Header, Icon, Grid, List, Button, Menu } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import { retrieveRepos } from '../../actions/repoActions';
-import { fetchOrgs } from '../../actions/renderActions';
+import { displayOrgs } from '../../actions/renderActions';
 import Repo from '../Repo/Repo';
+import Logout from '../Logout/Logout';
 import injectWidgetId from '../../utils/utils';
 import './RepoList.css';
 
@@ -25,19 +26,28 @@ export class RepoList extends Component {
   render() {
     return (
       <div>
-        <Button icon onClick={() => this.props.fetchOrgs(this.props.userName)}>
-          <Icon name="arrow left" />
-        </Button>
+        <Menu compact>
+          <Menu.Item>
+            <Button icon onClick={() => this.props.displayOrgs(this.props.userName)}>
+              <Icon name="arrow left" />
+            </Button>
+          </Menu.Item>
+          <Menu.Item>
+            <Logout />
+          </Menu.Item>
+        </Menu>
         <Grid centered padded>
-          <Grid.Column width={8}>
+          <Grid.Row width={16}>
             <Header as="h2" icon textAlign="center">
               <Icon name="github" />
               <Header.Content>Which repository are you interested in?</Header.Content>
             </Header>
-            <List animated divided relaxed size="huge">
+          </Grid.Row>
+          <Grid.Row width={16}>
+            <List id="repo-list" animated divided horizontal selection size="huge">
               {repoComponents(this.props.reposByOrg, this.props.orgName)}
             </List>
-          </Grid.Column>
+          </Grid.Row>
         </Grid>
       </div>
     );
@@ -46,7 +56,7 @@ export class RepoList extends Component {
 
 RepoList.propTypes = {
   retrieveRepos: PropTypes.func.isRequired,
-  fetchOrgs: PropTypes.func.isRequired,
+  displayOrgs: PropTypes.func.isRequired,
   userName: PropTypes.string.isRequired,
   orgName: PropTypes.string.isRequired,
   reposByOrg: PropTypes.objectOf(PropTypes.array),
@@ -76,7 +86,7 @@ export const mapStateToProps = (state, ownProps) => {
 export const mapDispatchToProps = dispatch =>
   bindActionCreators({
     retrieveRepos,
-    fetchOrgs,
+    displayOrgs,
   }, dispatch);
 
 export default injectWidgetId(connect(mapStateToProps, mapDispatchToProps)(RepoList));

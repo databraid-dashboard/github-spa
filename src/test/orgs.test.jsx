@@ -2,14 +2,18 @@ import React from 'react';
 import toJson from 'enzyme-to-json';
 import { shallow } from 'enzyme';
 
-import { Organizations, mapStateToProps, mapDispatchToProps } from '../components/Organizations/Organizations';
+import {
+  Organizations,
+  mapStateToProps,
+  mapDispatchToProps,
+} from '../components/Organizations/Organizations';
 
 const state = {
   widgets: {
     byId: {
       github: {
         orgs: {
-          ids: [246869449],
+          ids: ['246869449'],
           orgsById: {
             246869449: {
               avatarUrl: 'https://avatars1.githubusercontent.com/u/29614654?v=4',
@@ -21,20 +25,20 @@ const state = {
         currentPage: { render: 'orgs', repoName: null, userName: 'michaelmurray6298' },
       },
     },
+    currentPage: { render: 'orgs', repoName: null },
   },
+  currentPage: { render: 'orgs', repoName: null, userName: 'michaelmurray6298' },
 };
 
 describe('Organizations component', () => {
   it('should render a component with props as specified ', () => {
     const retrieveOrgs = jest.fn();
-    const renderLogin = jest.fn();
     const component = shallow(
       <Organizations
         orgIds={state.widgets.byId.github.orgs.ids}
         loadingOrganizations={false}
         currentPage={state.widgets.byId.github.currentPage.render}
         retrieveOrgs={retrieveOrgs}
-        renderLogin={renderLogin}
         userName={state.widgets.byId.github.currentPage.userName}
       />,
     );
@@ -51,9 +55,9 @@ describe('Organizations component', () => {
   //   expect(retrieveOrgs).toBeCalled();
   // });
 
-  it('map\'s given State To Props ', () => {
+  it("map's given State To Props ", () => {
     const expected = {
-      orgIds: [246869449],
+      orgIds: ['246869449'],
       orgsById: {
         246869449: {
           avatarUrl: 'https://avatars1.githubusercontent.com/u/29614654?v=4',
