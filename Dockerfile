@@ -4,6 +4,6 @@ RUN mkdir app
 WORKDIR app
 
 ADD package.json .
-RUN npm install
+RUN npm install -q
 
 ADD . .
