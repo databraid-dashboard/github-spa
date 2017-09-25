@@ -64,11 +64,7 @@ class ProgressArc extends Component {
     return this.setForeground(context)
       .transition()
       .duration(this.props.duration)
-<<<<<<< HEAD
-      .call(this.arcTween, Math.PI * 2 * this.props.percentComplete, this.arc());
-=======
       .call(this.arcTween, (Math.PI * 2) * this.props.percentComplete, this.arc());
->>>>>>> 76b8f545c7af0071673d7f2c90fb6cb892bad138
   }
 
   arcTween(transition, newAngle, arc) {
