@@ -5,7 +5,7 @@
 ## Description
 
 ## Usage
-- Ensure you have Docker installed. If you need to install it you can get started here.
+- Ensure you have Docker installed. If you don't, you can download Docker [here](https://www.docker.com/community-edition).
 - Fork and clone this repository.
 - Run `npm install`.
 - Run `npm start`.
