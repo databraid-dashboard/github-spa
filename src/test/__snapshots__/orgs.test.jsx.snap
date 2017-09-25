@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Organizations component should render a component with props as specified  1`] = `
+<div>
+  <Menu
+    compact={true}
+  >
+    <MenuItem>
+      <Connect(Component) />
+    </MenuItem>
+  </Menu>
+  <Grid
+    centered={true}
+    columns={3}
+    padded={true}
+  >
+    <Header
+      as="h2"
+      icon={true}
+      textAlign="center"
+    >
+      <Icon
+        as="i"
+        name="github"
+      />
+      <HeaderContent>
+        Which organization are you interested in?
+      </HeaderContent>
+    </Header>
+    <GridRow>
+      <Wrapper
+        orgId="246869449"
+      />
+    </GridRow>
+  </Grid>
+</div>
+`;
